@@ -29,21 +29,21 @@ const getLocalWeatherIcon = (conditionText) => {
 };
 
 const cidades = [
-  { nome: 'Candiota', coord: '-31.4768,-53.6792' },
   { nome: 'Amaral Ferrador', coord: '-30.873,-52.2473' },
-  { nome: 'Pedras Altas', coord: '-31.7325,-53.5849' },
-  { nome: 'Turuçu', coord: '-31.4292,-52.1859' },
-  { nome: 'Herval', coord: '-32.0129,-53.4031' },
-  { nome: 'Pelotas', coord: '-31.768099,-52.341164' },
-  { nome: 'Rio Grande', coord: '-32.0332,-52.0986' },
+  { nome: 'Arroio Grande', coord: '-32.2387,-53.0907' },
+  { nome: 'Candiota', coord: '-31.4768,-53.6792' },
   { nome: 'Canguçu', coord: '-31.3956,-52.6864' },
-  { nome: 'São Lourenço do Sul', coord: '-31.3629,-51.9789' },
-  { nome: 'Piratini', coord: '-31.4421,-53.1045' },
+  { nome: 'Capão do Leão', coord: '-31.7675,-52.4487 ' },
+  { nome: 'Herval', coord: '-32.0129,-53.4031' },
   { nome: 'Jaguarão', coord: '-32.5602,-53.381' },
   { nome: 'Pedro Osório', coord: '-31.8797,-52.8104' },
+  { nome: 'Pelotas', coord: '-31.768099,-52.341164' },
+  { nome: 'Pedras Altas', coord: '-31.7325,-53.5849' },
   { nome: 'Pinheiro Machado', coord: '-31.578,-53.381' },
-  { nome: 'Arroio Grande', coord: '-32.2387,-53.0907' },
-  { nome: 'Capão do Leão', coord: '-31.7675,-52.4487 ' },
+  { nome: 'Piratini', coord: '-31.4421,-53.1045' },
+  { nome: 'Rio Grande', coord: '-32.0332,-52.0986' },
+  { nome: 'São Lourenço do Sul', coord: '-31.3629,-51.9789' },
+  { nome: 'Turuçu', coord: '-31.4292,-52.1859' },
 ];
 
 const App = () => {
