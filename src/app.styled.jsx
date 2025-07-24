@@ -9,8 +9,6 @@ export const Card = styled.div`
 
   display: flex;
   flex-direction: column;
-
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 
 export const NameSection = styled.div`
