@@ -33,7 +33,6 @@ const cidades = [
   { nome: 'Rio Grande', coord: '-32.0332,-52.0986' },
   { nome: 'Canguçu', coord: '-31.3956,-52.6864' },
   { nome: 'São Lourenço do Sul', coord: '-31.3629,-51.9789' },
-  { nome: 'São Vicente do Sul', coord: '-33.5338,-53.3496' },
   { nome: 'Piratini', coord: '-31.4421,-53.1045' },
   { nome: 'Jaguarão', coord: '-32.5602,-53.381' },
   { nome: 'Pedro Osório', coord: '-31.8797,-52.8104' },
@@ -52,7 +51,7 @@ const App = () => {
   const corrigirNome = (nome) => {
     if (nome === 'Olimpo') return 'Pedro Osório';
     if (nome === 'Cangucu') return 'Canguçu';
-    if (nome === 'Santa Vitoria Do Palmar') return 'Sta. Vitoria do Palmar';
+    if (nome === 'Sao Lourenco Do Sul') return 'São Lourenço do Sul';
     if (nome === 'Jaguarao') return 'Jaguarão';
     return nome;
   };
@@ -150,6 +149,11 @@ const App = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
             >
               <IconImage src={dados.icon} alt="tempo" />
             </motion.div>

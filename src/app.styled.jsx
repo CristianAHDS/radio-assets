@@ -23,6 +23,10 @@ export const NameSection = styled.div`
 
   display: flex;
   justify-content: center;
+
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
 `;
 
 export const MidleSection = styled.div`
