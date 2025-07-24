@@ -114,7 +114,7 @@ const App = () => {
   useEffect(() => {
     const cidadeInterval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % cidades.length);
-    }, 10000); // troca cidade a cada 6s
+    }, 15000); // troca cidade a cada 6s
 
     return () => clearInterval(cidadeInterval);
   }, []);
