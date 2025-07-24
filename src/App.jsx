@@ -29,6 +29,11 @@ const getLocalWeatherIcon = (conditionText) => {
 };
 
 const cidades = [
+  { nome: 'Candiota', coord: '-31.4768,-53.6792' },
+  { nome: 'Amaral Ferrador', coord: '-30.873,-52.2473' },
+  { nome: 'Pedras Altas', coord: '-31.7325,-53.5849' },
+  { nome: 'Turuçu', coord: '-31.4292,-52.1859' },
+  { nome: 'Herval', coord: '-32.0129,-53.4031' },
   { nome: 'Pelotas', coord: '-31.768099,-52.341164' },
   { nome: 'Rio Grande', coord: '-32.0332,-52.0986' },
   { nome: 'Canguçu', coord: '-31.3956,-52.6864' },
@@ -38,6 +43,7 @@ const cidades = [
   { nome: 'Pedro Osório', coord: '-31.8797,-52.8104' },
   { nome: 'Pinheiro Machado', coord: '-31.578,-53.381' },
   { nome: 'Arroio Grande', coord: '-32.2387,-53.0907' },
+  { nome: 'Capão do Leão', coord: '-31.7675,-52.4487 ' },
 ];
 
 const App = () => {
@@ -53,6 +59,9 @@ const App = () => {
     if (nome === 'Cangucu') return 'Canguçu';
     if (nome === 'Sao Lourenco Do Sul') return 'São Lourenço do Sul';
     if (nome === 'Jaguarao') return 'Jaguarão';
+    if (nome === 'Guarda Nova') return 'Herval';
+    if (nome === 'Passo Das Pedras') return 'Turuçu';
+    if (nome === 'Seival') return 'Candiota';
     return nome;
   };
 
@@ -105,7 +114,7 @@ const App = () => {
   useEffect(() => {
     const cidadeInterval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % cidades.length);
-    }, 6000); // troca cidade a cada 6s
+    }, 10000); // troca cidade a cada 6s
 
     return () => clearInterval(cidadeInterval);
   }, []);
