@@ -18,83 +18,104 @@ import Chuva from './assets/rain.png';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
-// Mapeia condição textual para imagem local
 const getLocalWeatherIcon = (conditionText) => {
   const text = conditionText.toLowerCase();
-
   if (text.includes('sunny')) return Sol;
   if (text.includes('partly') || text.includes('cloudy')) return SolEntreNuvens;
   if (text.includes('overcast') || text === 'cloudy') return Nublado;
   if (text.includes('rain') && text.includes('sun')) return SolEChuva;
   if (text.includes('rain')) return Chuva;
-
-  return Nublado; // fallback
+  return Nublado;
 };
 
-const App = () => {
-  const [weatherData, setWeatherData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [temperaturaInteira, setTemperaturaInteira] = useState();
-  const [sensacao, setSensacao] = useState();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [nome, setNome] = useState(null);
-  const [icon, setIcon] = useState(null);
+const cidades = [
+  { nome: 'Pelotas', coord: '-31.768099,-52.341164' },
+  { nome: 'Rio Grande', coord: '-32.0332,-52.0986' },
+  { nome: 'Canguçu', coord: '-31.3956,-52.6864' },
+  { nome: 'São Lourenço do Sul', coord: '-31.3629,-51.9789' },
+  { nome: 'São Vicente do Sul', coord: '-33.5338,-53.3496' },
+  { nome: 'Piratini', coord: '-31.4421,-53.1045' },
+  { nome: 'Jaguarão', coord: '-32.5602,-53.381' },
+  { nome: 'Pedro Osório', coord: '-31.8797,-52.8104' },
+  { nome: 'Pinheiro Machado', coord: '-31.578,-53.381' },
+  { nome: 'Arroio Grande', coord: '-32.2387,-53.0907' },
+];
 
-  const cidades = [
-    { nome: 'Pelotas', coord: '-31.768099,-52.341164' },
-    { nome: 'Rio Grande', coord: '-32.0332,-52.0986' },
-    { nome: 'Canguçu', coord: '-31.3956,-52.6864' },
-    { nome: 'São Lourenço do Sul', coord: '-31.3629,-51.9789' },
-    { nome: 'São Vicente do Sul', coord: '-33.5338,-53.3496' },
-    { nome: 'Piratini', coord: '-31.4421,-53.1045' },
-    { nome: 'Jaguarão', coord: '-32.5602,-53.381' },
-    { nome: 'Pedro Osório', coord: '-31.8797,-52.8104' },
-    { nome: 'Pinheiro Machado', coord: '-31.578,-53.381' },
-    { nome: 'Arroio Grande', coord: '-32.2387,-53.0907' },
-  ];
+const App = () => {
+  const [weatherDataMap, setWeatherDataMap] = useState({});
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [error, setError] = useState(null);
+
+  const STORAGE_KEY = 'weatherDataMap';
+  const TIMESTAMP_KEY = 'weatherDataTimestamp';
+
+  const corrigirNome = (nome) => {
+    if (nome === 'Olimpo') return 'Pedro Osório';
+    if (nome === 'Cangucu') return 'Canguçu';
+    if (nome === 'Santa Vitoria Do Palmar') return 'Sta. Vitoria do Palmar';
+    if (nome === 'Jaguarao') return 'Jaguarão';
+    return nome;
+  };
+
+  const fetchAllCitiesWeather = async () => {
+    const newWeatherDataMap = {};
+    for (const cidade of cidades) {
+      try {
+        const res = await fetch(
+          `https://api.weatherapi.com/v1/current.json?key=34402a45e8a24b4194335812211910&q=${cidade.coord}&aqi=no`,
+        );
+        const data = await res.json();
+        newWeatherDataMap[cidade.nome] = {
+          nomeCorrigido: corrigirNome(data.location.name),
+          temperatura: Math.round(Number(data.current.temp_c)),
+          sensacao: Math.round(Number(data.current.feelslike_c)),
+          icon: getLocalWeatherIcon(data.current.condition.text),
+        };
+      } catch (err) {
+        console.warn(`Erro ao buscar dados de ${cidade.nome}`);
+      }
+    }
+
+    // Salva no estado e no localStorage
+    setWeatherDataMap(newWeatherDataMap);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(newWeatherDataMap));
+    localStorage.setItem(TIMESTAMP_KEY, Date.now().toString());
+  };
+
+  useEffect(() => {
+    const loadData = () => {
+      const cache = localStorage.getItem(STORAGE_KEY);
+      const timestamp = parseInt(localStorage.getItem(TIMESTAMP_KEY), 10);
+
+      const now = Date.now();
+      const cacheIsValid = cache && timestamp && now - timestamp < 60000; // menos de 60s
+
+      if (cacheIsValid) {
+        setWeatherDataMap(JSON.parse(cache));
+      } else {
+        fetchAllCitiesWeather();
+      }
+    };
+
+    loadData();
+
+    const refreshInterval = setInterval(fetchAllCitiesWeather, 60000); // atualiza a cada 60s
+    return () => clearInterval(refreshInterval);
+  }, []);
 
   useEffect(() => {
     const cidadeInterval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % cidades.length);
-    }, 6000); // 6 segundos
+    }, 6000); // troca cidade a cada 6s
 
     return () => clearInterval(cidadeInterval);
   }, []);
 
-  useEffect(() => {
-    const cidadeAtual = cidades[currentIndex];
+  const cidadeAtual = cidades[currentIndex];
+  const dados = weatherDataMap[cidadeAtual.nome];
 
-    const fetchWeather = () => {
-      setNome('');
-      fetch(
-        `https://api.weatherapi.com/v1/current.json?key=34402a45e8a24b4194335812211910&q=${cidadeAtual.coord}&aqi=yes`,
-      )
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Erro ao buscar dados da API');
-          }
-          return response.json();
-        })
-        .then((data) => {
-          setWeatherData(data);
-          setTemperaturaInteira(Math.round(Number(data.current.temp_c)));
-          setSensacao(Math.round(Number(data.current.feelslike_c)));
-          setNome(data.location.name);
-          setIcon(getLocalWeatherIcon(data.current.condition.text)); // ícone local
-          setLoading(false);
-        })
-        .catch((err) => {
-          setError(err.message);
-          setLoading(false);
-        });
-    };
-
-    fetchWeather();
-  }, [currentIndex]);
-
-  if (loading) return <p>Carregando...</p>;
-  if (error) return <p>Erro: {error}</p>;
+  if (!dados) return <p>Carregando dados...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <AnimatePresence mode="wait">
@@ -106,15 +127,7 @@ const App = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {nome === 'Olimpo'
-              ? 'Pedro Osório'
-              : nome === 'Cangucu'
-              ? 'Canguçu'
-              : nome === 'Santa Vitoria Do Palmar'
-              ? 'Sta. Vitoria do Palmar'
-              : nome === 'Jaguarao'
-              ? 'Jaguarão'
-              : nome}
+            {dados.nomeCorrigido}
           </motion.div>
         </NameSection>
 
@@ -127,23 +140,18 @@ const App = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              {temperaturaInteira}ºC
+              {dados.temperatura}ºC
             </motion.div>
           </Temp>
 
           <Icon>
             <motion.div
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
               key={`icon-${currentIndex}`}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <IconImage src={icon} alt="tempo" />
+              <IconImage src={dados.icon} alt="tempo" />
             </motion.div>
           </Icon>
         </MidleSection>
@@ -157,7 +165,7 @@ const App = () => {
             style={{ display: 'flex', alignItems: 'center' }}
           >
             <strong>Sensação:</strong>
-            <div style={{ marginLeft: '10px' }}>{sensacao}ºC</div>
+            <div style={{ marginLeft: '10px' }}>{dados.sensacao}ºC</div>
           </motion.div>
         </InfoSection>
       </Card>
