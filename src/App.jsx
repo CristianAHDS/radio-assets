@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Geral from './geral.jsx';
 import Esporte from './esporte.jsx';
 import Fenadoce from './fenadoce.jsx';
+import Lower from './lower.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: '/fenadoce',
     element: <Fenadoce />,
+  },
+  {
+    path: '/lower',
+    element: <Lower />,
   },
 ]);
 
