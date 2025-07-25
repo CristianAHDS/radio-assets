@@ -7,6 +7,7 @@ import Geral from './geral.jsx';
 import Esporte from './esporte.jsx';
 import Fenadoce from './fenadoce.jsx';
 import Lower from './lower.jsx';
+import Clock from './clock.jsx';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: '/lower',
     element: <Lower />,
+  },
+  {
+    path: '/clock',
+    element: <Clock />,
   },
 ]);
 

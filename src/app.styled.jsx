@@ -81,4 +81,6 @@ export const InfoSection = styled.div`
 
   color: #fff;
   font-size: 18px;
+
+  text-transform: uppercase;
 `;

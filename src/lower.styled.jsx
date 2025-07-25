@@ -74,4 +74,6 @@ export const ScrollingText = styled.div`
   font-weight: 400;
   font-size: 18px;
   padding-right: 100px; /* Espaço entre as duplicações */
+
+  text-transform: uppercase;
 `;

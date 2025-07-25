@@ -20,7 +20,7 @@ const Lower = () => {
     };
 
     fetchText();
-    const interval = setInterval(fetchText, 60000);
+    const interval = setInterval(fetchText, 10000);
     return () => clearInterval(interval);
   }, []);
 
