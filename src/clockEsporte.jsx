@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Card, TopCard, CardLogos, Hora } from './clock.styled.jsx';
+import { Card, TopCard, CardLogos, Hora } from './clockEsporte.styled.jsx';
 
 const Clock = () => {
   const [hora, setHora] = useState('');

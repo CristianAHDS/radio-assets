@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primary, secondary } from './constants/color';
+import { primary, secondaryFenadoce } from './constants/color';
 
 export const Card = styled.div`
   width: 235px;
@@ -14,7 +14,7 @@ export const Card = styled.div`
 export const TopCard = styled.div`
   width: 100%;
   height: 50px;
-  background-color: ${secondary};
+  background-color: ${secondaryFenadoce};
 
   display: flex;
   align-items: center;
