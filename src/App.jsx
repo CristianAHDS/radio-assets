@@ -4,15 +4,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // Pages
 import TempoGeral from './geral.jsx';
-import Esporte from './esporte.jsx';
-import FenadoceTempo from './fenadoce.jsx';
+import TempoEsporte from './esporte.jsx';
+import TempoFenadoce from './fenadoce.jsx';
 import Lower from './lower.jsx';
 import LowerEsporte from './lowerEsporte.jsx';
+import LowerFenadoce from './lowerEsporte.jsx';
 import Clock from './clock.jsx';
 import ClockEsporte from './clockEsporte.jsx';
-import AcordaZonaSul from './pages/acorda_zona_sul/index.jsx';
-import Esportes from './pages/esportes/index.jsx';
-import Fenadoce from './pages/fenadoce/index.jsx';
+import ClockFenadoce from './clockFenadoce.jsx';
 
 const router = createBrowserRouter([
   {
@@ -21,11 +20,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/esporte',
-    element: <Esporte />,
+    element: <TempoEsporte />,
   },
   {
-    path: '/fenadoceTempo',
-    element: <FenadoceTempo />,
+    path: '/fenadoce',
+    element: <TempoFenadoce />,
   },
   {
     path: '/lower',
@@ -36,6 +35,10 @@ const router = createBrowserRouter([
     element: <LowerEsporte />,
   },
   {
+    path: '/lowerFenadoce',
+    element: <LowerFenadoce />,
+  },
+  {
     path: '/clock',
     element: <Clock />,
   },
@@ -44,16 +47,8 @@ const router = createBrowserRouter([
     element: <ClockEsporte />,
   },
   {
-    path: '/acorda_zona_sul',
-    element: <AcordaZonaSul />,
-  },
-  {
-    path: '/esportes',
-    element: <Esportes />,
-  },
-  {
-    path: '/fenadoce',
-    element: <Fenadoce />,
+    path: '/clockFenadoce',
+    element: <ClockFenadoce />,
   },
 ]);
 
