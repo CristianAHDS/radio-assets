@@ -8,7 +8,7 @@ import TempoEsporte from './esporte.jsx';
 import TempoFenadoce from './fenadoce.jsx';
 import Lower from './lower.jsx';
 import LowerEsporte from './lowerEsporte.jsx';
-import LowerFenadoce from './lowerEsporte.jsx';
+import LowerFenadoce from './lowerFenadoce.jsx';
 import Clock from './clock.jsx';
 import ClockEsporte from './clockEsporte.jsx';
 import ClockFenadoce from './clockFenadoce.jsx';
