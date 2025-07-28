@@ -9,7 +9,7 @@ import {
 } from './lowerEsporte.styled';
 
 const Lower = () => {
-  const defaultText = 'Edit';
+  const defaultText = 'https://pelotense-assets.netlify.app/lowerEsporte';
 
   const [text, setText] = useState(() => {
     // tenta carregar do localStorage ou usa o padrão
