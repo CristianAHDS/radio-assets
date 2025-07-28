@@ -66,28 +66,30 @@ export const ScrollingWrapper = styled.div`
 `;
 
 // Recebe largura via prop
-export const ScrollingText = styled.textarea`
-  width: calc(100vw - 300px);
-  height: 15px;
-  margin-top: 15px;
+export const ScrollingText = styled.textarea.attrs({
+  rows: 1,
+  wrap: 'off',
+})`
+  width: ${(props) =>
+    props.width ? `${props.width}px` : 'calc(100vw - 300px)'};
+  height: 50px; /* altura igual à barra */
+  line-height: 50px; /* centraliza verticalmente */
+
   overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 
   border: none;
   outline: none;
   resize: none;
 
-  display: flex;
-  align-items: center;
-
   white-space: nowrap;
   font-weight: 400;
   font-size: 18px;
-  padding-right: 20px;
+  padding-right: 30px; /* espaço entre duplicações */
 
   text-transform: uppercase;
-
   background-color: transparent;
-
   color: #fff;
 
   &:focus {
