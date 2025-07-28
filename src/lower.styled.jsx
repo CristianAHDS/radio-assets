@@ -1,7 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { primary, secondary } from './constants/color';
 
-// Animação de scroll contínuo da direita para a esquerda
 const scroll = keyframes`
   0% {
     transform: translateX(0);
@@ -57,27 +56,25 @@ export const TextSide = styled.div`
   position: relative;
 `;
 
-// Agora recebe a duração da animação via prop 'animationDuration'
+// Recebe duração da animação via prop
 export const ScrollingWrapper = styled.div`
   height: 100%;
   display: flex;
   width: max-content;
-  animation: ${scroll} ${(props) => props.animationDuration || 30}s linear
+  animation: ${scroll} ${(props) => props.animationDuration || 10}s linear
     infinite;
 `;
 
-// Agora recebe a largura via prop 'width'
+// Recebe largura via prop
 export const ScrollingText = styled.textarea`
-  /* Removi min-width para usar a largura dinâmica */
-  width: ${(props) =>
-    props.width ? `${props.width}px` : 'calc(100vw - 300px)'};
+  width: calc(100vw - 300px);
   height: 15px;
   margin-top: 15px;
   overflow: hidden;
 
   border: none;
   outline: none;
-  resize: none; /* opcional: remove o controle de redimensionamento */
+  resize: none;
 
   display: flex;
   align-items: center;
@@ -85,7 +82,7 @@ export const ScrollingText = styled.textarea`
   white-space: nowrap;
   font-weight: 400;
   font-size: 18px;
-  padding-right: 100px; /* Espaço entre as duplicações */
+  padding-right: 20px;
 
   text-transform: uppercase;
 

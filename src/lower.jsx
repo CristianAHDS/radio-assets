@@ -9,7 +9,7 @@ import {
 } from './lower.styled';
 
 const Lower = () => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState('EDITAR TEXT');
   const [secondText, setSecondText] = useState('');
 
   // Estado para largura do textarea e duração da animação
@@ -18,17 +18,6 @@ const Lower = () => {
 
   // Ref para o elemento invisível que mede o texto
   const measureRef = useRef(null);
-
-  useEffect(() => {
-    const fetchText = () => {
-      fetch('https://corsproxy.io/?https://pastebin.com/raw/Az7qixiV')
-        .then((res) => res.text())
-        .then((data) => setText(data))
-        .catch((err) => console.error('Erro ao buscar o texto:', err));
-    };
-
-    fetchText();
-  }, []);
 
   useEffect(() => {
     setSecondText(text);
@@ -41,7 +30,7 @@ const Lower = () => {
       setTextWidth(measuredWidth + 50); // folga para padding
 
       // Calcula duração proporcional (exemplo: 10s para cada 100px)
-      const duration = Math.max(10, (measuredWidth / 100) * 10);
+      const duration = Math.max(1, (measuredWidth / 10000) * 10);
       setAnimationDuration(duration);
     }
   }, [text]);
@@ -73,11 +62,6 @@ const Lower = () => {
             <ScrollingText
               width={textWidth}
               value={text}
-              onChange={(e) => setText(e.target.value)}
-            />
-            <ScrollingText
-              width={textWidth}
-              value={secondText}
               onChange={(e) => setText(e.target.value)}
             />
             <ScrollingText
