@@ -57,15 +57,27 @@ export const TextSide = styled.div`
   position: relative;
 `;
 
+// Agora recebe a duração da animação via prop 'animationDuration'
 export const ScrollingWrapper = styled.div`
   height: 100%;
   display: flex;
   width: max-content;
-  animation: ${scroll} 120s linear infinite;
+  animation: ${scroll} ${(props) => props.animationDuration || 30}s linear
+    infinite;
 `;
 
-export const ScrollingText = styled.div`
-  height: 100%;
+// Agora recebe a largura via prop 'width'
+export const ScrollingText = styled.textarea`
+  /* Removi min-width para usar a largura dinâmica */
+  width: ${(props) =>
+    props.width ? `${props.width}px` : 'calc(100vw - 300px)'};
+  height: 15px;
+  margin-top: 15px;
+  overflow: hidden;
+
+  border: none;
+  outline: none;
+  resize: none; /* opcional: remove o controle de redimensionamento */
 
   display: flex;
   align-items: center;
@@ -76,4 +88,12 @@ export const ScrollingText = styled.div`
   padding-right: 100px; /* Espaço entre as duplicações */
 
   text-transform: uppercase;
+
+  background-color: transparent;
+
+  color: #fff;
+
+  &:focus {
+    outline: none;
+  }
 `;

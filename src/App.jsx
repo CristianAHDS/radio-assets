@@ -12,6 +12,7 @@ import LowerFenadoce from './lowerFenadoce.jsx';
 import Clock from './clock.jsx';
 import ClockEsporte from './clockEsporte.jsx';
 import ClockFenadoce from './clockFenadoce.jsx';
+import Gc from './components/gc';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path: '/clockFenadoce',
     element: <ClockFenadoce />,
+  },
+  {
+    path: '/gc',
+    element: <Gc />,
   },
 ]);
 
