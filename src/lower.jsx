@@ -9,20 +9,26 @@ import {
 } from './lower.styled';
 
 const Lower = () => {
-  const textLower =
-    'DESPEDIDA | BRASIL ENCERRA SÉRIE D COM VITÓRIA POR 1 A 0 SOBRE O LÍDER BARRA - JOÃO LIBÂNIA MARCA O ÚNICO GOL DO JOGO EM BALNEÁRIO CAMBORIÚ E XAVANTE TERMINA EM SEXTO LUGAR DO GRUPO A8. TRADICIONALISMO | RODEIO ARTÍSTICO TRADICIONALISTA É ATRAÇÃO NA FENADOCE - EVENTO PROMOVIDO PELA 26ª REGIÃO TRADICIONALISTA REÚNE ATÉ ESTE DOMINGO (27) CERCA DE 600 COMPETIDORES. SAÚDE | MÉDICOS NÃO ACEITAM PROPOSTA E VÃO RESTRINGIR ATENDIMENTOS NO HOSPITAL DE MORRO REDONDO - APÓS REPORTAGEM DE A HORA DO SUL, O SIMERS REALIZOU UMA AÇÃO NA UNIDADE, QUE ESTÁ COM TRÊS MESES DE SALÁRIOS ATRASADOS. EDUCAME | CEEE EQUATORIAL CELEBRA TRÊS ANOS DO PROJETO E+ COMUNIDADE COM 46 MIL FAMÍLIAS BENEFICIADAS - COM R$ 37 MILHÕES INVESTIDOS, INICIATIVA REFORÇA PRESENÇA SOCIAL DA DISTRIBUIDORA NO RIO GRANDE DO SUL. FUTSAL | EM TARDE DE HOMENAGEM, MALGI PERDE PARA O SÃO JOSÉ - EQUIPE PELOTENSE SOFRE 7 A 1 NO GINÁSIO DO SESI. APÓS 30 ANOS | ALUNOS E PROFESSORES DO IFSUL UNEM-SE POR REVITALIZAÇÃO DO ANTIGO RELÓGIO - PROJETO ENVOLVE OS CURSOS DE ELETRÔNICA E ELETROMECÂNICA DA INSTITUIÇÃO. ENSINO E ASSISTÊNCIA | CAMPUS FRANKLIN OLIVÉ LEITE REALIZA MAIS DE 3,5 MIL ATENDIMENTOS POR MÊS - ASSISTÊNCIA AMBULATORIAL DE MÉDIA COMPLEXIDADE ABRANGE 21 MUNICÍPIOS DA REGIÃO SUL; ACOLHIMENTO TAMBÉM SERVE COMO CAMPO DE APRENDIZADO PRÁTICO PARA OS ALUNOS. SAÚDE | SINAIS QUE PODEM EVITAR O CÂNCER DE INTESTINO - MORTE DE PRETA GIL POR CÂNCER DE INTESTINO ACENDE O ALERTA PARA A PREVENÇÃO, COM ATENÇÃO PARA HÁBITOS E SINTOMAS. EDUCAME | TRILHAS TURÍSTICO-PEDAGÓGICAS INSTIGAM APRENDIZADO SOBRE RIQUEZAS NATURAIS - PROJETO DE EXTENSÃO DA UNIPAMPA É DIRECIONADO PARA TODAS AS FAIXAS ETÁRIAS.';
+  const defaultText = 'Edit';
 
-  const [text, setText] = useState(textLower);
+  const [text, setText] = useState(() => {
+    // tenta carregar do localStorage ou usa o padrão
+    return localStorage.getItem('lowerText') || defaultText;
+  });
+
   const [secondText, setSecondText] = useState('');
   const [textWidth, setTextWidth] = useState(0);
   const [animationDuration, setAnimationDuration] = useState(30);
 
   const measureRef = useRef(null);
 
+  // Sempre que o texto mudar, salva no localStorage
   useEffect(() => {
+    localStorage.setItem('lowerText', text);
     setSecondText(text);
   }, [text]);
 
+  // Recalcula largura e duração
   useEffect(() => {
     if (measureRef.current) {
       const measuredWidth = measureRef.current.offsetWidth;
@@ -39,7 +45,7 @@ const Lower = () => {
       <TextContainer>
         <LeftSide>ahoradosul.com.br</LeftSide>
         <TextSide>
-          {/* Invisível para medir largura */}
+          {/* invisível para medir */}
           <span
             ref={measureRef}
             style={{
@@ -58,11 +64,17 @@ const Lower = () => {
 
           <ScrollingWrapper animationDuration={animationDuration}>
             <ScrollingText
+              spellcheck="false"
               width={textWidth}
               value={text}
               onChange={(e) => setText(e.target.value)}
             />
-            <ScrollingText width={textWidth} value={secondText} readOnly />
+            <ScrollingText
+              width={textWidth}
+              value={secondText}
+              spellcheck="false"
+              onChange={(e) => setText(e.target.value)}
+            />
           </ScrollingWrapper>
         </TextSide>
       </TextContainer>
