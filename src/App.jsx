@@ -13,6 +13,7 @@ import Clock from './clock.jsx';
 import ClockEsporte from './clockEsporte.jsx';
 import ClockFenadoce from './clockFenadoce.jsx';
 import Gc from './components/gc';
+import Tabela from './components/tabela';
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
   {
     path: '/gc',
     element: <Gc />,
+  },
+  {
+    path: '/tabela',
+    element: <Tabela />,
   },
 ]);
 

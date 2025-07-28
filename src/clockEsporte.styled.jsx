@@ -3,7 +3,7 @@ import { primary, secondaryEsporte } from './constants/color';
 
 export const Card = styled.div`
   width: 235px;
-  height: 180px;
+  //height: 180px;
 
   background-color: #f9f9f9;
 
