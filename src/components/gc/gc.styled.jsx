@@ -39,6 +39,8 @@ export const TextContainerTop = styled.textarea`
   &:focus {
     outline: none;
   }
+
+  padding: 0px 30px 0px 0px;
 `;
 
 export const GcBottom = styled.div`
@@ -66,6 +68,8 @@ export const TextContainer = styled.textarea`
   white-space: nowrap;
   display: inline-block; /* impede ocupar largura total */
   transition: width 0.2s ease;
+
+  padding: 0px 30px 0px 0px;
 
   &:focus {
     outline: none;
