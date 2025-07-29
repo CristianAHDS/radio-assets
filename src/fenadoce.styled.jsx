@@ -22,7 +22,7 @@ export const NameSection = styled.div`
   background-color: #fff;
   color: ${secondaryFenadoce};
 
-  font-size: 24px;
+  font-size: ${(props) => (props.$isLongName ? '20px' : '24px')};
   font-weight: bold;
 
   display: flex;
