@@ -5,38 +5,58 @@ import {
   LeftSide,
   TextSide,
   ScrollingWrapper,
-  ScrollingText,
 } from './lower.styled';
 
 const Lower = () => {
   const defaultText = 'Edit';
-
   const [text, setText] = useState(() => {
-    // tenta carregar do localStorage ou usa o padrão
     return localStorage.getItem('lowerText') || defaultText;
   });
 
-  const [secondText, setSecondText] = useState('');
-  const [textWidth, setTextWidth] = useState(0);
   const [animationDuration, setAnimationDuration] = useState(30);
-
   const measureRef = useRef(null);
+  const contentRef = useRef(null);
 
-  // Sempre que o texto mudar, salva no localStorage
+  // Salva texto puro no localStorage
   useEffect(() => {
     localStorage.setItem('lowerText', text);
-    setSecondText(text);
   }, [text]);
 
-  // Recalcula largura e duração
+  // Recalcula largura e duração com base no texto bruto
   useEffect(() => {
     if (measureRef.current) {
       const measuredWidth = measureRef.current.offsetWidth;
-      setTextWidth(measuredWidth + 50);
-
-      const speed = 150; // pixels por segundo
+      const speed = 150;
       const duration = Math.max(15, measuredWidth / speed);
       setAnimationDuration(duration);
+    }
+  }, [text]);
+
+  // Função que converte *texto* em <strong>texto</strong>
+  const formatText = (input) => {
+    const parts = input.split(/(\*[^*]+\*)/g); // pega *palavra*
+    return parts
+      .map((part) => {
+        if (part.startsWith('*') && part.endsWith('*')) {
+          const boldText = part.slice(1, -1);
+          return `<strong>${boldText}</strong>`;
+        }
+        return part;
+      })
+      .join('');
+  };
+
+  // Trata input do usuário
+  const handleInput = (e) => {
+    const rawText = e.currentTarget.textContent;
+    setText(rawText);
+  };
+
+  // Atualiza HTML sempre que o texto muda
+  useEffect(() => {
+    if (contentRef.current) {
+      const html = formatText(text);
+      contentRef.current.innerHTML = html;
     }
   }, [text]);
 
@@ -63,17 +83,23 @@ const Lower = () => {
           </span>
 
           <ScrollingWrapper animationDuration={animationDuration}>
-            <ScrollingText
-              spellcheck="false"
-              width={textWidth}
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-            />
-            <ScrollingText
-              width={textWidth}
-              value={secondText}
-              spellcheck="false"
-              onChange={(e) => setText(e.target.value)}
+            <div
+              ref={contentRef}
+              contentEditable
+              onInput={handleInput}
+              spellCheck={false}
+              style={{
+                marginTop: 10,
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                outline: 'none',
+                border: 'none',
+                fontSize: '18px',
+                fontWeight: 400,
+                textTransform: 'uppercase',
+                fontFamily: 'inherit',
+                color: '#fff',
+              }}
             />
           </ScrollingWrapper>
         </TextSide>
