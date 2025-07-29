@@ -45,6 +45,8 @@ export const HeaderLegends = styled.div`
 
   border-bottom: solid 1px #0028641f;
   background: #eef1f7;
+
+  border-left: solid 8px transparent;
 `;
 
 export const LegendPo = styled.div`
