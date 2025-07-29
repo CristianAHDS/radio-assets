@@ -128,7 +128,9 @@ const App = () => {
   return (
     <AnimatePresence mode="wait">
       <Card>
-        <NameSection>
+        <NameSection
+          $isLongName={dados.nomeCorrigido === 'São Lourenço do Sul'}
+        >
           <motion.div
             key={`name-${currentIndex}`}
             initial={{ opacity: 0, y: 10 }}
