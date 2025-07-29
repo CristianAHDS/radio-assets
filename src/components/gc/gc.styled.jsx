@@ -75,3 +75,11 @@ export const TextContainer = styled.textarea`
     outline: none;
   }
 `;
+
+export const Logo = styled.img`
+  height: 30px;
+
+  filter: brightness(100);
+
+  margin-right: 20px;
+`;

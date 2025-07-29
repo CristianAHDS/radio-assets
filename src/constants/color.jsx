@@ -7,3 +7,5 @@ export const secondaryEsporte = '#02463d';
 
 export const primaryFenadoce = '#ffbc0e';
 export const secondaryFenadoce = '#b83a1c';
+
+export const grayGeral = '#f9f9f9';

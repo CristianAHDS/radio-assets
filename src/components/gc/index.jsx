@@ -7,6 +7,7 @@ import {
   TextContainerTop,
   TextMirror,
   TextMirrorBottom,
+  Logo,
 } from './gc.styled.jsx';
 
 const Gc = () => {
@@ -46,9 +47,12 @@ const Gc = () => {
     localStorage.setItem('gcBottomText', bottomText);
   }, [bottomText]);
 
+  const logoImage = 'https://i.imgur.com/gXyrBvU.gif';
+
   return (
     <Container>
       <GcTop>
+        <Logo src={logoImage} alt="Logo" />
         <TextMirror ref={mirrorTopRef} />
         <TextContainerTop
           ref={topRef}
@@ -57,6 +61,7 @@ const Gc = () => {
           onChange={(e) => setTopText(e.target.value)}
         />
       </GcTop>
+      {/* 
       <GcBottom>
         <TextMirrorBottom ref={mirrorBottomRef} />
         <TextContainer
@@ -66,6 +71,7 @@ const Gc = () => {
           onChange={(e) => setBottomText(e.target.value)}
         />
       </GcBottom>
+      */}
     </Container>
   );
 };
