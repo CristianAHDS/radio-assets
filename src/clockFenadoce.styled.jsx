@@ -38,7 +38,7 @@ export const CardLogos = styled.div`
 
 export const Hora = styled.div`
   margin-left: 20px;
-
+  font-size: 22px;
   font-weight: 400;
 
   color: #fff;
