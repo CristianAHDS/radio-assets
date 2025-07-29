@@ -42,7 +42,10 @@ const Tabela = () => {
           <RowContentClass>
             <RowPo>1</RowPo>
             <RowTeam>
-              <RowLogo src={genericLogo} alt="Escudo" />
+              <RowLogo
+                src="https://barrafc.com.br/wp-content/uploads/2025/04/logo-barra-official-01-690x900.png"
+                alt="Escudo"
+              />
               Barra FC
             </RowTeam>
             <RowResults>8</RowResults>
@@ -55,7 +58,10 @@ const Tabela = () => {
           <RowContentClass>
             <RowPo>2</RowPo>
             <RowTeam>
-              <RowLogo src={genericLogo} alt="Escudo" />
+              <RowLogo
+                src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Esporte_Clube_S%C3%A3o_Jos%C3%A9_logo.png"
+                alt="Escudo"
+              />
               São José PA
             </RowTeam>
             <RowResults>7</RowResults>
@@ -68,7 +74,10 @@ const Tabela = () => {
           <RowContentClass>
             <RowPo>3</RowPo>
             <RowTeam>
-              <RowLogo src={genericLogo} alt="Escudo" />
+              <RowLogo
+                src="https://jec.com.br/wp-content/smush-webp/2024/01/cropped-Logo-Joinville.png.webp"
+                alt="Escudo"
+              />
               Joinville
             </RowTeam>
             <RowResults>6</RowResults>
@@ -81,7 +90,10 @@ const Tabela = () => {
           <RowContentClass>
             <RowPo>4</RowPo>
             <RowTeam>
-              <RowLogo src={genericLogo} alt="Escudo" />
+              <RowLogo
+                src="https://images.seeklogo.com/logo-png/21/2/clube-nautico-marcilio-dias-logo-png_seeklogo-219083.png"
+                alt="Escudo"
+              />
               Marcilio Dias
             </RowTeam>
             <RowResults>5</RowResults>
@@ -94,7 +106,10 @@ const Tabela = () => {
           <RowContent>
             <RowPo>5</RowPo>
             <RowTeam>
-              <RowLogo src={genericLogo} alt="Escudo" />
+              <RowLogo
+                src="https://images.seeklogo.com/logo-png/6/2/guarany-futebol-clube-de-bage-rs-logo-png_seeklogo-64019.png"
+                alt="Escudo"
+              />
               Garany de Bagé
             </RowTeam>
             <RowResults>5</RowResults>
@@ -107,7 +122,10 @@ const Tabela = () => {
           <RowContent>
             <RowPo>6</RowPo>
             <RowTeam>
-              <RowLogo src={genericLogo} alt="Escudo" />
+              <RowLogo
+                src="https://logodownload.org/wp-content/uploads/2017/02/ge-gremio-esportivo-brasil-logo.png"
+                alt="Escudo"
+              />
               Brasil de Pelotas
             </RowTeam>
             <RowResults>5</RowResults>
@@ -120,7 +138,10 @@ const Tabela = () => {
           <RowContent>
             <RowPo>7</RowPo>
             <RowTeam>
-              <RowLogo src={genericLogo} alt="Escudo" />
+              <RowLogo
+                src="https://upload.wikimedia.org/wikipedia/pt/a/aa/EC_S%C3%A3o_Luiz.svg"
+                alt="Escudo"
+              />
               São Luiz
             </RowTeam>
             <RowResults>4</RowResults>
@@ -133,7 +154,10 @@ const Tabela = () => {
           <RowContent>
             <RowPo>8</RowPo>
             <RowTeam>
-              <RowLogo src={genericLogo} alt="Escudo" />
+              <RowLogo
+                src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Azuriz_FC.png"
+                alt="Escudo"
+              />
               Azuriz FC
             </RowTeam>
             <RowResults>3</RowResults>

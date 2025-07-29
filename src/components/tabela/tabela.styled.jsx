@@ -8,6 +8,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #505050;
 `;
 
 export const CardTabela = styled.div`
@@ -172,8 +173,8 @@ export const RowPoints = styled.div`
 `;
 
 export const RowLogo = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 35px;
+
   margin-right: 15px;
   object-fit: cover;
 `;
