@@ -1,7 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { primaryFenadoce, secondaryFenadoce } from './constants/color';
 
-// Animação de scroll contínuo da direita para a esquerda
 const scroll = keyframes`
   0% {
     transform: translateX(0);
@@ -24,7 +23,7 @@ export const TextContainer = styled.div`
   width: 100vw;
   height: 50px;
 
-  background-color: ${primaryFenadoce};
+  background-color: ${secondaryFenadoce};
 
   display: flex;
   align-items: center;
@@ -37,7 +36,7 @@ export const TextContainer = styled.div`
 export const LeftSide = styled.div`
   width: 300px;
   height: 100%;
-  background-color: ${secondaryFenadoce};
+  background-color: ${primaryFenadoce};
 
   display: flex;
   justify-content: center;
@@ -51,29 +50,49 @@ export const LeftSide = styled.div`
 export const TextSide = styled.div`
   width: calc(100% - 300px);
   height: 100%;
-  background-color: ${primaryFenadoce};
+  background-color: ${secondaryFenadoce};
 
   overflow: hidden;
   position: relative;
 `;
 
+// Recebe duração da animação via prop
 export const ScrollingWrapper = styled.div`
   height: 100%;
   display: flex;
   width: max-content;
-  animation: ${scroll} 120s linear infinite;
+  animation: ${scroll} ${(props) => props.animationDuration || 10}s linear
+    infinite;
 `;
 
-export const ScrollingText = styled.div`
-  height: 100%;
+// Recebe largura via prop
+export const ScrollingText = styled.textarea.attrs({
+  rows: 1,
+  wrap: 'off',
+})`
+  width: ${(props) =>
+    props.width ? `${props.width}px` : 'calc(100vw - 300px)'};
+  height: 50px; /* altura igual à barra */
+  line-height: 50px; /* centraliza verticalmente */
 
-  display: flex;
-  align-items: center;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  border: none;
+  outline: none;
+  resize: none;
 
   white-space: nowrap;
   font-weight: 400;
   font-size: 18px;
-  padding-right: 100px; /* Espaço entre as duplicações */
+  padding-right: 30px; /* espaço entre duplicações */
 
   text-transform: uppercase;
+  background-color: transparent;
+  color: #fff;
+
+  &:focus {
+    outline: none;
+  }
 `;

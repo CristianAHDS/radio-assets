@@ -27,7 +27,7 @@ const Clock = () => {
       <TopCard>
         AO VIVO <Hora>{hora}</Hora>
       </TopCard>
-      <CardLogos></CardLogos>
+      {/*<CardLogos></CardLogos>*/}
     </Card>
   );
 };
