@@ -32,6 +32,30 @@ const Lower = () => {
     }
   }, [text]);
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Tab') {
+      e.preventDefault(); // impede o comportamento padrão
+
+      const selection = window.getSelection();
+      const range = selection.getRangeAt(0);
+
+      // Cria um nó de texto com tab (você pode trocar para '  ' se preferir dois espaços)
+      const tabNode = document.createTextNode('    '); // 4 espaços
+
+      // Insere o nó de texto no local do cursor
+      range.insertNode(tabNode);
+
+      // Move o cursor após os espaços inseridos
+      range.setStartAfter(tabNode);
+      range.setEndAfter(tabNode);
+      selection.removeAllRanges();
+      selection.addRange(range);
+
+      // Atualiza o state
+      setText(contentRef.current.textContent);
+    }
+  };
+
   // Função que converte *texto* em <strong>texto</strong>
   const formatText = (input) => {
     const parts = input.split(/(\*[^*]+\*)/g); // pega *palavra*
@@ -87,9 +111,10 @@ const Lower = () => {
               ref={contentRef}
               contentEditable
               onInput={handleInput}
+              onKeyDown={handleKeyDown}
               spellCheck={false}
               style={{
-                marginTop: 10,
+                marginTop: 12,
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
                 outline: 'none',
