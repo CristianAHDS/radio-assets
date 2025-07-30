@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {
   primaryConexão,
-  secondaryEsporte,
+  secondaryConexão,
   grayPrimary,
 } from './constants/color';
 
@@ -20,7 +20,7 @@ export const NameSection = styled.div`
   min-height: 25%;
 
   background-color: #fff;
-  color: ${secondaryEsporte};
+  color: ${secondaryConexão};
 
   font-size: ${(props) => (props.$isLongName ? '20px' : '24px')};
   font-weight: bold;
@@ -81,7 +81,7 @@ export const InfoSection = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: ${secondaryEsporte};
+  background-color: ${secondaryConexão};
 
   color: #fff;
   font-size: 18px;

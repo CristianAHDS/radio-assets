@@ -16,6 +16,7 @@ import ClockEsporte from './clockEsporte.jsx';
 import ClockFenadoce from './clockFenadoce.jsx';
 import ClockConexao from './clockConexao.jsx';
 import Gc from './components/gc';
+import GcConexao from './components/gcConexao';
 import Tabela from './components/tabela';
 import Alert from './components/alerts';
 
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
   {
     path: '/gc',
     element: <Gc />,
+  },
+  {
+    path: '/gcConexao',
+    element: <GcConexao />,
   },
   {
     path: '/tabela',
