@@ -5,6 +5,9 @@ export const grayPrimary = '#dcdcdc';
 export const primaryEstporte = '#31842e';
 export const secondaryEsporte = '#02463d';
 
+export const primaryConexão = '#007085';
+export const secondaryConexão = '#003039';
+
 export const primaryFenadoce = '#ffbc0e';
 export const secondaryFenadoce = '#b83a1c';
 

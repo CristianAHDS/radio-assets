@@ -9,11 +9,13 @@ import TempoFenadoce from './fenadoce.jsx';
 import Lower from './lower.jsx';
 import LowerEsporte from './lowerEsporte.jsx';
 import LowerFenadoce from './lowerFenadoce.jsx';
+import LowerConexao from './lowerConexao.jsx';
 import Clock from './clock.jsx';
 import ClockEsporte from './clockEsporte.jsx';
 import ClockFenadoce from './clockFenadoce.jsx';
 import Gc from './components/gc';
 import Tabela from './components/tabela';
+import Alert from './components/alerts';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,10 @@ const router = createBrowserRouter([
     element: <LowerFenadoce />,
   },
   {
+    path: '/lowerConexao',
+    element: <LowerConexao />,
+  },
+  {
     path: '/clock',
     element: <Clock />,
   },
@@ -59,6 +65,10 @@ const router = createBrowserRouter([
   {
     path: '/tabela',
     element: <Tabela />,
+  },
+  {
+    path: '/alert',
+    element: <Alert />,
   },
 ]);
 
