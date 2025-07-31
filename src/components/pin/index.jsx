@@ -28,7 +28,7 @@ const Pin = () => {
   };
 
   useEffect(() => {
-    const savedTop = localStorage.getItem('gcTopText');
+    const savedTop = localStorage.getItem('pinText');
     const savedBottom = localStorage.getItem('gcBottomText');
 
     if (savedTop) setTopText(savedTop);
@@ -37,7 +37,7 @@ const Pin = () => {
 
   useEffect(() => {
     adjustWidth(mirrorTopRef, topRef, topText);
-    localStorage.setItem('gcTopText', topText);
+    localStorage.setItem('pinText', topText);
   }, [topText]);
 
   useEffect(() => {
