@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Card, TopCard, CardLogos, Hora } from './clockEsporte.styled.jsx';
+import Alert from './components/alerts';
 
 const Clock = () => {
   const [hora, setHora] = useState('');
-  const [index, setIndex] = useState(0);
+  const [alert, setAlert] = useState(false);
 
   useEffect(() => {
     const atualizarHora = () => {
@@ -13,7 +14,15 @@ const Clock = () => {
         hour: '2-digit',
         minute: '2-digit',
       });
+
       setHora(horaBrasilia);
+
+      // Ativa o alerta quando for 10:42
+      if (horaBrasilia === '99:99') {
+        setAlert(true);
+      } else {
+        setAlert(false);
+      }
     };
 
     atualizarHora();
@@ -25,9 +34,15 @@ const Clock = () => {
   return (
     <Card>
       <TopCard>
-        AO VIVO <Hora>{hora}</Hora>
+        {alert ? (
+          <Alert text={`Alerta ativado às ${hora}`} />
+        ) : (
+          <>
+            AO VIVO <Hora>{hora}</Hora>
+          </>
+        )}
       </TopCard>
-      <CardLogos></CardLogos>
+      <CardLogos />
     </Card>
   );
 };

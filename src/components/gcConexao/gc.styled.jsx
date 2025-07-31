@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { secondaryConexão } from '../../constants/color';
+import { secondary } from '../../constants/color';
 
 export const Container = styled.div`
   display: flex;
@@ -7,10 +7,12 @@ export const Container = styled.div`
 `;
 
 export const GcTop = styled.div`
-  background-color: ${secondaryConexão};
+  background-color: ${secondary};
   padding: 10px 20px;
-  display: inline-flex; /* <-- muda para inline-flex */
+  display: inline-flex;
   align-items: center;
+  position: fixed;
+  right: 0;
 `;
 
 export const TextMirror = styled.span`
@@ -21,6 +23,8 @@ export const TextMirror = styled.span`
   font-weight: 600;
   text-transform: uppercase;
   font-family: inherit;
+  direction: rtl;
+  text-align: right;
 `;
 
 export const TextContainerTop = styled.textarea`
@@ -34,20 +38,22 @@ export const TextContainerTop = styled.textarea`
   text-transform: uppercase;
   color: #fff;
   white-space: nowrap;
-  display: inline-block; /* <-- impede ocupar 100% */
+  display: inline-block;
+  direction: rtl;
+  text-align: right;
+
+  padding: 0px 30px 0px 0px;
 
   &:focus {
     outline: none;
   }
-
-  padding: 0px 30px 0px 0px;
 `;
 
 export const GcBottom = styled.div`
   width: auto;
   background-color: #f9f9f9;
   padding: 10px 20px;
-  display: inline-flex; /* idem aqui */
+  display: inline-flex;
   align-items: center;
 `;
 
@@ -66,9 +72,8 @@ export const TextContainer = styled.textarea`
   font-size: 26px;
   color: #505050;
   white-space: nowrap;
-  display: inline-block; /* impede ocupar largura total */
+  display: inline-block;
   transition: width 0.2s ease;
-
   padding: 0px 30px 0px 0px;
 
   &:focus {
@@ -78,8 +83,7 @@ export const TextContainer = styled.textarea`
 
 export const Logo = styled.img`
   height: 30px;
-
   filter: brightness(100);
-
-  margin-right: 20px;
+  margin-left: 20px;
+  transform: rotate(180deg);
 `;

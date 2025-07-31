@@ -19,7 +19,6 @@ const Gc = () => {
   const mirrorBottomRef = useRef(null);
   const bottomRef = useRef(null);
 
-  // Ajusta largura pelo espelho
   const adjustWidth = (mirrorRef, inputRef, text) => {
     if (mirrorRef.current && inputRef.current) {
       mirrorRef.current.textContent = text || ' ';
@@ -27,7 +26,6 @@ const Gc = () => {
     }
   };
 
-  // Carrega dados do localStorage
   useEffect(() => {
     const savedTop = localStorage.getItem('gcTopText');
     const savedBottom = localStorage.getItem('gcBottomText');
@@ -36,7 +34,6 @@ const Gc = () => {
     if (savedBottom) setBottomText(savedBottom);
   }, []);
 
-  // Atualiza largura e salva no localStorage
   useEffect(() => {
     adjustWidth(mirrorTopRef, topRef, topText);
     localStorage.setItem('gcTopText', topText);
@@ -52,7 +49,6 @@ const Gc = () => {
   return (
     <Container>
       <GcTop>
-        <Logo src={logoImage} alt="Logo" />
         <TextMirror ref={mirrorTopRef} />
         <TextContainerTop
           ref={topRef}
@@ -60,8 +56,10 @@ const Gc = () => {
           value={topText}
           onChange={(e) => setTopText(e.target.value)}
         />
+        <Logo src={logoImage} alt="Logo" />
       </GcTop>
-      {/* 
+
+      {/*
       <GcBottom>
         <TextMirrorBottom ref={mirrorBottomRef} />
         <TextContainer
