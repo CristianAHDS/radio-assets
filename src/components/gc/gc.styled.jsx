@@ -84,6 +84,6 @@ export const TextContainer = styled.textarea`
 export const Logo = styled.img`
   height: 30px;
   filter: brightness(100);
-  margin-left: 20px;
+
   transform: rotate(180deg);
 `;
