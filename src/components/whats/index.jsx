@@ -9,7 +9,7 @@ import {
   TextMirrorBottom,
   Logo,
 } from './whats.styled.jsx';
-import { LuMapPinCheckInside } from "react-icons/lu";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Whats = () => {
   const [topText, setTopText] = useState('');
@@ -56,7 +56,7 @@ const Whats = () => {
           spellCheck="false"
           value={'99950.0995'}
         />
-        <LuMapPinCheckInside style={{color: '#fff', fontSize: 30}} />
+        <FaWhatsapp style={{color: '#fff', fontSize: 30}} />
       </GcTop>
 
       {/*
