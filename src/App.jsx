@@ -4,24 +4,31 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // Pages
 import TempoGeral from './geral.jsx';
-import TempoEsporte from './esporte.jsx';
 import TempoFenadoce from './fenadoce.jsx';
-import TempoConexao from './conexao.jsx';
 import Lower from './lower.jsx';
-import LowerEsporte from './lowerEsporte.jsx';
 import LowerFenadoce from './lowerFenadoce.jsx';
-import LowerConexao from './lowerConexao.jsx';
 import Clock from './clock.jsx';
-import ClockEsporte from './clockEsporte.jsx';
 import ClockFenadoce from './clockFenadoce.jsx';
-import ClockConexao from './clockConexao.jsx';
 import Gc from './components/gc';
-import GcConexao from './components/gcConexao';
 import Tabela from './components/tabela';
 import Alert from './components/alerts';
 import Pin from './components/pin';
 import Whats from './components/whats';
+import Insta from './components/insta';
+
+//Esporte
+import TempoEsporte from './esporte.jsx';
+import LowerEsporte from './lowerEsporte.jsx';
+import ClockEsporte from './clockEsporte.jsx';
+
+//Conexão
+import InstaConexao from './components/instaConexao';
+import WhatsConexao from './components/whatsConexao';
+import GcConexao from './components/gcConexao';
+import ClockConexao from './clockConexao.jsx';
+import TempoConexao from './conexao.jsx';
 import PinConexao from './components/pinConexao';
+import LowerConexao from './lowerConexao.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,56 +36,28 @@ const router = createBrowserRouter([
     element: <TempoGeral />,
   },
   {
-    path: '/esporte',
-    element: <TempoEsporte />,
-  },
-  {
     path: '/fenadoce',
     element: <TempoFenadoce />,
-  },
-  {
-    path: '/conexao',
-    element: <TempoConexao />,
   },
   {
     path: '/lower',
     element: <Lower />,
   },
   {
-    path: '/lowerEsporte',
-    element: <LowerEsporte />,
-  },
-  {
     path: '/lowerFenadoce',
     element: <LowerFenadoce />,
-  },
-  {
-    path: '/lowerConexao',
-    element: <LowerConexao />,
   },
   {
     path: '/clock',
     element: <Clock />,
   },
   {
-    path: '/clockEsporte',
-    element: <ClockEsporte />,
-  },
-  {
     path: '/clockFenadoce',
     element: <ClockFenadoce />,
   },
   {
-    path: '/clockConexao',
-    element: <ClockConexao />,
-  },
-  {
     path: '/gc',
     element: <Gc />,
-  },
-  {
-    path: '/gcConexao',
-    element: <GcConexao />,
   },
   {
     path: '/tabela',
@@ -92,13 +71,57 @@ const router = createBrowserRouter([
     path: '/pin',
     element: <Pin />
   },
+
+  {
+    path: '/whats',
+    element: <Whats />
+  },
+  //Esporte
+  {
+    path: '/clockEsporte',
+    element: <ClockEsporte />,
+  },
+  {
+    path: '/lowerEsporte',
+    element: <LowerEsporte />,
+  },
+  {
+    path: '/esporte',
+    element: <TempoEsporte />,
+  },
+
+  //Conexao
+  {
+    path: '/conexao',
+    element: <TempoConexao />,
+  },
+  {
+    path: '/lowerConexao',
+    element: <LowerConexao />,
+  },
+  {
+    path: '/clockConexao',
+    element: <ClockConexao />,
+  },
+  {
+    path: '/gcConexao',
+    element: <GcConexao />,
+  },
+  {
+    path: '/insta',
+    element: <Insta />
+  },
   {
     path: '/pinConexao',
     element: <PinConexao />
   },
   {
-    path: '/whats',
-    element: <Whats />
+    path: '/whatsConexao',
+    element: <WhatsConexao />
+  },
+  {
+    path: '/instaConexao',
+    element: <InstaConexao />
   },
 ]);
 
