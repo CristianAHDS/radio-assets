@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { secondary } from '../../constants/color';
+import { secondaryEsporte } from '../../constants/color';
 
 export const Container = styled.div`
   display: flex;
@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const GcTop = styled.div`
-  background-color: ${secondary};
+  background-color: ${secondaryEsporte};
   padding: 10px 20px;
   display: inline-flex;
   align-items: center;
