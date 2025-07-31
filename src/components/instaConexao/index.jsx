@@ -54,7 +54,7 @@ const Insta = () => {
         <TextContainerTop
           ref={topRef}
           spellCheck="false"
-          value={'ahoradosul'}
+          value={'ahoradosul@'}
         />
         <FaInstagram style={{color: '#fff', fontSize: 30}} />
       </GcTop>
