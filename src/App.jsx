@@ -20,6 +20,7 @@ import GcConexao from './components/gcConexao';
 import Tabela from './components/tabela';
 import Alert from './components/alerts';
 import Pin from './components/pin';
+import Whats from './components/whats';
 import PinConexao from './components/pinConexao';
 
 const router = createBrowserRouter([
@@ -94,7 +95,11 @@ const router = createBrowserRouter([
   {
     path: '/pinConexao',
     element: <PinConexao />
-  }
+  },
+  {
+    path: '/whats',
+    element: <Whats />
+  },
 ]);
 
 const App = () => {
