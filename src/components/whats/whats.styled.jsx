@@ -21,7 +21,7 @@ export const TextMirror = styled.span`
   position: absolute;
   visibility: hidden;
   white-space: pre;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 600;
   text-transform: uppercase;
   font-family: inherit;
@@ -30,13 +30,13 @@ export const TextMirror = styled.span`
 `;
 
 export const TextContainerTop = styled.textarea`
-  width:175px !important;
+  width:160px !important;
   height: 1.2em;
   resize: none;
   overflow: hidden;
   background-color: transparent;
   border: none;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 600;
   text-transform: uppercase;
   color: #fff;

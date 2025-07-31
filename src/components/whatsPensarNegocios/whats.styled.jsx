@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { secondaryConexão  } from '../../constants/color';
+import { secondaryPensarNegocios  } from '../../constants/color';
 
 export const Container = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ export const Container = styled.div`
 export const GcTop = styled.div`
 
   
-  background-color: ${secondaryConexão };
+  background-color: ${secondaryPensarNegocios };
   padding: 10px 20px;
   display: inline-flex;
   align-items: center;

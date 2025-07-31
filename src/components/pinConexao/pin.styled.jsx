@@ -19,7 +19,7 @@ export const TextMirror = styled.span`
   position: absolute;
   visibility: hidden;
   white-space: pre;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 600;
   text-transform: uppercase;
   font-family: inherit;
@@ -33,7 +33,7 @@ export const TextContainerTop = styled.textarea`
   overflow: hidden;
   background-color: transparent;
   border: none;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 600;
   text-transform: uppercase;
   color: #fff;

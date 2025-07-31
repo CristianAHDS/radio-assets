@@ -21,6 +21,15 @@ import TempoEsporte from './esporte.jsx';
 import LowerEsporte from './lowerEsporte.jsx';
 import ClockEsporte from './clockEsporte.jsx';
 
+//Pensar Negócios
+import TempoPensarnegocios from './components/tempoPensarNegocios';
+import LowerPersnarNegocios from './components/lowerPensarNegocios';
+import GcPensarNegocios from './components/gcPensarNegocios';
+import ClockPensarNegocios from './components/clockPensarNegocios';
+import WhatsPensarNegocios from './components/whatsPensarNegocios';
+import InstaPensarNegocios from './components/instaPensarNegocios';
+import PinPensarNegocios from './components/pinPensarNegocios';
+
 //Conexão
 import InstaConexao from './components/instaConexao';
 import WhatsConexao from './components/whatsConexao';
@@ -122,6 +131,36 @@ const router = createBrowserRouter([
   {
     path: '/instaConexao',
     element: <InstaConexao />
+  },
+
+  //Pensar Negocios
+  {
+    path: '/lowerPensarNegocios',
+    element: <LowerPersnarNegocios />
+  },
+  {
+    path: '/gcPensarNegocios',
+    element: <GcPensarNegocios />,
+  },
+  {
+    path: '/clockPensarNegocios',
+    element: <ClockPensarNegocios />,
+  },
+  {
+    path: '/pensarNegocios',
+    element: <TempoPensarnegocios />,
+  },
+  {
+    path: '/whatsPensarNegocios',
+    element: <WhatsPensarNegocios />
+  },
+  {
+    path: '/instaPensarNegocios',
+    element: <InstaPensarNegocios />
+  },
+  {
+    path: '/pinPensarNegocios',
+    element: <PinPensarNegocios />
   },
 ]);
 

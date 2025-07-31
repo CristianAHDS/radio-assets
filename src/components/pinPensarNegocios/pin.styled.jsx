@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { secondaryConexão  } from '../../constants/color';
+import { secondaryPensarNegocios } from '../../constants/color';
 
 export const Container = styled.div`
   display: flex;
@@ -7,9 +7,7 @@ export const Container = styled.div`
 `;
 
 export const GcTop = styled.div`
-
-  
-  background-color: ${secondaryConexão };
+  background-color: ${secondaryPensarNegocios};
   padding: 10px 20px;
   display: inline-flex;
   align-items: center;
@@ -21,7 +19,7 @@ export const TextMirror = styled.span`
   position: absolute;
   visibility: hidden;
   white-space: pre;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 600;
   text-transform: uppercase;
   font-family: inherit;
@@ -30,13 +28,12 @@ export const TextMirror = styled.span`
 `;
 
 export const TextContainerTop = styled.textarea`
-  width:160px !important;
   height: 1.2em;
   resize: none;
   overflow: hidden;
   background-color: transparent;
   border: none;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 600;
   text-transform: uppercase;
   color: #fff;
