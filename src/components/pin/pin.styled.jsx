@@ -75,7 +75,7 @@ export const TextContainer = styled.textarea`
   white-space: nowrap;
   display: inline-block;
   transition: width 0.2s ease;
-  padding: 0px 30px 0px 0px;
+  padding: 0px 0px 0px 10px;
 
   &:focus {
     outline: none;
