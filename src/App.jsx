@@ -3,6 +3,7 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // Pages
+import Let from './components/let';
 import TempoGeral from './geral.jsx';
 import TempoFenadoce from './fenadoce.jsx';
 import Lower from './lower.jsx';
@@ -15,7 +16,7 @@ import Alert from './components/alerts';
 import Pin from './components/pin';
 import Whats from './components/whats';
 import Insta from './components/insta';
-import Radar from './components/radar'
+import Radar from './components/radar';
 
 //Esporte
 import TempoEsporte from './esporte.jsx';
@@ -42,12 +43,16 @@ import LowerConexao from './lowerConexao.jsx';
 
 const router = createBrowserRouter([
   {
+    path: '/let',
+    element: <Let />,
+  },
+  {
     path: '/',
     element: <TempoGeral />,
   },
   {
     path: '/radar',
-    element: <Radar/>
+    element: <Radar />,
   },
   {
     path: '/fenadoce',
@@ -83,12 +88,12 @@ const router = createBrowserRouter([
   },
   {
     path: '/pin',
-    element: <Pin />
+    element: <Pin />,
   },
 
   {
     path: '/whats',
-    element: <Whats />
+    element: <Whats />,
   },
   //Esporte
   {
@@ -123,25 +128,25 @@ const router = createBrowserRouter([
   },
   {
     path: '/insta',
-    element: <Insta />
+    element: <Insta />,
   },
   {
     path: '/pinConexao',
-    element: <PinConexao />
+    element: <PinConexao />,
   },
   {
     path: '/whatsConexao',
-    element: <WhatsConexao />
+    element: <WhatsConexao />,
   },
   {
     path: '/instaConexao',
-    element: <InstaConexao />
+    element: <InstaConexao />,
   },
 
   //Pensar Negocios
   {
     path: '/lowerPensarNegocios',
-    element: <LowerPersnarNegocios />
+    element: <LowerPersnarNegocios />,
   },
   {
     path: '/gcPensarNegocios',
@@ -157,15 +162,15 @@ const router = createBrowserRouter([
   },
   {
     path: '/whatsPensarNegocios',
-    element: <WhatsPensarNegocios />
+    element: <WhatsPensarNegocios />,
   },
   {
     path: '/instaPensarNegocios',
-    element: <InstaPensarNegocios />
+    element: <InstaPensarNegocios />,
   },
   {
     path: '/pinPensarNegocios',
-    element: <PinPensarNegocios />
+    element: <PinPensarNegocios />,
   },
 ]);
 

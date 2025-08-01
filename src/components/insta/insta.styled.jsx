@@ -7,14 +7,15 @@ export const Container = styled.div`
 `;
 
 export const GcTop = styled.div`
-
-  
   background-color: ${primary};
   padding: 10px 20px;
   display: inline-flex;
   align-items: center;
   position: fixed;
   right: 0;
+  top: 0;
+  padding: 0px 20px;
+  height: 50px;
 `;
 
 export const TextMirror = styled.span`
@@ -30,7 +31,7 @@ export const TextMirror = styled.span`
 `;
 
 export const TextContainerTop = styled.textarea`
-  width:210px !important;
+  width: 210px !important;
   height: 1.2em;
   resize: none;
   overflow: hidden;

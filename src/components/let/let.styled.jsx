@@ -3,25 +3,36 @@ import { primary } from '../../constants/color';
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 15px; /* espaço entre o Square e os blocos de texto */
+`;
+
+export const Square = styled.div`
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+`;
+
+export const GcWrapper = styled.div`
+  display: flex;
   flex-direction: column;
+  gap: 0;
 `;
 
 export const GcTop = styled.div`
   background-color: ${primary};
-  display: inline-flex;
+  padding: 10px 20px;
+  display: flex;
   align-items: center;
-  position: fixed;
-  right: 0;
-  top: 0;
-  padding: 0px 20px;
-  height: 50px;
+  width: fit-content; /* ocupa toda a largura */
 `;
 
 export const TextMirror = styled.span`
   position: absolute;
   visibility: hidden;
   white-space: pre;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
   text-transform: uppercase;
   font-family: inherit;
@@ -35,16 +46,17 @@ export const TextContainerTop = styled.textarea`
   overflow: hidden;
   background-color: transparent;
   border: none;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
   text-transform: uppercase;
   color: #fff;
   white-space: nowrap;
-  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   direction: rtl;
   text-align: right;
-
-  padding: 0px 30px 0px 0px;
+  padding: 0px 0px 0px 10px;
 
   &:focus {
     outline: none;
@@ -52,11 +64,11 @@ export const TextContainerTop = styled.textarea`
 `;
 
 export const GcBottom = styled.div`
-  width: auto;
   background-color: #f9f9f9;
   padding: 10px 20px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  width: fit-content;
 `;
 
 export const TextMirrorBottom = styled(TextMirror)`
@@ -86,6 +98,4 @@ export const TextContainer = styled.textarea`
 export const Logo = styled.img`
   height: 30px;
   filter: brightness(100);
-
-  transform: rotate(180deg);
 `;
