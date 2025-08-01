@@ -49,7 +49,9 @@ const Pin = () => {
 
   return (
     <Container>
+          
       <GcTop>
+      <LuMapPinCheckInside style={{color: '#fff', fontSize: 30}} />
         <TextMirror ref={mirrorTopRef} />
         <TextContainerTop
           ref={topRef}
@@ -57,7 +59,7 @@ const Pin = () => {
           value={topText}
           onChange={(e) => setTopText(e.target.value)}
         />
-        <LuMapPinCheckInside style={{color: '#fff', fontSize: 30}} />
+   
       </GcTop>
 
       {/*

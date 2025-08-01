@@ -50,13 +50,14 @@ const Insta = () => {
   return (
     <Container>
       <GcTop>
+        <FaInstagram style={{color: '#fff', fontSize: 30}} />
         <TextMirror ref={mirrorTopRef} />
         <TextContainerTop
           ref={topRef}
           spellCheck="false"
           value={'ahoradosul@'}
         />
-        <FaInstagram style={{color: '#fff', fontSize: 30}} />
+      
       </GcTop>
 
       {/*
