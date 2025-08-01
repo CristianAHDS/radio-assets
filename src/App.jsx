@@ -15,6 +15,7 @@ import Alert from './components/alerts';
 import Pin from './components/pin';
 import Whats from './components/whats';
 import Insta from './components/insta';
+import Radar from './components/radar'
 
 //Esporte
 import TempoEsporte from './esporte.jsx';
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <TempoGeral />,
+  },
+  {
+    path: '/radar',
+    element: <Radar/>
   },
   {
     path: '/fenadoce',
