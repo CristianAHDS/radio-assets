@@ -59,6 +59,7 @@ export const TextSide = styled.div`
 
 // Recebe duração da animação via prop
 export const ScrollingWrapper = styled.div`
+  margin-top: 1px;
   height: 100%;
   display: flex;
   width: max-content;
