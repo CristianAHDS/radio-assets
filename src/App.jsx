@@ -17,6 +17,7 @@ import Pin from './components/pin';
 import Whats from './components/whats';
 import Insta from './components/insta';
 import Radar from './components/radar';
+import Ticket from './components/ticket';
 
 //Esporte
 import TempoEsporte from './esporte.jsx';
@@ -42,6 +43,10 @@ import PinConexao from './components/pinConexao';
 import LowerConexao from './lowerConexao.jsx';
 
 const router = createBrowserRouter([
+  {
+    path: '/ticket',
+    element: <Ticket />,
+  },
   {
     path: '/let',
     element: <Let />,

@@ -82,7 +82,7 @@ export const TextContainer = styled.textarea`
 `;
 
 export const Logo = styled.img`
+  margin-right: 10px;
   height: 30px;
   filter: brightness(100);
-
 `;

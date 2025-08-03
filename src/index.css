@@ -13,6 +13,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@scope (.ticket) {
+  /* Styles within this scope will only apply to elements
+     that are descendants of .my-component or .my-component itself. */
+  img {
+    border: 2px solid green; /* This border will only affect images inside .my-component */
+  }
+
+  .inner-element {
+    border-bottom: 1px dashed blue; /* This border will only affect .inner-element inside .my-component */
+  }
+}
+
 a {
   font-weight: 500;
   color: #646cff;

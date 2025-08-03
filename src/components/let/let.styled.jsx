@@ -69,6 +69,7 @@ export const GcBottom = styled.div`
   display: flex;
   align-items: center;
   width: fit-content;
+  margin-right: 10px;
 `;
 
 export const TextMirrorBottom = styled(TextMirror)`

@@ -28,32 +28,32 @@ const Let = () => {
   };
 
   useEffect(() => {
-    const savedTop = localStorage.getItem('gcTopText');
-    const savedBottom = localStorage.getItem('gcBottomText');
+    const savedTop = localStorage.getItem('letTopText');
+    const savedBottom = localStorage.getItem('letBottomText');
 
     if (savedTop) {
       setTopText(savedTop);
     } else {
       setTopText('EDITAR');
-      localStorage.setItem('gcTopText', 'EDITAR');
+      localStorage.setItem('letTopText', 'EDITAR');
     }
 
     if (savedBottom) {
       setBottomText(savedBottom);
     } else {
       setBottomText('EDITAR');
-      localStorage.setItem('gcBottomText', 'EDITAR');
+      localStorage.setItem('letBottomText', 'EDITAR');
     }
   }, []);
 
   useEffect(() => {
     adjustWidth(mirrorTopRef, topRef, topText);
-    localStorage.setItem('gcTopText', topText);
+    localStorage.setItem('letTopText', topText);
   }, [topText]);
 
   useEffect(() => {
     adjustWidth(mirrorBottomRef, bottomRef, bottomText);
-    localStorage.setItem('gcBottomText', bottomText);
+    localStorage.setItem('letBottomText', bottomText);
   }, [bottomText]);
 
   return (
