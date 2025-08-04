@@ -20,9 +20,13 @@ import Radar from './components/radar';
 import Ticket from './components/ticket';
 
 //Esporte
+import LetEsporte from './components/letEsporte';
 import TempoEsporte from './esporte.jsx';
 import LowerEsporte from './lowerEsporte.jsx';
 import ClockEsporte from './clockEsporte.jsx';
+import GcEsporte from './components/gcEsporte';
+import InstaEsporte from './components/instaEsporte';
+import WhatsEsporte from './components/whatsEsporte';
 
 //Pensar Negócios
 import TempoPensarnegocios from './components/tempoPensarNegocios';
@@ -44,6 +48,10 @@ import PinConexao from './components/pinConexao';
 import LowerConexao from './lowerConexao.jsx';
 
 const router = createBrowserRouter([
+  {
+    path: '/insta',
+    element: <Insta />,
+  },
   {
     path: '/ticket',
     element: <Ticket />,
@@ -96,12 +104,16 @@ const router = createBrowserRouter([
     path: '/pin',
     element: <Pin />,
   },
-
   {
     path: '/whats',
     element: <Whats />,
   },
+
   //Esporte
+  {
+    path: '/whatsEsporte',
+    element: <WhatsEsporte />,
+  },
   {
     path: '/clockEsporte',
     element: <ClockEsporte />,
@@ -113,6 +125,18 @@ const router = createBrowserRouter([
   {
     path: '/esporte',
     element: <TempoEsporte />,
+  },
+  {
+    path: '/gcEsporte',
+    element: <GcEsporte />,
+  },
+  {
+    path: '/letEsporte',
+    element: <LetEsporte />,
+  },
+  {
+    path: '/instaEsporte',
+    element: <InstaEsporte />,
   },
 
   //Conexao
@@ -135,10 +159,6 @@ const router = createBrowserRouter([
   {
     path: '/gcConexao',
     element: <GcConexao />,
-  },
-  {
-    path: '/insta',
-    element: <Insta />,
   },
   {
     path: '/pinConexao',
