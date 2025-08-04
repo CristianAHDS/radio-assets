@@ -46,7 +46,7 @@ export const TextContainerTop = styled.textarea`
   direction: rtl;
   text-align: right;
 
-  padding: 0px 30px 0px 0px;
+  padding: 0px 20px 0px 0px;
 
   &:focus {
     outline: none;

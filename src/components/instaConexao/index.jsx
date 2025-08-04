@@ -9,9 +9,9 @@ import {
   TextMirrorBottom,
   Logo,
 } from './insta.styled.jsx';
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram } from 'react-icons/fa';
 
-const Insta = () => {
+const InstaConexao = () => {
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
 
@@ -45,18 +45,16 @@ const Insta = () => {
     localStorage.setItem('gcBottomText', bottomText);
   }, [bottomText]);
 
-
-
   return (
     <Container>
       <GcTop>
+        <FaInstagram style={{ color: '#fff', fontSize: 30, marginRight: 10 }} />
         <TextMirror ref={mirrorTopRef} />
         <TextContainerTop
           ref={topRef}
           spellCheck="false"
           value={'ahoradosul@'}
         />
-        <FaInstagram style={{color: '#fff', fontSize: 30}} />
       </GcTop>
 
       {/*
@@ -74,4 +72,4 @@ const Insta = () => {
   );
 };
 
-export default Insta;
+export default InstaConexao;
