@@ -27,6 +27,7 @@ import ClockEsporte from './clockEsporte.jsx';
 import GcEsporte from './components/gcEsporte';
 import InstaEsporte from './components/instaEsporte';
 import WhatsEsporte from './components/whatsEsporte';
+import PinEsporte from './components/pinEsporte';
 
 //Pensar Negócios
 import TempoPensarnegocios from './components/tempoPensarNegocios';
@@ -137,6 +138,10 @@ const router = createBrowserRouter([
   {
     path: '/instaEsporte',
     element: <InstaEsporte />,
+  },
+  {
+    path: '/pinEsporte',
+    element: <PinEsporte />,
   },
 
   //Conexao

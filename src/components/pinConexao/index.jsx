@@ -9,9 +9,9 @@ import {
   TextMirrorBottom,
   Logo,
 } from './pin.styled.jsx';
-import { LuMapPinCheckInside } from "react-icons/lu";
+import { LuMapPinCheckInside } from 'react-icons/lu';
 
-const PinConexao = () => {
+const Pin = () => {
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
 
@@ -45,11 +45,12 @@ const PinConexao = () => {
     localStorage.setItem('gcBottomText', bottomText);
   }, [bottomText]);
 
-
-
   return (
     <Container>
       <GcTop>
+        <LuMapPinCheckInside
+          style={{ color: '#fff', fontSize: 30, marginRight: 10 }}
+        />
         <TextMirror ref={mirrorTopRef} />
         <TextContainerTop
           ref={topRef}
@@ -57,7 +58,6 @@ const PinConexao = () => {
           value={topText}
           onChange={(e) => setTopText(e.target.value)}
         />
-        <LuMapPinCheckInside style={{color: '#fff', fontSize: 30}} />
       </GcTop>
 
       {/*
@@ -75,4 +75,4 @@ const PinConexao = () => {
   );
 };
 
-export default PinConexao;
+export default Pin;

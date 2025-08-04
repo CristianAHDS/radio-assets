@@ -39,7 +39,7 @@ export const TextContainerTop = styled.textarea`
   color: #fff;
   white-space: nowrap;
   display: inline-block;
-  direction: rtl;
+
   text-align: right;
 
   padding: 0px 00px 0px 10px;

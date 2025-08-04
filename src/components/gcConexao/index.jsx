@@ -27,7 +27,7 @@ const Gc = () => {
   };
 
   useEffect(() => {
-    const savedTop = localStorage.getItem('gcTopText');
+    const savedTop = localStorage.getItem('let');
     const savedBottom = localStorage.getItem('gcBottomText');
 
     if (savedTop) setTopText(savedTop);
@@ -36,7 +36,7 @@ const Gc = () => {
 
   useEffect(() => {
     adjustWidth(mirrorTopRef, topRef, topText);
-    localStorage.setItem('gcTopText', topText);
+    localStorage.setItem('let', topText);
   }, [topText]);
 
   useEffect(() => {
@@ -49,6 +49,7 @@ const Gc = () => {
   return (
     <Container>
       <GcTop>
+        <Logo src={logoImage} alt="Logo" />
         <TextMirror ref={mirrorTopRef} />
         <TextContainerTop
           ref={topRef}
@@ -56,7 +57,6 @@ const Gc = () => {
           value={topText}
           onChange={(e) => setTopText(e.target.value)}
         />
-        <Logo src={logoImage} alt="Logo" />
       </GcTop>
 
       {/*
