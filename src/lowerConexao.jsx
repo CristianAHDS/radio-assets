@@ -87,7 +87,6 @@ const Lower = () => {
   return (
     <Container>
       <TextContainer>
-        <LeftSide>ahoradosul.com.br</LeftSide>
         <TextSide>
           {/* invisível para medir */}
           <span
@@ -128,6 +127,7 @@ const Lower = () => {
             />
           </ScrollingWrapper>
         </TextSide>
+        <LeftSide>ahoradosul.com.br</LeftSide>
       </TextContainer>
     </Container>
   );

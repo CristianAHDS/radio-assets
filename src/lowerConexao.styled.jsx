@@ -29,7 +29,6 @@ export const TextContainer = styled.div`
   align-items: center;
   color: #fff;
 
-  border-left: solid 10px #fff;
   overflow: hidden;
 `;
 
@@ -45,6 +44,8 @@ export const LeftSide = styled.div`
   font-weight: 900;
   font-size: 20px;
   text-transform: uppercase;
+
+  border-left: solid 8px #fff;
 `;
 
 export const TextSide = styled.div`
@@ -58,6 +59,7 @@ export const TextSide = styled.div`
 
 // Recebe duração da animação via prop
 export const ScrollingWrapper = styled.div`
+  margin-top: 1px;
   height: 100%;
   display: flex;
   width: max-content;
