@@ -12,7 +12,7 @@ export const GcTop = styled.div`
   display: inline-flex;
   align-items: center;
   position: fixed;
-  right: 0;
+  left: 0;
 `;
 
 export const TextMirror = styled.span`
