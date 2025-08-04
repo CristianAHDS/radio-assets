@@ -34,6 +34,7 @@ import InstaPensarNegocios from './components/instaPensarNegocios';
 import PinPensarNegocios from './components/pinPensarNegocios';
 
 //Conexão
+import LetConexao from './components/letConexao';
 import InstaConexao from './components/instaConexao';
 import WhatsConexao from './components/whatsConexao';
 import GcConexao from './components/gcConexao';
@@ -115,6 +116,10 @@ const router = createBrowserRouter([
   },
 
   //Conexao
+  {
+    path: '/letConexao',
+    element: <LetConexao />,
+  },
   {
     path: '/conexao',
     element: <TempoConexao />,
