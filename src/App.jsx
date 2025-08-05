@@ -5,11 +5,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 // Pages
 import Let from './components/let';
 import TempoGeral from './geral.jsx';
-import TempoFenadoce from './fenadoce.jsx';
 import Lower from './lower.jsx';
-import LowerFenadoce from './lowerFenadoce.jsx';
 import Clock from './clock.jsx';
-import ClockFenadoce from './clockFenadoce.jsx';
 import Gc from './components/gc';
 import Tabela from './components/tabela';
 import Alert from './components/alerts';
@@ -70,24 +67,12 @@ const router = createBrowserRouter([
     element: <Radar />,
   },
   {
-    path: '/fenadoce',
-    element: <TempoFenadoce />,
-  },
-  {
     path: '/lower',
     element: <Lower />,
   },
   {
-    path: '/lowerFenadoce',
-    element: <LowerFenadoce />,
-  },
-  {
     path: '/clock',
     element: <Clock />,
-  },
-  {
-    path: '/clockFenadoce',
-    element: <ClockFenadoce />,
   },
   {
     path: '/gc',
