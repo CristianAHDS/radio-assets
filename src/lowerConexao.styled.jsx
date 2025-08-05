@@ -30,6 +30,8 @@ export const TextContainer = styled.div`
   color: #fff;
 
   overflow: hidden;
+
+  border-left: solid 8px #fff;
 `;
 
 export const LeftSide = styled.div`

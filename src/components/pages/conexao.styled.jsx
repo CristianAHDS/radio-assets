@@ -1,5 +1,9 @@
 import styled from 'styled-components';
-import { primary, secondary, grayPrimary } from './constants/color';
+import {
+  primaryConexão,
+  secondaryConexão,
+  grayPrimary,
+} from './constants/color';
 
 export const Card = styled.div`
   width: 235px;
@@ -16,7 +20,7 @@ export const NameSection = styled.div`
   min-height: 25%;
 
   background-color: #fff;
-  color: ${secondary};
+  color: ${secondaryConexão};
 
   font-size: ${(props) => (props.$isLongName ? '20px' : '24px')};
   font-weight: bold;
@@ -41,7 +45,7 @@ export const Temp = styled.div`
   width: 70%;
   height: 100%;
 
-  background-color: ${primary};
+  background-color: ${primaryConexão};
 
   font-size: 34px;
 
@@ -77,25 +81,9 @@ export const InfoSection = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: ${secondary};
+  background-color: ${secondaryConexão};
 
   color: #fff;
-  font-size: 18px;
-
-  text-transform: uppercase;
-`;
-
-export const InfoSectionAlert = styled.div`
-  width: 100%;
-  min-height: 25%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: ${grayPrimary};
-
-  color: ${secondary};
   font-size: 18px;
 
   text-transform: uppercase;

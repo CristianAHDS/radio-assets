@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { primaryEstporte, secondaryEsporte } from './constants/color';
+import { primary, secondary } from './constants/color';
 
 const scroll = keyframes`
   0% {
@@ -23,21 +23,19 @@ export const TextContainer = styled.div`
   width: 100vw;
   height: 50px;
 
-  background-color: ${primaryEstporte};
+  background-color: ${primary};
 
   display: flex;
   align-items: center;
   color: #fff;
 
   overflow: hidden;
-
-  border-left: solid 8px #fff;
 `;
 
 export const LeftSide = styled.div`
   width: 300px;
   height: 100%;
-  background-color: ${secondaryEsporte};
+  background-color: ${secondary};
 
   display: flex;
   justify-content: center;
@@ -53,7 +51,7 @@ export const LeftSide = styled.div`
 export const TextSide = styled.div`
   width: calc(100% - 300px);
   height: 100%;
-  background-color: ${primaryEstporte};
+  background-color: ${primary};
 
   overflow: hidden;
   position: relative;

@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { primaryEstporte, secondaryEsporte } from './constants/color';
+import { primaryFenadoce, secondaryFenadoce } from './constants/color';
 
 const scroll = keyframes`
   0% {
@@ -23,21 +23,20 @@ export const TextContainer = styled.div`
   width: 100vw;
   height: 50px;
 
-  background-color: ${primaryEstporte};
+  background-color: ${secondaryFenadoce};
 
   display: flex;
   align-items: center;
   color: #fff;
 
+  border-left: solid 10px #fff;
   overflow: hidden;
-
-  border-left: solid 8px #fff;
 `;
 
 export const LeftSide = styled.div`
   width: 300px;
   height: 100%;
-  background-color: ${secondaryEsporte};
+  background-color: ${primaryFenadoce};
 
   display: flex;
   justify-content: center;
@@ -46,14 +45,12 @@ export const LeftSide = styled.div`
   font-weight: 900;
   font-size: 20px;
   text-transform: uppercase;
-
-  border-left: solid 8px #fff;
 `;
 
 export const TextSide = styled.div`
   width: calc(100% - 300px);
   height: 100%;
-  background-color: ${primaryEstporte};
+  background-color: ${secondaryFenadoce};
 
   overflow: hidden;
   position: relative;
@@ -61,7 +58,6 @@ export const TextSide = styled.div`
 
 // Recebe duração da animação via prop
 export const ScrollingWrapper = styled.div`
-  margin-top: 1px;
   height: 100%;
   display: flex;
   width: max-content;

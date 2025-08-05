@@ -8,16 +8,15 @@ import {
   Temp,
   Icon,
   IconImage,
-  InfoSectionAlert,
-} from './app.styled';
+} from './esporte.styled';
+
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import SolEntreNuvens from './assets/sunCloud.png';
 import Sol from './assets/sun.png';
 import Nublado from './assets/cloud.png';
 import SolEChuva from './assets/sunRain.png';
 import Chuva from './assets/rain.png';
-
-import { GoAlert } from 'react-icons/go';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -31,28 +30,12 @@ const getLocalWeatherIcon = (conditionText) => {
   return Nublado;
 };
 
-const traduzirAlerta = (headline) => {
-  const texto = headline.toLowerCase();
-
-  if (texto.includes('thunderstorm')) return 'Tempestade';
-  if (texto.includes('storm')) return 'Tempestade';
-  if (texto.includes('flood')) return 'Enchente';
-  if (texto.includes('wind')) return 'Vento';
-  if (texto.includes('snow')) return 'Neve';
-  if (texto.includes('heat')) return 'Calor';
-  if (texto.includes('cold')) return 'Frio';
-  if (texto.includes('rain')) return 'Chuva';
-  if (texto.includes('fog')) return 'Nevoeiro';
-
-  return 'Alerta';
-};
-
 const cidades = [
   { nome: 'Amaral Ferrador', coord: '-30.873,-52.2473' },
   { nome: 'Arroio Grande', coord: '-32.2387,-53.0907' },
   { nome: 'Candiota', coord: '-31.4768,-53.6792' },
   { nome: 'Canguçu', coord: '-31.3956,-52.6864' },
-  { nome: 'Capão do Leão', coord: '-31.7675,-52.4487' },
+  { nome: 'Capão do Leão', coord: '-31.7675,-52.4487 ' },
   { nome: 'Herval', coord: '-32.0129,-53.4031' },
   { nome: 'Jaguarão', coord: '-32.5602,-53.381' },
   { nome: 'Pedro Osório', coord: '-31.8797,-52.8104' },
@@ -86,35 +69,24 @@ const App = () => {
 
   const fetchAllCitiesWeather = async () => {
     const newWeatherDataMap = {};
-
     for (const cidade of cidades) {
       try {
         const res = await fetch(
-          `https://api.weatherapi.com/v1/forecast.json?key=34402a45e8a24b4194335812211910&q=${cidade.coord}&days=1&alerts=yes`,
+          `https://api.weatherapi.com/v1/current.json?key=34402a45e8a24b4194335812211910&q=${cidade.coord}&aqi=no`,
         );
         const data = await res.json();
-
-        const alertas = data.alerts?.alert || [];
-
         newWeatherDataMap[cidade.nome] = {
           nomeCorrigido: corrigirNome(data.location.name),
           temperatura: Math.round(Number(data.current.temp_c)),
           sensacao: Math.round(Number(data.current.feelslike_c)),
           icon: getLocalWeatherIcon(data.current.condition.text),
-          alertas: alertas.map((alert) => ({
-            titulo: alert.headline,
-            descricao: alert.desc,
-            urgencia: alert.urgency,
-            categoria: alert.category,
-            evento: alert.event,
-            instrucao: alert.instruction,
-          })),
         };
       } catch (err) {
-        console.warn(`Erro ao buscar dados de ${cidade.nome}`, err);
+        console.warn(`Erro ao buscar dados de ${cidade.nome}`);
       }
     }
 
+    // Salva no estado e no localStorage
     setWeatherDataMap(newWeatherDataMap);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(newWeatherDataMap));
     localStorage.setItem(TIMESTAMP_KEY, Date.now().toString());
@@ -126,7 +98,7 @@ const App = () => {
       const timestamp = parseInt(localStorage.getItem(TIMESTAMP_KEY), 10);
 
       const now = Date.now();
-      const cacheIsValid = cache && timestamp && now - timestamp < 60000;
+      const cacheIsValid = cache && timestamp && now - timestamp < 60000; // menos de 60s
 
       if (cacheIsValid) {
         setWeatherDataMap(JSON.parse(cache));
@@ -136,14 +108,15 @@ const App = () => {
     };
 
     loadData();
-    const refreshInterval = setInterval(fetchAllCitiesWeather, 60000);
+
+    const refreshInterval = setInterval(fetchAllCitiesWeather, 60000); // atualiza a cada 60s
     return () => clearInterval(refreshInterval);
   }, []);
 
   useEffect(() => {
     const cidadeInterval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % cidades.length);
-    }, 15000);
+    }, 15000); // troca cidade a cada 6s
 
     return () => clearInterval(cidadeInterval);
   }, []);
@@ -211,24 +184,6 @@ const App = () => {
             <div style={{ marginLeft: '10px' }}>{dados.sensacao}ºC</div>
           </motion.div>
         </InfoSection>
-
-        {dados.alertas.length > 0 && (
-          <InfoSectionAlert>
-            <motion.div
-              key={`alerta-${currentIndex}`}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <GoAlert
-                  style={{ fontSize: 20, marginRight: 6, marginTop: -3 }}
-                />
-                {traduzirAlerta(dados.alertas[0].titulo)}
-              </div>
-            </motion.div>
-          </InfoSectionAlert>
-        )}
       </Card>
     </AnimatePresence>
   );
