@@ -1,6 +1,6 @@
 # Rádio Pelotense - Assets OBS
 
-![Rádio Pelotense Assets](https://i.imgur.com/LFINvaa.png)
+![Rádio Pelotense Assets](https://i.imgur.com/2vGJwyu.png)
 
 ## 🚀 Rotas Disponíveis
 
