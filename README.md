@@ -1,13 +1,12 @@
-# Weather Bug - Sistema de Previsão do Tempo
+# Rádio Pelotense - Assets OBS
 
-Sistema de previsão do tempo desenvolvido em React + Vite para a Rádio Pelotense.
+![Rádio Pelotense Assets](https://i.imgur.com/LFINvaa.png)
 
 ## 🚀 Rotas Disponíveis
 
 ### Páginas Principais
 
 - **Página Inicial**: [https://pelotense-assets.netlify.app/](https://pelotense-assets.netlify.app/)
-- **Fenadoce**: [https://pelotense-assets.netlify.app/fenadoce](https://pelotense-assets.netlify.app/fenadoce)
 - **Esporte**: [https://pelotense-assets.netlify.app/esporte](https://pelotense-assets.netlify.app/esporte)
 - **Conexão**: [https://pelotense-assets.netlify.app/conexao](https://pelotense-assets.netlify.app/conexao)
 - **Pensar Negócios**: [https://pelotense-assets.netlify.app/pensarNegocios](https://pelotense-assets.netlify.app/pensarNegocios)
@@ -17,7 +16,6 @@ Sistema de previsão do tempo desenvolvido em React + Vite para a Rádio Peloten
 - **Relógio Geral**: [https://pelotense-assets.netlify.app/clock](https://pelotense-assets.netlify.app/clock)
 - **Relógio Esporte**: [https://pelotense-assets.netlify.app/clockEsporte](https://pelotense-assets.netlify.app/clockEsporte)
 - **Relógio Conexão**: [https://pelotense-assets.netlify.app/clockConexao](https://pelotense-assets.netlify.app/clockConexao)
-- **Relógio Fenadoce**: [https://pelotense-assets.netlify.app/clockFenadoce](https://pelotense-assets.netlify.app/clockFenadoce)
 - **Relógio Pensar Negócios**: [https://pelotense-assets.netlify.app/clockPensarNegocios](https://pelotense-assets.netlify.app/clockPensarNegocios)
 
 ### Componentes Lower
@@ -25,7 +23,6 @@ Sistema de previsão do tempo desenvolvido em React + Vite para a Rádio Peloten
 - **Lower Geral**: [https://pelotense-assets.netlify.app/lower](https://pelotense-assets.netlify.app/lower)
 - **Lower Esporte**: [https://pelotense-assets.netlify.app/lowerEsporte](https://pelotense-assets.netlify.app/lowerEsporte)
 - **Lower Conexão**: [https://pelotense-assets.netlify.app/lowerConexao](https://pelotense-assets.netlify.app/lowerConexao)
-- **Lower Fenadoce**: [https://pelotense-assets.netlify.app/lowerFenadoce](https://pelotense-assets.netlify.app/lowerFenadoce)
 - **Lower Pensar Negócios**: [https://pelotense-assets.netlify.app/lowerPensarNegocios](https://pelotense-assets.netlify.app/lowerPensarNegocios)
 
 ### Componentes de Mídia Social
