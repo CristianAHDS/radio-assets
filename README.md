@@ -57,6 +57,11 @@
 - **WhatsApp Conexão**: [https://pelotense-assets.netlify.app/whatsConexao](https://pelotense-assets.netlify.app/whatsConexao)
 - **WhatsApp Pensar Negócios**: [https://pelotense-assets.netlify.app/whatsPensarNegocios](https://pelotense-assets.netlify.app/whatsPensarNegocios)
 
+<p align="center">
+  <img src="https://i.imgur.com/1kLgzB8.png" alt="GC" width="45%" style="margin-right:10px;"/>
+  <img src="https://i.imgur.com/IGpDman.png" alt="GC" width="45%"/>
+</p>
+
 ---
 
 ### Componentes de Pin
