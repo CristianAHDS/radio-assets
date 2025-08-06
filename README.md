@@ -102,7 +102,7 @@ Agora os componentes **GC** e **Let** aceitam passar um nome diretamente pela UR
  [https://pelotense-assets.netlify.app/gcConexao?nome=Maria](https://pelotense-assets.netlify.app/gcConexao?nome=Maria)
 
   <p align="center">
-  <img src="https://i.imgur.com/A7t4Eej.png" alt="GC" width="350"/>
+  <img src="https://i.imgur.com/A7t4Eej.png" alt="GC" width="200"/>
 </p>
 
 Se não for passado nenhum nome na URL, o componente usará o valor salvo no **localStorage** ou exibirá `"EDITAR"`.
