@@ -58,7 +58,7 @@
 - **WhatsApp Pensar Negócios**: [https://pelotense-assets.netlify.app/whatsPensarNegocios](https://pelotense-assets.netlify.app/whatsPensarNegocios)
 
 <p align="center">
-  <img src="https://i.imgur.com/1kLgzB8.png" alt="GC" width="45%" style="margin-right:10px;"/>
+  <img src="https://i.imgur.com/1kLgzB8.png" alt="GC" width="29%" style="margin-right:10px;"/>
   <img src="https://i.imgur.com/IGpDman.png" alt="GC" width="45%"/>
 </p>
 
