@@ -211,7 +211,7 @@ const App = () => {
             <div style={{ marginLeft: '10px' }}>{dados.sensacao}ºC</div>
           </motion.div>
         </InfoSection>
-
+        {console.log('dados.alertas', dados.alertas)}
         {dados.alertas.length > 0 && (
           <InfoSectionAlert>
             <motion.div

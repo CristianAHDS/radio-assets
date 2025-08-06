@@ -84,3 +84,34 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 - **Styled Components**: Estilização dos componentes
 
 ## 📁 Estrutura do Projeto
+
+src/
+├── components/ # Componentes organizados por categoria
+│ ├── clock/ # Componentes de relógio
+│ ├── lower/ # Componentes lower
+│ ├── pages/ # Páginas principais
+│ ├── alerts/ # Componentes de alerta
+│ ├── gc/ # Componentes GC
+│ ├── insta/ # Componentes Instagram
+│ ├── let/ # Componentes Let
+│ ├── pin/ # Componentes Pin
+│ ├── radar/ # Componente Radar
+│ ├── tabela/ # Componente Tabela
+│ ├── ticket/ # Componente Ticket
+│ └── whats/ # Componentes WhatsApp
+├── assets/ # Recursos estáticos
+├── constants/ # Constantes da aplicação
+└── App.jsx # Componente principal
+
+## 🚀 Como Executar
+
+1. Clone o repositório
+2. Instale as dependências: `npm install`
+3. Execute o projeto: `npm run dev`
+4. Acesse: `http://localhost:5173`
+
+## 📦 Build para Produção
+
+```bash
+npm run build
+```
