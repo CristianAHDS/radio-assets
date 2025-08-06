@@ -1,7 +1,7 @@
 # Rádio Pelotense - Assets OBS
 
 <p align="center">
-  <img src="https://i.imgur.com/2vGJwyu.png" alt="Rádio Pelotense Assets" width="400"/>
+  <img src="https://i.imgur.com/2vGJwyu.png" alt="Rádio Pelotense Assets" width="400" style="margin-top:20px;"/>
 </p>
 
 ## 🚀 Rotas Disponíveis
@@ -14,7 +14,7 @@
 - **Pensar Negócios**: [https://pelotense-assets.netlify.app/pensarNegocios](https://pelotense-assets.netlify.app/pensarNegocios)
 
 <p align="center">
-  <img src="https://i.imgur.com/P5jq3sY.png" alt="Tempo" width="250"/>
+  <img src="https://i.imgur.com/P5jq3sY.png" alt="Tempo" width="250" style="margin-top:20px;"/>
 </p>
 
 ---
@@ -27,7 +27,7 @@
 - **Relógio Pensar Negócios**: [https://pelotense-assets.netlify.app/clockPensarNegocios](https://pelotense-assets.netlify.app/clockPensarNegocios)
 
 <p align="center">
-  <img src="https://i.imgur.com/Q0ysbVY.png" alt="Clock" width="300"/>
+  <img src="https://i.imgur.com/Q0ysbVY.png" alt="Clock" width="300" style="margin-top:20px;"/>
 </p>
 
 ---
@@ -57,7 +57,7 @@
 - **WhatsApp Conexão**: [https://pelotense-assets.netlify.app/whatsConexao](https://pelotense-assets.netlify.app/whatsConexao)
 - **WhatsApp Pensar Negócios**: [https://pelotense-assets.netlify.app/whatsPensarNegocios](https://pelotense-assets.netlify.app/whatsPensarNegocios)
 
-<p align="center">
+<p align="center" style="margin-top:20px;">
   <img src="https://i.imgur.com/1kLgzB8.png" alt="GC" width="29%" style="margin-right:10px;"/>
   <img src="https://i.imgur.com/IGpDman.png" alt="GC" width="45%"/>
 </p>
@@ -72,7 +72,7 @@
 - **Pin Pensar Negócios**: [https://pelotense-assets.netlify.app/pinPensarNegocios](https://pelotense-assets.netlify.app/pinPensarNegocios)
 
 <p align="center">
-  <img src="https://i.imgur.com/3wJCbuR.png" alt="Pin" width="200"/>
+  <img src="https://i.imgur.com/3wJCbuR.png" alt="Pin" width="200" style="margin-top:20px;"/>
 </p>
 
 ---
@@ -93,7 +93,7 @@
 - **GC Pensar Negócios**: [https://pelotense-assets.netlify.app/gcPensarNegocios](https://pelotense-assets.netlify.app/gcPensarNegocios)
 
 <p align="center">
-  <img src="https://i.imgur.com/3ue7UGS.png" alt="GC" width="350"/>
+  <img src="https://i.imgur.com/3ue7UGS.png" alt="GC" width="350" style="margin-top:20px;"/>
 </p>
 
 #### 🔗 Passando Nome via URL
@@ -107,7 +107,7 @@ Agora os componentes **GC** e **Let** aceitam passar um nome diretamente pela UR
  [https://pelotense-assets.netlify.app/gcConexao?nome=Maria](https://pelotense-assets.netlify.app/gcConexao?nome=Maria)
 
   <p align="center">
-  <img src="https://i.imgur.com/A7t4Eej.png" alt="GC" width="200"/>
+  <img src="https://i.imgur.com/A7t4Eej.png" alt="GC" width="200" style="margin-top:20px;"/>
 </p>
 
 Se não for passado nenhum nome na URL, o componente usará o valor salvo no **localStorage** ou exibirá `"EDITAR"`.
@@ -120,7 +120,7 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 - **Tabela**: [https://pelotense-assets.netlify.app/tabela](https://pelotense-assets.netlify.app/tabela)
 - **Alert**: [https://pelotense-assets.netlify.app/alert](https://pelotense-assets.netlify.app/alert)
 - **Ticket**: [https://pelotense-assets.netlify.app/ticket](https://pelotense-assets.netlify.app/ticket)
-<p align="center">
+<p align="center" style="margin-top:20px;">
   <img src="https://i.imgur.com/XlFT6Jn.png" alt="GC" width="45%" style="margin-right:10px;"/>
   <img src="https://i.imgur.com/K0Uxxx2.png" alt="GC" width="45%"/>
 </p>
