@@ -40,7 +40,7 @@
 - **Lower Pensar Negócios**: [https://pelotense-assets.netlify.app/lowerPensarNegocios](https://pelotense-assets.netlify.app/lowerPensarNegocios)
 
 <p align="center">
-  <img src="https://i.imgur.com/voxa430.png" alt="Lower" width="600"/>
+  <img src="https://i.imgur.com/voxa430.png" alt="Lower" width="900"/>
 </p>
 
 ---
