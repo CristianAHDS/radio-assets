@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { secondaryPensarNegocios } from '../../constants/color';
+import { primaryPensarNegocios } from '../../constants/color';
 
 export const Container = styled.div`
   display: flex;
@@ -7,12 +7,12 @@ export const Container = styled.div`
 `;
 
 export const GcTop = styled.div`
-  background-color: ${secondaryPensarNegocios};
+  background-color: ${primaryPensarNegocios};
   padding: 10px 20px;
   display: inline-flex;
   align-items: center;
   position: fixed;
-  right: 0;
+  left: 0;
 `;
 
 export const TextMirror = styled.span`
@@ -39,10 +39,10 @@ export const TextContainerTop = styled.textarea`
   color: #fff;
   white-space: nowrap;
   display: inline-block;
-  direction: rtl;
+
   text-align: right;
 
-  padding: 0px 30px 0px 0px;
+  padding: 0px 00px 0px 10px;
 
   &:focus {
     outline: none;
@@ -82,7 +82,7 @@ export const TextContainer = styled.textarea`
 `;
 
 export const Logo = styled.img`
+  margin-right: 10px;
   height: 30px;
   filter: brightness(100);
-  transform: rotate(180deg);
 `;

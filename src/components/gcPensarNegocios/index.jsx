@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import {
   Container,
   GcTop,
@@ -11,8 +12,12 @@ import {
 } from './gc.styled.jsx';
 
 const Gc = () => {
+  const [searchParams] = useSearchParams();
+  const nome = searchParams.get('nome'); // pega ?nome=XXX
+
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
+  const [fromUrl, setFromUrl] = useState(false); // flag para controlar se veio da URL
 
   const mirrorTopRef = useRef(null);
   const topRef = useRef(null);
@@ -26,22 +31,42 @@ const Gc = () => {
     }
   };
 
+  // Carrega valor inicial
   useEffect(() => {
-    const savedTop = localStorage.getItem('let');
+    const savedTop = localStorage.getItem('gcTopText');
     const savedBottom = localStorage.getItem('gcBottomText');
 
-    if (savedTop) setTopText(savedTop);
-    if (savedBottom) setBottomText(savedBottom);
-  }, []);
+    if (nome && nome.trim() !== '') {
+      setTopText(nome.toUpperCase());
+      setFromUrl(true); // veio pela URL
+    } else if (savedTop && savedTop.trim() !== '') {
+      setTopText(savedTop);
+    } else {
+      setTopText('EDITAR');
+      localStorage.setItem('gcTopText', 'EDITAR');
+    }
+
+    if (savedBottom && savedBottom.trim() !== '') {
+      setBottomText(savedBottom);
+    } else {
+      setBottomText('EDITAR');
+      localStorage.setItem('gcBottomText', 'EDITAR');
+    }
+  }, [nome]);
 
   useEffect(() => {
     adjustWidth(mirrorTopRef, topRef, topText);
-    localStorage.setItem('let', topText);
-  }, [topText]);
+    // Só salva no localStorage se não veio da URL
+    if (!fromUrl && topText && topText.trim() !== '') {
+      localStorage.setItem('gcTopText', topText);
+    }
+  }, [topText, fromUrl]);
 
   useEffect(() => {
     adjustWidth(mirrorBottomRef, bottomRef, bottomText);
-    localStorage.setItem('gcBottomText', bottomText);
+    if (bottomText && bottomText.trim() !== '') {
+      localStorage.setItem('gcBottomText', bottomText);
+    }
   }, [bottomText]);
 
   const logoImage = 'https://i.imgur.com/gXyrBvU.gif';
@@ -59,7 +84,8 @@ const Gc = () => {
         />
       </GcTop>
 
-      {/*
+      {/* Se quiser reativar o bottom */}
+      {/* 
       <GcBottom>
         <TextMirrorBottom ref={mirrorBottomRef} />
         <TextContainer

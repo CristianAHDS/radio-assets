@@ -17,6 +17,7 @@ const Gc = () => {
 
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
+  const [fromUrl, setFromUrl] = useState(false); // flag para controlar se veio da URL
 
   const mirrorTopRef = useRef(null);
   const topRef = useRef(null);
@@ -37,7 +38,7 @@ const Gc = () => {
 
     if (nome && nome.trim() !== '') {
       setTopText(nome.toUpperCase());
-      localStorage.setItem('gcTopText', nome.toUpperCase());
+      setFromUrl(true); // veio pela URL
     } else if (savedTop && savedTop.trim() !== '') {
       setTopText(savedTop);
     } else {
@@ -55,10 +56,11 @@ const Gc = () => {
 
   useEffect(() => {
     adjustWidth(mirrorTopRef, topRef, topText);
-    if (topText && topText.trim() !== '') {
+    // Só salva no localStorage se não veio da URL
+    if (!fromUrl && topText && topText.trim() !== '') {
       localStorage.setItem('gcTopText', topText);
     }
-  }, [topText]);
+  }, [topText, fromUrl]);
 
   useEffect(() => {
     adjustWidth(mirrorBottomRef, bottomRef, bottomText);
@@ -83,7 +85,7 @@ const Gc = () => {
       </GcTop>
 
       {/* Se quiser reativar o bottom */}
-      {/*
+      {/* 
       <GcBottom>
         <TextMirrorBottom ref={mirrorBottomRef} />
         <TextContainer
