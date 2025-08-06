@@ -83,26 +83,6 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 - **React Router**: Roteamento da aplicação
 - **Styled Components**: Estilização dos componentes
 
-## 📁 Estrutura do Projeto
-
-src/
-├── components/ # Componentes organizados por categoria
-│ ├── clock/ # Componentes de relógio
-│ ├── lower/ # Componentes lower
-│ ├── pages/ # Páginas principais
-│ ├── alerts/ # Componentes de alerta
-│ ├── gc/ # Componentes GC
-│ ├── insta/ # Componentes Instagram
-│ ├── let/ # Componentes Let
-│ ├── pin/ # Componentes Pin
-│ ├── radar/ # Componente Radar
-│ ├── tabela/ # Componente Tabela
-│ ├── ticket/ # Componente Ticket
-│ └── whats/ # Componentes WhatsApp
-├── assets/ # Recursos estáticos
-├── constants/ # Constantes da aplicação
-└── App.jsx # Componente principal
-
 ## 🚀 Como Executar
 
 1. Clone o repositório
