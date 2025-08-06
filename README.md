@@ -45,6 +45,20 @@
 
 ---
 
+### Componentes de Mídia Social
+
+- **Instagram Geral**: [https://pelotense-assets.netlify.app/insta](https://pelotense-assets.netlify.app/insta)
+- **Instagram Esporte**: [https://pelotense-assets.netlify.app/instaEsporte](https://pelotense-assets.netlify.app/instaEsporte)
+- **Instagram Conexão**: [https://pelotense-assets.netlify.app/instaConexao](https://pelotense-assets.netlify.app/instaConexao)
+- **Instagram Pensar Negócios**: [https://pelotense-assets.netlify.app/instaPensarNegocios](https://pelotense-assets.netlify.app/instaPensarNegocios)
+
+- **WhatsApp Geral**: [https://pelotense-assets.netlify.app/whats](https://pelotense-assets.netlify.app/whats)
+- **WhatsApp Esporte**: [https://pelotense-assets.netlify.app/whatsEsporte](https://pelotense-assets.netlify.app/whatsEsporte)
+- **WhatsApp Conexão**: [https://pelotense-assets.netlify.app/whatsConexao](https://pelotense-assets.netlify.app/whatsConexao)
+- **WhatsApp Pensar Negócios**: [https://pelotense-assets.netlify.app/whatsPensarNegocios](https://pelotense-assets.netlify.app/whatsPensarNegocios)
+
+---
+
 ### Componentes de Pin
 
 - **Pin Geral**: [https://pelotense-assets.netlify.app/pin](https://pelotense-assets.netlify.app/pin)
@@ -58,6 +72,14 @@
 
 ---
 
+### Componentes de Let
+
+- **Let Geral**: [https://pelotense-assets.netlify.app/let](https://pelotense-assets.netlify.app/let)
+- **Let Esporte**: [https://pelotense-assets.netlify.app/letEsporte](https://pelotense-assets.netlify.app/letEsporte)
+- **Let Conexão**: [https://pelotense-assets.netlify.app/letConexao](https://pelotense-assets.netlify.app/letConexao)
+
+---
+
 ### Componentes GC
 
 - **GC Geral**: [https://pelotense-assets.netlify.app/gc](https://pelotense-assets.netlify.app/gc)
@@ -68,3 +90,50 @@
 <p align="center">
   <img src="https://i.imgur.com/3ue7UGS.png" alt="GC" width="350"/>
 </p>
+
+#### 🔗 Passando Nome via URL
+
+Agora os componentes **GC** e **Let** aceitam passar um nome diretamente pela URL usando **query string**:
+
+- **Exemplo GC Geral com nome**:  
+  [https://pelotense-assets.netlify.app/gc?nome=Cristian](https://pelotense-assets.netlify.app/gc?nome=Cristian)
+
+- **Exemplo GC Conexão com nome**:  
+  [https://pelotense-assets.netlify.app/gcConexao?nome=Maria](https://pelotense-assets.netlify.app/gcConexao?nome=Maria)
+
+Se não for passado nenhum nome na URL, o componente usará o valor salvo no **localStorage** ou exibirá `"EDITAR"`.
+
+---
+
+### Componentes Adicionais
+
+- **Radar**: [https://pelotense-assets.netlify.app/radar](https://pelotense-assets.netlify.app/radar)
+- **Tabela**: [https://pelotense-assets.netlify.app/tabela](https://pelotense-assets.netlify.app/tabela)
+- **Alert**: [https://pelotense-assets.netlify.app/alert](https://pelotense-assets.netlify.app/alert)
+- **Ticket**: [https://pelotense-assets.netlify.app/ticket](https://pelotense-assets.netlify.app/ticket)
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **React**: Framework JavaScript para construção de interfaces
+- **Vite**: Build tool e bundler
+- **React Router**: Roteamento da aplicação
+- **Styled Components**: Estilização dos componentes
+
+---
+
+## 🚀 Como Executar
+
+1. Clone o repositório
+2. Instale as dependências: `npm install`
+3. Execute o projeto: `npm run dev`
+4. Acesse: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 📦 Build para Produção
+
+```bash
+npm run build
+```
