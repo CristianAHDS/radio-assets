@@ -53,7 +53,7 @@ const Whats = () => {
         <TextContainerTop
           ref={topRef}
           spellCheck="false"
-          value={'99950.0995'}
+          value={'PARTICIPE PELO : 99950.0995'}
         />
       </GcTop>
 

@@ -1,20 +1,21 @@
 import styled from 'styled-components';
-import { secondaryPensarNegocios  } from '../../constants/color';
+import { primaryPensarNegocios } from '../../constants/color';
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const GcTop = styled.div`
-
-  
-  background-color: ${secondaryPensarNegocios };
-  padding: 10px 20px;
+  background-color: ${primaryPensarNegocios};
   display: inline-flex;
   align-items: center;
   position: fixed;
   right: 0;
+  top: 0;
+  padding: 0px 20px;
+  height: 50px;
 `;
 
 export const TextMirror = styled.span`
@@ -30,7 +31,7 @@ export const TextMirror = styled.span`
 `;
 
 export const TextContainerTop = styled.textarea`
-  width:160px !important;
+  width: 400px !important;
   height: 1.2em;
   resize: none;
   overflow: hidden;

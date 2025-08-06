@@ -9,9 +9,9 @@ import {
   TextMirrorBottom,
   Logo,
 } from './whats.styled.jsx';
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from 'react-icons/fa';
 
-const WhatsConexao = () => {
+const Whats = () => {
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
 
@@ -45,18 +45,16 @@ const WhatsConexao = () => {
     localStorage.setItem('gcBottomText', bottomText);
   }, [bottomText]);
 
-
-
   return (
     <Container>
       <GcTop>
+        <FaWhatsapp style={{ color: '#fff', fontSize: 30 }} />
         <TextMirror ref={mirrorTopRef} />
         <TextContainerTop
           ref={topRef}
           spellCheck="false"
-          value={'99950.0995'}
+          value={'PARTICIPE PELO : 99950.0995'}
         />
-        <FaWhatsapp style={{color: '#fff', fontSize: 30}} />
       </GcTop>
 
       {/*
@@ -74,4 +72,4 @@ const WhatsConexao = () => {
   );
 };
 
-export default WhatsConexao;
+export default Whats;

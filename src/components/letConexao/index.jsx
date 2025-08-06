@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import {
   Container,
   Square,
@@ -11,7 +12,11 @@ import {
   TextMirrorBottom,
 } from './let.styled.jsx';
 
-const LetConexao = () => {
+const GcConexao = () => {
+  const [searchParams] = useSearchParams();
+  const nome = searchParams.get('nome'); // pega ?nome=XXX
+  console.log('nome', nome);
+
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
 
@@ -27,33 +32,41 @@ const LetConexao = () => {
     }
   };
 
+  // Decide o valor inicial
   useEffect(() => {
     const savedTop = localStorage.getItem('letTopText');
     const savedBottom = localStorage.getItem('letBottomText');
 
-    if (savedTop) {
+    if (nome && nome.trim() !== '') {
+      setTopText(nome.toUpperCase());
+      localStorage.setItem('letTopText', nome.toUpperCase());
+    } else if (savedTop && savedTop.trim() !== '') {
       setTopText(savedTop);
     } else {
       setTopText('EDITAR');
       localStorage.setItem('letTopText', 'EDITAR');
     }
 
-    if (savedBottom) {
+    if (savedBottom && savedBottom.trim() !== '') {
       setBottomText(savedBottom);
     } else {
       setBottomText('EDITAR');
       localStorage.setItem('letBottomText', 'EDITAR');
     }
-  }, []);
+  }, [nome]);
 
   useEffect(() => {
     adjustWidth(mirrorTopRef, topRef, topText);
-    localStorage.setItem('letTopText', topText);
+    if (topText && topText.trim() !== '') {
+      localStorage.setItem('letTopText', topText);
+    }
   }, [topText]);
 
   useEffect(() => {
     adjustWidth(mirrorBottomRef, bottomRef, bottomText);
-    localStorage.setItem('letBottomText', bottomText);
+    if (bottomText && bottomText.trim() !== '') {
+      localStorage.setItem('letBottomText', bottomText);
+    }
   }, [bottomText]);
 
   return (
@@ -84,4 +97,4 @@ const LetConexao = () => {
   );
 };
 
-export default LetConexao;
+export default GcConexao;

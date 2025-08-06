@@ -31,7 +31,7 @@ export const TextMirror = styled.span`
 `;
 
 export const TextContainerTop = styled.textarea`
-  width: 160px !important;
+  width: 400px !important;
   height: 1.2em;
   resize: none;
   overflow: hidden;

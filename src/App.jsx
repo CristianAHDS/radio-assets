@@ -1,5 +1,4 @@
 import './App.css';
-
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // Pages
@@ -46,152 +45,48 @@ import PinConexao from './components/pinConexao';
 import LowerConexao from './lowerConexao.jsx';
 
 const router = createBrowserRouter([
-  {
-    path: '/insta',
-    element: <Insta />,
-  },
-  {
-    path: '/ticket',
-    element: <Ticket />,
-  },
-  {
-    path: '/let',
-    element: <Let />,
-  },
-  {
-    path: '/',
-    element: <TempoGeral />,
-  },
-  {
-    path: '/radar',
-    element: <Radar />,
-  },
-  {
-    path: '/lower',
-    element: <Lower />,
-  },
-  {
-    path: '/clock',
-    element: <Clock />,
-  },
-  {
-    path: '/gc',
-    element: <Gc />,
-  },
-  {
-    path: '/tabela',
-    element: <Tabela />,
-  },
-  {
-    path: '/alert',
-    element: <Alert />,
-  },
-  {
-    path: '/pin',
-    element: <Pin />,
-  },
-  {
-    path: '/whats',
-    element: <Whats />,
-  },
+  { path: '/insta', element: <Insta /> },
+  { path: '/ticket', element: <Ticket /> },
+  { path: '/let', element: <Let /> },
+  { path: '/', element: <TempoGeral /> },
+  { path: '/radar', element: <Radar /> },
+  { path: '/lower', element: <Lower /> },
+  { path: '/clock', element: <Clock /> },
+  { path: '/gc', element: <Gc /> },
+  { path: '/tabela', element: <Tabela /> },
+  { path: '/alert', element: <Alert /> },
+  { path: '/pin', element: <Pin /> },
+  { path: '/whats', element: <Whats /> },
 
   //Esporte
-  {
-    path: '/whatsEsporte',
-    element: <WhatsEsporte />,
-  },
-  {
-    path: '/clockEsporte',
-    element: <ClockEsporte />,
-  },
-  {
-    path: '/lowerEsporte',
-    element: <LowerEsporte />,
-  },
-  {
-    path: '/esporte',
-    element: <TempoEsporte />,
-  },
-  {
-    path: '/gcEsporte',
-    element: <GcEsporte />,
-  },
-  {
-    path: '/letEsporte',
-    element: <LetEsporte />,
-  },
-  {
-    path: '/instaEsporte',
-    element: <InstaEsporte />,
-  },
-  {
-    path: '/pinEsporte',
-    element: <PinEsporte />,
-  },
+  { path: '/whatsEsporte', element: <WhatsEsporte /> },
+  { path: '/clockEsporte', element: <ClockEsporte /> },
+  { path: '/lowerEsporte', element: <LowerEsporte /> },
+  { path: '/esporte', element: <TempoEsporte /> },
+  { path: '/gcEsporte', element: <GcEsporte /> },
+  { path: '/letEsporte', element: <LetEsporte /> },
+  { path: '/instaEsporte', element: <InstaEsporte /> },
+  { path: '/pinEsporte', element: <PinEsporte /> },
 
-  //Conexao
-  {
-    path: '/letConexao',
-    element: <LetConexao />,
-  },
-  {
-    path: '/conexao',
-    element: <TempoConexao />,
-  },
-  {
-    path: '/lowerConexao',
-    element: <LowerConexao />,
-  },
-  {
-    path: '/clockConexao',
-    element: <ClockConexao />,
-  },
-  {
-    path: '/gcConexao',
-    element: <GcConexao />,
-  },
-  {
-    path: '/pinConexao',
-    element: <PinConexao />,
-  },
-  {
-    path: '/whatsConexao',
-    element: <WhatsConexao />,
-  },
-  {
-    path: '/instaConexao',
-    element: <InstaConexao />,
-  },
+  //Conexão
+  { path: '/letConexao', element: <LetConexao /> },
+  { path: '/conexao', element: <TempoConexao /> },
+  { path: '/lowerConexao', element: <LowerConexao /> },
+  { path: '/clockConexao', element: <ClockConexao /> },
+  // rota dinâmica aceitando um nome
+  { path: '/gcConexao', element: <GcConexao /> },
+  { path: '/pinConexao', element: <PinConexao /> },
+  { path: '/whatsConexao', element: <WhatsConexao /> },
+  { path: '/instaConexao', element: <InstaConexao /> },
 
   //Pensar Negocios
-  {
-    path: '/lowerPensarNegocios',
-    element: <LowerPersnarNegocios />,
-  },
-  {
-    path: '/gcPensarNegocios',
-    element: <GcPensarNegocios />,
-  },
-  {
-    path: '/clockPensarNegocios',
-    element: <ClockPensarNegocios />,
-  },
-  {
-    path: '/pensarNegocios',
-    element: <TempoPensarnegocios />,
-  },
-  {
-    path: '/whatsPensarNegocios',
-    element: <WhatsPensarNegocios />,
-  },
-  {
-    path: '/instaPensarNegocios',
-    element: <InstaPensarNegocios />,
-  },
-  {
-    path: '/pinPensarNegocios',
-    element: <PinPensarNegocios />,
-  },
+  { path: '/lowerPensarNegocios', element: <LowerPersnarNegocios /> },
+  { path: '/gcPensarNegocios', element: <GcPensarNegocios /> },
+  { path: '/clockPensarNegocios', element: <ClockPensarNegocios /> },
+  { path: '/pensarNegocios', element: <TempoPensarnegocios /> },
+  { path: '/whatsPensarNegocios', element: <WhatsPensarNegocios /> },
+  { path: '/instaPensarNegocios', element: <InstaPensarNegocios /> },
+  { path: '/pinPensarNegocios', element: <PinPensarNegocios /> },
 ]);
 
 const App = () => {

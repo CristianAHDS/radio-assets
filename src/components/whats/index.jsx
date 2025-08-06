@@ -9,7 +9,7 @@ import {
   TextMirrorBottom,
   Logo,
 } from './whats.styled.jsx';
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp } from 'react-icons/fa';
 
 const Whats = () => {
   const [topText, setTopText] = useState('');
@@ -45,19 +45,16 @@ const Whats = () => {
     localStorage.setItem('gcBottomText', bottomText);
   }, [bottomText]);
 
-
-
   return (
     <Container>
       <GcTop>
-      <FaWhatsapp style={{color: '#fff', fontSize: 30}} />
+        <FaWhatsapp style={{ color: '#fff', fontSize: 30 }} />
         <TextMirror ref={mirrorTopRef} />
         <TextContainerTop
           ref={topRef}
           spellCheck="false"
-          value={'99950.0995'}
+          value={'PARTICIPE PELO : 99950.0995'}
         />
-
       </GcTop>
 
       {/*
