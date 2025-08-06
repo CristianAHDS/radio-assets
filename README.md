@@ -57,6 +57,18 @@
 - **GC Conexão**: [https://pelotense-assets.netlify.app/gcConexao](https://pelotense-assets.netlify.app/gcConexao)
 - **GC Pensar Negócios**: [https://pelotense-assets.netlify.app/gcPensarNegocios](https://pelotense-assets.netlify.app/gcPensarNegocios)
 
+#### 🔗 Passando Nome via URL
+
+Agora os componentes **GC** e **Let** aceitam passar um nome diretamente pela URL usando **query string**:
+
+- **Exemplo GC Geral com nome**:  
+  [https://pelotense-assets.netlify.app/gc?nome=Cristian](https://pelotense-assets.netlify.app/gc?nome=Cristian)
+
+- **Exemplo GC Conexão com nome**:  
+  [https://pelotense-assets.netlify.app/gcConexao?nome=Maria](https://pelotense-assets.netlify.app/gcConexao?nome=Maria)
+
+Se não for passado nenhum nome na URL, o componente usará o valor salvo no **localStorage** ou exibirá `"EDITAR"`.
+
 ### Componentes Adicionais
 
 - **Radar**: [https://pelotense-assets.netlify.app/radar](https://pelotense-assets.netlify.app/radar)
@@ -72,40 +84,3 @@
 - **Styled Components**: Estilização dos componentes
 
 ## 📁 Estrutura do Projeto
-
-```
-src/
-├── components/          # Componentes organizados por categoria
-│   ├── clock/          # Componentes de relógio
-│   ├── lower/          # Componentes lower
-│   ├── pages/          # Páginas principais
-│   ├── alerts/         # Componentes de alerta
-│   ├── gc/             # Componentes GC
-│   ├── insta/          # Componentes Instagram
-│   ├── let/            # Componentes Let
-│   ├── pin/            # Componentes Pin
-│   ├── radar/          # Componente Radar
-│   ├── tabela/         # Componente Tabela
-│   ├── ticket/         # Componente Ticket
-│   └── whats/          # Componentes WhatsApp
-├── assets/             # Recursos estáticos
-├── constants/          # Constantes da aplicação
-└── App.jsx            # Componente principal
-```
-
-## 🚀 Como Executar
-
-1. Clone o repositório
-2. Instale as dependências: `npm install`
-3. Execute o projeto: `npm run dev`
-4. Acesse: `http://localhost:5173`
-
-## 📦 Build para Produção
-
-```bash
-npm run build
-```
-
-## 🌐 Deploy
-
-O projeto está configurado para deploy no Netlify com o domínio: **pelotense-assets.netlify.app**
