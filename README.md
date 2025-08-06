@@ -99,7 +99,11 @@ Agora os componentes **GC** e **Let** aceitam passar um nome diretamente pela UR
   [https://pelotense-assets.netlify.app/gc?nome=Cristian](https://pelotense-assets.netlify.app/gc?nome=Cristian)
 
 - **Exemplo GC Conexão com nome**:  
-  [https://pelotense-assets.netlify.app/gcConexao?nome=Maria](https://pelotense-assets.netlify.app/gcConexao?nome=Maria)
+ [https://pelotense-assets.netlify.app/gcConexao?nome=Maria](https://pelotense-assets.netlify.app/gcConexao?nome=Maria)
+
+  <p align="center">
+  <img src="https://i.imgur.com/A7t4Eej.png" alt="GC" width="350"/>
+</p>
 
 Se não for passado nenhum nome na URL, o componente usará o valor salvo no **localStorage** ou exibirá `"EDITAR"`.
 
@@ -111,6 +115,10 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 - **Tabela**: [https://pelotense-assets.netlify.app/tabela](https://pelotense-assets.netlify.app/tabela)
 - **Alert**: [https://pelotense-assets.netlify.app/alert](https://pelotense-assets.netlify.app/alert)
 - **Ticket**: [https://pelotense-assets.netlify.app/ticket](https://pelotense-assets.netlify.app/ticket)
+<p align="center">
+  <img src="https://i.imgur.com/XlFT6Jn.png" alt="GC" width="45%" style="margin-right:10px;"/>
+  <img src="https://i.imgur.com/K0Uxxx2.png" alt="GC" width="45%"/>
+</p>
 
 ---
 
