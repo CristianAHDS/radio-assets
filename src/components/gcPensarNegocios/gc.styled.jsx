@@ -23,7 +23,7 @@ export const TextMirror = styled.span`
   font-weight: 600;
   text-transform: uppercase;
   font-family: inherit;
-  direction: rtl;
+
   text-align: right;
 `;
 
