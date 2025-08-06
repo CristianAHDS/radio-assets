@@ -19,7 +19,8 @@
 - **Relógio Esporte**: [https://pelotense-assets.netlify.app/clockEsporte](https://pelotense-assets.netlify.app/clockEsporte)
 - **Relógio Conexão**: [https://pelotense-assets.netlify.app/clockConexao](https://pelotense-assets.netlify.app/clockConexao)
 - **Relógio Pensar Negócios**: [https://pelotense-assets.netlify.app/clockPensarNegocios](https://pelotense-assets.netlify.app/clockPensarNegocios)
-  ![clock](https://i.imgur.com/Q0ysbVY.png)
+
+![clock](https://i.imgur.com/Q0ysbVY.png)
 
 ### Componentes Lower
 
@@ -27,7 +28,8 @@
 - **Lower Esporte**: [https://pelotense-assets.netlify.app/lowerEsporte](https://pelotense-assets.netlify.app/lowerEsporte)
 - **Lower Conexão**: [https://pelotense-assets.netlify.app/lowerConexao](https://pelotense-assets.netlify.app/lowerConexao)
 - **Lower Pensar Negócios**: [https://pelotense-assets.netlify.app/lowerPensarNegocios](https://pelotense-assets.netlify.app/lowerPensarNegocios)
-  ![Lower](https://i.imgur.com/voxa430.png)
+
+![Lower](https://i.imgur.com/voxa430.png)
 
 ### Componentes de Mídia Social
 
@@ -47,14 +49,14 @@
 - **Pin Esporte**: [https://pelotense-assets.netlify.app/pinEsporte](https://pelotense-assets.netlify.app/pinEsporte)
 - **Pin Conexão**: [https://pelotense-assets.netlify.app/pinConexao](https://pelotense-assets.netlify.app/pinConexao)
 - **Pin Pensar Negócios**: [https://pelotense-assets.netlify.app/pinPensarNegocios](https://pelotense-assets.netlify.app/pinPensarNegocios)
-  ![Pin](https://i.imgur.com/3wJCbuR.png)
+
+![Pin](https://i.imgur.com/3wJCbuR.png)
 
 ### Componentes de Let
 
 - **Let Geral**: [https://pelotense-assets.netlify.app/let](https://pelotense-assets.netlify.app/let)
 - **Let Esporte**: [https://pelotense-assets.netlify.app/letEsporte](https://pelotense-assets.netlify.app/letEsporte)
 - **Let Conexão**: [https://pelotense-assets.netlify.app/letConexao](https://pelotense-assets.netlify.app/letConexao)
-  ![Let](https://i.imgur.com/dq256HA.png)
 
 ### Componentes GC
 
@@ -62,7 +64,8 @@
 - **GC Esporte**: [https://pelotense-assets.netlify.app/gcEsporte](https://pelotense-assets.netlify.app/gcEsporte)
 - **GC Conexão**: [https://pelotense-assets.netlify.app/gcConexao](https://pelotense-assets.netlify.app/gcConexao)
 - **GC Pensar Negócios**: [https://pelotense-assets.netlify.app/gcPensarNegocios](https://pelotense-assets.netlify.app/gcPensarNegocios)
-  ![GC Names](https://i.imgur.com/3ue7UGS.png)
+
+![GC Names](https://i.imgur.com/3ue7UGS.png)
 
 #### 🔗 Passando Nome via URL
 
