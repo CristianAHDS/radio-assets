@@ -17,4 +17,7 @@ export const secondaryPensarNegocios = '#E55722';
 export const primaryOutros = '#eb6a07';
 export const secondaryOutros = '#3c3c3b';
 
+export const primaryCorpoEMente = '#60a9f5';
+export const secondaryCorpoEMente = '#355d87';
+
 export const grayGeral = '#f9f9f9';

@@ -13,6 +13,7 @@
 - **Conexão**: [https://pelotense-assets.netlify.app/conexao](https://pelotense-assets.netlify.app/conexao)
 - **Pensar Negócios**: [https://pelotense-assets.netlify.app/pensarNegocios](https://pelotense-assets.netlify.app/pensarNegocios)
 - **Outros**: [https://pelotense-assets.netlify.app/outros](https://pelotense-assets.netlify.app/outros)
+- **Corpo e Mente**: [https://pelotense-assets.netlify.app/corpoEMente](https://pelotense-assets.netlify.app/corpoEMente)
 
 <p align="center">
   <img src="https://i.imgur.com/P5jq3sY.png" alt="Tempo" width="250" style="margin-top:20px;"/>
@@ -27,6 +28,7 @@
 - **Relógio Conexão**: [https://pelotense-assets.netlify.app/clockConexao](https://pelotense-assets.netlify.app/clockConexao)
 - **Relógio Pensar Negócios**: [https://pelotense-assets.netlify.app/clockPensarNegocios](https://pelotense-assets.netlify.app/clockPensarNegocios)
 - **Relógio Outros**: [https://pelotense-assets.netlify.app/clockOutros](https://pelotense-assets.netlify.app/clockOutros)
+- **Relógio Corpo e Mente**: [https://pelotense-assets.netlify.app/clockCorpoEMente](https://pelotense-assets.netlify.app/clockCorpoEMente)
 
 <p align="center">
   <img src="https://i.imgur.com/Q0ysbVY.png" alt="Clock" width="300" style="margin-top:20px;"/>
@@ -41,6 +43,7 @@
 - **Lower Conexão**: [https://pelotense-assets.netlify.app/lowerConexao](https://pelotense-assets.netlify.app/lowerConexao)
 - **Lower Pensar Negócios**: [https://pelotense-assets.netlify.app/lowerPensarNegocios](https://pelotense-assets.netlify.app/lowerPensarNegocios)
 - **Lower Outros**: [https://pelotense-assets.netlify.app/lowerOutros](https://pelotense-assets.netlify.app/lowerOutros)
+- **Lower Corpo e Mente**: [https://pelotense-assets.netlify.app/lowerCorpoEMente](https://pelotense-assets.netlify.app/lowerCorpoEMente)
 
 <p align="center">
   <img src="https://i.imgur.com/voxa430.png" alt="Lower" width="900"/>
@@ -55,14 +58,16 @@
 - **Instagram Conexão**: [https://pelotense-assets.netlify.app/instaConexao](https://pelotense-assets.netlify.app/instaConexao)
 - **Instagram Pensar Negócios**: [https://pelotense-assets.netlify.app/instaPensarNegocios](https://pelotense-assets.netlify.app/instaPensarNegocios)
 - **Instagram Outros**: [https://pelotense-assets.netlify.app/instaOutros](https://pelotense-assets.netlify.app/instaOutros)
+- **Instagram Corpo e Mente**: [https://pelotense-assets.netlify.app/instaCorpoEMente](https://pelotense-assets.netlify.app/instaCorpoEMente)
 
-<div style="margin-top:10px;"></div>
+<div style="margin-top:30px;"></div>
 
 - **WhatsApp Geral**: [https://pelotense-assets.netlify.app/whats](https://pelotense-assets.netlify.app/whats)
 - **WhatsApp Esporte**: [https://pelotense-assets.netlify.app/whatsEsporte](https://pelotense-assets.netlify.app/whatsEsporte)
 - **WhatsApp Conexão**: [https://pelotense-assets.netlify.app/whatsConexao](https://pelotense-assets.netlify.app/whatsConexao)
 - **WhatsApp Pensar Negócios**: [https://pelotense-assets.netlify.app/whatsPensarNegocios](https://pelotense-assets.netlify.app/whatsPensarNegocios)
 - **WhatsApp Outros**: [https://pelotense-assets.netlify.app/whatsOutros](https://pelotense-assets.netlify.app/whatsOutros)
+- **WhatsApp Corpo e Mente**: [https://pelotense-assets.netlify.app/whatsCorpoEMente](https://pelotense-assets.netlify.app/whatsCorpoEMente)
 
 <p align="center" style="margin-top:20px;">
   <img src="https://i.imgur.com/1kLgzB8.png" alt="GC" width="29%" style="margin-right:10px;"/>
@@ -77,7 +82,7 @@
 - **Pin Esporte**: [https://pelotense-assets.netlify.app/pinEsporte](https://pelotense-assets.netlify.app/pinEsporte)
 - **Pin Conexão**: [https://pelotense-assets.netlify.app/pinConexao](https://pelotense-assets.netlify.app/pinConexao)
 - **Pin Pensar Negócios**: [https://pelotense-assets.netlify.app/pinPensarNegocios](https://pelotense-assets.netlify.app/pinPensarNegocios)
-- **Pin Outros**: [https://pelotense-assets.netlify.app/pinOutros](https://pelotense-assets.netlify.app/pinOutros)
+- **Pin Outros**: [https://pelotense-assets.netlify.app/pinOutros](https://pelotense-assets.netlify.app/pinOutros)- **Pin Corpo e Mente**: [https://pelotense-assets.netlify.app/pinCorpoEMente](https://pelotense-assets.netlify.app/pinCorpoEMente)
 
 <p align="center">
   <img src="https://i.imgur.com/3wJCbuR.png" alt="Pin" width="200" style="margin-top:20px;"/>
@@ -100,6 +105,7 @@
 - **GC Conexão**: [https://pelotense-assets.netlify.app/gcConexao](https://pelotense-assets.netlify.app/gcConexao)
 - **GC Pensar Negócios**: [https://pelotense-assets.netlify.app/gcPensarNegocios](https://pelotense-assets.netlify.app/gcPensarNegocios)
 - **GC Outros**: [https://pelotense-assets.netlify.app/gcOutros](https://pelotense-assets.netlify.app/gcOutros)
+- **GC Corpo e Mente**: [https://pelotense-assets.netlify.app/gcCorpoEMente](https://pelotense-assets.netlify.app/gcCorpoEMente)
 
 <p align="center">
   <img src="https://i.imgur.com/3ue7UGS.png" alt="GC" width="350" style="margin-top:20px;"/>

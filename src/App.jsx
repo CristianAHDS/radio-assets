@@ -54,6 +54,15 @@ import PinOutros from './components/pinOutros';
 import InstaOutros from './components/instaOutros';
 import WhatsOutros from './components/whatsOutros';
 
+//Corpo e Mente
+import ClockCorpoEMente from './components/clockCorpoEMente';
+import TempoCorpoEMente from './components/tempoCorpoEMente';
+import LowerCorpoEMente from './components/lowerCorpoEMente';
+import GcCorpoEMente from './components/gcCorpoEMente';
+import PinCorpoEMente from './components/pinCorpoEMente';
+import InstaCorpoEMente from './components/instaCorpoEMente';
+import WhatsCorpoEMente from './components/whatsCorpoEMente';
+
 const router = createBrowserRouter([
   { path: '/insta', element: <Insta /> },
   { path: '/ticket', element: <Ticket /> },
@@ -107,6 +116,15 @@ const router = createBrowserRouter([
   { path: '/pinOutros', element: <PinOutros /> },
   { path: '/whatsOutros', element: <WhatsOutros /> },
   { path: '/instaOutros', element: <InstaOutros /> },
+
+  //Corpo e Mente
+  { path: '/clockCorpoEMente', element: <ClockCorpoEMente /> },
+  { path: '/corpoEMente', element: <TempoCorpoEMente /> },
+  { path: '/lowerCorpoEMente', element: <LowerCorpoEMente /> },
+  { path: '/gcCorpoEMente', element: <GcCorpoEMente /> },
+  { path: '/pinCorpoEMente', element: <PinCorpoEMente /> },
+  { path: '/whatsCorpoEMente', element: <WhatsCorpoEMente /> },
+  { path: '/instaCorpoEMente', element: <InstaCorpoEMente /> },
 ]);
 
 const App = () => {
