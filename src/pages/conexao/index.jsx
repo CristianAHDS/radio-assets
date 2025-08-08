@@ -4,7 +4,6 @@ import TempoOutros from '../../conexao.jsx';
 import GcOutros from '../../components/gcConexao';
 import PinOutros from '../../components/pinConexao';
 import WhatsOutros from '../../components/whatsConexao';
-import InstaCorpoEMente from '../../components/InstaCorpoEMente';
 import LowerOutros from '../../lowerConexao.jsx';
 
 const Esportes = () => {
