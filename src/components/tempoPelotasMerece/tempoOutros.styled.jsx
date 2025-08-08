@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {
-  primaryOutros,
+  primaryPelotasMerece,
   secondaryPelotasMerece,
   grayPrimary,
 } from '../../constants/color';
@@ -45,7 +45,7 @@ export const Temp = styled.div`
   width: 70%;
   height: 100%;
 
-  background-color: ${primaryOutros};
+  background-color: ${primaryPelotasMerece};
 
   font-size: 34px;
 

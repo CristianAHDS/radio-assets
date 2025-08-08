@@ -2,6 +2,9 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // Pages
+import PageCorpoEMente from './pages/corpoEMente';
+import PagePelotasMerece from './pages/pelotasMerece';
+import PageOutros from './pages/outros';
 import Let from './components/let';
 import TempoGeral from './geral.jsx';
 import Lower from './lower.jsx';
@@ -73,6 +76,11 @@ import InstaPelotasMerece from './components/instaPelotasMerece';
 import WhatsPelotasMerece from './components/whatsPelotasMerece';
 
 const router = createBrowserRouter([
+  // Pages
+  { path: '/pageCorpoEMente', element: <PageCorpoEMente /> },
+  { path: '/pagePelotasMerece', element: <PagePelotasMerece /> },
+  { path: '/pageOutros', element: <PageOutros /> },
+
   { path: '/insta', element: <Insta /> },
   { path: '/ticket', element: <Ticket /> },
   { path: '/let', element: <Let /> },
