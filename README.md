@@ -14,7 +14,7 @@
 - **Pensar Negócios**: [https://pelotense-assets.netlify.app/pensarNegocios](https://pelotense-assets.netlify.app/pensarNegocios)
 - **Outros**: [https://pelotense-assets.netlify.app/outros](https://pelotense-assets.netlify.app/outros)
 - **Corpo e Mente**: [https://pelotense-assets.netlify.app/corpoEMente](https://pelotense-assets.netlify.app/corpoEMente)
-- **Pelotas Merece**: [https://pelotense-assets.netlify.app/lowerPelotasMerece](https://pelotense-assets.netlify.app/lowerPelotasMerece)
+- **Pelotas Merece**: [https://pelotense-assets.netlify.app/lowerPelotasMerece](https://pelotense-assets.netlify.app/pelotasMerece)
 
 <p align="center">
   <img src="https://i.imgur.com/P5jq3sY.png" alt="Tempo" width="250" style="margin-top:20px;"/>
