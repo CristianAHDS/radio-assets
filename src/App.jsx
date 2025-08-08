@@ -14,6 +14,7 @@ import Whats from './components/whats';
 import Insta from './components/insta';
 import Radar from './components/radar';
 import Ticket from './components/ticket';
+import Results from './components/results';
 
 //Esporte
 import LetEsporte from './components/letEsporte';
@@ -44,6 +45,15 @@ import TempoConexao from './conexao.jsx';
 import PinConexao from './components/pinConexao';
 import LowerConexao from './lowerConexao.jsx';
 
+//Outros
+import ClockOutros from './components/clockOutros';
+import TempoOutros from './components/tempoOutros';
+import LowerOutros from './components/lowerOutros';
+import GcOutros from './components/gcOutros';
+import PinOutros from './components/pinOutros';
+import InstaOutros from './components/instaOutros';
+import WhatsOutros from './components/whatsOutros';
+
 const router = createBrowserRouter([
   { path: '/insta', element: <Insta /> },
   { path: '/ticket', element: <Ticket /> },
@@ -57,6 +67,7 @@ const router = createBrowserRouter([
   { path: '/alert', element: <Alert /> },
   { path: '/pin', element: <Pin /> },
   { path: '/whats', element: <Whats /> },
+  { path: '/results', element: <Results /> },
 
   //Esporte
   { path: '/whatsEsporte', element: <WhatsEsporte /> },
@@ -87,6 +98,15 @@ const router = createBrowserRouter([
   { path: '/whatsPensarNegocios', element: <WhatsPensarNegocios /> },
   { path: '/instaPensarNegocios', element: <InstaPensarNegocios /> },
   { path: '/pinPensarNegocios', element: <PinPensarNegocios /> },
+
+  //Outros
+  { path: '/clockOutros', element: <ClockOutros /> },
+  { path: '/outros', element: <TempoOutros /> },
+  { path: '/lowerOutros', element: <LowerOutros /> },
+  { path: '/gcOutros', element: <GcOutros /> },
+  { path: '/pinOutros', element: <PinOutros /> },
+  { path: '/whatsOutros', element: <WhatsOutros /> },
+  { path: '/instaOutros', element: <InstaOutros /> },
 ]);
 
 const App = () => {

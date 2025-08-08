@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import { primaryConexão, secondaryConexão } from './constants/color';
+import { primaryOutros, secondaryOutros } from '../../constants/color';
 
 const scroll = keyframes`
   0% {
@@ -23,7 +23,7 @@ export const TextContainer = styled.div`
   width: 100vw;
   height: 50px;
 
-  background-color: ${primaryConexão};
+  background-color: ${primaryOutros};
 
   display: flex;
   align-items: center;
@@ -37,7 +37,7 @@ export const TextContainer = styled.div`
 export const LeftSide = styled.div`
   width: 300px;
   height: 100%;
-  background-color: ${secondaryConexão};
+  background-color: ${secondaryOutros};
 
   display: flex;
   justify-content: center;
@@ -53,7 +53,7 @@ export const LeftSide = styled.div`
 export const TextSide = styled.div`
   width: calc(100% - 300px);
   height: 100%;
-  background-color: ${primaryConexão};
+  background-color: ${primaryOutros};
 
   overflow: hidden;
   position: relative;

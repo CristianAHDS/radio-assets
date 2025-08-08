@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {
-  primaryPensarNegocios,
-  secondaryPensarNegocios,
+  primaryOutros,
+  secondaryOutros,
   grayPrimary,
 } from '../../constants/color';
 
@@ -20,7 +20,7 @@ export const NameSection = styled.div`
   min-height: 25%;
 
   background-color: #fff;
-  color: ${secondaryPensarNegocios};
+  color: ${secondaryOutros};
 
   font-size: ${(props) => (props.$isLongName ? '20px' : '24px')};
   font-weight: bold;
@@ -45,7 +45,7 @@ export const Temp = styled.div`
   width: 70%;
   height: 100%;
 
-  background-color: ${primaryPensarNegocios};
+  background-color: ${primaryOutros};
 
   font-size: 34px;
 
@@ -81,7 +81,7 @@ export const InfoSection = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: ${secondaryPensarNegocios};
+  background-color: ${secondaryOutros};
 
   color: #fff;
   font-size: 18px;
