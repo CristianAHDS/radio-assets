@@ -54,7 +54,9 @@
 - **Instagram Esporte**: [https://pelotense-assets.netlify.app/instaEsporte](https://pelotense-assets.netlify.app/instaEsporte)
 - **Instagram Conexão**: [https://pelotense-assets.netlify.app/instaConexao](https://pelotense-assets.netlify.app/instaConexao)
 - **Instagram Pensar Negócios**: [https://pelotense-assets.netlify.app/instaPensarNegocios](https://pelotense-assets.netlify.app/instaPensarNegocios)
-- **Instagram Outros**: [https://pelotense-assets.netlify.app/instaOutrosd](https://pelotense-assets.netlify.app/instaOutrosd)
+- **Instagram Outros**: [https://pelotense-assets.netlify.app/instaOutros](https://pelotense-assets.netlify.app/instaOutros)
+
+<div style="margin-top:10px;"></div>
 
 - **WhatsApp Geral**: [https://pelotense-assets.netlify.app/whats](https://pelotense-assets.netlify.app/whats)
 - **WhatsApp Esporte**: [https://pelotense-assets.netlify.app/whatsEsporte](https://pelotense-assets.netlify.app/whatsEsporte)
