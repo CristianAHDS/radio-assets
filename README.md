@@ -82,7 +82,7 @@
 - **Pin Esporte**: [https://pelotense-assets.netlify.app/pinEsporte](https://pelotense-assets.netlify.app/pinEsporte)
 - **Pin Conexão**: [https://pelotense-assets.netlify.app/pinConexao](https://pelotense-assets.netlify.app/pinConexao)
 - **Pin Pensar Negócios**: [https://pelotense-assets.netlify.app/pinPensarNegocios](https://pelotense-assets.netlify.app/pinPensarNegocios)
-- **Pin Outros**: [https://pelotense-assets.netlify.app/pinOutros](https://pelotense-assets.netlify.app/pinOutros)- **Pin Corpo e Mente**: [https://pelotense-assets.netlify.app/pinCorpoEMente](https://pelotense-assets.netlify.app/pinCorpoEMente)
+- **Pin Outros**: [https://pelotense-assets.netlify.app/pinOutros](https://pelotense-assets.netlify.app/pinOutros)- - **Pin Corpo e Mente**: [https://pelotense-assets.netlify.app/pinCorpoEMente](https://pelotense-assets.netlify.app/pinCorpoEMente)
 
 <p align="center">
   <img src="https://i.imgur.com/3wJCbuR.png" alt="Pin" width="200" style="margin-top:20px;"/>
