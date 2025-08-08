@@ -20,4 +20,7 @@ export const secondaryOutros = '#3c3c3b';
 export const primaryCorpoEMente = '#60a9f5';
 export const secondaryCorpoEMente = '#355d87';
 
+export const primaryPelotasMerece = '#eebc43';
+export const secondaryPelotasMerece = '#90183b';
+
 export const grayGeral = '#f9f9f9';

@@ -63,6 +63,15 @@ import PinCorpoEMente from './components/pinCorpoEMente';
 import InstaCorpoEMente from './components/instaCorpoEMente';
 import WhatsCorpoEMente from './components/whatsCorpoEMente';
 
+//Pelotas Merece
+import ClockPelotasMerece from './components/clockPelotasMerece';
+import TempoPelotasMerece from './components/tempoPelotasMerece';
+import LowerPelotasMerece from './components/lowerPelotasMerece';
+import GcPelotasMerece from './components/gcPelotasMerece';
+import PinPelotasMerece from './components/pinPelotasMerece';
+import InstaPelotasMerece from './components/instaPelotasMerece';
+import WhatsPelotasMerece from './components/whatsPelotasMerece';
+
 const router = createBrowserRouter([
   { path: '/insta', element: <Insta /> },
   { path: '/ticket', element: <Ticket /> },
@@ -125,6 +134,15 @@ const router = createBrowserRouter([
   { path: '/pinCorpoEMente', element: <PinCorpoEMente /> },
   { path: '/whatsCorpoEMente', element: <WhatsCorpoEMente /> },
   { path: '/instaCorpoEMente', element: <InstaCorpoEMente /> },
+
+  //Pelotas Merece
+  { path: '/clockPelotasMerece', element: <ClockPelotasMerece /> },
+  { path: '/pelotasMerece', element: <TempoPelotasMerece /> },
+  { path: '/lowerPelotasMerece', element: <LowerPelotasMerece /> },
+  { path: '/gcPelotasMerece', element: <GcPelotasMerece /> },
+  { path: '/pinPelotasMerece', element: <PinPelotasMerece /> },
+  { path: '/whatsPelotasMerece', element: <WhatsPelotasMerece /> },
+  { path: '/instaPelotasMerece', element: <InstaPelotasMerece /> },
 ]);
 
 const App = () => {
