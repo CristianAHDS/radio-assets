@@ -11,7 +11,7 @@ import {
 } from './insta.styled.jsx';
 import { FaInstagram } from 'react-icons/fa';
 
-const InstaConexao = () => {
+const InstaCorpoEMente = () => {
   const [topText, setTopText] = useState('');
   const [bottomText, setBottomText] = useState('');
 
@@ -72,4 +72,4 @@ const InstaConexao = () => {
   );
 };
 
-export default InstaConexao;
+export default InstaCorpoEMente;

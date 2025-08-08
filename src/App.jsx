@@ -66,8 +66,8 @@ import TempoCorpoEMente from './components/tempoCorpoEMente';
 import LowerCorpoEMente from './components/lowerCorpoEMente';
 import GcCorpoEMente from './components/gcCorpoEMente';
 import PinCorpoEMente from './components/pinCorpoEMente';
-import InstaCorpoEMente from './components/instaCorpoEMente';
 import WhatsCorpoEMente from './components/whatsCorpoEMente';
+import InstaCorpoEMente from './components/instaCorpoEMente';
 
 //Pelotas Merece
 import ClockPelotasMerece from './components/clockPelotasMerece';

@@ -4,7 +4,7 @@ import TempoCorpoEMente from '../../components/tempoCorpoEMente';
 import GcCorpoEMente from '../../components/gcCorpoEMente';
 import PinCorpoEMente from '../../components/pinCorpoEMente';
 import WhatsCorpoEMente from '../../components/whatsCorpoEMente';
-import InstaCorpoEMente from '../../components/InstaCorpoEMente';
+import InstaCorpoEMente from '../../components/instaCorpoEMente';
 import LowerCorpoEMente from '../../components/lowerCorpoEMente';
 
 const Esportes = () => {

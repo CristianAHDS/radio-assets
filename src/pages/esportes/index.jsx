@@ -4,7 +4,7 @@ import TempoOutros from '../../esporte.jsx';
 import GcOutros from '../../components/gcEsporte';
 import PinOutros from '../../components/pinEsporte';
 import WhatsOutros from '../../components/whatsEsporte';
-import InstaCorpoEMente from '../../components/InstaCorpoEMente';
+
 import LowerOutros from '../../lowerEsporte.jsx';
 
 const Esportes = () => {
