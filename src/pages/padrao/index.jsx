@@ -1,11 +1,11 @@
 import { Container, Lower } from './corpoEMente.styled.jsx';
-import ClockOutros from '../../clockEsporte.jsx';
-import TempoOutros from '../../esporte.jsx';
-import GcOutros from '../../components/gcEsporte';
-import PinOutros from '../../components/pinEsporte';
-import WhatsOutros from '../../components/whatsEsporte';
+import ClockOutros from '../../clock.jsx';
+import TempoOutros from '../../geral.jsx';
+import GcOutros from '../../components/gc';
+import PinOutros from '../../components/pin';
+import WhatsOutros from '../../components/whats';
 import InstaCorpoEMente from '../../components/InstaCorpoEMente';
-import LowerOutros from '../../lowerEsporte.jsx';
+import LowerOutros from '../../lower.jsx';
 
 const Esportes = () => {
   return (

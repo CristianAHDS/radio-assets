@@ -5,6 +5,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import PageCorpoEMente from './pages/corpoEMente';
 import PagePelotasMerece from './pages/pelotasMerece';
 import PageOutros from './pages/outros';
+import PageEsportes from './pages/esportes';
+import PagePadrao from './pages/padrao';
+import PageConexao from './pages/conexao';
 import Let from './components/let';
 import TempoGeral from './geral.jsx';
 import Lower from './lower.jsx';
@@ -80,6 +83,9 @@ const router = createBrowserRouter([
   { path: '/pageCorpoEMente', element: <PageCorpoEMente /> },
   { path: '/pagePelotasMerece', element: <PagePelotasMerece /> },
   { path: '/pageOutros', element: <PageOutros /> },
+  { path: '/pageEsportes', element: <PageEsportes /> },
+  { path: '/pagePadrao', element: <PagePadrao /> },
+  { path: '/pageConexao', element: <PageConexao /> },
 
   { path: '/insta', element: <Insta /> },
   { path: '/ticket', element: <Ticket /> },

@@ -212,7 +212,7 @@ const App = () => {
           </motion.div>
         </InfoSection>
         {console.log('dados.alertas', dados.alertas)}
-        {dados.alertas.length > 0 && (
+        {dados.alertas?.length > 0 && (
           <InfoSectionAlert>
             <motion.div
               key={`alerta-${currentIndex}`}
