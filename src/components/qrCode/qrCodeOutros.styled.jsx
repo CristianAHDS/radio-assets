@@ -51,8 +51,6 @@ export const Sistema = styled.div`
   justify-content: center;
   font-weight: bold;
 
-  margin-bottom: -10px;
-
   z-index: 100;
   font-size: 20px;
   color: #3f3f3f;
