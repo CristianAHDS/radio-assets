@@ -21,6 +21,7 @@ import Insta from './components/insta';
 import Radar from './components/radar';
 import Ticket from './components/ticket';
 import Results from './components/results';
+import QrCode from './components/qrCode';
 
 //Esporte
 import LetEsporte from './components/letEsporte';
@@ -100,6 +101,7 @@ const router = createBrowserRouter([
   { path: '/pin', element: <Pin /> },
   { path: '/whats', element: <Whats /> },
   { path: '/results', element: <Results /> },
+  { path: '/qrCode', element: <QrCode /> },
 
   //Esporte
   { path: '/whatsEsporte', element: <WhatsEsporte /> },

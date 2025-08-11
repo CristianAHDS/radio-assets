@@ -20,6 +20,11 @@ export const Card = styled.div`
 
   background-color: #f5f7fb;
 
+  background-image: url('https://i.imgur.com/l2Zb674.png');
+
+  background-position: center;
+  background-size: cover;
+
   padding: 0px 10px;
 `;
 
@@ -32,7 +37,7 @@ export const Title = styled.div`
 
   text-align: center;
 
-  color: #3f3f3f;
+  color: #f5f7fb;
 `;
 
 export const IconContainer = styled.div`
@@ -46,7 +51,7 @@ export const IconContainer = styled.div`
 
   padding: 10px 0px;
 
-  color: #3f3f3f;
+  color: #f5f7fb;
 
   margin-bottom: 20px;
 `;
