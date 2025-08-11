@@ -146,7 +146,7 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 - **Reuslts**: [https://pelotense-assets.netlify.app/results](https://pelotense-assets.netlify.app/results)
 - **QR Code**: [https://pelotense-assets.netlify.app/results](https://pelotense-assets.netlify.app/qrCode)
 
-<p align="center" style="margin-top:20px;">
+<p align="left" style="margin-top:20px;">
   <img src="https://i.imgur.com/fR28zFN.png" alt="GC" width="25%"/>
 </p>
 <p align="center" >
