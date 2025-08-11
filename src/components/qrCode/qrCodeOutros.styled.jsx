@@ -3,7 +3,7 @@ import { primaryOutros } from '../../constants/color';
 
 export const Container = styled.div`
   width: 233px;
-  height: 300px;
+  height: 360px;
 
   background-color: #f9f9f9;
 
@@ -16,7 +16,7 @@ export const TextContainer = styled.div`
   height: 30%;
 
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 
   color: #3f3f3f;
@@ -35,8 +35,25 @@ export const QrCodeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 `;
 
 export const Qr = styled.img`
-  width: 75%;
+  height: calc(100% - 30px);
+`;
+
+export const Sistema = styled.div`
+  height: 50px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+
+  margin-bottom: -10px;
+
+  z-index: 100;
+  font-size: 20px;
+  color: #3f3f3f;
 `;
