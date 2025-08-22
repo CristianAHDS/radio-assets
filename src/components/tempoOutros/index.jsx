@@ -57,6 +57,7 @@ const App = () => {
   const TIMESTAMP_KEY = 'weatherDataTimestamp';
 
   const corrigirNome = (nome) => {
+    if (nome === 'Abolicao') return 'Amaral Ferrador';
     if (nome === 'Olimpo') return 'Pedro Osório';
     if (nome === 'Cangucu') return 'Canguçu';
     if (nome === 'Sao Lourenco Do Sul') return 'São Lourenço do Sul';
