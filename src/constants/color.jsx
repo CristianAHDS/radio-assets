@@ -24,3 +24,6 @@ export const primaryPelotasMerece = '#eebc43';
 export const secondaryPelotasMerece = '#90183b';
 
 export const grayGeral = '#f9f9f9';
+
+export const ahoraPrimary = '#20396e';
+export const ahoraSecondary = '#1d3d7a';

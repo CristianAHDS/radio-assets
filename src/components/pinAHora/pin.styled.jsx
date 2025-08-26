@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primaryCorpoEMente } from '../../constants/color';
+import { ahoraPrimary } from '../../constants/color';
 
 export const Container = styled.div`
   display: flex;
@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const GcTop = styled.div`
-  background-color: ${primaryCorpoEMente};
+  background-color: ${ahoraPrimary};
   padding: 10px 20px;
   display: inline-flex;
   align-items: center;

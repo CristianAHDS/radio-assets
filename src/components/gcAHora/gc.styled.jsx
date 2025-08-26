@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primaryCorpoEMente } from '../../constants/color';
+import { ahoraPrimary } from '../../constants/color';
 
 export const Container = styled.div`
   display: flex;
@@ -7,23 +7,23 @@ export const Container = styled.div`
 `;
 
 export const GcTop = styled.div`
-  background-color: ${primaryCorpoEMente};
+  background-color: ${ahoraPrimary};
   padding: 10px 20px;
   display: inline-flex;
   align-items: center;
   position: fixed;
-  right: 0;
+  left: 0;
 `;
 
 export const TextMirror = styled.span`
   position: absolute;
   visibility: hidden;
   white-space: pre;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
   text-transform: uppercase;
   font-family: inherit;
-
+  direction: rtl;
   text-align: right;
 `;
 
@@ -33,7 +33,7 @@ export const TextContainerTop = styled.textarea`
   overflow: hidden;
   background-color: transparent;
   border: none;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
   text-transform: uppercase;
   color: #fff;
@@ -42,7 +42,7 @@ export const TextContainerTop = styled.textarea`
 
   text-align: right;
 
-  padding: 0px 20px 0px 0px;
+  padding: 0px 00px 0px 10px;
 
   &:focus {
     outline: none;
@@ -82,8 +82,7 @@ export const TextContainer = styled.textarea`
 `;
 
 export const Logo = styled.img`
+  margin-right: 10px;
   height: 30px;
   filter: brightness(100);
-
-  transform: rotate(180deg);
 `;

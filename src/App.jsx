@@ -79,6 +79,13 @@ import PinPelotasMerece from './components/pinPelotasMerece';
 import InstaPelotasMerece from './components/instaPelotasMerece';
 import WhatsPelotasMerece from './components/whatsPelotasMerece';
 
+//AHORA
+import ClockAHora from './components/clockAHora';
+import LowerAHora from './components/lowerAHora';
+import GcAHora from './components/gcAHora';
+import PinAHora from './components/pinAHora';
+import TempoAHora from './components/tempoAHora';
+
 const router = createBrowserRouter([
   // Pages
   { path: '/pageCorpoEMente', element: <PageCorpoEMente /> },
@@ -159,6 +166,14 @@ const router = createBrowserRouter([
   { path: '/pinPelotasMerece', element: <PinPelotasMerece /> },
   { path: '/whatsPelotasMerece', element: <WhatsPelotasMerece /> },
   { path: '/instaPelotasMerece', element: <InstaPelotasMerece /> },
+
+  //AHORA
+  { path: '/clockAHora', element: <ClockAHora /> },
+  { path: '/LowerAHora', element: <LowerAHora /> },
+  { path: '/gcAHora', element: <GcAHora /> },
+  { path: '/pinAHora', element: <PinAHora /> },
+  { path: '/aHora', element: <TempoAHora /> },
+  
 ]);
 
 const App = () => {
