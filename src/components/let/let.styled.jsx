@@ -62,6 +62,7 @@ export const TextContainerTop = styled.textarea`
   }
 `;
 
+
 export const GcBottom = styled.div`
   background-color: #f9f9f9;
   padding: 10px 20px;
@@ -89,6 +90,29 @@ export const TextContainer = styled.textarea`
   display: inline-block;
   transition: width 0.2s ease;
   padding: 0px 15px 0px 10px;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+
+export const TextContainerBottom= styled.textarea`
+  height: 1.2em;
+  resize: none;
+  overflow: hidden;
+  background-color: transparent;
+  border: none;
+  font-size: 26px;
+
+  text-transform: uppercase;
+  color: #505050;
+  white-space: nowrap;
+  max-width: 100%;
+
+  padding: 0px 15px 0px 10px;
+
+
 
   &:focus {
     outline: none;

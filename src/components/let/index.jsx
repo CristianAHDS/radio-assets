@@ -7,6 +7,7 @@ import {
   GcBottom,
   TextContainer,
   TextContainerTop,
+  TextContainerBottom,
   TextMirror,
   TextMirrorBottom,
 } from './let.styled.jsx';
@@ -72,7 +73,7 @@ const Let = () => {
 
         <GcBottom>
           <TextMirrorBottom ref={mirrorBottomRef} />
-          <TextContainer
+          <TextContainerBottom
             ref={bottomRef}
             spellCheck="false"
             value={bottomText}
