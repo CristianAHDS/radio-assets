@@ -137,6 +137,23 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 
 ---
 
+<p align="center">
+  <img src="https://ahoradosul.com.br/wp-content/uploads/2025/07/logo.png" alt="Rádio Pelotense Assets" width="400" style="margin-top:20px;"/>
+</p>
+
+
+### Componentes Grupo A Hora
+
+- **Relógio**: [https://pelotense-assets.netlify.app/clockAHora](https://pelotense-assets.netlify.app/clockAHora)
+- **Lower A Hora**: [https://pelotense-assets.netlify.app/tabela](https://pelotense-assets.netlify.app/tabela)
+- **Alert**: [https://pelotense-assets.netlify.app/LowerAHora](https://pelotense-assets.netlify.app/LowerAHora)
+- **GC A Hora**: [https://pelotense-assets.netlify.app/gcAHora](https://pelotense-assets.netlify.app/gcAHora)
+- **Pin A Hora**: [https://pelotense-assets.netlify.app/pinAHora](https://pelotense-assets.netlify.app/pinAHora)
+- **Tempo Região**: [https://pelotense-assets.netlify.app/aHora](https://pelotense-assets.netlify.app/aHora)
+- **Tempo Somente Lajeado**: [https://pelotense-assets.netlify.app/lajeado](https://pelotense-assets.netlify.app/lajeado)
+
+---
+
 ### Componentes Adicionais
 
 - **Radar**: [https://pelotense-assets.netlify.app/radar](https://pelotense-assets.netlify.app/radar)
