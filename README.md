@@ -137,12 +137,12 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 
 ---
 
+### Componentes Grupo A Hora
+
 <p align="center">
   <img src="https://ahoradosul.com.br/wp-content/uploads/2025/07/radio-ahora-1200x579-1.png" alt="Rádio Pelotense Assets" width="400" style="margin-top:20px;"/>
 </p>
 
-
-### Componentes Grupo A Hora
 
 - **Relógio**: [https://pelotense-assets.netlify.app/clockAHora](https://pelotense-assets.netlify.app/clockAHora)
 - **Lower A Hora**: [https://pelotense-assets.netlify.app/lowerAhora](https://pelotense-assets.netlify.app/lowerAhora)
