@@ -34,13 +34,12 @@ export const TextContainer = styled.div`
 
   overflow: hidden;
 
-  border-left: solid 8px #fff;
 `;
 
 export const LeftSide = styled.div`
-  width: 300px;
+  width: 220px;
   height: 100%;
-  background-color: ${ahoraSecondary};
+  background-color:#001d41;
 
   display: flex;
   justify-content: center;
@@ -48,15 +47,14 @@ export const LeftSide = styled.div`
 
   font-weight: 900;
   font-size: 20px;
-  text-transform: uppercase;
 
-  border-left: solid 8px #fff;
+  
 `;
 
 export const TextSide = styled.div`
-  width: calc(100% - 300px);
+  width: calc(100% - 445px);
   height: 100%;
-  background-color: ${ahoraPrimary};
+  background-color: #001d41;
 
   overflow: hidden;
   position: relative;

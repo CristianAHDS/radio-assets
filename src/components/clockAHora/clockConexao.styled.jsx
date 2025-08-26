@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { ahoraPrimary } from '../../constants/color';
 
 export const Card = styled.div`
-  width: 235px;
+  width: 230px;
   //height: 180px;
 
   background-color: #f9f9f9;
@@ -14,7 +14,7 @@ export const Card = styled.div`
 export const TopCard = styled.div`
   width: 100%;
   height: 50px;
-  background-color: ${ahoraPrimary};
+  background-color: #001d41;
 
   display: flex;
   align-items: center;

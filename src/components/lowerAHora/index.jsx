@@ -6,6 +6,7 @@
     TextSide,
     ScrollingWrapper,
   } from './lowerConexao.styled';
+  import ClockAHora from '../clockAHora'
 
   const Lower = () => {
     const defaultText = 'Edit';
@@ -87,6 +88,7 @@
     return (
       <Container>
         <TextContainer>
+          <ClockAHora/>
           <TextSide>
             {/* invisível para medir */}
             <span
@@ -127,7 +129,7 @@
               />
             </ScrollingWrapper>
           </TextSide>
-          <LeftSide>ahoradosul.com.br</LeftSide>
+          <LeftSide>grupoahora.net.br</LeftSide>
         </TextContainer>
       </Container>
     );
