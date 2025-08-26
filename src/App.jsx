@@ -85,6 +85,7 @@ import LowerAHora from './components/lowerAHora';
 import GcAHora from './components/gcAHora';
 import PinAHora from './components/pinAHora';
 import TempoAHora from './components/tempoAHora';
+import Lajeado from './components/tempoAHora/lajeado.jsx';
 
 const router = createBrowserRouter([
   // Pages
@@ -173,6 +174,7 @@ const router = createBrowserRouter([
   { path: '/gcAHora', element: <GcAHora /> },
   { path: '/pinAHora', element: <PinAHora /> },
   { path: '/aHora', element: <TempoAHora /> },
+  { path: '/lajeado', element: <Lajeado /> },
   
 ]);
 
