@@ -138,7 +138,7 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 ---
 
 <p align="center">
-  <img src="https://ahoradosul.com.br/wp-content/uploads/2025/07/logo.png" alt="Rádio Pelotense Assets" width="400" style="margin-top:20px;"/>
+  <img src="https://ahoradosul.com.br/wp-content/uploads/2025/07/radio-ahora-1200x579-1.png" alt="Rádio Pelotense Assets" width="400" style="margin-top:20px;"/>
 </p>
 
 
@@ -152,8 +152,7 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 - **Tempo Região**: [https://pelotense-assets.netlify.app/aHora](https://pelotense-assets.netlify.app/aHora)
 - **Tempo Somente Lajeado**: [https://pelotense-assets.netlify.app/lajeado](https://pelotense-assets.netlify.app/lajeado)
 
-- **Exemplo GC A Hora com nome**:  
- [https://pelotense-assets.netlify.app/gcAhora?nome=Maria](https://pelotense-assets.netlify.app/gcAhora?nome=Maria)
+- **Exemplo GC A Hora com nome**:  [https://pelotense-assets.netlify.app/gcAhora?nome=Maria](https://pelotense-assets.netlify.app/gcAhora?nome=Maria)
 
 ---
 
