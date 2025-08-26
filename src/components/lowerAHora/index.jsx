@@ -9,7 +9,7 @@
   import ClockAHora from '../clockAHora'
 
   const Lower = () => {
-    const defaultText = 'Edit';
+    const defaultText = 'Editar texto';
     const [text, setText] = useState(() => {
       return localStorage.getItem('lowerText') || defaultText;
     });

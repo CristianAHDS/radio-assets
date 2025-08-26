@@ -9,8 +9,8 @@ export const Container = styled.div`
 `;
 
 export const Square = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 0px;
+  height: 0px;
   background-color: #fff;
 `;
 
@@ -36,7 +36,7 @@ export const TextMirror = styled.span`
   font-weight: 600;
   text-transform: uppercase;
   font-family: inherit;
-  direction: rtl;
+
   text-align: right;
 `;
 
@@ -54,7 +54,7 @@ export const TextContainerTop = styled.textarea`
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  direction: rtl;
+
   text-align: right;
 
   &:focus {
