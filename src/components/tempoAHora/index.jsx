@@ -50,11 +50,11 @@ const cidades = [
 
 
 const App = () => {
-  const [weatherDataMap, setWeatherDataMap] = useState({});
+  const [weatherDataMapAhoraAhora, setWeatherDataMapAhora] = useState({});
   const [currentIndex, setCurrentIndex] = useState(0);
   const [error, setError] = useState(null);
 
-  const STORAGE_KEY = 'weatherDataMap';
+  const STORAGE_KEY = 'weatherDataMapAhoraAhora';
   const TIMESTAMP_KEY = 'weatherDataTimestamp';
 
   const fetchAllCitiesWeather = async () => {
@@ -77,7 +77,7 @@ const App = () => {
     }
 
     // Salva no estado e no localStorage
-    setWeatherDataMap(newWeatherDataMap);
+    setWeatherDataMapAhora(newWeatherDataMap);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(newWeatherDataMap));
     localStorage.setItem(TIMESTAMP_KEY, Date.now().toString());
   };
@@ -91,7 +91,7 @@ const App = () => {
       const cacheIsValid = cache && timestamp && now - timestamp < 60000; // menos de 60s
 
       if (cacheIsValid) {
-        setWeatherDataMap(JSON.parse(cache));
+        setWeatherDataMapAhora(JSON.parse(cache));
       } else {
         fetchAllCitiesWeather();
       }
@@ -112,7 +112,7 @@ const App = () => {
   }, []);
 
   const cidadeAtual = cidades[currentIndex];
-  const dados = weatherDataMap[cidadeAtual.nome];
+  const dados = weatherDataMapAhoraAhora[cidadeAtual.nome];
 
   if (!dados) return <p>Carregando dados...</p>;
   if (error) return <p>{error}</p>;
