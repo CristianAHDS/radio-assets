@@ -147,7 +147,6 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 
 - **Relógio**: [https://pelotense-assets.netlify.app/clockAHora](https://pelotense-assets.netlify.app/clockAHora)
 - **Lower A Hora**: [https://pelotense-assets.netlify.app/lowerAhora](https://pelotense-assets.netlify.app/lowerAhora)
-- **Alert**: [https://pelotense-assets.netlify.app/LowerAHora](https://pelotense-assets.netlify.app/LowerAHora)
 - **GC A Hora**: [https://pelotense-assets.netlify.app/gcAHora](https://pelotense-assets.netlify.app/gcAHora)
 - **Pin A Hora**: [https://pelotense-assets.netlify.app/pinAHora](https://pelotense-assets.netlify.app/pinAHora)
 - **Tempo Região**: [https://pelotense-assets.netlify.app/aHora](https://pelotense-assets.netlify.app/aHora)
