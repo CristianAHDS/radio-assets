@@ -143,7 +143,7 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 
 
 <p align="center">
-<img src="https://i.imgur.com/zxKc7LS.png" alt="GC" width="200" style="margin-top:20px;"/>
+<img src="https://i.imgur.com/zxKc7LS.png" alt="GC" width="400" style="margin-top:20px;"/>
 </p>
 
 ---
