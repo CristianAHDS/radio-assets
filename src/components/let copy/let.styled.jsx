@@ -6,9 +6,6 @@ export const Container = styled.div`
   flex-direction: row;
   align-items: flex-start;
   gap: 15px; /* espaço entre o Square e os blocos de texto */
-
-  border-top-left-radius: 16px; 
-
 `;
 
 export const Square = styled.div`
@@ -21,19 +18,14 @@ export const GcWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0;
-
-    margin-left: -4px !important;
 `;
 
 export const GcTop = styled.div`
-  background-color: #001d41;
-  padding: 10px 0px 60px 20px;
+  background-color: ${primary};
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   width: fit-content; /* ocupa toda a largura */
-  border-top-left-radius: 26px; 
-
-
 `;
 
 export const TextMirror = styled.span`
@@ -77,8 +69,7 @@ export const GcBottom = styled.div`
   display: flex;
   align-items: center;
   width: fit-content;
-  margin-top: -50px;
-  margin-left: 10px;
+  margin-right: 10px;
 `;
 
 export const TextMirrorBottom = styled(TextMirror)`
@@ -115,10 +106,9 @@ export const TextContainerBottom= styled.textarea`
   font-size: 26px;
 
   text-transform: uppercase;
-  color: #262626;
+  color: #505050;
   white-space: nowrap;
   max-width: 100%;
-  font-weight: bold;
 
   padding: 0px 15px 0px 10px;
 

@@ -87,6 +87,9 @@ import PinAHora from './components/pinAHora';
 import TempoAHora from './components/tempoAHora';
 import Lajeado from './components/tempoAHora/lajeado.jsx';
 
+//CAMS
+import CamUna from './components/camUna'
+
 const router = createBrowserRouter([
   // Pages
   { path: '/pageCorpoEMente', element: <PageCorpoEMente /> },
@@ -175,6 +178,9 @@ const router = createBrowserRouter([
   { path: '/pinAHora', element: <PinAHora /> },
   { path: '/aHora', element: <TempoAHora /> },
   { path: '/lajeado', element: <Lajeado /> },
+
+  //CAMS
+  { path: '/camUna', element: <CamUna /> },
   
 ]);
 
