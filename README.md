@@ -137,6 +137,19 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 
 ---
 
+### Componentes de Cameras
+
+- **Camera Una**: [https://pelotense-assets.netlify.app/pin](https://pelotense-assets.netlify.app/pin)
+
+
+<p align="center">
+  <iframe frameborder="0" width='200' 
+    src="https://bitcom.camerite.com/embed/755679/undefined/undefined/vet-parque-una? autoplay=true&sound=truecontrols=0">
+  </iframe>
+</p>
+
+---
+
 ### Componentes Grupo A Hora
 
 
