@@ -139,7 +139,7 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 
 ### Componentes de Cameras
 
-- **Camera Una**: [https://pelotense-assets.netlify.app/pin](https://pelotense-assets.netlify.app/camUna)
+- **Camera Una**: [https://pelotense-assets.netlify.app/camUna](https://pelotense-assets.netlify.app/camUna)
 
 
 <p align="center">
@@ -151,7 +151,7 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 ### Componentes Grupo A Hora
 
 
-<p align="left">
+<p align="center">
   <img src="https://ahoradosul.com.br/wp-content/uploads/2025/07/radio-ahora-1200x579-1.png" alt="Rádio Pelotense Assets" width="400" style="margin-top:20px;"/>
 </p>
 
