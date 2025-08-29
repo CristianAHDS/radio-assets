@@ -13,7 +13,7 @@ const CamUna = () => {
     <Container>
       <ContainerFrame>
         <iframe frameborder="0" width='1368' height='900'
-          src="https://bitcom.camerite.com/embed/755679/undefined/undefined/vet-parque-una?autoplay=true&sound=truecontrols=0">
+          src="https://bitcom.camerite.com/embed/825714/undefined/undefined/vet-torquato-pontos-pescados?autoplay=true&sound=true">
         </iframe>
         <Logos>
         <PelotenseLogo src="https://i.imgur.com/x8O2f2L.png" />
