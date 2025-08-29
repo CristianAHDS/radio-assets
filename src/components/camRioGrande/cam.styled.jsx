@@ -26,6 +26,7 @@ export const ContainerFrame = styled.div`
 
 export const VetorialLogo = styled.img`
   width: 100px;
+  margin-right: 50px;
 `
 
 export const PelotenseLogo = styled.img`
