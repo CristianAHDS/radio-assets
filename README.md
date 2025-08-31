@@ -141,7 +141,7 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 
 - **Câmera Una**: [https://pelotense-assets.netlify.app/camUna](https://pelotense-assets.netlify.app/camUna)
 - **Câmera Rio Grnade**: [https://pelotense-assets.netlify.app/camRioGrande](https://pelotense-assets.netlify.app/camRioGrande)
-- **Câmera Shopping**: [https://pelotense-assets.netlify.app/camShopping](https://pelotense-assets.netlify.app/CcamShopping)
+- **Câmera Shopping**: [https://pelotense-assets.netlify.app/camShopping](https://pelotense-assets.netlify.app/camShopping)
 
 <p align="center">
 <img src="https://i.imgur.com/zxKc7LS.png" alt="GC" width="400" style="margin-top:20px;"/>
