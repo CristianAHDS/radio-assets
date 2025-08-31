@@ -88,8 +88,9 @@ import TempoAHora from './components/tempoAHora';
 import Lajeado from './components/tempoAHora/lajeado.jsx';
 
 //CAMS
-import CamUna from './components/camUna'
-import CamRioGrande from './components/camRioGrande'
+import CamUna from './components/camUna';
+import CamRioGrande from './components/camRioGrande';
+import CamShopping from './components/camShopping'
 
 const router = createBrowserRouter([
   // Pages
@@ -183,6 +184,7 @@ const router = createBrowserRouter([
   //CAMS
   { path: '/camUna', element: <CamUna /> },
   { path: '/camRioGrande', element: <CamRioGrande />},
+  { path: '/camShopping', element: <CamShopping />},
 ]);
 
 const App = () => {
