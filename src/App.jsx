@@ -182,7 +182,7 @@ const router = createBrowserRouter([
   { path: '/lajeado', element: <Lajeado /> },
 
   //CAMS
-  { path: '/camUna', element: <CamUna /> },
+  { path: '/camUna', element: <CamUna /> }, 
   { path: '/camRioGrande', element: <CamRioGrande />},
   { path: '/camShopping', element: <CamShopping />},
 ]);
