@@ -148,6 +148,7 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 <img src="https://i.imgur.com/5tEfAgI.png" alt="GC" width="400" style="margin-top:20px;"/>
 <img src="https://i.imgur.com/4kDfjWH.png" alt="GC" width="400" style="margin-top:20px;"/>
 </p>
+
 ---
 
 ### Componentes Grupo A Hora
