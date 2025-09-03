@@ -22,6 +22,21 @@
 
 ---
 
+### Componentes de Loc Câmera
+
+- **Loc. Câmera Geral**: [https://pelotense-assets.netlify.app/camTp?local=Nome](https://pelotense-assets.netlify.app/camTp?local=Nome)
+- **Loc. Câmera Esporte**: [https://pelotense-assets.netlify.app/camTpEsporte?local=Nome](https://pelotense-assets.netlify.app/camTpEsporte?local=Nome)
+- **Loc. Câmera Conexão**: [https://pelotense-assets.netlify.app/camTpConexao?local=Nome](https://pelotense-assets.netlify.app/camTpConexao?local=Nome)
+- **Loc. Câmera Pensar Negócios**: [https://pelotense-assets.netlify.app/camTpPensarNegocios?local=Nome](https://pelotense-assets.netlify.app/camTpPensarNegocios?local=Nome)
+- **Loc. Câmera Corpo e Mente**: [https://pelotense-assets.netlify.app/camTpCorpoEMente?local=Nome](https://pelotense-assets.netlify.app/camTpCorpoEMente?local=Nome)
+- **Loc. Câmera Pelotas Merece**: [https://pelotense-assets.netlify.app/camTpCorpoEMente?local=Nome](https://pelotense-assets.netlify.app/camTpCorpoEMente?local=Nome)
+
+<p align="center">
+  <img src="https://i.imgur.com/Q0ysbVY.png" alt="Clock" width="300" style="margin-top:20px;"/>
+</p>
+
+---
+
 ### Componentes de Relógio
 
 - **Relógio Geral**: [https://pelotense-assets.netlify.app/clock](https://pelotense-assets.netlify.app/clock)

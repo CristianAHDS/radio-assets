@@ -22,6 +22,7 @@ import Radar from './components/radar';
 import Ticket from './components/ticket';
 import Results from './components/results';
 import QrCode from './components/qrCode';
+import CamTp from './components/camTp';
 
 //Esporte
 import LetEsporte from './components/letEsporte';
@@ -115,6 +116,7 @@ const router = createBrowserRouter([
   { path: '/whats', element: <Whats /> },
   { path: '/results', element: <Results /> },
   { path: '/qrCode', element: <QrCode /> },
+  { path: '/camTp', element: <CamTp />},
 
   //Esporte
   { path: '/whatsEsporte', element: <WhatsEsporte /> },
@@ -126,7 +128,7 @@ const router = createBrowserRouter([
   { path: '/instaEsporte', element: <InstaEsporte /> },
   { path: '/pinEsporte', element: <PinEsporte /> },
 
-  //Conexão
+  //Conexão 
   { path: '/letConexao', element: <LetConexao /> },
   { path: '/conexao', element: <TempoConexao /> },
   { path: '/lowerConexao', element: <LowerConexao /> },
@@ -144,14 +146,14 @@ const router = createBrowserRouter([
   { path: '/pensarNegocios', element: <TempoPensarnegocios /> },
   { path: '/whatsPensarNegocios', element: <WhatsPensarNegocios /> },
   { path: '/instaPensarNegocios', element: <InstaPensarNegocios /> },
-  { path: '/pinPensarNegocios', element: <PinPensarNegocios /> },
+  { path: '/pinPensarNegocios', element: <PinPensarNegocios /> }, 
 
   //Outros
   { path: '/clockOutros', element: <ClockOutros /> },
   { path: '/outros', element: <TempoOutros /> },
   { path: '/lowerOutros', element: <LowerOutros /> },
   { path: '/gcOutros', element: <GcOutros /> },
-  { path: '/pinOutros', element: <PinOutros /> },
+  { path: '/pinOutros', element: <PinOutros /> },  
   { path: '/whatsOutros', element: <WhatsOutros /> },
   { path: '/instaOutros', element: <InstaOutros /> },
 

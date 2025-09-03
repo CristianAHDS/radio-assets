@@ -42,7 +42,7 @@ const cidades = [
   { nome: 'Muçum', coord: '-29.1970821,-51.8695857' },
   { nome: 'Roca Sales', coord: '-29.3025947,-51.8589285' },
   { nome: 'São Jerônimo', coord: '-29.9691323,-51.7426927' },
-  { nome: 'Taquiari', coord: '-29.7915097,-51.8572538' },
+  { nome: 'Taquari', coord: '-29.7915097,-51.8572538' },
   { nome: 'Teutônia', coord: '-29.4787474,-51.8090686' },
   { nome: 'Triunfo', coord: '-29.9494149,-51.7154383' },
   { nome: 'Venâncio Aires', coord: '-29.5721496,-52.1216905' },
