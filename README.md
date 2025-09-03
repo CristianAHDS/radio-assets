@@ -34,7 +34,7 @@ Agora os componentes **GC** e **Let** e **CamTp** aceitam passar um nome diretam
 - **Loc. Câmera Pelotas Merece**: [https://pelotense-assets.netlify.app/camTpCorpoEMente?local=Nome](https://pelotense-assets.netlify.app/camTpCorpoEMente?local=Nome)
 
 <p align="center">
-  <img src="https://i.imgur.com/Fez5IRG.png" alt="Clock" width="300" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/Fez5IRG.png" alt="Clock" width="00" style="margin-top:20px;"/>
 </p>
 
 ---
