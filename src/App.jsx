@@ -33,6 +33,7 @@ import GcEsporte from './components/gcEsporte';
 import InstaEsporte from './components/instaEsporte';
 import WhatsEsporte from './components/whatsEsporte';
 import PinEsporte from './components/pinEsporte';
+import CamTpEsporte from './components/camTpEsporte';
 
 //Pensar Negócios
 import TempoPensarnegocios from './components/tempoPensarNegocios';
@@ -42,6 +43,7 @@ import ClockPensarNegocios from './components/clockPensarNegocios';
 import WhatsPensarNegocios from './components/whatsPensarNegocios';
 import InstaPensarNegocios from './components/instaPensarNegocios';
 import PinPensarNegocios from './components/pinPensarNegocios';
+import CamTpPensarNegocios from './components/camTpPensarNegocios';
 
 //Conexão
 import LetConexao from './components/letConexao';
@@ -52,6 +54,7 @@ import ClockConexao from './clockConexao.jsx';
 import TempoConexao from './conexao.jsx';
 import PinConexao from './components/pinConexao';
 import LowerConexao from './lowerConexao.jsx';
+import CamTpConexao from './components/camTpConexao';
 
 //Outros
 import ClockOutros from './components/clockOutros';
@@ -70,6 +73,7 @@ import GcCorpoEMente from './components/gcCorpoEMente';
 import PinCorpoEMente from './components/pinCorpoEMente';
 import WhatsCorpoEMente from './components/whatsCorpoEMente';
 import InstaCorpoEMente from './components/instaCorpoEMente';
+import CamTpCorpoEMente from './components/camTpCorpoEMente';
 
 //Pelotas Merece
 import ClockPelotasMerece from './components/clockPelotasMerece';
@@ -79,6 +83,7 @@ import GcPelotasMerece from './components/gcPelotasMerece';
 import PinPelotasMerece from './components/pinPelotasMerece';
 import InstaPelotasMerece from './components/instaPelotasMerece';
 import WhatsPelotasMerece from './components/whatsPelotasMerece';
+import CamTpPelotasMerece from './components/CamTpPelotasMerece';
 
 //AHORA
 import ClockAHora from './components/clockAHora';
@@ -127,6 +132,7 @@ const router = createBrowserRouter([
   { path: '/letEsporte', element: <LetEsporte /> },
   { path: '/instaEsporte', element: <InstaEsporte /> },
   { path: '/pinEsporte', element: <PinEsporte /> },
+  { path: '/camTpEsporte', element: <CamTpEsporte />},
 
   //Conexão 
   { path: '/letConexao', element: <LetConexao /> },
@@ -138,6 +144,7 @@ const router = createBrowserRouter([
   { path: '/pinConexao', element: <PinConexao /> },
   { path: '/whatsConexao', element: <WhatsConexao /> },
   { path: '/instaConexao', element: <InstaConexao /> },
+  { path: '/camTpConexao', element: <CamTpConexao />},
 
   //Pensar Negocios
   { path: '/lowerPensarNegocios', element: <LowerPersnarNegocios /> },
@@ -147,6 +154,7 @@ const router = createBrowserRouter([
   { path: '/whatsPensarNegocios', element: <WhatsPensarNegocios /> },
   { path: '/instaPensarNegocios', element: <InstaPensarNegocios /> },
   { path: '/pinPensarNegocios', element: <PinPensarNegocios /> }, 
+  { path: '/camTpPensarNegocios', element: <CamTpPensarNegocios />},
 
   //Outros
   { path: '/clockOutros', element: <ClockOutros /> },
@@ -165,6 +173,7 @@ const router = createBrowserRouter([
   { path: '/pinCorpoEMente', element: <PinCorpoEMente /> },
   { path: '/whatsCorpoEMente', element: <WhatsCorpoEMente /> },
   { path: '/instaCorpoEMente', element: <InstaCorpoEMente /> },
+  { path: '/camTpCorpoEMente', element: <CamTpCorpoEMente />},
 
   //Pelotas Merece
   { path: '/clockPelotasMerece', element: <ClockPelotasMerece /> },
@@ -174,6 +183,7 @@ const router = createBrowserRouter([
   { path: '/pinPelotasMerece', element: <PinPelotasMerece /> },
   { path: '/whatsPelotasMerece', element: <WhatsPelotasMerece /> },
   { path: '/instaPelotasMerece', element: <InstaPelotasMerece /> },
+  { path: '/CamTpPelotasMerece', element: <CamTpPelotasMerece />},
 
   //AHORA
   { path: '/clockAHora', element: <ClockAHora /> },

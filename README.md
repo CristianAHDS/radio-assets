@@ -24,6 +24,8 @@
 
 ### Componentes de Loc Câmera
 
+Agora os componentes **GC** e **Let** e **CamTp** aceitam passar um nome diretamente pela URL usando **query string**:
+
 - **Loc. Câmera Geral**: [https://pelotense-assets.netlify.app/camTp?local=Nome](https://pelotense-assets.netlify.app/camTp?local=Nome)
 - **Loc. Câmera Esporte**: [https://pelotense-assets.netlify.app/camTpEsporte?local=Nome](https://pelotense-assets.netlify.app/camTpEsporte?local=Nome)
 - **Loc. Câmera Conexão**: [https://pelotense-assets.netlify.app/camTpConexao?local=Nome](https://pelotense-assets.netlify.app/camTpConexao?local=Nome)
@@ -32,7 +34,7 @@
 - **Loc. Câmera Pelotas Merece**: [https://pelotense-assets.netlify.app/camTpCorpoEMente?local=Nome](https://pelotense-assets.netlify.app/camTpCorpoEMente?local=Nome)
 
 <p align="center">
-  <img src="https://i.imgur.com/Q0ysbVY.png" alt="Clock" width="300" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/Fez5IRG.png" alt="Clock" width="300" style="margin-top:20px;"/>
 </p>
 
 ---
