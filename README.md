@@ -31,7 +31,7 @@ Agora os componentes **GC** e **Let** e **CamTp** aceitam passar um nome diretam
 - **Loc. Câmera Conexão**: [https://pelotense-assets.netlify.app/camTpConexao?local=Nome](https://pelotense-assets.netlify.app/camTpConexao?local=Nome)
 - **Loc. Câmera Pensar Negócios**: [https://pelotense-assets.netlify.app/camTpPensarNegocios?local=Nome](https://pelotense-assets.netlify.app/camTpPensarNegocios?local=Nome)
 - **Loc. Câmera Corpo e Mente**: [https://pelotense-assets.netlify.app/camTpCorpoEMente?local=Nome](https://pelotense-assets.netlify.app/camTpCorpoEMente?local=Nome)
-- **Loc. Câmera Pelotas Merece**: [https://pelotense-assets.netlify.app/camTpCorpoEMente?local=Nome](https://pelotense-assets.netlify.app/camTpCorpoEMente?local=Nome)
+- **Loc. Câmera Pelotas Merece**: [https://pelotense-assets.netlify.app/camTpPelotasMerece?local=Nome](https://pelotense-assets.netlify.app/camTpPelotasMerece?local=Nome)
 
 <p align="center">
   <img src="https://i.imgur.com/Fez5IRG.png" alt="Clock" width="400" style="margin-top:20px;"/>
