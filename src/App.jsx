@@ -23,6 +23,7 @@ import Ticket from './components/ticket';
 import Results from './components/results';
 import QrCode from './components/qrCode';
 import CamTp from './components/camTp';
+import Gravado from './components/gravado';
 
 //Esporte
 import LetEsporte from './components/letEsporte';
@@ -122,6 +123,7 @@ const router = createBrowserRouter([
   { path: '/results', element: <Results /> },
   { path: '/qrCode', element: <QrCode /> },
   { path: '/camTp', element: <CamTp />},
+  {path: '/gravado', element: <Gravado/>},
 
   //Esporte
   { path: '/whatsEsporte', element: <WhatsEsporte /> },
