@@ -154,6 +154,38 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 
 ---
 
+### Componentes GC Musica
+
+- **GC Musica Geral**: [https://pelotense-assets.netlify.app/gcMusica](https://pelotense-assets.netlify.app/gcMusica)
+- **GC Musica Esporte**: [https://pelotense-assets.netlify.app/gcMusicaEsporte](https://pelotense-assets.netlify.app/gcMusicaEsporte)
+- **GC Musica Conexão**: [https://pelotense-assets.netlify.app/gcMusicaConexao](https://pelotense-assets.netlify.app/gcMusicaConexao)
+- **GC Musica Pensar Negócios**: [https://pelotense-assets.netlify.app/gcMusicaPensarNegocios](https://pelotense-assets.netlify.app/gcMusicaPensarNegocios)
+- **GC Musica Outros**: [https://pelotense-assets.netlify.app/gcMusicaOutros](https://pelotense-assets.netlify.app/gcMusicaOutros)
+- **GC Musica Corpo e Mente**: [https://pelotense-assets.netlify.app/gcMusicaCorpoEMente](https://pelotense-assets.netlify.app/gcMusicaCorpoEMente)
+- **GC Musica Pelotas Merece**: [https://pelotense-assets.netlify.app/gcMusicaPelotasMerece](https://pelotense-assets.netlify.app/gcMusicaPelotasMerece)
+
+<p align="center">
+  <img src="https://i.imgur.com/3ue7UGS.png" alt="GC" width="350" style="margin-top:20px;"/>
+</p>
+
+#### 🔗 Passando Nome via URL
+
+Agora os componentes **GC** e **Let** aceitam passar um nome diretamente pela URL usando **query string**:
+
+- **Exemplo GC Musica Geral com nome**:  
+  [https://pelotense-assets.netlify.app/gcMusica?nome=Cristian](https://pelotense-assets.netlify.app/gcMusica?nome=Cristian)
+
+- **Exemplo GC Musica Conexão com nome**:  
+ [https://pelotense-assets.netlify.app/gcMusicaConexao?nome=Maria](https://pelotense-assets.netlify.app/gcMusicaConexao?nome=Maria)
+
+  <p align="center">
+  <img src="https://i.imgur.com/BqxTHTE.png" alt="GC" width="200" style="margin-top:20px;"/>
+</p>
+
+Se não for passado nenhum nome na URL, o componente usará o valor salvo no **localStorage** ou exibirá `"EDITAR"`.
+
+---
+
 ### Componentes de Cameras
 
 - **Câmera Una**: [https://pelotense-assets.netlify.app/camUna](https://pelotense-assets.netlify.app/camUna)

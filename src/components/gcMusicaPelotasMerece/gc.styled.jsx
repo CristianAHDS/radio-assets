@@ -1,18 +1,21 @@
 import styled from 'styled-components';
-import { primaryEstporte } from '../../constants/color';
+import { primaryPelotasMerece } from '../../constants/color';
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 `;
 
 export const GcTop = styled.div`
-  background-color: ${primaryEstporte};
+  background-color: ${primaryPelotasMerece};
   padding: 10px 20px;
   display: inline-flex;
   align-items: center;
   position: fixed;
-  left: 0;
+  height: 33px !important;
 `;
 
 export const TextMirror = styled.span`
@@ -49,20 +52,6 @@ export const TextContainerTop = styled.textarea`
   }
 `;
 
-export const GcBottom = styled.div`
-  width: auto;
-  background-color: #f9f9f9;
-  padding: 10px 20px;
-  display: inline-flex;
-  align-items: center;
-`;
-
-export const TextMirrorBottom = styled(TextMirror)`
-  font-size: 26px;
-  font-weight: 500;
-  color: #505050;
-`;
-
 export const TextContainer = styled.textarea`
   height: 1.2em;
   resize: none;
@@ -82,7 +71,8 @@ export const TextContainer = styled.textarea`
 `;
 
 export const Logo = styled.img`
-  margin-right: 10px;
-  height: 30px;
+  margin-right: -5px;
+  margin-left: -10px;
+  height: 70px;
   filter: brightness(100);
 `;

@@ -13,6 +13,7 @@ import TempoGeral from './geral.jsx';
 import Lower from './lower.jsx';
 import Clock from './clock.jsx';
 import Gc from './components/gc';
+import GcMusica from './components/gcMusica';
 import Tabela from './components/tabela';
 import Alert from './components/alerts';
 import Pin from './components/pin';
@@ -116,6 +117,7 @@ const router = createBrowserRouter([
   { path: '/lower', element: <Lower /> },
   { path: '/clock', element: <Clock /> },
   { path: '/gc', element: <Gc /> },
+  { path: '/gcMusica', element: <GcMusica/>},
   { path: '/tabela', element: <Tabela /> },
   { path: '/alert', element: <Alert /> },
   { path: '/pin', element: <Pin /> },
