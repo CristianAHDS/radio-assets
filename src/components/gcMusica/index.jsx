@@ -9,6 +9,7 @@ import {
 
   Logo,
 } from './gc.styled.jsx';
+import myGif from '../../assets/music.gif';
 
 const Gc = () => {
   const [searchParams] = useSearchParams();
@@ -68,7 +69,7 @@ const Gc = () => {
     }
   }, [bottomText]);
 
-  const logoImage = 'https://i.imgur.com/HC687NM.gif';
+  const logoImage = myGif;
 
   return (
     <Container>

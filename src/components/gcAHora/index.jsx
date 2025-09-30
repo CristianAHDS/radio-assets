@@ -3,13 +3,13 @@ import { useSearchParams } from 'react-router-dom';
 import {
   Container,
   GcTop,
-  GcBottom,
-  TextContainer,
+
   TextContainerTop,
   TextMirror,
-  TextMirrorBottom,
+
   Logo,
 } from './gc.styled.jsx';
+import myGif from '../../assets/music.gif';
 
 const Gc = () => {
   const [searchParams] = useSearchParams();
@@ -33,7 +33,7 @@ const Gc = () => {
 
   // Carrega valor inicial
   useEffect(() => {
-    const savedTop = localStorage.getItem('gcTopText');
+    const savedTop = localStorage.getItem('gcMusic');
     const savedBottom = localStorage.getItem('gcBottomText');
 
     if (nome && nome.trim() !== '') {
@@ -43,7 +43,7 @@ const Gc = () => {
       setTopText(savedTop);
     } else {
       setTopText('EDITAR');
-      localStorage.setItem('gcTopText', 'EDITAR');
+      localStorage.setItem('gcMusic', 'EDITAR');
     }
 
     if (savedBottom && savedBottom.trim() !== '') {
@@ -58,7 +58,7 @@ const Gc = () => {
     adjustWidth(mirrorTopRef, topRef, topText);
     // Só salva no localStorage se não veio da URL
     if (!fromUrl && topText && topText.trim() !== '') {
-      localStorage.setItem('gcTopText', topText);
+      localStorage.setItem('gcMusic', topText);
     }
   }, [topText, fromUrl]);
 
@@ -69,7 +69,7 @@ const Gc = () => {
     }
   }, [bottomText]);
 
-  const logoImage = 'https://i.imgur.com/gXyrBvU.gif';
+  const logoImage = myGif;
 
   return (
     <Container>
@@ -84,18 +84,7 @@ const Gc = () => {
         />
       </GcTop>
 
-      {/* Se quiser reativar o bottom */}
-      {/* 
-      <GcBottom>
-        <TextMirrorBottom ref={mirrorBottomRef} />
-        <TextContainer
-          ref={bottomRef}
-          spellCheck="false"
-          value={bottomText}
-          onChange={(e) => setBottomText(e.target.value)}
-        />
-      </GcBottom>
-      */}
+
     </Container>
   );
 };
