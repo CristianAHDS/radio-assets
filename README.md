@@ -165,7 +165,7 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 - **GC Musica Pelotas Merece**: [https://pelotense-assets.netlify.app/gcMusicaPelotasMerece](https://pelotense-assets.netlify.app/gcMusicaPelotasMerece)
 
 <p align="center">
-  <img src="https://i.imgur.com/3ue7UGS.png" alt="GC" width="350" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/BqxTHTE.png" alt="GC" width="350" style="margin-top:20px;"/>
 </p>
 
 #### 🔗 Passando Nome via URL
@@ -179,7 +179,7 @@ Agora os componentes **GC** e **Let** aceitam passar um nome diretamente pela UR
  [https://pelotense-assets.netlify.app/gcMusicaConexao?nome=Teste](https://pelotense-assets.netlify.app/gcMusicaConexao?nome=Teste)
 
   <p align="center">
-  <img src="https://i.imgur.com/3ue7UGS.png" alt="GC" width="300" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/BqxTHTE.png" alt="GC" width="300" style="margin-top:20px;"/>
 </p>
 
 Se não for passado nenhum nome na URL, o componente usará o valor salvo no **localStorage** ou exibirá `"EDITAR"`.
