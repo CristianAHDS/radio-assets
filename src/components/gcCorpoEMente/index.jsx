@@ -69,7 +69,7 @@ const Gc = () => {
     }
   }, [bottomText]);
 
-  const logoImage = myGif;
+   const logoImage = 'https://i.imgur.com/gXyrBvU.gif';
 
   return (
     <Container>

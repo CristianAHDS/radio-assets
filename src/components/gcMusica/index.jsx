@@ -21,7 +21,7 @@ const Gc = () => {
 
   const mirrorTopRef = useRef(null);
   const topRef = useRef(null);
-  const mirrorBottomRef = useRef(null);
+  const mirrorBottomRef = useRef(null);   
   const bottomRef = useRef(null);
 
   const adjustWidth = (mirrorRef, inputRef, text) => {
