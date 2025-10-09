@@ -74,7 +74,7 @@ const App = () => {
       const timestamp = parseInt(localStorage.getItem(TIMESTAMP_KEY), 10);
 
       const now = Date.now();
-      const cacheIsValid = cache && timestamp && now - timestamp < 60000; // menos de 60s
+      const cacheIsValid = cache && timestamp && now - timestamp < 30000; // menos de 60s
 
       if (cacheIsValid) {
         setWeatherDataMap(JSON.parse(cache));
@@ -85,7 +85,7 @@ const App = () => {
 
     loadData();
 
-    const refreshInterval = setInterval(fetchAllCitiesWeather, 60000); // atualiza a cada 60s
+    const refreshInterval = setInterval(fetchAllCitiesWeather, 30000); // atualiza a cada 60s
     return () => clearInterval(refreshInterval);
   }, []);
 

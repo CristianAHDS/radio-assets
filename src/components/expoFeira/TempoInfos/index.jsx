@@ -74,7 +74,7 @@ const App = () => {
       const timestamp = parseInt(localStorage.getItem(TIMESTAMP_KEY), 10);
 
       const now = Date.now();
-      const cacheIsValid = cache && timestamp && now - timestamp < 60000; // menos de 60s
+      const cacheIsValid = cache && timestamp && now - timestamp < 20000; // menos de 60s
 
       if (cacheIsValid) {
         setWeatherDataMap(JSON.parse(cache));
@@ -85,14 +85,14 @@ const App = () => {
 
     loadData();
 
-    const refreshInterval = setInterval(fetchAllCitiesWeather, 60000); // atualiza a cada 60s
+    const refreshInterval = setInterval(fetchAllCitiesWeather, 20000); // atualiza a cada 60s
     return () => clearInterval(refreshInterval);
   }, []);
 
   useEffect(() => {
     const cidadeInterval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % cidades.length);
-    }, 15000); // troca cidade a cada 6s
+    }, 5000); // troca cidade a cada 6s
 
     return () => clearInterval(cidadeInterval);
   }, []);
