@@ -3,7 +3,7 @@ import { primaryMistura } from '../../../constants/color';
 
 export const Container = styled.div`
   width: 180px;
-  height: 105px;
+  height: 110px;
 
   background-color: #fff;
 
@@ -41,16 +41,13 @@ export const ClockContainer = styled.div`
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   width: 100%;
-  height: 30px;
+  height: 35px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   background-color: ${primaryMistura};
-
-  color: #fff;
-  font-size: 14px;
 `;
 
 export const SubContainer = styled.div`
@@ -69,7 +66,7 @@ export const SubContainer = styled.div`
 `;
 
 export const Hora = styled.div`
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
 
   color: #fff;

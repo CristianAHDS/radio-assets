@@ -6,6 +6,16 @@
 
 ## 🚀 Rotas Disponíveis
 
+### Mistura Boa Novo
+
+- **Clock Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newClock](https://pelotense-assets.netlify.app/newClock)
+
+<p align="center">
+  <img src="https://i.imgur.com/X0W71S9.png" alt="Clock" width="400" style="margin-top:20px;"/>
+</p>
+
+---
+
 ### Tempo
 
 - **Tempo**: [https://pelotense-assets.netlify.app/](https://pelotense-assets.netlify.app/)
@@ -202,11 +212,9 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 
 ### Componentes Grupo A Hora
 
-
 <p align="center">
   <img src="https://ahoradosul.com.br/wp-content/uploads/2025/07/radio-ahora-1200x579-1.png" alt="Rádio Pelotense Assets" width="400" style="margin-top:20px;"/>
 </p>
-
 
 - **Relógio**: [https://pelotense-assets.netlify.app/clockAHora](https://pelotense-assets.netlify.app/clockAHora)
 - **Lower A Hora**: [https://pelotense-assets.netlify.app/lowerAhora](https://pelotense-assets.netlify.app/lowerAhora)
@@ -215,7 +223,7 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 - **Tempo Região**: [https://pelotense-assets.netlify.app/aHora](https://pelotense-assets.netlify.app/aHora)
 - **Tempo Somente Lajeado**: [https://pelotense-assets.netlify.app/lajeado](https://pelotense-assets.netlify.app/lajeado)
 
-- **Exemplo GC A Hora com nome**:  [https://pelotense-assets.netlify.app/gcAhora?nome=Maria](https://pelotense-assets.netlify.app/gcAhora?nome=Maria)
+- **Exemplo GC A Hora com nome**: [https://pelotense-assets.netlify.app/gcAhora?nome=Maria](https://pelotense-assets.netlify.app/gcAhora?nome=Maria)
 
 ---
 
