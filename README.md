@@ -18,6 +18,18 @@
 
 ---
 
+### ExpoFeira Novo
+
+- **Clock ExpoFeiraa Novo**: [https://pelotense-assets.netlify.app/newClockExpo](https://pelotense-assets.netlify.app/newClockExpo)
+- **Tempo ExpoFeira Novo**: [https://pelotense-assets.netlify.app/newTempoExpo](https://pelotense-assets.netlify.app/newTempoExpo)
+
+<p align="center">
+  <img src="https://i.imgur.com/A7Ts56E.png" alt="Clock" width="200" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/uEMPGx5.png" alt="Clock" width="200" style="margin-top:20px;"/>
+</p>
+
+---
+
 ### Tempo
 
 - **Tempo**: [https://pelotense-assets.netlify.app/](https://pelotense-assets.netlify.app/)
