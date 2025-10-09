@@ -27,3 +27,5 @@ export const grayGeral = '#f9f9f9';
 
 export const ahoraPrimary = '#20396e';
 export const ahoraSecondary = '#1d3d7a';
+
+export const primaryMistura = '#8bb7fe';

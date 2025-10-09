@@ -32,7 +32,7 @@ const Gc = () => {
 
   // Carrega valor inicial
   useEffect(() => {
-    const savedTop = localStorage.getItem('gcTopText');
+    const savedTop = localStorage.getItem('gcMusic');
     const savedBottom = localStorage.getItem('gcBottomText');
 
     if (nome && nome.trim() !== '') {
@@ -42,7 +42,7 @@ const Gc = () => {
       setTopText(savedTop);
     } else {
       setTopText('EDITAR');
-      localStorage.setItem('gcTopText', 'EDITAR');
+      localStorage.setItem('gcMusic', 'EDITAR');
     }
 
     if (savedBottom && savedBottom.trim() !== '') {
@@ -57,7 +57,7 @@ const Gc = () => {
     adjustWidth(mirrorTopRef, topRef, topText);
     // Só salva no localStorage se não veio da URL
     if (!fromUrl && topText && topText.trim() !== '') {
-      localStorage.setItem('gcTopText', topText);
+      localStorage.setItem('gcMusic', topText);
     }
   }, [topText, fromUrl]);
 
@@ -82,8 +82,6 @@ const Gc = () => {
           onChange={(e) => setTopText(e.target.value)}
         />
       </GcTop>
-
-
     </Container>
   );
 };

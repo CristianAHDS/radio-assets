@@ -106,7 +106,14 @@ import CamUna from './components/camUna';
 import CamRioGrande from './components/camRioGrande';
 import CamShopping from './components/camShopping'
 
+//New Components
+import NewClock from './components/newVersion/ClockNewVersion'
+
 const router = createBrowserRouter([
+  // New Components
+  { path: '/newClock', element: <NewClock /> },
+
+
   // Pages
   { path: '/pageCorpoEMente', element: <PageCorpoEMente /> },
   { path: '/pagePelotasMerece', element: <PagePelotasMerece /> },
