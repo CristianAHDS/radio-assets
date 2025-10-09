@@ -11,7 +11,7 @@
 - **Clock Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newClock](https://pelotense-assets.netlify.app/newClock)
 
 <p align="center">
-  <img src="https://i.imgur.com/X0W71S9.png" alt="Clock" width="400" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/X0W71S9.png" alt="Clock" width="200" style="margin-top:20px;"/>
 </p>
 
 ---
