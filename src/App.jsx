@@ -104,15 +104,16 @@ import Lajeado from './components/tempoAHora/lajeado.jsx';
 //CAMS
 import CamUna from './components/camUna';
 import CamRioGrande from './components/camRioGrande';
-import CamShopping from './components/camShopping'
+import CamShopping from './components/camShopping';
 
 //New Components
-import NewClock from './components/newVersion/ClockNewVersion'
+import NewClock from './components/newVersion/ClockNewVersion';
+import NewTempo from './components/newVersion/TempoNewVersion';
 
 const router = createBrowserRouter([
   // New Components
   { path: '/newClock', element: <NewClock /> },
-
+  { path: '/newTempo', element: <NewTempo /> },
 
   // Pages
   { path: '/pageCorpoEMente', element: <PageCorpoEMente /> },
@@ -130,21 +131,21 @@ const router = createBrowserRouter([
   { path: '/lower', element: <Lower /> },
   { path: '/clock', element: <Clock /> },
   { path: '/gc', element: <Gc /> },
-  { path: '/gcMusica', element: <GcMusica/>},
-  { path: '/gcMusicaEsporte', element: <GcMusicaEsporte/>},
-  { path: '/gcMusicaConexao', element: <GcMusicaConexao/>},
-  { path: '/gcMusicaPensarNegocios', element: <GcMusicaPensarNegocios/>},
-  { path: '/gcMusicaOutros', element: <GcMusicaOutros/>},
-  { path: '/gcMusicaCorpoEMente', element: <GcMusicaCorpoEMente/>},
-  { path: '/gcMusicaPelotasMerece', element: <GcMusicaPelotasMerece/>},
+  { path: '/gcMusica', element: <GcMusica /> },
+  { path: '/gcMusicaEsporte', element: <GcMusicaEsporte /> },
+  { path: '/gcMusicaConexao', element: <GcMusicaConexao /> },
+  { path: '/gcMusicaPensarNegocios', element: <GcMusicaPensarNegocios /> },
+  { path: '/gcMusicaOutros', element: <GcMusicaOutros /> },
+  { path: '/gcMusicaCorpoEMente', element: <GcMusicaCorpoEMente /> },
+  { path: '/gcMusicaPelotasMerece', element: <GcMusicaPelotasMerece /> },
   { path: '/tabela', element: <Tabela /> },
   { path: '/alert', element: <Alert /> },
   { path: '/pin', element: <Pin /> },
   { path: '/whats', element: <Whats /> },
   { path: '/results', element: <Results /> },
   { path: '/qrCode', element: <QrCode /> },
-  { path: '/camTp', element: <CamTp />},
-  {path: '/gravado', element: <Gravado/>},
+  { path: '/camTp', element: <CamTp /> },
+  { path: '/gravado', element: <Gravado /> },
 
   //Esporte
   { path: '/whatsEsporte', element: <WhatsEsporte /> },
@@ -155,9 +156,9 @@ const router = createBrowserRouter([
   { path: '/letEsporte', element: <LetEsporte /> },
   { path: '/instaEsporte', element: <InstaEsporte /> },
   { path: '/pinEsporte', element: <PinEsporte /> },
-  { path: '/camTpEsporte', element: <CamTpEsporte />},
+  { path: '/camTpEsporte', element: <CamTpEsporte /> },
 
-  //Conexão 
+  //Conexão
   { path: '/letConexao', element: <LetConexao /> },
   { path: '/conexao', element: <TempoConexao /> },
   { path: '/lowerConexao', element: <LowerConexao /> },
@@ -167,7 +168,7 @@ const router = createBrowserRouter([
   { path: '/pinConexao', element: <PinConexao /> },
   { path: '/whatsConexao', element: <WhatsConexao /> },
   { path: '/instaConexao', element: <InstaConexao /> },
-  { path: '/camTpConexao', element: <CamTpConexao />},
+  { path: '/camTpConexao', element: <CamTpConexao /> },
 
   //Pensar Negocios
   { path: '/lowerPensarNegocios', element: <LowerPersnarNegocios /> },
@@ -176,15 +177,15 @@ const router = createBrowserRouter([
   { path: '/pensarNegocios', element: <TempoPensarnegocios /> },
   { path: '/whatsPensarNegocios', element: <WhatsPensarNegocios /> },
   { path: '/instaPensarNegocios', element: <InstaPensarNegocios /> },
-  { path: '/pinPensarNegocios', element: <PinPensarNegocios /> }, 
-  { path: '/camTpPensarNegocios', element: <CamTpPensarNegocios />},
+  { path: '/pinPensarNegocios', element: <PinPensarNegocios /> },
+  { path: '/camTpPensarNegocios', element: <CamTpPensarNegocios /> },
 
   //Outros
   { path: '/clockOutros', element: <ClockOutros /> },
   { path: '/outros', element: <TempoOutros /> },
   { path: '/lowerOutros', element: <LowerOutros /> },
   { path: '/gcOutros', element: <GcOutros /> },
-  { path: '/pinOutros', element: <PinOutros /> },  
+  { path: '/pinOutros', element: <PinOutros /> },
   { path: '/whatsOutros', element: <WhatsOutros /> },
   { path: '/instaOutros', element: <InstaOutros /> },
 
@@ -196,7 +197,7 @@ const router = createBrowserRouter([
   { path: '/pinCorpoEMente', element: <PinCorpoEMente /> },
   { path: '/whatsCorpoEMente', element: <WhatsCorpoEMente /> },
   { path: '/instaCorpoEMente', element: <InstaCorpoEMente /> },
-  { path: '/camTpCorpoEMente', element: <CamTpCorpoEMente />},
+  { path: '/camTpCorpoEMente', element: <CamTpCorpoEMente /> },
 
   //Pelotas Merece
   { path: '/clockPelotasMerece', element: <ClockPelotasMerece /> },
@@ -206,7 +207,7 @@ const router = createBrowserRouter([
   { path: '/pinPelotasMerece', element: <PinPelotasMerece /> },
   { path: '/whatsPelotasMerece', element: <WhatsPelotasMerece /> },
   { path: '/instaPelotasMerece', element: <InstaPelotasMerece /> },
-  { path: '/CamTpPelotasMerece', element: <CamTpPelotasMerece />},
+  { path: '/CamTpPelotasMerece', element: <CamTpPelotasMerece /> },
 
   //AHORA
   { path: '/clockAHora', element: <ClockAHora /> },
@@ -217,9 +218,9 @@ const router = createBrowserRouter([
   { path: '/lajeado', element: <Lajeado /> },
 
   //CAMS
-  { path: '/camUna', element: <CamUna /> }, 
-  { path: '/camRioGrande', element: <CamRioGrande />},
-  { path: '/camShopping', element: <CamShopping />},
+  { path: '/camUna', element: <CamUna /> },
+  { path: '/camRioGrande', element: <CamRioGrande /> },
+  { path: '/camShopping', element: <CamShopping /> },
 ]);
 
 const App = () => {

@@ -9,9 +9,11 @@
 ### Mistura Boa Novo
 
 - **Clock Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newClock](https://pelotense-assets.netlify.app/newClock)
+- **Tempo Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newTempo](https://pelotense-assets.netlify.app/newTempo)
 
 <p align="center">
   <img src="https://i.imgur.com/X0W71S9.png" alt="Clock" width="200" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/eG4zeit.png" alt="Clock" width="200" style="margin-top:20px;"/>
 </p>
 
 ---
