@@ -15,8 +15,8 @@
 - **Whats Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newWhats](https://pelotense-assets.netlify.app/newWhats)
 
 <p align="center">
-  <img src="https://i.imgur.com/X0W71S9.png" alt="Clock" width="200" style="margin-top:20px;"/>
-  <img src="https://i.imgur.com/eG4zeit.png" alt="Clock" width="200" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/X0W71S9.png" alt="Clock" width="200" style="margin-top:40px;"/>
+  <img src="https://i.imgur.com/eG4zeit.png" alt="Clock" width="200" style="margin-top:40px;"/>
 </p>
 <p align="center">
   <img src="https://i.imgur.com/Tq33vyw.png" alt="Clock" width="200" style="margin-top:20px;"/>
