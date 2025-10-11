@@ -34,7 +34,7 @@
 - **Tempo ExpoFeira Novo**: [https://pelotense-assets.netlify.app/newTempoExpo](https://pelotense-assets.netlify.app/newTempoExpo)
 
 <p align="center">
-  <img src="https://i.imgur.com/A7Ts56E.png" alt="Clock" width="300" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/A7Ts56E.png" alt="Clock" width="400" style="margin-top:20px;"/>
   
 </p>
 
