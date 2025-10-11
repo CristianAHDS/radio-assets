@@ -23,7 +23,7 @@
   <img src="https://i.imgur.com/UM1PJBd.png" alt="Clock" width="200" style="margin-top:20px;"/>
 </p>
 <p align="center">
-  <img src="https://i.imgur.com/Ek65FIi.png" alt="Clock" width="300" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/Ek65FIi.png" alt="Clock" width="400" style="margin-top:20px;"/>
 </p>
 
 ---
