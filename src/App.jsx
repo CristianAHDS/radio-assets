@@ -111,6 +111,7 @@ import NewClock from './components/newVersion/ClockNewVersion';
 import NewTempo from './components/newVersion/TempoNewVersion';
 import NewGC from './components/newVersion/GCNew';
 import NewGCMusica from './components/newVersion/gcMusica';
+import NewWhats from './components/newVersion/whats'
 
 import NewClockExpo from './components/expoFeira/ClockNewVersion';
 import NewTempoExpo from './components/expoFeira/TempoNewVersion';
@@ -122,6 +123,7 @@ const router = createBrowserRouter([
   { path: '/newTempo', element: <NewTempo /> },
   { path: '/newGC', element: <NewGC/> },
   { path: '/newGcMuisca', element: <NewGCMusica/> },
+  { path: '/newWhats', element: <NewWhats/> },
   { path: '/newClockExpo', element: <NewClockExpo /> },
   { path: '/newTempoExpo', element: <NewTempoExpo /> },
 
