@@ -109,9 +109,11 @@ import CamShopping from './components/camShopping';
 //New Components
 import NewClock from './components/newVersion/ClockNewVersion';
 import NewTempo from './components/newVersion/TempoNewVersion';
+import NewGC from './components/newVersion/GCNew';
 
 import NewClockExpo from './components/expoFeira/ClockNewVersion';
 import NewTempoExpo from './components/expoFeira/TempoNewVersion';
+
 
 const router = createBrowserRouter([
   // New Components
@@ -119,6 +121,7 @@ const router = createBrowserRouter([
   { path: '/newTempo', element: <NewTempo /> },
   { path: '/newClockExpo', element: <NewClockExpo /> },
   { path: '/newTempoExpo', element: <NewTempoExpo /> },
+  { path: '/newGC', element: <NewGC/> },
 
   // Pages
   { path: '/pageCorpoEMente', element: <PageCorpoEMente /> },
