@@ -13,7 +13,7 @@
 - **GC Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newGc](https://pelotense-assets.netlify.app/newGc)
 - **GC Música Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newnewGcMuiscaGc](https://pelotense-assets.netlify.app/newGcMuisca)
 - **Whats Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newCamTp](https://pelotense-assets.netlify.app/newCamTp)
-- **Cameras TP Boa Novo**: [https://pelotense-assets.netlify.app/newGc](https://pelotense-assets.netlify.app/newGc)
+- **Cameras TP Boa Novo**: [https://pelotense-assets.netlify.app/newGc](https://pelotense-assets.netlify.app/newGc?local=Nome)
 
 <p align="center">
   <img src="https://i.imgur.com/X0W71S9.png" alt="Clock" width="200" style="margin-top:40px;"/>
