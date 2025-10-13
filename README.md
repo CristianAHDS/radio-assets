@@ -10,10 +10,24 @@
 
 - **Clock Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newClock](https://pelotense-assets.netlify.app/newClock)
 - **Tempo Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newTempo](https://pelotense-assets.netlify.app/newTempo)
+- **GC Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newGc](https://pelotense-assets.netlify.app/newGc)
+- **GC Música Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newnewGcMuiscaGc](https://pelotense-assets.netlify.app/newGcMuisca)
+- **Whats Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newWhats](https://pelotense-assets.netlify.app/newWhats)
+- **Cameras TP Boa Novo**: [https://pelotense-assets.netlify.app/newCamTp](https://pelotense-assets.netlify.app/newCamTp?local=Nome)
 
 <p align="center">
-  <img src="https://i.imgur.com/X0W71S9.png" alt="Clock" width="200" style="margin-top:20px;"/>
-  <img src="https://i.imgur.com/eG4zeit.png" alt="Clock" width="200" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/X0W71S9.png" alt="Clock" width="200" style="margin-top:40px;"/>
+  <img src="https://i.imgur.com/eG4zeit.png" alt="Clock" width="200" style="margin-top:40px;"/>
+</p>
+<p align="center">
+  <img src="https://i.imgur.com/Tq33vyw.png" alt="Clock" width="200" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/UM1PJBd.png" alt="Clock" width="200" style="margin-top:20px;"/>
+</p>
+<p align="center">
+  <img src="https://i.imgur.com/Ek65FIi.png" alt="Clock" width="400" style="margin-top:20px;"/>
+</p>
+<p align="center">
+  <img src="https://i.imgur.com/x5Mk6gW.png" alt="Clock" width="400" style="margin-top:20px;"/>
 </p>
 
 ---
@@ -25,7 +39,7 @@
 
 <p align="center">
   <img src="https://i.imgur.com/A7Ts56E.png" alt="Clock" width="200" style="margin-top:20px;"/>
-  <img src="https://i.imgur.com/uEMPGx5.png" alt="Clock" width="200" style="margin-top:20px;"/>
+  
 </p>
 
 ---
