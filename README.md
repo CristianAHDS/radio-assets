@@ -216,12 +216,6 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 - **Câmera Rio Grnade**: [https://pelotense-assets.netlify.app/camRioGrande](https://pelotense-assets.netlify.app/camRioGrande)
 - **Câmera Shopping**: [https://pelotense-assets.netlify.app/camShopping](https://pelotense-assets.netlify.app/camShopping)
 
-<p align="center">
-<img src="https://i.imgur.com/zxKc7LS.png" alt="GC" width="400" style="margin-top:20px;"/>
-<img src="https://i.imgur.com/5tEfAgI.png" alt="GC" width="400" style="margin-top:20px;"/>
-<img src="https://i.imgur.com/4kDfjWH.png" alt="GC" width="400" style="margin-top:20px;"/>
-</p>
-
 ---
 
 ### Componentes Grupo A Hora
