@@ -114,11 +114,27 @@ import NewGCMusica from './components/newVersion/gcMusica';
 import NewWhats from './components/newVersion/whats'
 import NewCamTp from './components/newVersion/camTp'
 
+//New Defaukt
+import DefaultClock from './components/newDefault/ClockNewVersion';
+import DefaultTempo from './components/newDefault/TempoNewVersion';
+import DefaultGC from './components/newDefault/GCNew';
+import DefaultGCMusica from './components/newDefault/gcMusica';
+import DefaultWhats from './components/newDefault/whats'
+import DefaultCamTp from './components/newDefault/camTp'
+
 import NewClockExpo from './components/expoFeira/ClockNewVersion';
 import NewTempoExpo from './components/expoFeira/TempoNewVersion';
 
 
 const router = createBrowserRouter([
+  // Deafautl Components
+  { path: '/defaultClock', element: <DefaultClock /> },
+  { path: '/defaultTempo', element: <DefaultTempo /> },
+  { path: '/defaultGC', element: <DefaultGC/> },
+  { path: '/defaultGcMuisca', element: <DefaultGCMusica/> },
+  { path: '/defaultCamTp', element: <DefaultCamTp/> },
+  { path: '/defaultWhats', element: <DefaultWhats/> },
+
   // New Components
   { path: '/newClock', element: <NewClock /> },
   { path: '/newTempo', element: <NewTempo /> },
@@ -126,6 +142,7 @@ const router = createBrowserRouter([
   { path: '/newGcMuisca', element: <NewGCMusica/> },
   { path: '/newCamTp', element: <NewCamTp/> },
   { path: '/newWhats', element: <NewWhats/> },
+
   { path: '/newClockExpo', element: <NewClockExpo /> },
   { path: '/newTempoExpo', element: <NewTempoExpo /> },
 
