@@ -8,26 +8,26 @@
 
 ### Default Novo
 
-- **Clock Mistura Boa Novo**: [https://pelotense-assets.netlify.app/defaultClock](https://pelotense-assets.netlify.app/defaultClock)
-- **Tempo Mistura Boa Novo**: [https://pelotense-assets.netlify.app/defaultTempo](https://pelotense-assets.netlify.app/defaultTempo)
-- **GC Mistura Boa Novo**: [https://pelotense-assets.netlify.app/defaultGC?nome=Teste](https://pelotense-assets.netlify.app/defaultGC?nome=Teste)
-- **GC Música Mistura Boa Novo**: [https://pelotense-assets.netlify.app/defaultGcMuisca?nome=Teste](https://pelotense-assets.netlify.app/defaultGcMuisca?nome=Teste)
-- **Whats Mistura Boa Novo**: [https://pelotense-assets.netlify.app/DefaultWhats](https://pelotense-assets.netlify.app/DefaultWhats)
-- **Cameras TP Boa Novo**: [https://pelotense-assets.netlify.app/defaultCamTp?local=Nome](https://pelotense-assets.netlify.app/defaultCamTp?local=Nome)
+- **Clock Default Novo**: [https://pelotense-assets.netlify.app/defaultClock](https://pelotense-assets.netlify.app/defaultClock)
+- **Tempo Default Novo**: [https://pelotense-assets.netlify.app/defaultTempo](https://pelotense-assets.netlify.app/defaultTempo)
+- **GC Default Novo**: [https://pelotense-assets.netlify.app/defaultGC?nome=Teste](https://pelotense-assets.netlify.app/defaultGC?nome=Teste)
+- **GC Música Default Novo**: [https://pelotense-assets.netlify.app/defaultGcMuisca?nome=Teste](https://pelotense-assets.netlify.app/defaultGcMuisca?nome=Teste)
+- **Whats Default Novo**: [https://pelotense-assets.netlify.app/DefaultWhats](https://pelotense-assets.netlify.app/DefaultWhats)
+- **Cameras TP Default Novo**: [https://pelotense-assets.netlify.app/defaultCamTp?local=Nome](https://pelotense-assets.netlify.app/defaultCamTp?local=Nome)
 
 <p align="center">
-  <img src="https://i.imgur.com/X0W71S9.png" alt="Clock" width="200" style="margin-top:40px;"/>
-  <img src="https://i.imgur.com/eG4zeit.png" alt="Clock" width="200" style="margin-top:40px;"/>
+  <img src="https://i.imgur.com/lDU5Zrc.png" alt="Clock" width="200" style="margin-top:40px;"/>
+  <img src="https://i.imgur.com/ZZ7GTbC.png" alt="Clock" width="200" style="margin-top:40px;"/>
 </p>
 <p align="center">
-  <img src="https://i.imgur.com/Tq33vyw.png" alt="Clock" width="200" style="margin-top:20px;"/>
-  <img src="https://i.imgur.com/UM1PJBd.png" alt="Clock" width="200" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/viGE0Ol.png" alt="Clock" width="200" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/0O45BjI.png" alt="Clock" width="200" style="margin-top:20px;"/>
 </p>
 <p align="center">
-  <img src="https://i.imgur.com/Ek65FIi.png" alt="Clock" width="400" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/Eqc9BRw.png" alt="Clock" width="400" style="margin-top:20px;"/>
 </p>
 <p align="center">
-  <img src="https://i.imgur.com/x5Mk6gW.png" alt="Clock" width="400" style="margin-top:20px;"/>
+  <img src="https://i.imgur.com/jkmzR7T.png" alt="Clock" width="400" style="margin-top:20px;"/>
 </p>
 
 ---
@@ -36,10 +36,10 @@
 
 - **Clock Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newClock](https://pelotense-assets.netlify.app/newClock)
 - **Tempo Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newTempo](https://pelotense-assets.netlify.app/newTempo)
-- **GC Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newGc](https://pelotense-assets.netlify.app/newGc)
+- **GC Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newGc?nome=Teste](https://pelotense-assets.netlify.app/newGc?nome=Teste)
 - **GC Música Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newnewGcMuiscaGc?nome=Teste](https://pelotense-assets.netlify.app/newGcMuisca?nome=Teste)
 - **Whats Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newWhats](https://pelotense-assets.netlify.app/newWhats)
-- **Cameras TP Boa Novo**: [https://pelotense-assets.netlify.app/newCamTp?local=Nome](https://pelotense-assets.netlify.app/newCamTp?local=Nome)
+- **Cameras TP Mistura Boa Novo**: [https://pelotense-assets.netlify.app/newCamTp?local=Nome](https://pelotense-assets.netlify.app/newCamTp?local=Nome)
 
 <p align="center">
   <img src="https://i.imgur.com/X0W71S9.png" alt="Clock" width="200" style="margin-top:40px;"/>
