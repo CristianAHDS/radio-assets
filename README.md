@@ -16,18 +16,18 @@
 - **Cameras TP Default Novo**: [https://pelotense-assets.netlify.app/defaultCamTp?local=Nome](https://pelotense-assets.netlify.app/defaultCamTp?local=Nome)
 
 <p align="center">
-  <img src="https://i.imgur.com/lDU5Zrc.png" alt="Clock" width="200" style="margin-top:40px;"/>
-  <img src="https://i.imgur.com/ZZ7GTbC.png" alt="Clock" width="200" style="margin-top:40px;"/>
+  <img src="https://i.ibb.co/qLCJNkv9/1.png" alt="Clock" width="200" style="margin-top:40px;"/>
+  <img src="https://i.ibb.co/LdFJp17c/2.png" alt="Clock" width="200" style="margin-top:40px;"/>
 </p>
 <p align="center">
-  <img src="https://i.imgur.com/viGE0Ol.png" alt="Clock" width="200" style="margin-top:20px;"/>
-  <img src="https://i.imgur.com/0O45BjI.png" alt="Clock" width="200" style="margin-top:20px;"/>
+  <img src="https://i.ibb.co/C5kvMPBB/3.png" alt="Clock" width="200" style="margin-top:20px;"/>
+  <img src="https://i.ibb.co/Wv5SNtKb/4.png" alt="Clock" width="200" style="margin-top:20px;"/>
 </p>
 <p align="center">
-  <img src="https://i.imgur.com/Eqc9BRw.png" alt="Clock" width="400" style="margin-top:20px;"/>
+  <img src="https://i.ibb.co/274J37rv/5.png" alt="Clock" width="400" style="margin-top:20px;"/>
 </p>
 <p align="center">
-  <img src="https://i.imgur.com/jkmzR7T.png" alt="Clock" width="400" style="margin-top:20px;"/>
+  <img src="https://i.ibb.co/20k6bf7C/6.png" alt="Clock" width="400" style="margin-top:20px;"/>
 </p>
 
 ---

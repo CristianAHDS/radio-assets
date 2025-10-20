@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primary, secondary} from '../../../constants/color';
+import { defaultPrimary, defaultSecondary} from '../../../constants/color';
 
 export const Container = styled.div`
 
@@ -19,14 +19,12 @@ export const TextContainer = styled.div`
   height: 50px;
   display: flex;
   flex-direction: row;
-
-  
 `;
 
 export const VetorialSide = styled.div`
   width: 140px;
   height: 100%;
-  background-color: ${secondary};
+  background-color: ${defaultSecondary};
 
   padding: 0px 20px;
 
@@ -43,7 +41,7 @@ export const Logo = styled.img`
 `;
 
 export const LocateText = styled.div`
-  background-color: ${primary};
+  background-color: ${defaultPrimary};
   display: flex;
   align-items: center;
   padding: 0px 20px;

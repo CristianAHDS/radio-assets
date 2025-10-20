@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primary } from '../../../constants/color';
+import { defaultPrimary } from '../../../constants/color';
 
 export const Container = styled.div`
   width: 180px;
@@ -47,7 +47,7 @@ export const ClockContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: ${primary};
+  background-color: ${defaultPrimary};
 `;
 
 export const SubContainer = styled.div`
@@ -59,7 +59,7 @@ export const SubContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  background-color: ${primary};
+  background-color: ${defaultPrimary};
 
   color: #fff;
   font-size: 14px;

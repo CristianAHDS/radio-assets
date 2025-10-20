@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { primary } from '../../../constants/color';
+import { defaultPrimary } from '../../../constants/color';
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const GcTop = styled.div`
-  background-color: ${primary};
+  background-color: ${defaultPrimary};
   display: inline-flex;
   align-items: center;
   position: fixed;

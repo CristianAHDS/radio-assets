@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {
 
-  primary,
+  defaultPrimary,
 } from '../../../constants/color';
 
 export const Card = styled.div`
@@ -27,7 +27,7 @@ export const Temp = styled.div`
 
   border-radius: 15px;
 
-  background-color: ${primary};
+  background-color: ${defaultPrimary};
 
   font-size: 22px;
 
