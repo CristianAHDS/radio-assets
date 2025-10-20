@@ -28,10 +28,12 @@ export const grayGeral = '#f9f9f9';
 export const ahoraPrimary = '#20396e';
 export const ahoraSecondary = '#1d3d7a';
 
-export const defaultPrimary = '#00acf8';
-export const defaultSecondary = '#317b9e';
-
 export const primaryMistura = '#8bb7fe';
 export const primaryExpo = '#ff7c34';
+
+export const defaultPrimary = '#00acf8';
+export const defaultSecondary = '#317b9e';
+export const primaryPelotasMereceDefault = '#a91138';
+export const secondaryPelotasMereceDefault = '#733343';
 
 

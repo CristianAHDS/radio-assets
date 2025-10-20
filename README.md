@@ -58,6 +58,32 @@
 
 ---
 
+### Default Novo Pelotas Merece
+
+- **Clock Default Novo Pelotas Merece**: [https://pelotense-assets.netlify.app/defaultClockPelotasMerece](https://pelotense-assets.netlify.app/defaultClockPelotasMerece)
+- **Tempo Default Novo Pelotas Merece**: [https://pelotense-assets.netlify.app/defaultTempoPelotasMerece](https://pelotense-assets.netlify.app/defaultTempoPelotasMerece)
+- **GC Default Novo Pelotas Merece**: [https://pelotense-assets.netlify.app/defaultGCPelotasMerece?nome=Teste](https://pelotense-assets.netlify.app/defaultGCPelotasMerece?nome=Teste)
+- **GC Música Default Novo Pelotas Merece**: [https://pelotense-assets.netlify.app/defaultGCMusicaPelotasMerece?nome=Teste](https://pelotense-assets.netlify.app/defaultGCMusicaPelotasMerece?nome=Teste)
+- **Whats Default Novo Pelotas Merece**: [https://pelotense-assets.netlify.app/defaultWhatsPelotasMerece](https://pelotense-assets.netlify.app/defaultWhatsPelotasMerece)
+- **Cameras TP Default Novo Pelotas Merece**: [https://pelotense-assets.netlify.app/defaultCamTpPelotasMerece?local=Nome](https://pelotense-assets.netlify.app/defaultCamTpPelotasMerece?local=Nome)
+
+<p align="center">
+  <img src="https://i.ibb.co/gbcsyTby/1.png" alt="Clock" width="200" style="margin-top:40px;"/>
+  <img src="https://i.ibb.co/hRbNnMkP/2.png " alt="Clock" width="200" style="margin-top:40px;"/>
+</p>
+<p align="center">
+  <img src="https://i.ibb.co/DH9bxJ9c/3.png" alt="Clock" width="200" style="margin-top:20px;"/>
+  <img src="https://i.ibb.co/609vDHmR/4.png" alt="Clock" width="200" style="margin-top:20px;"/>
+</p>
+<p align="center">
+  <img src="https://i.ibb.co/b5g8QT8Z/5.png" alt="Clock" width="400" style="margin-top:20px;"/>
+</p>
+<p align="center">
+  <img src="https://i.ibb.co/d0gF5DZp/6.png" alt="Clock" width="400" style="margin-top:20px;"/>
+</p>
+
+---
+
 ### ExpoFeira Novo
 
 - **Clock ExpoFeiraa Novo**: [https://pelotense-assets.netlify.app/newClockExpo](https://pelotense-assets.netlify.app/newClockExpo)

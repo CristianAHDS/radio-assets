@@ -122,11 +122,27 @@ import DefaultGCMusica from './components/newDefault/gcMusica';
 import DefaultWhats from './components/newDefault/whats'
 import DefaultCamTp from './components/newDefault/camTp'
 
+//New Pelotas Merece Defaukt
+import DefaultClockPelotasMerece from './components/newDefaultPelotas/ClockNewVersion';
+import DefaultTempoPelotasMerece from './components/newDefaultPelotas/TempoNewVersion';
+import DefaultGCPelotasMerece from './components/newDefaultPelotas/GCNew';
+import DefaultGCMusicaPelotasMerece from './components/newDefaultPelotas/gcMusica';
+import DefaultWhatsPelotasMerece from './components/newDefaultPelotas/whats'
+import DefaultCamTpPelotasMerece from './components/newDefaultPelotas/camTp'
+
 import NewClockExpo from './components/expoFeira/ClockNewVersion';
 import NewTempoExpo from './components/expoFeira/TempoNewVersion';
 
 
 const router = createBrowserRouter([
+  // Deafautl Components Pelotas Merece 
+  { path: '/defaultClockPelotasMerece', element: <DefaultClockPelotasMerece /> },
+  { path: '/defaultTempoPelotasMerece', element: <DefaultTempoPelotasMerece /> },
+  { path: '/defaultGCPelotasMerece', element: <DefaultGCPelotasMerece/> },
+  { path: '/defaultGCMusicaPelotasMerece', element: <DefaultGCMusicaPelotasMerece/> },
+  { path: '/defaultWhatsPelotasMerece', element: <DefaultWhatsPelotasMerece/> },
+  { path: '/defaultCamTpPelotasMerece', element: <DefaultCamTpPelotasMerece/> },
+
   // Deafautl Components
   { path: '/defaultClock', element: <DefaultClock /> },
   { path: '/defaultTempo', element: <DefaultTempo /> },
