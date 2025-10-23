@@ -42,6 +42,7 @@ import InstaEsporte from './components/instaEsporte';
 import WhatsEsporte from './components/whatsEsporte';
 import PinEsporte from './components/pinEsporte';
 import CamTpEsporte from './components/camTpEsporte';
+import GameResult from './components/esportes/gameResult'
 
 //Pensar Negócios
 import TempoPensarnegocios from './components/tempoPensarNegocios';
@@ -204,6 +205,7 @@ const router = createBrowserRouter([
   { path: '/instaEsporte', element: <InstaEsporte /> },
   { path: '/pinEsporte', element: <PinEsporte /> },
   { path: '/camTpEsporte', element: <CamTpEsporte /> },
+  {path: '/gameResult', element: <GameResult /> },
 
   //Conexão
   { path: '/letConexao', element: <LetConexao /> },
