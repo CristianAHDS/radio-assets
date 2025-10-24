@@ -34,7 +34,7 @@ export const TopCenter = styled.div`
 `;
 
 export const HomeScore = styled.div`
-  width: 40px;
+  width: 50px;
   height: 100%;
 
   display: flex;
@@ -58,7 +58,7 @@ export const XScore = styled.div`
 `;
 
 export const AwayScore = styled.div`
-  width: 40px;
+  width: 50px;
   height: 100%;
 
   display: flex;
