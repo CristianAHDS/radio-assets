@@ -85,7 +85,7 @@ export const TeamLogo = styled.div`
 export const LogoLeft = styled.img`
   width: 100%;
 
-  margin-right: -20px;
+  margin-right: -30px;
 
   z-index: 100;
 `;
@@ -93,7 +93,7 @@ export const LogoLeft = styled.img`
 export const LogoRight = styled.img`
   width: 100%;
 
-  margin-left: -20px;
+  margin-left: -30px;
 
   z-index: 100;
 `;
