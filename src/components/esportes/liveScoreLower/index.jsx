@@ -152,16 +152,18 @@ const Lower = () => {
   };
 
   const formatText = (input) => {
-    const parts = input.split(/(\*[^*]+\*)/g);
-    return parts
-      .map((part) => {
-        if (part.startsWith('*') && part.endsWith('*')) {
-          const boldText = part.slice(1, -1);
-          return `<strong>${boldText}</strong>`;
-        }
-        return part;
-      })
-      .join('');
+    if (text) {
+      const parts = input.split(/(\*[^*]+\*)/g);
+      return parts
+        .map((part) => {
+          if (part.startsWith('*') && part.endsWith('*')) {
+            const boldText = part.slice(1, -1);
+            return `<strong>${boldText}</strong>`;
+          }
+          return part;
+        })
+        .join('');
+    }
   };
 
   const handleInput = (e) => {
