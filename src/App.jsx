@@ -42,7 +42,8 @@ import InstaEsporte from './components/instaEsporte';
 import WhatsEsporte from './components/whatsEsporte';
 import PinEsporte from './components/pinEsporte';
 import CamTpEsporte from './components/camTpEsporte';
-import GameResult from './components/esportes/gameResult'
+import GameResult from './components/esportes/gameResult';
+import LiveScore from './components/esportes/liveScore';
 
 //Pensar Negócios
 import TempoPensarnegocios from './components/tempoPensarNegocios';
@@ -112,53 +113,67 @@ import NewClock from './components/newVersion/ClockNewVersion';
 import NewTempo from './components/newVersion/TempoNewVersion';
 import NewGC from './components/newVersion/GCNew';
 import NewGCMusica from './components/newVersion/gcMusica';
-import NewWhats from './components/newVersion/whats'
-import NewCamTp from './components/newVersion/camTp'
+import NewWhats from './components/newVersion/whats';
+import NewCamTp from './components/newVersion/camTp';
 
 //New Defaukt
 import DefaultClock from './components/newDefault/ClockNewVersion';
 import DefaultTempo from './components/newDefault/TempoNewVersion';
 import DefaultGC from './components/newDefault/GCNew';
 import DefaultGCMusica from './components/newDefault/gcMusica';
-import DefaultWhats from './components/newDefault/whats'
-import DefaultCamTp from './components/newDefault/camTp'
+import DefaultWhats from './components/newDefault/whats';
+import DefaultCamTp from './components/newDefault/camTp';
 
 //New Pelotas Merece Defaukt
 import DefaultClockPelotasMerece from './components/newDefaultPelotas/ClockNewVersion';
 import DefaultTempoPelotasMerece from './components/newDefaultPelotas/TempoNewVersion';
 import DefaultGCPelotasMerece from './components/newDefaultPelotas/GCNew';
 import DefaultGCMusicaPelotasMerece from './components/newDefaultPelotas/gcMusica';
-import DefaultWhatsPelotasMerece from './components/newDefaultPelotas/whats'
-import DefaultCamTpPelotasMerece from './components/newDefaultPelotas/camTp'
+import DefaultWhatsPelotasMerece from './components/newDefaultPelotas/whats';
+import DefaultCamTpPelotasMerece from './components/newDefaultPelotas/camTp';
 
 import NewClockExpo from './components/expoFeira/ClockNewVersion';
 import NewTempoExpo from './components/expoFeira/TempoNewVersion';
 
-
 const router = createBrowserRouter([
-  // Deafautl Components Pelotas Merece 
-  { path: '/defaultClockPelotasMerece', element: <DefaultClockPelotasMerece /> },
-  { path: '/defaultTempoPelotasMerece', element: <DefaultTempoPelotasMerece /> },
-  { path: '/defaultGCPelotasMerece', element: <DefaultGCPelotasMerece/> },
-  { path: '/defaultGCMusicaPelotasMerece', element: <DefaultGCMusicaPelotasMerece/> },
-  { path: '/defaultWhatsPelotasMerece', element: <DefaultWhatsPelotasMerece/> },
-  { path: '/defaultCamTpPelotasMerece', element: <DefaultCamTpPelotasMerece/> },
+  // Deafautl Components Pelotas Merece
+  {
+    path: '/defaultClockPelotasMerece',
+    element: <DefaultClockPelotasMerece />,
+  },
+  {
+    path: '/defaultTempoPelotasMerece',
+    element: <DefaultTempoPelotasMerece />,
+  },
+  { path: '/defaultGCPelotasMerece', element: <DefaultGCPelotasMerece /> },
+  {
+    path: '/defaultGCMusicaPelotasMerece',
+    element: <DefaultGCMusicaPelotasMerece />,
+  },
+  {
+    path: '/defaultWhatsPelotasMerece',
+    element: <DefaultWhatsPelotasMerece />,
+  },
+  {
+    path: '/defaultCamTpPelotasMerece',
+    element: <DefaultCamTpPelotasMerece />,
+  },
 
   // Deafautl Components
   { path: '/defaultClock', element: <DefaultClock /> },
   { path: '/defaultTempo', element: <DefaultTempo /> },
-  { path: '/defaultGC', element: <DefaultGC/> },
-  { path: '/defaultGcMuisca', element: <DefaultGCMusica/> },
-  { path: '/defaultCamTp', element: <DefaultCamTp/> },
-  { path: '/defaultWhats', element: <DefaultWhats/> },
+  { path: '/defaultGC', element: <DefaultGC /> },
+  { path: '/defaultGcMuisca', element: <DefaultGCMusica /> },
+  { path: '/defaultCamTp', element: <DefaultCamTp /> },
+  { path: '/defaultWhats', element: <DefaultWhats /> },
 
   // New Components
   { path: '/newClock', element: <NewClock /> },
   { path: '/newTempo', element: <NewTempo /> },
-  { path: '/newGC', element: <NewGC/> },
-  { path: '/newGcMuisca', element: <NewGCMusica/> },
-  { path: '/newCamTp', element: <NewCamTp/> },
-  { path: '/newWhats', element: <NewWhats/> },
+  { path: '/newGC', element: <NewGC /> },
+  { path: '/newGcMuisca', element: <NewGCMusica /> },
+  { path: '/newCamTp', element: <NewCamTp /> },
+  { path: '/newWhats', element: <NewWhats /> },
 
   { path: '/newClockExpo', element: <NewClockExpo /> },
   { path: '/newTempoExpo', element: <NewTempoExpo /> },
@@ -205,7 +220,8 @@ const router = createBrowserRouter([
   { path: '/instaEsporte', element: <InstaEsporte /> },
   { path: '/pinEsporte', element: <PinEsporte /> },
   { path: '/camTpEsporte', element: <CamTpEsporte /> },
-  {path: '/gameResult', element: <GameResult /> },
+  { path: '/gameResult', element: <GameResult /> },
+  { path: '/liveScore', element: <LiveScore /> },
 
   //Conexão
   { path: '/letConexao', element: <LetConexao /> },

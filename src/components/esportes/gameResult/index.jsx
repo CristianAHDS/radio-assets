@@ -24,7 +24,7 @@ const GameResult = (props) => {
       <Top>
         <TopLeft>
           <TeamLogo>
-            <LogoLeft src={props.TeamLogo2 || defaultLogo} alt="Logo" />
+            <LogoLeft src={props.TeamLogo1 || defaultLogo} alt="Logo" />
           </TeamLogo>
           <TeamName>{props.TeamName1 || 'Time 1'}</TeamName>
         </TopLeft>
