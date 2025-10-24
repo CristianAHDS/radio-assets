@@ -10,12 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@guna81/react-ticker": "^3.4.1",
     "motion": "^12.23.9",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^6.14.2",
-    "react-ticker": "^1.3.2"
+    "react-router-dom": "^6.14.2"
   },
   "devDependencies": {
     "@emotion/react": "^11.14.0",
