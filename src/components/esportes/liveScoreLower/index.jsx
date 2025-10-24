@@ -8,9 +8,80 @@ import {
 } from './lowerEsporte.styled';
 
 const Lower = () => {
-  const defaultText = 'Edit';
+  const [dados, setDados] = useState(null);
+
+  const horariosPermitidos = [
+    '12:00',
+    '12:30',
+    '12:40',
+    '18:00',
+    '18:10',
+    '18:20',
+    '18:30',
+    '18:40',
+    '18:50',
+    '19:00',
+  ];
+
+  const fetchDados = async () => {
+    try {
+      const response = await fetch(
+        'https://api.api-futebol.com.br/v1/campeonatos/14/rodadas/33',
+        {
+          method: 'GET',
+          headers: {
+            Authorization: 'Bearer live_794f2c64379593df1ccf3bd66ab40d',
+          },
+        },
+      );
+
+      if (!response.ok)
+        throw new Error('Erro na requisição: ' + response.status);
+
+      const data = await response.json();
+      console.log('🔄 Dados atualizados da API:', data);
+
+      localStorage.setItem('dadosLiveScore', JSON.stringify(data));
+      localStorage.setItem(
+        'dadosLiveScoreUltimaAtualizacao',
+        new Date().toISOString(),
+      );
+      setDados(data);
+    } catch (error) {
+      console.error('Erro ao buscar dados:', error);
+    }
+  };
+
+  const deveAtualizarAgora = () => {
+    const agora = new Date();
+    const horaMinuto = agora.toTimeString().slice(0, 5);
+    return horariosPermitidos.includes(horaMinuto);
+  };
+
+  useEffect(() => {
+    const dadosLocal = localStorage.getItem('dadosLiveScore');
+
+    if (dadosLocal) {
+      setDados(JSON.parse(dadosLocal));
+      console.log('📦 Dados carregados do localStorage');
+    }
+
+    if (!dadosLocal) {
+      console.log('⚠️ Nenhum dado encontrado, buscando da API...');
+      fetchDados();
+    } else {
+      const interval = setInterval(() => {
+        if (deveAtualizarAgora()) {
+          console.log('⏰ Horário permitido, atualizando dados...');
+          fetchDados();
+        }
+      }, 60 * 1000);
+      return () => clearInterval(interval);
+    }
+  }, []);
+
   const [text, setText] = useState(() => {
-    return localStorage.getItem('lowerTextLiveScore') || defaultText;
+    return localStorage.getItem('lowerTextLiveScore');
   });
 
   const [animationDuration, setAnimationDuration] = useState(30);
@@ -59,7 +130,7 @@ const Lower = () => {
   useEffect(() => {
     if (measureRef.current) {
       const measuredWidth = measureRef.current.offsetWidth;
-      const speed = 150;
+      const speed = 280;
       const duration = Math.max(15, measuredWidth / speed);
       setAnimationDuration(duration);
     }
@@ -123,7 +194,7 @@ const Lower = () => {
               fontFamily: 'inherit',
             }}
           >
-            {text}
+            {text} | | {text}
           </span>
 
           <ScrollingWrapper animationDuration={animationDuration}>
