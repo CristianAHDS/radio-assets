@@ -44,6 +44,7 @@ import PinEsporte from './components/pinEsporte';
 import CamTpEsporte from './components/camTpEsporte';
 import GameResult from './components/esportes/gameResult';
 import LiveScore from './components/esportes/liveScore';
+import LiveScoreLower from './components/esportes/liveScoreLower';
 
 //Pensar Negócios
 import TempoPensarnegocios from './components/tempoPensarNegocios';
@@ -222,6 +223,7 @@ const router = createBrowserRouter([
   { path: '/camTpEsporte', element: <CamTpEsporte /> },
   { path: '/gameResult', element: <GameResult /> },
   { path: '/liveScore', element: <LiveScore /> },
+  { path: '/liveScoreLower', element: <LiveScoreLower /> },
 
   //Conexão
   { path: '/letConexao', element: <LetConexao /> },
