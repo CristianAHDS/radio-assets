@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { primaryEstporte } from '../../../constants/color';
 
 export const Container = styled.div`
-  width: 500px;
+  width: 570px;
   height: 55px;
 
   margin: 20px 0px;
@@ -83,7 +83,7 @@ export const TeamLogo = styled.div`
 `;
 
 export const LogoLeft = styled.img`
-  width: 100%;
+  width: 90%;
 
   margin-right: -30px;
 
@@ -91,7 +91,7 @@ export const LogoLeft = styled.img`
 `;
 
 export const LogoRight = styled.img`
-  width: 100%;
+  width: 90%;
 
   margin-left: -30px;
 
