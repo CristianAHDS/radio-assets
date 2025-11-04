@@ -6,6 +6,7 @@
 
 ## 🚀 Rotas Disponíveis
 
+<!--
 ### Componentes Futebol
 
 - **Game Score Results**: [https://pelotense-assets.netlify.app/gameResultdefaultClock](https://pelotense-assets.netlify.app/gameResult)
@@ -13,6 +14,7 @@
 <p align="center">
   <img src="https://i.imgur.com/QxM4IjP.png" alt="Clock" width="400" style="margin-top:20px;"/>
 </p>
+-->
 
 ### Default Novo
 
