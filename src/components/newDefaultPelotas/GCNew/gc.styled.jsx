@@ -1,18 +1,25 @@
-import styled from 'styled-components';
-import { primaryPelotasMereceDefault } from '../../../constants/color';
+import styled from "styled-components";
+import { primaryPelotasMereceDefault } from "../../../constants/color";
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
+export const CenterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+`;
 
 export const GcTop = styled.div`
+  height: 35px;
   background-color: ${primaryPelotasMereceDefault};
   padding: 10px 20px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  position: fixed;
-  left: 0;
 
   border-radius: 15px;
 `;
@@ -44,7 +51,7 @@ export const TextContainerTop = styled.textarea`
 
   text-align: right;
 
-  padding: 0px 30px 0px 10px !important;;
+  padding: 0px 30px 0px 10px !important;
 
   &:focus {
     outline: none;
