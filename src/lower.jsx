@@ -87,7 +87,6 @@ const Lower = () => {
   return (
     <Container>
       <TextContainer>
-      
         <TextSide>
           {/* invisível para medir */}
           <span
@@ -96,7 +95,7 @@ const Lower = () => {
               position: 'absolute',
               visibility: 'hidden',
               whiteSpace: 'nowrap',
-              fontSize: 18,
+              fontSize: 20,
               fontWeight: 400,
               textTransform: 'uppercase',
               paddingRight: '100px',
@@ -114,12 +113,12 @@ const Lower = () => {
               onKeyDown={handleKeyDown}
               spellCheck={false}
               style={{
-                marginTop: 12,
+                marginTop: 9,
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
                 outline: 'none',
                 border: 'none',
-                fontSize: '18px',
+                fontSize: '22px',
                 fontWeight: 400,
                 textTransform: 'uppercase',
                 fontFamily: 'inherit',

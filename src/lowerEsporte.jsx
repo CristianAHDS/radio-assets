@@ -113,12 +113,12 @@ const Lower = () => {
               onKeyDown={handleKeyDown}
               spellCheck={false}
               style={{
-                marginTop: 12,
+                marginTop: 9,
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
                 outline: 'none',
                 border: 'none',
-                fontSize: '18px',
+                fontSize: '22px',
                 fontWeight: 400,
                 textTransform: 'uppercase',
                 fontFamily: 'inherit',
