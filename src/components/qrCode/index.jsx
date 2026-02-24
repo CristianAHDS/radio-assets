@@ -5,6 +5,7 @@ import QRCode from 'react-qr-code';
 const QrCode = () => {
   const [searchParams] = useSearchParams();
   const link = searchParams.get('link'); // pega ?link=XXX
+  const text = searchParams.get('text'); // pega ?link=XXX
   return (
     <MainContainer>
       <QrFrameContainer>
@@ -12,7 +13,7 @@ const QrCode = () => {
           style={{ width: '75%' }}
           value={link || 'https://ahoradosul.com.br/'}
         />
-        <QqText>Texto QR</QqText>
+        <QqText>{text || 'A Hora do Sul'}</QqText>
       </QrFrameContainer>
     </MainContainer>
   );
