@@ -318,10 +318,10 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 - **Alert**: [https://pelotense-assets.netlify.app/alert](https://pelotense-assets.netlify.app/alert)
 - **Ticket**: [https://pelotense-assets.netlify.app/ticket](https://pelotense-assets.netlify.app/ticket)
 - **Reuslts**: [https://pelotense-assets.netlify.app/results](https://pelotense-assets.netlify.app/results)
-- **QR Code**: [https://pelotense-assets.netlify.app/results](https://pelotense-assets.netlify.app/qrCode?link=&text=)
+- **QR Code**: [https://pelotense-assets.netlify.app/qrCode?link=&text=](https://pelotense-assets.netlify.app/qrCode?link=&text=)
 
 <p align="left" style="margin-top:20px;">
-  <img src="https://i.imgur.com/tq7vTGi.png" alt="GC" width="25%" style="margin-right:10px;"/>
+  <img src="https://i.imgur.com/3dOTF9y.png" alt="GC" width="25%" style="margin-right:10px;"/>
   <img src="https://i.imgur.com/K0Uxxx2.png" alt="GC" width="65%"/>
 </p>
 <p align="left" >
