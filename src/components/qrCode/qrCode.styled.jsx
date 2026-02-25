@@ -17,7 +17,6 @@ export const MainContainer = styled.div`
 
 export const QrFrameContainer = styled.div`
   width: 250px;
-  min-height: 400px;
 
   background-color: #fff;
 
@@ -31,6 +30,15 @@ export const QrFrameContainer = styled.div`
 
 export const QqText = styled.p`
   color: #505050;
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
+  text-align: center;
+
+  padding: 0px 5px;
+`;
+
+export const Logo = styled.img`
+  width: 20%;
+  filter: brightness(20%);
+  margin-top: 20px;
 `;

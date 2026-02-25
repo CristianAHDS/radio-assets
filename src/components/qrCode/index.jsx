@@ -1,4 +1,4 @@
-import { MainContainer, QrFrameContainer, QqText } from './qrCode.styled';
+import { MainContainer, QrFrameContainer, QqText, Logo } from './qrCode.styled';
 import { useSearchParams } from 'react-router-dom';
 import QRCode from 'react-qr-code';
 
@@ -13,7 +13,8 @@ const QrCode = () => {
           style={{ width: '75%' }}
           value={link || 'https://ahoradosul.com.br/'}
         />
-        <QqText>{text || 'A Hora do Sul'}</QqText>
+        <Logo src="https://i.imgur.com/epU894P.png" alt="Logo" />
+        <QqText>{text || ''}</QqText>
       </QrFrameContainer>
     </MainContainer>
   );
