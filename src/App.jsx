@@ -136,6 +136,9 @@ import DefaultCamTpPelotasMerece from './components/newDefaultPelotas/camTp';
 import NewClockExpo from './components/expoFeira/ClockNewVersion';
 import NewTempoExpo from './components/expoFeira/TempoNewVersion';
 
+//UNO
+import UnoEscalaCasa from './components/Uno/EscalaCasa';
+
 const router = createBrowserRouter([
   // Deafautl Components Pelotas Merece
   {
@@ -288,6 +291,9 @@ const router = createBrowserRouter([
   { path: '/camUna', element: <CamUna /> },
   { path: '/camRioGrande', element: <CamRioGrande /> },
   { path: '/camShopping', element: <CamShopping /> },
+
+  //UNO
+  { path: '/Uno/EscalaCasa', element: <UnoEscalaCasa /> },
 ]);
 
 const App = () => {

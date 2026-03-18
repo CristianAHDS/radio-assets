@@ -4,8 +4,8 @@ import QRCode from 'react-qr-code';
 
 const QrCode = () => {
   const [searchParams] = useSearchParams();
-  const link = searchParams.get('link'); // pega ?link=XXX
-  const text = searchParams.get('text'); // pega ?link=XXX
+  const link = searchParams.get('link');
+  const text = searchParams.get('text');
   return (
     <MainContainer>
       <QrFrameContainer>
