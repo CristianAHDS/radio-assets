@@ -26,7 +26,6 @@ import {
   FiInstagram,
 } from 'react-icons/fi';
 import { FaWhatsapp, FaQrcode } from 'react-icons/fa';
-import Logo from '../../components/newVersion/ClockNewVersion/logo.png';
 import './landing.css';
 
 const LandingGlobalStyle = createGlobalStyle`
@@ -361,7 +360,6 @@ export default function Landing() {
       <header className="landing-nav">
         <div className="landing-nav-inner">
           <div className="landing-brand">
-            <img src={Logo} alt="Rádio Pelotense" className="landing-brand-logo" />
             <span className="landing-brand-name">
               Rádio <strong>Pelotense</strong>
             </span>
@@ -604,7 +602,6 @@ export default function Landing() {
       <footer className="landing-footer">
         <div className="landing-footer-inner">
           <div className="landing-brand">
-            <img src={Logo} alt="Rádio Pelotense" className="landing-brand-logo" />
             <span className="landing-brand-name">
               Rádio <strong>Pelotense</strong>
             </span>

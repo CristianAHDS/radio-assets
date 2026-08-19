@@ -34,9 +34,12 @@ import {
   StatLabel,
   Section,
   SectionHeader,
+  SectionRight,
   SectionTitle,
   SectionDot,
   SectionBadge,
+  CategorySearchBox,
+  CategoryInput,
   Grid,
   Card,
   CardHeader,
@@ -176,20 +179,31 @@ const ComponentCard = ({ item, index }) => {
 
 const Testes = () => {
   const [search, setSearch] = useState('');
+  const [categorySearch, setCategorySearch] = useState({});
+
+  const setCategoryQuery = (title, query) => {
+    setCategorySearch((prev) => ({ ...prev, [title]: query }));
+  };
 
   const filteredGroups = useMemo(() => {
     const query = search.trim().toLowerCase();
 
     if (!query) return GROUPS;
 
-    return GROUPS.map((group) => ({
-      ...group,
-      items: group.items.filter(
-        (item) =>
-          item.name.toLowerCase().includes(query) ||
-          item.path.toLowerCase().includes(query),
-      ),
-    })).filter((group) => group.items.length > 0);
+    return GROUPS.map((group) => {
+      const titleMatch = group.title.toLowerCase().includes(query);
+
+      return {
+        ...group,
+        items: titleMatch
+          ? group.items
+          : group.items.filter(
+              (item) =>
+                item.name.toLowerCase().includes(query) ||
+                item.path.toLowerCase().includes(query),
+            ),
+      };
+    }).filter((group) => group.items.length > 0);
   }, [search]);
 
   const totalItems = useMemo(
@@ -293,23 +307,56 @@ const Testes = () => {
           </EmptyState>
         )}
 
-        {filteredGroups.map((group, gi) => (
-          <Section key={group.title} style={{ animationDelay: `${gi * 60}ms` }}>
-            <SectionHeader>
-              <SectionTitle>
-                <SectionDot />
-                {group.title}
-              </SectionTitle>
-              <SectionBadge>{group.items.length} componente{group.items.length === 1 ? '' : 's'}</SectionBadge>
-            </SectionHeader>
+        {filteredGroups.map((group, gi) => {
+          const query = (categorySearch[group.title] || '').trim().toLowerCase();
+          const items = query
+            ? group.items.filter(
+                (item) =>
+                  item.name.toLowerCase().includes(query) ||
+                  item.path.toLowerCase().includes(query),
+              )
+            : group.items;
 
-            <Grid>
-              {group.items.map((item, i) => (
-                <ComponentCard key={item.path} item={item} index={i} />
-              ))}
-            </Grid>
-          </Section>
-        ))}
+          return (
+            <Section key={group.title} style={{ animationDelay: `${gi * 60}ms` }}>
+              <SectionHeader>
+                <SectionTitle>
+                  <SectionDot />
+                  {group.title}
+                </SectionTitle>
+                <SectionRight>
+                  <CategorySearchBox>
+                    <FiSearch size={13} />
+                    <CategoryInput
+                      type="text"
+                      placeholder="Buscar nesta categoria..."
+                      value={categorySearch[group.title] || ''}
+                      onChange={(e) =>
+                        setCategoryQuery(group.title, e.target.value)
+                      }
+                    />
+                  </CategorySearchBox>
+                  <SectionBadge>
+                    {items.length} componente{items.length === 1 ? '' : 's'}
+                  </SectionBadge>
+                </SectionRight>
+              </SectionHeader>
+
+              {items.length === 0 ? (
+                <EmptyState>
+                  <FiSearch size={28} />
+                  Nenhum componente encontrado nesta categoria.
+                </EmptyState>
+              ) : (
+                <Grid>
+                  {items.map((item, i) => (
+                    <ComponentCard key={item.path} item={item} index={i} />
+                  ))}
+                </Grid>
+              )}
+            </Section>
+          );
+        })}
       </Container>
     </Page>
   );

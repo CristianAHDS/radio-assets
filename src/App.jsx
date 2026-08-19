@@ -31,6 +31,11 @@ import Results from './components/results';
 import QrCode from './components/qrCode';
 import CamTp from './components/camTp';
 import Gravado from './components/gravado';
+import Rec from './components/gravado/rec';
+import NoAr from './components/gravado/noAr';
+import AoVivo from './components/gravado/aovivo';
+import Retransmissao from './components/gravado/retransmissao';
+import LowerGravado from './components/gravado/lower';
 
 //Esporte
 import LetEsporte from './components/letEsporte';
@@ -219,6 +224,11 @@ const router = createBrowserRouter([
   { path: '/qrCode', element: <QrCode /> },
   { path: '/camTp', element: <CamTp /> },
   { path: '/gravado', element: <Gravado /> },
+  { path: '/rec', element: <Rec /> },
+  { path: '/noAr', element: <NoAr /> },
+  { path: '/aovivo', element: <AoVivo /> },
+  { path: '/retransmissao', element: <Retransmissao /> },
+  { path: '/lowerGravado', element: <LowerGravado /> },
 
   //Esporte
   { path: '/whatsEsporte', element: <WhatsEsporte /> },

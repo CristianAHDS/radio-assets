@@ -215,6 +215,17 @@ export const GROUPS = [
     ],
   },
   {
+    title: 'Gravação',
+    items: [
+      { name: 'Gravado', path: '/gravado' },
+      { name: 'REC', path: '/rec' },
+      { name: 'No Ar', path: '/noAr' },
+      { name: 'Ao Vivo', path: '/aovivo' },
+      { name: 'Retransmissão', path: '/retransmissao' },
+      { name: 'Lower Gravação', path: '/lowerGravado' },
+    ],
+  },
+  {
     title: 'UNO',
     items: [{ name: 'Escala Casa', path: '/Uno/EscalaCasa' }],
   },

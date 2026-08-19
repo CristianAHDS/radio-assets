@@ -323,6 +323,20 @@ Se não for passado nenhum nome na URL, o componente usará o valor salvo no **l
 
 ---
 
+### Componentes de Gravação
+
+- **Gravado**: [https://pelotense-assets.netlify.app/gravado](https://pelotense-assets.netlify.app/gravado)
+- **REC**: [https://pelotense-assets.netlify.app/rec](https://pelotense-assets.netlify.app/rec)
+- **No Ar**: [https://pelotense-assets.netlify.app/noAr](https://pelotense-assets.netlify.app/noAr)
+- **Ao Vivo**: [https://pelotense-assets.netlify.app/aovivo](https://pelotense-assets.netlify.app/aovivo)
+- **Retransmissão**: [https://pelotense-assets.netlify.app/retransmissao](https://pelotense-assets.netlify.app/retransmissao)
+
+<p align="center">
+  <img src="https://i.imgur.com/gXyrBvU.gif" alt="Gravado" width="200" style="margin-top:20px;"/>
+</p>
+
+---
+
 ### Componentes Adicionais
 
 - **Radar**: [https://pelotense-assets.netlify.app/radar](https://pelotense-assets.netlify.app/radar)

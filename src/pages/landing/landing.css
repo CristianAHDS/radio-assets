@@ -47,13 +47,6 @@
   gap: 10px;
 }
 
-.landing-brand-logo {
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(129, 140, 248, 0.35));
-}
-
 .landing-brand-name {
   font-size: 1.05rem;
   font-weight: 600;

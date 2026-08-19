@@ -270,6 +270,49 @@ export const SectionHeader = styled.div`
   margin-bottom: 20px;
 `;
 
+export const SectionRight = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+`;
+
+export const CategorySearchBox = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  svg {
+    position: absolute;
+    left: 11px;
+    color: #64748b;
+    pointer-events: none;
+  }
+`;
+
+export const CategoryInput = styled.input`
+  width: 200px;
+  max-width: 100%;
+  padding: 7px 12px 7px 32px !important;
+  border-radius: 10px;
+  border: 1px solid #1e2d47;
+  background: rgba(10, 14, 26, 0.7);
+  color: #e8edf5;
+  font-size: 12.5px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &::placeholder {
+    color: #64748b;
+  }
+
+  &:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+`;
+
 export const SectionTitle = styled.h2`
   display: flex;
   align-items: center;
