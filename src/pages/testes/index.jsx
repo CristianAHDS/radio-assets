@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { createGlobalStyle } from 'styled-components';
 import {
   FiExternalLink,
@@ -80,6 +80,27 @@ const ComponentCard = ({ item, index }) => {
   );
   const [values, setValues] = useState(initialValues);
   const [copied, setCopied] = useState(false);
+  const [inView, setInView] = useState(false);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setInView(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '300px' },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const url = useMemo(() => buildUrl(item.path, values), [item.path, values]);
 
@@ -94,19 +115,29 @@ const ComponentCard = ({ item, index }) => {
   };
 
   return (
-    <Card style={{ animationDelay: `${Math.min(index * 40, 360)}ms` }}>
+    <Card
+      ref={cardRef}
+      style={{ animationDelay: `${Math.min(index * 40, 360)}ms` }}
+    >
       <CardHeader>
         <CardTitle title={item.name}>{item.name}</CardTitle>
         <RouteTag title={url}>{item.path}</RouteTag>
       </CardHeader>
 
       <Preview>
-        <PreviewFrame
-          src={url}
-          title={item.name}
-          loading="lazy"
-          scrolling="no"
-        />
+        {inView ? (
+          <PreviewFrame
+            src={url}
+            title={item.name}
+            loading="lazy"
+            scrolling="no"
+          />
+        ) : (
+          <EmptyState>
+            <FiLayers size={24} />
+            Carregando preview...
+          </EmptyState>
+        )}
       </Preview>
 
       <CardFooter>

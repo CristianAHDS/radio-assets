@@ -101,7 +101,14 @@ const App = () => {
       const cacheIsValid = cache && timestamp && now - timestamp < 60000; // menos de 60s
 
       if (cacheIsValid) {
-        setWeatherDataMap(JSON.parse(cache));
+        try {
+          setWeatherDataMap(JSON.parse(cache));
+        } catch (e) {
+          console.warn('⚠️ Cache corrompido, buscando dados novos', e);
+          localStorage.removeItem(STORAGE_KEY);
+          localStorage.removeItem(TIMESTAMP_KEY);
+          fetchAllCitiesWeather();
+        }
       } else {
         fetchAllCitiesWeather();
       }

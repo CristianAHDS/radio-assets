@@ -89,10 +89,10 @@ const LiveScore = () => {
       {dados.partidas?.map((jogo) => (
         <GameResult
           key={jogo.partida_id}
-          TeamLogo1={jogo.time_mandante.escudo}
-          TeamLogo2={jogo.time_visitante.escudo}
-          TeamName1={jogo.time_mandante.nome_popular}
-          TeamName2={jogo.time_visitante.nome_popular}
+          TeamLogo1={jogo.time_mandante?.escudo}
+          TeamLogo2={jogo.time_visitante?.escudo}
+          TeamName1={jogo.time_mandante?.nome_popular}
+          TeamName2={jogo.time_visitante?.nome_popular}
           HomeScore={jogo.placar_mandante}
           AwayScore={jogo.placar_visitante}
           Camp={jogo.campeonato?.nome || 'Brasileirão Série A'}
