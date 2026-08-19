@@ -170,6 +170,7 @@ Agora os componentes **GC** e **Let** e **CamTp** aceitam passar um nome diretam
 ### Componentes Lower
 
 - **Lower Geral**: [https://pelotense-assets.netlify.app/lower](https://pelotense-assets.netlify.app/lower)
+- **Lower Teste (Portal)**: [https://pelotense-assets.netlify.app/lowerTeste](https://pelotense-assets.netlify.app/lowerTeste)
 - **Lower Esporte**: [https://pelotense-assets.netlify.app/lowerEsporte](https://pelotense-assets.netlify.app/lowerEsporte)
 - **Lower Conexão**: [https://pelotense-assets.netlify.app/lowerConexao](https://pelotense-assets.netlify.app/lowerConexao)
 - **Lower Pensar Negócios**: [https://pelotense-assets.netlify.app/lowerPensarNegocios](https://pelotense-assets.netlify.app/lowerPensarNegocios)

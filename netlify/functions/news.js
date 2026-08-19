@@ -1,4 +1,4 @@
-exports.handler = async () => {
+export const handler = async () => {
   try {
     const res = await fetch('https://ahoradosul.com.br/', {
       headers: {

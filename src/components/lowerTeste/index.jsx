@@ -23,24 +23,39 @@ const LowerTeste = () => {
   useEffect(() => {
     let cancelled = false;
 
-    fetch(NEWS_URL)
-      .then((res) => res.json())
-      .then((data) => {
+    const loadNews = async () => {
+      try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 15000);
+
+        const res = await fetch(NEWS_URL, { signal: controller.signal });
+        const data = await res.json();
+
+        clearTimeout(timeout);
+
         if (cancelled) return;
+
         if (data && Array.isArray(data.titles) && data.titles.length > 0) {
           const joined = joinTitles(data.titles);
           setText(joined);
           localStorage.setItem(STORAGE_KEY, joined);
+        } else {
+          setText(
+            localStorage.getItem(STORAGE_KEY) ||
+              'Notícias indisponíveis - clique e edite',
+          );
         }
-      })
-      .catch(() => {
+      } catch {
         if (!cancelled) {
           setText(
             localStorage.getItem(STORAGE_KEY) ||
               'Notícias indisponíveis - clique e edite',
           );
         }
-      });
+      }
+    };
+
+    loadNews();
 
     return () => {
       cancelled = true;
@@ -103,7 +118,7 @@ const LowerTeste = () => {
             />
           </ScrollingWrapper>
         </TextSide>
-        <LeftSide>Últimas</LeftSide>
+        <LeftSide>ahoradosul.com.br</LeftSide>
       </TextContainer>
     </Container>
   );
