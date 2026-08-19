@@ -18,7 +18,7 @@ import {
 const defaultLogo =
   'https://png.pngtree.com/png-clipart/20241221/original/pngtree-football-team-logo-vector-png-image_18123638.png';
 
-const GameResult = (props) => {
+const GameResult = (props = {}) => {
   return (
     <Container>
       <Top>

@@ -3,11 +3,11 @@ import { Card } from './alert.styled.jsx';
 
 import { LuBellRing } from 'react-icons/lu';
 
-const Alert = (props) => {
+const Alert = ({ text } = {}) => {
   return (
     <Card>
       <LuBellRing style={{ marginRight: 10, fontSize: 28 }} />
-      {props.text}
+      {text}
     </Card>
   );
 };

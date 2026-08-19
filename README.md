@@ -6,6 +6,18 @@
 
 ## 🚀 Rotas Disponíveis
 
+### Landing Page
+
+- **Página inicial**: [https://pelotense-assets.netlify.app/landing](https://pelotense-assets.netlify.app/landing)
+
+Apresentação do projeto com os recursos da suíte de overlays e acesso direto à página de testes.
+
+### Testes de Componentes
+
+- **Lista completa de componentes**: [https://pelotense-assets.netlify.app/testes](https://pelotense-assets.netlify.app/testes)
+
+Visualize e teste todos os componentes da rádio em uma única tela, com preview ao vivo, campos para nome/local e URL pronta para usar no OBS.
+
 <!--
 ### Componentes Futebol
 

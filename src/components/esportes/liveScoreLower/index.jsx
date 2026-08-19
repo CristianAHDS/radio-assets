@@ -62,8 +62,14 @@ const Lower = () => {
     const dadosLocal = localStorage.getItem('dadosLiveScore');
 
     if (dadosLocal) {
-      setDados(JSON.parse(dadosLocal));
-      console.log('📦 Dados carregados do localStorage');
+      try {
+        setDados(JSON.parse(dadosLocal));
+        console.log('📦 Dados carregados do localStorage');
+      } catch (e) {
+        console.warn('⚠️ Dados corrompidos no localStorage', e);
+        localStorage.removeItem('dadosLiveScore');
+        fetchDados();
+      }
     }
 
     if (!dadosLocal) {

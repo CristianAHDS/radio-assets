@@ -139,6 +139,12 @@ import NewTempoExpo from './components/expoFeira/TempoNewVersion';
 //UNO
 import UnoEscalaCasa from './components/Uno/EscalaCasa';
 
+//Testes
+import Testes from './pages/testes';
+
+//Landing
+import Landing from './pages/landing';
+
 const router = createBrowserRouter([
   // Deafautl Components Pelotas Merece
   {
@@ -294,6 +300,12 @@ const router = createBrowserRouter([
 
   //UNO
   { path: '/Uno/EscalaCasa', element: <UnoEscalaCasa /> },
+
+  //Testes
+  { path: '/testes', element: <Testes /> },
+
+  //Landing
+  { path: '/landing', element: <Landing /> },
 ]);
 
 const App = () => {
