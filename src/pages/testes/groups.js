@@ -95,6 +95,7 @@ export const GROUPS = [
   {
     title: 'Lower',
     items: [
+      { name: 'Lower Teste (Portal)', path: '/lowerTeste' },
       { name: 'Lower Geral', path: '/lower' },
       { name: 'Lower Esporte', path: '/lowerEsporte' },
       { name: 'Lower Conexão', path: '/lowerConexao' },

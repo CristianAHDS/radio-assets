@@ -91,8 +91,8 @@ export const TELAS = [
     name: 'Tela Gravação',
     components: [
       {
-        type: 'gravado',
-        src: '/gravado',
+        type: 'rec',
+        src: '/rec',
         top: '48px',
         left: '116px',
         width: '300px',

@@ -39,6 +39,7 @@ import LowerGravado from './components/gravado/lower';
 import Telas from './components/telas';
 import Logo from './components/logo';
 import BlocoBranco from './components/blocoBranco';
+import LowerTeste from './components/lowerTeste';
 
 //Esporte
 import LetEsporte from './components/letEsporte';
@@ -240,6 +241,7 @@ const router = createBrowserRouter([
   //Tela Geral components
   { path: '/logo', element: <Logo /> },
   { path: '/blocoBranco', element: <BlocoBranco /> },
+  { path: '/lowerTeste', element: <LowerTeste /> },
 
   //Esporte
   { path: '/whatsEsporte', element: <WhatsEsporte /> },
