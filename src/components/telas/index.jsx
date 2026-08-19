@@ -20,7 +20,6 @@ const CenterWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000;
   overflow: hidden;
 `;
 
@@ -28,7 +27,6 @@ const ScrollWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
-  background: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,7 +45,6 @@ const Screen = styled.div`
   position: relative;
   width: 1920px;
   height: 1080px;
-  background: #000;
   overflow: hidden;
   transform-origin: top left;
 `;

@@ -69,17 +69,6 @@ export const GROUPS = [
     ],
   },
   {
-    title: 'Páginas',
-    items: [
-      { name: 'Página Padrão', path: '/pagePadrao' },
-      { name: 'Página Esportes', path: '/pageEsportes' },
-      { name: 'Página Conexão', path: '/pageConexao' },
-      { name: 'Página Outros', path: '/pageOutros' },
-      { name: 'Página Corpo e Mente', path: '/pageCorpoEMente' },
-      { name: 'Página Pelotas Merece', path: '/pagePelotasMerece' },
-    ],
-  },
-  {
     title: 'Relógios',
     items: [
       { name: 'Relógio Geral', path: '/clock' },
