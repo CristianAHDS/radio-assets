@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { usePortalNews } from './hooks/usePortalNews';
 import {
   Container,
   TextContainer,
@@ -16,6 +17,11 @@ const Lower = () => {
   const [animationDuration, setAnimationDuration] = useState(30);
   const measureRef = useRef(null);
   const contentRef = useRef(null);
+  const news = usePortalNews();
+  
+  useEffect(() => {
+    if (news) setText(news);
+  }, [news]);
 
   // Salva texto puro no localStorage
   useEffect(() => {
