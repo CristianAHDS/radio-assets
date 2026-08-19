@@ -36,6 +36,9 @@ import NoAr from './components/gravado/noAr';
 import AoVivo from './components/gravado/aovivo';
 import Retransmissao from './components/gravado/retransmissao';
 import LowerGravado from './components/gravado/lower';
+import Telas from './components/telas';
+import Logo from './components/logo';
+import BlocoBranco from './components/blocoBranco';
 
 //Esporte
 import LetEsporte from './components/letEsporte';
@@ -229,6 +232,14 @@ const router = createBrowserRouter([
   { path: '/aovivo', element: <AoVivo /> },
   { path: '/retransmissao', element: <Retransmissao /> },
   { path: '/lowerGravado', element: <LowerGravado /> },
+
+  //Telas
+  { path: '/telas', element: <Telas /> },
+  { path: '/telas/:id', element: <Telas /> },
+
+  //Tela Geral components
+  { path: '/logo', element: <Logo /> },
+  { path: '/blocoBranco', element: <BlocoBranco /> },
 
   //Esporte
   { path: '/whatsEsporte', element: <WhatsEsporte /> },

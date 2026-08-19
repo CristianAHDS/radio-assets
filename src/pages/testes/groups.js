@@ -3,6 +3,20 @@ const localParam = { key: 'local', label: 'Local', default: 'Estúdio' };
 
 export const GROUPS = [
   {
+    title: 'Telas',
+    items: [
+      { name: 'Tela Geral', path: '/telas/tela-geral' },
+      { name: 'Tela Esporte', path: '/telas/tela-esporte' },
+      { name: 'Tela Conexão', path: '/telas/tela-conexao' },
+      { name: 'Tela Pensar Negócios', path: '/telas/tela-pensar-negocios' },
+      { name: 'Tela Outros', path: '/telas/tela-outros' },
+      { name: 'Tela Corpo e Mente', path: '/telas/tela-corpo-mente' },
+      { name: 'Tela Pelotas Merece', path: '/telas/tela-pelotas-merece' },
+      { name: 'Tela A Hora', path: '/telas/tela-a-hora' },
+      { name: 'Tela Gravação', path: '/telas/tela-gravacao' },
+    ],
+  },
+  {
     title: 'Default Novo',
     items: [
       { name: 'Clock Default', path: '/defaultClock' },
