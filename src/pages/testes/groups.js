@@ -17,6 +17,20 @@ export const GROUPS = [
     ],
   },
   {
+    title: 'Programação',
+    items: [
+      { name: 'Programação (Atual / Próximo)', path: '/programacao' },
+      { name: 'Programação Geral', path: '/programacaoGeral' },
+      { name: 'Programação Esporte', path: '/programacaoEsporte' },
+      { name: 'Programação Conexão', path: '/programacaoConexao' },
+      { name: 'Programação Pensar Negócios', path: '/programacaoPensarNegocios' },
+      { name: 'Programação Outros', path: '/programacaoOutros' },
+      { name: 'Programação Corpo e Mente', path: '/programacaoCorpoEMente' },
+      { name: 'Programação Pelotas Merece', path: '/programacaoPelotasMerece' },
+      { name: 'Programação A Hora', path: '/programacaoAHora' },
+    ],
+  },
+  {
     title: 'Default Novo',
     items: [
       { name: 'Clock Default', path: '/defaultClock' },

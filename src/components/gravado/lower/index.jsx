@@ -121,6 +121,22 @@ const Lower = () => {
                 color: '#fff',
               }}
             />
+            <div
+              aria-hidden="true"
+              dangerouslySetInnerHTML={{ __html: formatText(text) }}
+              style={{
+                marginTop: 9,
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                outline: 'none',
+                border: 'none',
+                fontSize: '22px',
+                fontWeight: 400,
+                textTransform: 'uppercase',
+                fontFamily: 'inherit',
+                color: '#fff',
+              }}
+            />
           </ScrollingWrapper>
         </TextSide>
         <LeftSide>ahoradosul.com.br</LeftSide>

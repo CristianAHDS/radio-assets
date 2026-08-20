@@ -40,6 +40,17 @@ import Telas from './components/telas';
 import Logo from './components/logo';
 import BlocoBranco from './components/blocoBranco';
 import LowerTeste from './components/lowerTeste';
+import ProgramacaoPage from './components/programacao/page';
+import {
+  ProgramacaoGeral,
+  ProgramacaoEsporte,
+  ProgramacaoConexao,
+  ProgramacaoPensarNegocios,
+  ProgramacaoOutros,
+  ProgramacaoCorpoEMente,
+  ProgramacaoPelotasMerece,
+  ProgramacaoAHora,
+} from './components/programacao/pages';
 
 //Esporte
 import LetEsporte from './components/letEsporte';
@@ -242,6 +253,17 @@ const router = createBrowserRouter([
   { path: '/logo', element: <Logo /> },
   { path: '/blocoBranco', element: <BlocoBranco /> },
   { path: '/lowerTeste', element: <LowerTeste /> },
+
+  //Programação
+  { path: '/programacao', element: <ProgramacaoPage /> },
+  { path: '/programacaoGeral', element: <ProgramacaoGeral /> },
+  { path: '/programacaoEsporte', element: <ProgramacaoEsporte /> },
+  { path: '/programacaoConexao', element: <ProgramacaoConexao /> },
+  { path: '/programacaoPensarNegocios', element: <ProgramacaoPensarNegocios /> },
+  { path: '/programacaoOutros', element: <ProgramacaoOutros /> },
+  { path: '/programacaoCorpoEMente', element: <ProgramacaoCorpoEMente /> },
+  { path: '/programacaoPelotasMerece', element: <ProgramacaoPelotasMerece /> },
+  { path: '/programacaoAHora', element: <ProgramacaoAHora /> },
 
   //Esporte
   { path: '/whatsEsporte', element: <WhatsEsporte /> },

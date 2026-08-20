@@ -116,6 +116,23 @@ const LowerTeste = () => {
                 color: '#fff',
               }}
             />
+            <div
+              aria-hidden="true"
+              style={{
+                marginTop: 9,
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                outline: 'none',
+                border: 'none',
+                fontSize: '22px',
+                fontWeight: 400,
+                textTransform: 'uppercase',
+                fontFamily: 'inherit',
+                color: '#fff',
+              }}
+            >
+              {text}
+            </div>
           </ScrollingWrapper>
         </TextSide>
         <LeftSide>ahoradosul.com.br</LeftSide>

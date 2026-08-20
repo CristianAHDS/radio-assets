@@ -133,6 +133,22 @@ import { usePortalNews } from '../../hooks/usePortalNews';
                   color: '#fff',
                 }}
               />
+              <div
+                aria-hidden="true"
+                dangerouslySetInnerHTML={{ __html: formatText(text) }}
+                style={{
+                  marginTop: 12,
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  outline: 'none',
+                  border: 'none',
+                  fontSize: '18px',
+                  fontWeight: 400,
+                  textTransform: 'uppercase',
+                  fontFamily: 'inherit',
+                  color: '#fff',
+                }}
+              />
             </ScrollingWrapper>
           </TextSide>
           <LeftSide>grupoahora.net.br</LeftSide>
