@@ -33,7 +33,7 @@ import { usePortalNews } from '../../hooks/usePortalNews';
     useEffect(() => {
       if (measureRef.current) {
         const measuredWidth = measureRef.current.offsetWidth;
-        const speed = 150;
+        const speed = 100;
         const duration = Math.max(15, measuredWidth / speed);
         setAnimationDuration(duration);
       }

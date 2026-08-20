@@ -136,7 +136,7 @@ const Lower = () => {
   useEffect(() => {
     if (measureRef.current) {
       const measuredWidth = measureRef.current.offsetWidth;
-      const speed = 280;
+      const speed = 187;
       const duration = Math.max(15, measuredWidth / speed);
       setAnimationDuration(duration);
     }
