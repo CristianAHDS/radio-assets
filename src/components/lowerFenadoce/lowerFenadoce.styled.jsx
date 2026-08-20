@@ -61,6 +61,8 @@ export const ScrollingWrapper = styled.div`
   height: 100%;
   display: flex;
   width: max-content;
+  will-change: transform;
+  backface-visibility: hidden;
   animation: ${scroll} ${(props) => props.animationDuration || 10}s linear
     infinite;
 `;
