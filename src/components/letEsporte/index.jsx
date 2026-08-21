@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import {
   Container,
-  Square,
   GcWrapper,
   GcTop,
   GcBottom,
@@ -58,7 +57,6 @@ const LetConexao = () => {
 
   return (
     <Container>
-      <Square />
       <GcWrapper>
         <GcTop>
           <TextMirror ref={mirrorTopRef} />

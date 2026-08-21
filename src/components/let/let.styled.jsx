@@ -5,16 +5,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 15px; /* espaço entre o Square e os blocos de texto */
 
-  border-top-left-radius: 16px; 
+  border-top-left-radius: 16px;
 
-`;
-
-export const Square = styled.div`
-  width: 0px;
-  height: 0px;
-  background-color: #fff;
 `;
 
 export const GcWrapper = styled.div`

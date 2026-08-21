@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import {
   Container,
-  Square,
   GcWrapper,
   GcTop,
   GcBottom,
@@ -71,7 +70,6 @@ const GcConexao = () => {
 
   return (
     <Container>
-      <Square />
       <GcWrapper>
         <GcTop>
           <TextMirror ref={mirrorTopRef} />

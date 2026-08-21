@@ -1,4 +1,5 @@
 const nomeParam = { key: 'nome', label: 'Nome', default: 'Teste' };
+const subParam = { key: 'sub', label: 'Subtítulo', default: 'Teste' };
 const localParam = { key: 'local', label: 'Local', default: 'Estúdio' };
 
 export const GROUPS = [
@@ -150,6 +151,14 @@ export const GROUPS = [
     title: 'Let',
     items: [
       { name: 'Let Geral', path: '/let', params: [nomeParam] },
+      { name: 'Let Teste', path: '/letTest', params: [nomeParam, subParam] },
+      { name: 'Let Teste Esporte', path: '/letTestEsporte', params: [nomeParam, subParam] },
+      { name: 'Let Teste Conexão', path: '/letTestConexao', params: [nomeParam, subParam] },
+      { name: 'Let Teste Pensar Negócios', path: '/letTestPensarNegocios', params: [nomeParam, subParam] },
+      { name: 'Let Teste Outros', path: '/letTestOutros', params: [nomeParam, subParam] },
+      { name: 'Let Teste Corpo e Mente', path: '/letTestCorpoEMente', params: [nomeParam, subParam] },
+      { name: 'Let Teste Pelotas Merece', path: '/letTestPelotasMerece', params: [nomeParam, subParam] },
+      { name: 'Let Teste A Hora', path: '/letTestAHora', params: [nomeParam, subParam] },
       { name: 'Let Esporte', path: '/letEsporte', params: [nomeParam] },
       { name: 'Let Conexão', path: '/letConexao', params: [nomeParam] },
     ],

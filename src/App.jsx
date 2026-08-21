@@ -9,6 +9,16 @@ import PageEsportes from './pages/esportes';
 import PagePadrao from './pages/padrao';
 import PageConexao from './pages/conexao';
 import Let from './components/let';
+import LetTest from './components/letTest';
+import {
+  primaryEstporte,
+  primaryConexão,
+  primaryPensarNegocios,
+  primaryOutros,
+  primaryCorpoEMente,
+  primaryPelotasMerece,
+  ahoraPrimary,
+} from './constants/color';
 import TempoGeral from './geral.jsx';
 import Lower from './lower.jsx';
 import Clock from './clock.jsx';
@@ -219,6 +229,42 @@ const router = createBrowserRouter([
   { path: '/insta', element: <Insta /> },
   { path: '/ticket', element: <Ticket /> },
   { path: '/let', element: <Let /> },
+  { path: '/letTest', element: <LetTest /> },
+  {
+    path: '/letTestEsporte',
+    element: <LetTest primaryColor={primaryEstporte} topBoxColor="#4caf50" />,
+  },
+  {
+    path: '/letTestConexao',
+    element: <LetTest primaryColor={primaryConexão} topBoxColor="#00a0bd" />,
+  },
+  {
+    path: '/letTestPensarNegocios',
+    element: (
+      <LetTest
+        primaryColor={primaryPensarNegocios}
+        topBoxColor="#ff9a66"
+      />
+    ),
+  },
+  {
+    path: '/letTestOutros',
+    element: <LetTest primaryColor={primaryOutros} topBoxColor="#ff9040" />,
+  },
+  {
+    path: '/letTestCorpoEMente',
+    element: <LetTest primaryColor={primaryCorpoEMente} topBoxColor="#93c9ff" />,
+  },
+  {
+    path: '/letTestPelotasMerece',
+    element: (
+      <LetTest primaryColor={primaryPelotasMerece} topBoxColor="#f7d783" />
+    ),
+  },
+  {
+    path: '/letTestAHora',
+    element: <LetTest primaryColor={ahoraPrimary} topBoxColor="#3d63c4" />,
+  },
   { path: '/', element: <TempoGeral /> },
   { path: '/radar', element: <Radar /> },
   { path: '/lower', element: <Lower /> },
