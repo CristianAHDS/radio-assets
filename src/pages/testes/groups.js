@@ -28,46 +28,6 @@ export const GROUPS = [
     ],
   },
   {
-    title: 'Default Novo',
-    items: [
-      { name: 'Clock Default', path: '/defaultClock' },
-      { name: 'Tempo Default', path: '/defaultTempo' },
-      { name: 'GC Default', path: '/defaultGC', params: [nomeParam] },
-      { name: 'GC Música Default', path: '/defaultGcMuisca', params: [nomeParam] },
-      { name: 'WhatsApp Default', path: '/defaultWhats' },
-      { name: 'Câmeras TP Default', path: '/defaultCamTp', params: [localParam] },
-    ],
-  },
-  {
-    title: 'Mistura Boa Novo',
-    items: [
-      { name: 'Clock Mistura Boa', path: '/newClock' },
-      { name: 'Tempo Mistura Boa', path: '/newTempo' },
-      { name: 'GC Mistura Boa', path: '/newGC', params: [nomeParam] },
-      { name: 'GC Música Mistura Boa', path: '/newGcMuisca', params: [nomeParam] },
-      { name: 'WhatsApp Mistura Boa', path: '/newWhats' },
-      { name: 'Câmeras TP Mistura Boa', path: '/newCamTp', params: [localParam] },
-    ],
-  },
-  {
-    title: 'Default Novo Pelotas Merece',
-    items: [
-      { name: 'Clock Default Pelotas Merece', path: '/defaultClockPelotasMerece' },
-      { name: 'Tempo Default Pelotas Merece', path: '/defaultTempoPelotasMerece' },
-      { name: 'GC Default Pelotas Merece', path: '/defaultGCPelotasMerece', params: [nomeParam] },
-      { name: 'GC Música Default Pelotas Merece', path: '/defaultGCMusicaPelotasMerece', params: [nomeParam] },
-      { name: 'WhatsApp Default Pelotas Merece', path: '/defaultWhatsPelotasMerece' },
-      { name: 'Câmeras TP Default Pelotas Merece', path: '/defaultCamTpPelotasMerece', params: [localParam] },
-    ],
-  },
-  {
-    title: 'ExpoFeira Novo',
-    items: [
-      { name: 'Clock ExpoFeira', path: '/newClockExpo' },
-      { name: 'Tempo ExpoFeira', path: '/newTempoExpo' },
-    ],
-  },
-  {
     title: 'Cenas (Tempo)',
     items: [
       { name: 'Tempo Geral', path: '/' },
@@ -210,37 +170,11 @@ export const GROUPS = [
     ],
   },
   {
-    title: 'Grupo A Hora',
-    items: [
-      { name: 'Tempo Região', path: '/aHora' },
-      { name: 'Tempo Somente Lajeado', path: '/lajeado' },
-    ],
-  },
-  {
     title: 'Esportes',
     items: [
       { name: 'Game Results', path: '/gameResult' },
       { name: 'Live Score', path: '/liveScore' },
       { name: 'Live Score Lower', path: '/liveScoreLower' },
-    ],
-  },
-  {
-    title: 'Adicionais',
-    items: [
-      { name: 'Radar', path: '/radar' },
-      { name: 'Tabela', path: '/tabela' },
-      { name: 'Alert', path: '/alert' },
-      { name: 'Ticket', path: '/ticket' },
-      { name: 'Results', path: '/results' },
-      {
-        name: 'QR Code',
-        path: '/qrCode',
-        params: [
-          { key: 'link', label: 'Link', default: 'https://ahoradosul.com.br/' },
-          { key: 'text', label: 'Texto', default: 'Teste' },
-        ],
-      },
-      { name: 'Gravado', path: '/gravado' },
     ],
   },
   {
