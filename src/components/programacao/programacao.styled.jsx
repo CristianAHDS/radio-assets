@@ -34,7 +34,7 @@ export const Bar = styled.div`
   display: flex;
   align-items: stretch;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1050px;
   height: clamp(44px, 7.5vh, 84px);
   margin: 0 24px;
 
@@ -109,7 +109,7 @@ export const ProgramBlock = styled.div`
   position: relative;
   overflow: hidden;
 
-  width: 300px;
+  width: 200px;
 `;
 
 export const NextProgramBlock = styled(ProgramBlock)`
@@ -138,6 +138,15 @@ export const ProgramName = styled.strong`
   text-overflow: ellipsis;
   max-width: 100%;
   font-family: inherit;
+`;
+
+export const ProgramLogo = styled.img`
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  box-sizing: border-box;
+  padding: 6px 0;
 `;
 
 export const ProgramTime = styled.span`

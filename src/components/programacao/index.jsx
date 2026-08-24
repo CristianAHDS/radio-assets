@@ -8,10 +8,12 @@ import {
   NextProgramBlock,
   AccentRule,
   ProgramName,
+  ProgramLogo,
   ProgramTime,
   TimeLabel,
   Block,
 } from './programacao.styled';
+import { getLogoByName } from './logos';
 
 const SCHEDULE_URL = `${window.location.origin}/.netlify/functions/programacao`;
 const STORAGE_KEY = 'programacaoSchedule';
@@ -244,6 +246,9 @@ const Programacao = ({
   const current = programs.current || { name: '—', time: '' };
   const next = programs.next || { name: '—', time: '' };
 
+  const currentLogoSrc = currentLogo ?? getLogoByName(current.name);
+  const nextLogoSrc = nextLogo ?? getLogoByName(next.name);
+
   return (
     <Bar $colors={colors}>
       <Block>
@@ -255,8 +260,8 @@ const Programacao = ({
         </LabelBlock>
 
         <ProgramBlock>
-          {currentLogo ? (
-            <img src={currentLogo} alt={current.name} height="60%" />
+          {currentLogoSrc ? (
+            <ProgramLogo src={currentLogoSrc} alt={current.name} />
           ) : (
             <ProgramName title={current.name}>{current.name}</ProgramName>
           )}
@@ -268,8 +273,8 @@ const Programacao = ({
         </LabelBlock>
 
         <NextProgramBlock>
-          {nextLogo ? (
-            <img src={nextLogo} alt={next.name} height="60%" />
+          {nextLogoSrc ? (
+            <ProgramLogo src={nextLogoSrc} alt={next.name} />
           ) : (
             <ProgramName title={next.name}>{next.name}</ProgramName>
           )}
