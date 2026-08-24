@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // Pages
 import PageCorpoEMente from './pages/corpoEMente';
+import PageCorpoEMenteGravado from './pages/corpoEMenteGravado';
 import PagePelotasMerece from './pages/pelotasMerece';
 import PageOutros from './pages/outros';
 import PageEsportes from './pages/esportes';
@@ -108,6 +109,7 @@ import WhatsOutros from './components/whatsOutros';
 
 //Corpo e Mente
 import ClockCorpoEMente from './components/clockCorpoEMente';
+import ClockGravadoCorpoEMente from './components/clockGravadoCorpoEMente';
 import TempoCorpoEMente from './components/tempoCorpoEMente';
 import LowerCorpoEMente from './components/lowerCorpoEMente';
 import GcCorpoEMente from './components/gcCorpoEMente';
@@ -220,6 +222,7 @@ const router = createBrowserRouter([
 
   // Pages
   { path: '/pageCorpoEMente', element: <PageCorpoEMente /> },
+  { path: '/pageCorpoEMenteGravado', element: <PageCorpoEMenteGravado /> },
   { path: '/pagePelotasMerece', element: <PagePelotasMerece /> },
   { path: '/pageOutros', element: <PageOutros /> },
   { path: '/pageEsportes', element: <PageEsportes /> },
@@ -358,6 +361,7 @@ const router = createBrowserRouter([
 
   //Corpo e Mente
   { path: '/clockCorpoEMente', element: <ClockCorpoEMente /> },
+  { path: '/clockGravadoCorpoEMente', element: <ClockGravadoCorpoEMente /> },
   { path: '/corpoEMente', element: <TempoCorpoEMente /> },
   { path: '/lowerCorpoEMente', element: <LowerCorpoEMente /> },
   { path: '/gcCorpoEMente', element: <GcCorpoEMente /> },

@@ -72,6 +72,16 @@ export const TELAS = [
     components: [CLOCK('/clockCorpoEMente'), LOGO, BLOCK, LOWER('/lowerCorpoEMente')],
   },
   {
+    id: 'tela-corpo-mente-gravacao',
+    name: 'Tela Corpo e Mente Gravação',
+    components: [
+      CLOCK('/clockGravadoCorpoEMente'),
+      LOGO,
+      BLOCK,
+      LOWER('/lowerCorpoEMente'),
+    ],
+  },
+  {
     id: 'tela-pelotas-merece',
     name: 'Tela Pelotas Merece',
     components: [
