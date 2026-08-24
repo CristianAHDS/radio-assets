@@ -92,6 +92,16 @@ export const TELAS = [
     ],
   },
   {
+    id: 'tela-mistura-boa',
+    name: 'Tela Mistura Boa',
+    components: [
+      CLOCK('/clockMisturaBoa'),
+      LOGO,
+      BLOCK,
+      LOWER('/lowerMisturaBoa'),
+    ],
+  },
+  {
     id: 'tela-a-hora',
     name: 'Tela A Hora',
     components: [CLOCK('/clockAHora'), LOGO, BLOCK, LOWER('/LowerAHora')],

@@ -9,13 +9,8 @@ export const GROUPS = [
       { name: 'Tela Geral', path: '/telas/tela-geral' },
       { name: 'Tela Esporte', path: '/telas/tela-esporte' },
       { name: 'Tela Conexão', path: '/telas/tela-conexao' },
-      { name: 'Tela Pensar Negócios', path: '/telas/tela-pensar-negocios' },
-      { name: 'Tela Outros', path: '/telas/tela-outros' },
       { name: 'Tela Corpo e Mente', path: '/telas/tela-corpo-mente' },
-      { name: 'Tela Corpo e Mente Gravação', path: '/telas/tela-corpo-mente-gravacao' },
-      { name: 'Tela Pelotas Merece', path: '/telas/tela-pelotas-merece' },
-      { name: 'Tela A Hora', path: '/telas/tela-a-hora' },
-      { name: 'Tela Gravação', path: '/telas/tela-gravacao' },
+      { name: 'Tela Mistura Boa', path: '/telas/tela-mistura-boa' },
     ],
   },
   {
@@ -82,6 +77,7 @@ export const GROUPS = [
       { name: 'Tempo Outros', path: '/outros' },
       { name: 'Tempo Corpo e Mente', path: '/corpoEMente' },
       { name: 'Tempo Pelotas Merece', path: '/pelotasMerece' },
+      { name: 'Tempo Mistura Boa', path: '/misturaBoa' },
     ],
   },
   {
@@ -93,9 +89,9 @@ export const GROUPS = [
       { name: 'Relógio Pensar Negócios', path: '/clockPensarNegocios' },
       { name: 'Relógio Outros', path: '/clockOutros' },
       { name: 'Relógio Corpo e Mente', path: '/clockCorpoEMente' },
-      { name: 'Relógio Corpo e Mente Gravado', path: '/clockGravadoCorpoEMente' },
       { name: 'Relógio Pelotas Merece', path: '/clockPelotasMerece' },
       { name: 'Relógio A Hora', path: '/clockAHora' },
+      { name: 'Relógio Mistura Boa', path: '/clockMisturaBoa' },
     ],
   },
   {
@@ -110,6 +106,7 @@ export const GROUPS = [
       { name: 'Lower Corpo e Mente', path: '/lowerCorpoEMente' },
       { name: 'Lower Pelotas Merece', path: '/lowerPelotasMerece' },
       { name: 'Lower A Hora', path: '/LowerAHora' },
+      { name: 'Lower Mistura Boa', path: '/lowerMisturaBoa' },
     ],
   },
   {
@@ -134,6 +131,7 @@ export const GROUPS = [
       { name: 'WhatsApp Outros', path: '/whatsOutros' },
       { name: 'WhatsApp Corpo e Mente', path: '/whatsCorpoEMente' },
       { name: 'WhatsApp Pelotas Merece', path: '/whatsPelotasMerece' },
+      { name: 'WhatsApp Mistura Boa', path: '/whatsMisturaBoa' },
     ],
   },
   {
@@ -147,6 +145,7 @@ export const GROUPS = [
       { name: 'Pin Corpo e Mente', path: '/pinCorpoEMente' },
       { name: 'Pin Pelotas Merece', path: '/pinPelotasMerece' },
       { name: 'Pin A Hora', path: '/pinAHora' },
+      { name: 'Pin Mistura Boa', path: '/pinMisturaBoa' },
     ],
   },
   {
@@ -176,6 +175,7 @@ export const GROUPS = [
       { name: 'GC Corpo e Mente', path: '/gcCorpoEMente', params: [nomeParam] },
       { name: 'GC Pelotas Merece', path: '/gcPelotasMerece', params: [nomeParam] },
       { name: 'GC A Hora', path: '/gcAHora', params: [nomeParam] },
+      { name: 'GC Mistura Boa', path: '/gcMisturaBoa', params: [nomeParam] },
     ],
   },
   {
@@ -252,6 +252,12 @@ export const GROUPS = [
       { name: 'Ao Vivo', path: '/aovivo' },
       { name: 'Retransmissão', path: '/retransmissao' },
       { name: 'Lower Gravação', path: '/lowerGravado' },
+      {
+        name: 'Tela Corpo e Mente Gravação',
+        path: '/telas/tela-corpo-mente-gravacao',
+      },
+      { name: 'Relógio Corpo e Mente Gravado', path: '/clockGravadoCorpoEMente' },
+      { name: 'Relógio Mistura Boa Gravado', path: '/clockGravadoMisturaBoa' },
     ],
   },
   {

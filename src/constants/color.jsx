@@ -31,6 +31,9 @@ export const ahoraSecondary = '#1d3d7a';
 export const primaryMistura = '#8bb7fe';
 export const primaryExpo = '#ff7c34';
 
+export const primaryMisturaBoa = '#a46dff';
+export const secondaryMisturaBoa = '#7e4acb';
+
 export const defaultPrimary = '#00acf8';
 export const defaultSecondary = '#317b9e';
 export const primaryPelotasMereceDefault = '#a91138';

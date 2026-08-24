@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 // Pages
 import PageCorpoEMente from './pages/corpoEMente';
 import PageCorpoEMenteGravado from './pages/corpoEMenteGravado';
+import PageMisturaBoa from './pages/misturaBoa';
 import PagePelotasMerece from './pages/pelotasMerece';
 import PageOutros from './pages/outros';
 import PageEsportes from './pages/esportes';
@@ -143,6 +144,13 @@ import CamShopping from './components/camShopping';
 
 //New Components
 import NewClock from './components/newVersion/ClockNewVersion';
+import ClockGravadoMisturaBoa from './components/clockGravadoMisturaBoa';
+import ClockMisturaBoa from './components/clockMisturaBoa';
+import TempoMisturaBoa from './components/tempoMisturaBoa';
+import GcMisturaBoa from './components/gcMisturaBoa';
+import PinMisturaBoa from './components/pinMisturaBoa';
+import WhatsMisturaBoa from './components/whatsMisturaBoa';
+import LowerMisturaBoa from './components/lowerMisturaBoa';
 import NewTempo from './components/newVersion/TempoNewVersion';
 import NewGC from './components/newVersion/GCNew';
 import NewGCMusica from './components/newVersion/gcMusica';
@@ -211,6 +219,13 @@ const router = createBrowserRouter([
 
   // New Components
   { path: '/newClock', element: <NewClock /> },
+  { path: '/clockGravadoMisturaBoa', element: <ClockGravadoMisturaBoa /> },
+  { path: '/clockMisturaBoa', element: <ClockMisturaBoa /> },
+  { path: '/misturaBoa', element: <TempoMisturaBoa /> },
+  { path: '/gcMisturaBoa', element: <GcMisturaBoa /> },
+  { path: '/pinMisturaBoa', element: <PinMisturaBoa /> },
+  { path: '/whatsMisturaBoa', element: <WhatsMisturaBoa /> },
+  { path: '/lowerMisturaBoa', element: <LowerMisturaBoa /> },
   { path: '/newTempo', element: <NewTempo /> },
   { path: '/newGC', element: <NewGC /> },
   { path: '/newGcMuisca', element: <NewGCMusica /> },
@@ -223,6 +238,7 @@ const router = createBrowserRouter([
   // Pages
   { path: '/pageCorpoEMente', element: <PageCorpoEMente /> },
   { path: '/pageCorpoEMenteGravado', element: <PageCorpoEMenteGravado /> },
+  { path: '/pageMisturaBoa', element: <PageMisturaBoa /> },
   { path: '/pagePelotasMerece', element: <PagePelotasMerece /> },
   { path: '/pageOutros', element: <PageOutros /> },
   { path: '/pageEsportes', element: <PageEsportes /> },
