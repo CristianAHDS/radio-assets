@@ -54,7 +54,7 @@ export const TopContainer = styled.textarea`
   text-transform: uppercase;
   color: #fff;
   white-space: nowrap;
-
+  padding-right: 40px !important;
   &:focus {
     outline: none;
   }

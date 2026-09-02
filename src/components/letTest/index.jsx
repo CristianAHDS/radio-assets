@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 import {
@@ -98,11 +98,13 @@ const LetTest = ({ primaryColor, topBoxColor }) => {
     }
   }, [bottomText]);
 
-  useEffect(() => {
-    const applyFit = (text, base, min, mirror, input) => {
+  useLayoutEffect(() => {
+    const containerWidth = containerRef.current?.clientWidth || innerWidth;
+
+    const applyFit = (text, base, min, mirror, input, setWidth) => {
       if (!mirror.current || !input.current) return;
 
-      const maxWidth = Math.max(innerWidth - HORIZONTAL_PADDING, 200);
+      const maxWidth = Math.max(containerWidth - HORIZONTAL_PADDING, 200);
       let size = charFontSize(base, min, text);
 
       mirror.current.style.fontSize = `${size}px`;
@@ -111,16 +113,22 @@ const LetTest = ({ primaryColor, topBoxColor }) => {
       const textWidth = mirror.current.offsetWidth;
       if (textWidth > maxWidth && textWidth > 0) {
         size = Math.max(size * (maxWidth / textWidth), min);
-        mirror.current.style.fontSize = `${size}px`;
       }
 
-      mirror.current.textContent = text || ' ';
       input.current.style.fontSize = `${size}px`;
-      input.current.style.width = `${mirror.current.offsetWidth}px`;
+      if (setWidth) {
+        input.current.style.width = `${mirror.current.offsetWidth}px`;
+      }
+
+      if (input.current.scrollWidth > input.current.clientWidth + 1 && input.current.clientWidth > 0) {
+        const scale = input.current.clientWidth / input.current.scrollWidth;
+        size = Math.max(size * scale, min);
+        input.current.style.fontSize = `${size}px`;
+      }
     };
 
-    applyFit(topText, TOP_BASE, TOP_MIN, mirrorTopRef, topRef);
-    applyFit(bottomText, BOTTOM_BASE, BOTTOM_MIN, mirrorBottomRef, bottomRef);
+    applyFit(topText, TOP_BASE, TOP_MIN, mirrorTopRef, topRef, true);
+    applyFit(bottomText, BOTTOM_BASE, BOTTOM_MIN, mirrorBottomRef, bottomRef, false);
   }, [topText, bottomText, innerWidth]);
 
   return (
