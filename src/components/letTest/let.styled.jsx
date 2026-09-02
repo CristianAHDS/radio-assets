@@ -55,6 +55,7 @@ export const TopContainer = styled.textarea`
   color: #fff;
   white-space: nowrap;
   padding-right: 40px !important;
+  padding-left: 25px !important;
   &:focus {
     outline: none;
   }
