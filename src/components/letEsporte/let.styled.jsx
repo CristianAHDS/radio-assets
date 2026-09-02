@@ -49,6 +49,7 @@ export const TextContainerTop = styled.textarea`
   text-overflow: ellipsis;
   direction: rtl;
   text-align: right;
+  padding-right: 2px;
 
   &:focus {
     outline: none;

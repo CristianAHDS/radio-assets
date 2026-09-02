@@ -24,7 +24,9 @@ const Let = () => {
   const adjustWidth = (mirrorRef, inputRef, text) => {
     if (mirrorRef.current && inputRef.current) {
       mirrorRef.current.textContent = text || ' ';
-      inputRef.current.style.width = mirrorRef.current.offsetWidth + 'px';
+      inputRef.current.style.width = 'auto';
+      const naturalWidth = inputRef.current.scrollWidth;
+      inputRef.current.style.width = naturalWidth + 4 + 'px';
     }
   };
 
