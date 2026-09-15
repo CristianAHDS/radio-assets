@@ -4,6 +4,50 @@ const localParam = { key: 'local', label: 'Local', default: 'Estúdio' };
 
 export const GROUPS = [
   {
+    title: 'Let',
+    items: [
+      { name: 'Let Geral', path: '/let', params: [nomeParam] },
+      { name: 'Let Teste', path: '/letTest', params: [nomeParam, subParam] },
+      {
+        name: 'Let Teste Esporte',
+        path: '/letTestEsporte',
+        params: [nomeParam, subParam],
+      },
+      {
+        name: 'Let Teste Conexão',
+        path: '/letTestConexao',
+        params: [nomeParam, subParam],
+      },
+      {
+        name: 'Let Teste Pensar Negócios',
+        path: '/letTestPensarNegocios',
+        params: [nomeParam, subParam],
+      },
+      {
+        name: 'Let Teste Outros',
+        path: '/letTestOutros',
+        params: [nomeParam, subParam],
+      },
+      {
+        name: 'Let Teste Corpo e Mente',
+        path: '/letTestCorpoEMente',
+        params: [nomeParam, subParam],
+      },
+      {
+        name: 'Let Teste Pelotas Merece',
+        path: '/letTestPelotasMerece',
+        params: [nomeParam, subParam],
+      },
+      {
+        name: 'Let Teste A Hora',
+        path: '/letTestAHora',
+        params: [nomeParam, subParam],
+      },
+      { name: 'Let Esporte', path: '/letEsporte', params: [nomeParam] },
+      { name: 'Let Conexão', path: '/letConexao', params: [nomeParam] },
+    ],
+  },
+  {
     title: 'Telas',
     items: [
       { name: 'Tela Geral', path: '/telas/tela-geral' },
@@ -20,7 +64,10 @@ export const GROUPS = [
       { name: 'Programação Geral', path: '/programacaoGeral' },
       { name: 'Programação Esporte', path: '/programacaoEsporte' },
       { name: 'Programação Conexão', path: '/programacaoConexao' },
-      { name: 'Programação Pensar Negócios', path: '/programacaoPensarNegocios' },
+      {
+        name: 'Programação Pensar Negócios',
+        path: '/programacaoPensarNegocios',
+      },
       { name: 'Programação Outros', path: '/programacaoOutros' },
       { name: 'Programação Corpo e Mente', path: '/programacaoCorpoEMente' },
       { name: 'Programação Pelotas Merece', path: '/programacaoPelotasMerece' },
@@ -109,31 +156,23 @@ export const GROUPS = [
     ],
   },
   {
-    title: 'Let',
-    items: [
-      { name: 'Let Geral', path: '/let', params: [nomeParam] },
-      { name: 'Let Teste', path: '/letTest', params: [nomeParam, subParam] },
-      { name: 'Let Teste Esporte', path: '/letTestEsporte', params: [nomeParam, subParam] },
-      { name: 'Let Teste Conexão', path: '/letTestConexao', params: [nomeParam, subParam] },
-      { name: 'Let Teste Pensar Negócios', path: '/letTestPensarNegocios', params: [nomeParam, subParam] },
-      { name: 'Let Teste Outros', path: '/letTestOutros', params: [nomeParam, subParam] },
-      { name: 'Let Teste Corpo e Mente', path: '/letTestCorpoEMente', params: [nomeParam, subParam] },
-      { name: 'Let Teste Pelotas Merece', path: '/letTestPelotasMerece', params: [nomeParam, subParam] },
-      { name: 'Let Teste A Hora', path: '/letTestAHora', params: [nomeParam, subParam] },
-      { name: 'Let Esporte', path: '/letEsporte', params: [nomeParam] },
-      { name: 'Let Conexão', path: '/letConexao', params: [nomeParam] },
-    ],
-  },
-  {
     title: 'GC',
     items: [
       { name: 'GC Geral', path: '/gc', params: [nomeParam] },
       { name: 'GC Esporte', path: '/gcEsporte', params: [nomeParam] },
       { name: 'GC Conexão', path: '/gcConexao', params: [nomeParam] },
-      { name: 'GC Pensar Negócios', path: '/gcPensarNegocios', params: [nomeParam] },
+      {
+        name: 'GC Pensar Negócios',
+        path: '/gcPensarNegocios',
+        params: [nomeParam],
+      },
       { name: 'GC Outros', path: '/gcOutros', params: [nomeParam] },
       { name: 'GC Corpo e Mente', path: '/gcCorpoEMente', params: [nomeParam] },
-      { name: 'GC Pelotas Merece', path: '/gcPelotasMerece', params: [nomeParam] },
+      {
+        name: 'GC Pelotas Merece',
+        path: '/gcPelotasMerece',
+        params: [nomeParam],
+      },
       { name: 'GC A Hora', path: '/gcAHora', params: [nomeParam] },
       { name: 'GC Mistura Boa', path: '/gcMisturaBoa', params: [nomeParam] },
     ],
@@ -142,23 +181,67 @@ export const GROUPS = [
     title: 'GC Música',
     items: [
       { name: 'GC Música Geral', path: '/gcMusica', params: [nomeParam] },
-      { name: 'GC Música Esporte', path: '/gcMusicaEsporte', params: [nomeParam] },
-      { name: 'GC Música Conexão', path: '/gcMusicaConexao', params: [nomeParam] },
-      { name: 'GC Música Pensar Negócios', path: '/gcMusicaPensarNegocios', params: [nomeParam] },
-      { name: 'GC Música Outros', path: '/gcMusicaOutros', params: [nomeParam] },
-      { name: 'GC Música Corpo e Mente', path: '/gcMusicaCorpoEMente', params: [nomeParam] },
-      { name: 'GC Música Pelotas Merece', path: '/gcMusicaPelotasMerece', params: [nomeParam] },
+      {
+        name: 'GC Música Esporte',
+        path: '/gcMusicaEsporte',
+        params: [nomeParam],
+      },
+      {
+        name: 'GC Música Conexão',
+        path: '/gcMusicaConexao',
+        params: [nomeParam],
+      },
+      {
+        name: 'GC Música Pensar Negócios',
+        path: '/gcMusicaPensarNegocios',
+        params: [nomeParam],
+      },
+      {
+        name: 'GC Música Outros',
+        path: '/gcMusicaOutros',
+        params: [nomeParam],
+      },
+      {
+        name: 'GC Música Corpo e Mente',
+        path: '/gcMusicaCorpoEMente',
+        params: [nomeParam],
+      },
+      {
+        name: 'GC Música Pelotas Merece',
+        path: '/gcMusicaPelotasMerece',
+        params: [nomeParam],
+      },
     ],
   },
   {
     title: 'Loc Câmera',
     items: [
       { name: 'Loc. Câmera Geral', path: '/camTp', params: [localParam] },
-      { name: 'Loc. Câmera Esporte', path: '/camTpEsporte', params: [localParam] },
-      { name: 'Loc. Câmera Conexão', path: '/camTpConexao', params: [localParam] },
-      { name: 'Loc. Câmera Pensar Negócios', path: '/camTpPensarNegocios', params: [localParam] },
-      { name: 'Loc. Câmera Corpo e Mente', path: '/camTpCorpoEMente', params: [localParam] },
-      { name: 'Loc. Câmera Pelotas Merece', path: '/CamTpPelotasMerece', params: [localParam] },
+      {
+        name: 'Loc. Câmera Esporte',
+        path: '/camTpEsporte',
+        params: [localParam],
+      },
+      {
+        name: 'Loc. Câmera Conexão',
+        path: '/camTpConexao',
+        params: [localParam],
+      },
+      {
+        name: 'Loc. Câmera Pensar Negócios',
+        path: '/camTpPensarNegocios',
+        params: [localParam],
+      },
+      {
+        name: 'Loc. Câmera Corpo e Mente',
+        path: '/camTpCorpoEMente',
+        params: [localParam],
+      },
+      {
+        name: 'Loc. Câmera Pelotas Merece',
+        path: '/CamTpPelotasMerece',
+        params: [localParam],
+      },
     ],
   },
   {
@@ -190,7 +273,10 @@ export const GROUPS = [
         name: 'Tela Corpo e Mente Gravação',
         path: '/telas/tela-corpo-mente-gravacao',
       },
-      { name: 'Relógio Corpo e Mente Gravado', path: '/clockGravadoCorpoEMente' },
+      {
+        name: 'Relógio Corpo e Mente Gravado',
+        path: '/clockGravadoCorpoEMente',
+      },
       { name: 'Relógio Mistura Boa Gravado', path: '/clockGravadoMisturaBoa' },
     ],
   },
