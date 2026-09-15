@@ -6,7 +6,6 @@ export const GROUPS = [
   {
     title: 'Let',
     items: [
-      { name: 'Let Geral', path: '/let', params: [nomeParam] },
       { name: 'Let Teste', path: '/letTest', params: [nomeParam, subParam] },
       {
         name: 'Let Teste Esporte',
