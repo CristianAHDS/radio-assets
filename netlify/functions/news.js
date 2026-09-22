@@ -1,11 +1,14 @@
 export const handler = async () => {
   try {
-    const res = await fetch('https://ahoradosul.com.br/', {
-      headers: {
-        'User-Agent':
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36',
-      },
-    });
+    const res = await fetch(
+      `https://ahoradosul.com.br/?cache-bust=${Date.now()}`,
+      {
+        headers: {
+          'User-Agent':
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36',
+        },
+      }
+    );
 
     if (!res.ok) {
       return {
@@ -24,7 +27,10 @@ export const handler = async () => {
 
     return {
       statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-store',
+      },
       body: JSON.stringify({ titles: unique, updatedAt: new Date().toISOString() }),
     };
   } catch (err) {
