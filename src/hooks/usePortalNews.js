@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 const NEWS_URL = `${window.location.origin}/.netlify/functions/news`;
 const REFRESH_INTERVAL = 5 * 60 * 1000;
 
+export const DEFAULT_NEWS_TEXT =
+  'Mais da metade dos municípios da Zona Sul decretaram emergência • Pressionado, Brasil recebe o Aimoré no Bento Freitas • Leilão do Polo Rodoviário Pelotas está agendado para dezembro • Dor persistente não deve ser ignorada: reumatologista explica quando procurar avaliação • Estado se compromete a agilizar homologação de decretos da região • Homem de 28 anos é morto a tiros em Rio Grande • Líderes disparam na sexta rodada da Série A-2; fora do G-8, dupla Bra-Pel não perde posições • Mostra de Max Ziemer reúne charge e ironia no Caixeiral • Gabriel Morbeck espera reação do Xavante já contra o Aimoré: “A gente precisa reverter esta chave” • Defesa Civil nacional se instala na região Sul • Empresário, você se sente culpado por não produzir conteúdo? • O Teatro Frio, de Giorgio Ronna: um grupo de vanguarda estética e intelectual • Seu lugar no mundo • Para quem tem fé • O frágil ser humano • O espaço que ainda não ocuparam • BR-116 completa 14 anos de obras com 31 quilômetros ainda sem duplicação • Defesa Civil Nacional desenvolve ações na Zona Sul • Tabelinha eleitoral • Negócios na Expoagas 2026 chegam a R$ 830 milhões • Polícia Civil deflagra operação contra grupo investigado por extorsões • Cerrito decreta situação de emergência após chuvas intensas • “Grão tem uma proposta de linguagem cinematográfica diferente e isso é sempre um risco” • Prefeitura atualiza situação de escolas e UBSs nesta sexta-feira • Homem atropelado na Duque de Caxias morre após cinco dias no hospital •';
+
 const joinTitles = (titles) => `${titles.map((t) => `  ${t}  `).join('•')} •`;
 
 let inflight = null;

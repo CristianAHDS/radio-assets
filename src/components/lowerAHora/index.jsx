@@ -1,5 +1,5 @@
   import { useState, useEffect, useRef } from 'react';
-import { usePortalNews } from '../../hooks/usePortalNews';
+import { usePortalNews, DEFAULT_NEWS_TEXT } from '../../hooks/usePortalNews';
   import {
     Container,
     TextContainer,
@@ -10,7 +10,7 @@ import { usePortalNews } from '../../hooks/usePortalNews';
   import ClockAHora from '../clockAHora'
 
   const Lower = () => {
-    const defaultText = 'Editar texto';
+    const defaultText = DEFAULT_NEWS_TEXT;
     const [text, setText] = useState(() => {
       return localStorage.getItem('lowerText') || defaultText;
     });
