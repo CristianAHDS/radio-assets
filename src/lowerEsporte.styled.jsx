@@ -37,6 +37,7 @@ export const TextContainer = styled.div`
 export const LeftSide = styled.div`
   width: 300px;
   height: 100%;
+  margin-top: 5px;
   background-color: ${secondaryEsporte};
 
   display: flex;
@@ -61,7 +62,7 @@ export const TextSide = styled.div`
 
 // Recebe duração da animação via prop
 export const ScrollingWrapper = styled.div`
-  margin-top: 1px;
+  margin-top: 2px;
   height: 100%;
   display: flex;
   width: max-content;

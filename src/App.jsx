@@ -52,6 +52,12 @@ import Telas from './components/telas';
 import Logo from './components/logo';
 import BlocoBranco from './components/blocoBranco';
 import LowerTeste from './components/lowerTeste';
+import LowerApuracao from './components/lowerApuracao';
+import PainelApuracao from './components/apuracao/painel';
+import PlacarLider from './components/apuracao/placarLider';
+import VotoAVoto from './components/apuracao/votoAVoto';
+import ProgressoApuracao from './components/apuracao/progresso';
+import CarrosselCandidatos from './components/apuracao/carrosselCandidatos';
 import ProgramacaoPage from './components/programacao/page';
 import {
   ProgramacaoGeral,
@@ -318,6 +324,14 @@ const router = createBrowserRouter([
   { path: '/logo', element: <Logo /> },
   { path: '/blocoBranco', element: <BlocoBranco /> },
   { path: '/lowerTeste', element: <LowerTeste /> },
+  { path: '/lowerApuracao', element: <LowerApuracao /> },
+  { path: '/apuracao', element: <PainelApuracao /> },
+  { path: '/apuracaoLider', element: <PlacarLider /> },
+  { path: '/apuracaoVotoAVoto', element: <VotoAVoto /> },
+  { path: '/apuracaoProgresso', element: <ProgressoApuracao /> },
+  { path: '/apuracaoCarrossel', element: <CarrosselCandidatos /> },
+  { path: '/apuracaoCarrosselGovernador', element: <CarrosselCandidatos cargo="governador" /> },
+  { path: '/apuracaoCarrosselSenador', element: <CarrosselCandidatos cargo="senador" /> },
 
   //Programação
   { path: '/programacao', element: <ProgramacaoPage /> },

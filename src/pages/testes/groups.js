@@ -4,6 +4,26 @@ const localParam = { key: 'local', label: 'Local', default: 'Estúdio' };
 
 export const GROUPS = [
   {
+    title: 'Apuração de Votos',
+    accent: '#efd844',
+    items: [
+      /*
+      { name: 'Painel de Apuração', path: '/apuracao' },
+      { name: 'Progresso da Apuração', path: '/apuracaoProgresso' },
+      { name: 'Placar do Líder', path: '/apuracaoLider' },
+      { name: 'Voto a Voto', path: '/apuracaoVotoAVoto' },
+       */
+      { name: 'Carrossel Presidente', path: '/apuracaoCarrossel' },
+      {
+        name: 'Carrossel Governador',
+        path: '/apuracaoCarrosselGovernador',
+      },
+      { name: 'Carrossel Senador', path: '/apuracaoCarrosselSenador' },
+      { name: 'Tela Apuração', path: '/telas/tela-apuracao' },
+      { name: 'Lower Apuração', path: '/lowerApuracao' },
+    ],
+  },
+  {
     title: 'Let',
     items: [
       { name: 'Let Teste', path: '/letTest', params: [nomeParam, subParam] },

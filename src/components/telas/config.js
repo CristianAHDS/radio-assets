@@ -42,6 +42,11 @@ export const TELAS = [
     components: [CLOCK('/clock'), LOGO, BLOCK, LOWER('/lower')],
   },
   {
+    id: 'tela-apuracao',
+    name: 'Tela Apuração',
+    components: [CLOCK('/clock'), LOGO, BLOCK, LOWER('/lowerApuracao')],
+  },
+  {
     id: 'tela-esporte',
     name: 'Tela Esporte',
     components: [CLOCK('/clockEsporte'), LOGO, BLOCK, LOWER('/lowerEsporte')],

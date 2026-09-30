@@ -1,5 +1,15 @@
 import styled, { keyframes } from 'styled-components';
 
+const defaultAccent = '#6366f1';
+
+const hexToRgba = (hex, alpha) => {
+  const h = hex.replace('#', '');
+  const r = parseInt(h.substring(0, 2), 16);
+  const g = parseInt(h.substring(2, 4), 16);
+  const b = parseInt(h.substring(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
+
 const fadeInUp = keyframes`
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
@@ -257,7 +267,11 @@ export const Section = styled.section`
   background: rgba(22, 29, 47, 0.55);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid ${(p) => (p.$accent ? `${p.$accent}40` : 'rgba(255, 255, 255, 0.06)')};
+  box-shadow: ${(p) =>
+    p.$accent
+      ? `0 0 0 1px ${p.$accent}14, 0 0 40px ${hexToRgba(p.$accent, 0.08)}`
+      : 'none'};
   padding: 24px;
   animation: ${fadeInUp} 0.5s ease both;
 `;
@@ -327,8 +341,8 @@ export const SectionDot = styled.span`
   width: 10px;
   height: 10px;
   border-radius: 3px;
-  background: linear-gradient(135deg, #818cf8, #6366f1);
-  box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
+  background: linear-gradient(135deg, ${(p) => p.$accent || defaultAccent}, ${(p) => p.$accent || defaultAccent});
+  box-shadow: 0 0 12px ${(p) => hexToRgba(p.$accent || defaultAccent, 0.5)};
 `;
 
 export const SectionBadge = styled.span`
@@ -336,9 +350,9 @@ export const SectionBadge = styled.span`
   border-radius: 100px;
   font-size: 11px;
   font-weight: 700;
-  color: #818cf8;
-  background: rgba(99, 102, 241, 0.12);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  color: ${(p) => p.$accent || '#818cf8'};
+  background: ${(p) => hexToRgba(p.$accent || defaultAccent, 0.12)};
+  border: 1px solid ${(p) => hexToRgba(p.$accent || defaultAccent, 0.25)};
   white-space: nowrap;
 `;
 
@@ -360,8 +374,9 @@ export const Card = styled.div`
 
   &:hover {
     transform: translateY(-3px);
-    border-color: #273651;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28), 0 0 30px rgba(99, 102, 241, 0.08);
+    border-color: ${(p) => p.$accent || '#273651'};
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28), 0 0 30px ${(p) =>
+      hexToRgba(p.$accent || defaultAccent, 0.08)};
   }
 `;
 
@@ -398,21 +413,26 @@ export const RouteTag = styled.code`
 export const Preview = styled.div`
   position: relative;
   height: 250px;
+  overflow: hidden;
   background-color: #0e1420;
   background-image:
-    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 20% 20%, ${(p) => hexToRgba(p.$accent || defaultAccent, 0.08)} 0%, transparent 45%),
     radial-gradient(circle at 80% 70%, rgba(16, 185, 129, 0.05) 0%, transparent 45%),
-    linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+    linear-gradient(${(p) => hexToRgba(p.$accent || defaultAccent, 0.04)} 1px, transparent 1px),
+    linear-gradient(90deg, ${(p) => hexToRgba(p.$accent || defaultAccent, 0.04)} 1px, transparent 1px);
   background-size: auto, auto, 24px 24px, 24px 24px;
 `;
 
 export const PreviewFrame = styled.iframe`
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1080px;
   border: none;
+  transform-origin: top left;
+  pointer-events: none;
+  transform: scale(${(p) => p.$scale || 1});
 `;
 
 export const CardFooter = styled.div`
@@ -514,4 +534,32 @@ export const EmptyState = styled.div`
   font-size: 13.5px;
   text-align: center;
   animation: ${fadeIn} 0.3s ease;
+`;
+
+export const Placeholder = styled.div`
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: ${(p) => p.$accent || defaultAccent};
+  background: rgba(10, 14, 26, 0.55);
+
+  svg {
+    opacity: 0.8;
+  }
+
+  span {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+
+  small {
+    color: #64748b;
+    font-size: 12px;
+  }
 `;

@@ -11,6 +11,7 @@ import {
   FiMonitor,
   FiZap,
   FiCalendar,
+  FiClock,
 } from 'react-icons/fi';
 import { GROUPS } from './groups';
 import {
@@ -54,6 +55,7 @@ import {
   PrimaryButton,
   GhostButton,
   EmptyState,
+  Placeholder,
 } from './testes.styled';
 
 const buildUrl = (path, values) => {
@@ -100,7 +102,39 @@ const copyText = async (text) => {
   }
 };
 
-const ComponentCard = ({ item, index }) => {
+const PreviewScaled = ({ url, title, accent }) => {
+  const boxRef = useRef(null);
+  const [scale, setScale] = useState(0);
+
+  useEffect(() => {
+    const el = boxRef.current;
+    if (!el) return undefined;
+    const compute = () => {
+      const s = Math.min(el.offsetWidth / 1920, el.offsetHeight / 1080);
+      setScale(s);
+    };
+    compute();
+    const observer = new ResizeObserver(compute);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <Preview $accent={accent} ref={boxRef}>
+      {scale > 0 && (
+        <PreviewFrame
+          src={url}
+          title={title}
+          loading="lazy"
+          scrolling="no"
+          $scale={scale}
+        />
+      )}
+    </Preview>
+  );
+};
+
+const ComponentCard = ({ item, index, accent }) => {
   const initialValues = (item.params || []).reduce(
     (acc, param) => ({ ...acc, [param.key]: param.default || '' }),
     {},
@@ -129,7 +163,10 @@ const ComponentCard = ({ item, index }) => {
     return () => observer.disconnect();
   }, []);
 
-  const url = useMemo(() => buildUrl(item.path, values), [item.path, values]);
+  const url = useMemo(
+    () => (item.placeholder ? null : buildUrl(item.path, values)),
+    [item.path, values, item.placeholder],
+  );
 
   const handleCopy = async () => {
     const ok = await copyText(url);
@@ -142,28 +179,34 @@ const ComponentCard = ({ item, index }) => {
   return (
     <Card
       ref={cardRef}
+      $accent={accent}
       style={{ animationDelay: `${Math.min(index * 40, 360)}ms` }}
     >
       <CardHeader>
         <CardTitle title={item.name}>{item.name}</CardTitle>
-        <RouteTag title={url}>{item.path}</RouteTag>
+        <RouteTag title={item.placeholder ? 'Em breve' : url}>
+          {item.placeholder ? 'em breve' : item.path}
+        </RouteTag>
       </CardHeader>
 
-      <Preview>
-        {inView ? (
-          <PreviewFrame
-            src={url}
-            title={item.name}
-            loading="lazy"
-            scrolling="no"
-          />
-        ) : (
+      {item.placeholder ? (
+        <Preview $accent={accent}>
+          <Placeholder $accent={accent}>
+            <FiClock size={28} />
+            <span>Apuração de Votos</span>
+            <small>Componente em desenvolvimento</small>
+          </Placeholder>
+        </Preview>
+      ) : inView ? (
+        <PreviewScaled url={url} title={item.name} accent={accent} />
+      ) : (
+        <Preview $accent={accent}>
           <EmptyState>
             <FiLayers size={24} />
             Carregando preview...
           </EmptyState>
-        )}
-      </Preview>
+        </Preview>
+      )}
 
       <CardFooter>
         {item.params && item.params.length > 0 && (
@@ -186,13 +229,21 @@ const ComponentCard = ({ item, index }) => {
         )}
 
         <Actions>
-          <PrimaryButton as="a" href={url} target="_blank" rel="noreferrer">
-            <FiExternalLink size={14} /> Abrir
-          </PrimaryButton>
-          <GhostButton type="button" onClick={handleCopy}>
-            {copied ? <FiCheck size={14} /> : <FiCopy size={14} />}
-            {copied ? 'Copiado' : 'Copiar URL'}
-          </GhostButton>
+          {item.placeholder ? (
+            <PrimaryButton type="button" disabled>
+              <FiClock size={14} /> Em breve
+            </PrimaryButton>
+          ) : (
+            <>
+              <PrimaryButton as="a" href={url} target="_blank" rel="noreferrer">
+                <FiExternalLink size={14} /> Abrir
+              </PrimaryButton>
+              <GhostButton type="button" onClick={handleCopy}>
+                {copied ? <FiCheck size={14} /> : <FiCopy size={14} />}
+                {copied ? 'Copiado' : 'Copiar URL'}
+              </GhostButton>
+            </>
+          )}
         </Actions>
       </CardFooter>
     </Card>
@@ -265,10 +316,30 @@ const Testes = () => {
   );
 
   const stats = [
-    { label: 'Componentes', value: totalItems, icon: FiLayers, accent: '#6366f1' },
-    { label: 'Categorias', value: GROUPS.length, icon: FiGrid, accent: '#38bdf8' },
-    { label: 'Com Parâmetros', value: withParams, icon: FiSliders, accent: '#f59e0b' },
-    { label: 'Cenas / Páginas', value: scenesCount, icon: FiMonitor, accent: '#10b981' },
+    {
+      label: 'Componentes',
+      value: totalItems,
+      icon: FiLayers,
+      accent: '#6366f1',
+    },
+    {
+      label: 'Categorias',
+      value: GROUPS.length,
+      icon: FiGrid,
+      accent: '#38bdf8',
+    },
+    {
+      label: 'Com Parâmetros',
+      value: withParams,
+      icon: FiSliders,
+      accent: '#f59e0b',
+    },
+    {
+      label: 'Cenas / Páginas',
+      value: scenesCount,
+      icon: FiMonitor,
+      accent: '#10b981',
+    },
   ];
 
   return (
@@ -309,7 +380,11 @@ const Testes = () => {
           {stats.map((stat, i) => {
             const Icon = stat.icon;
             return (
-              <StatCard key={stat.label} $accent={stat.accent} style={{ animationDelay: `${i * 80}ms` }}>
+              <StatCard
+                key={stat.label}
+                $accent={stat.accent}
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
                 <StatIcon $accent={stat.accent}>
                   <Icon size={22} />
                 </StatIcon>
@@ -330,7 +405,9 @@ const Testes = () => {
         )}
 
         {filteredGroups.map((group, gi) => {
-          const query = (categorySearch[group.title] || '').trim().toLowerCase();
+          const query = (categorySearch[group.title] || '')
+            .trim()
+            .toLowerCase();
           const items = query
             ? group.items.filter(
                 (item) =>
@@ -340,10 +417,14 @@ const Testes = () => {
             : group.items;
 
           return (
-            <Section key={group.title} style={{ animationDelay: `${gi * 60}ms` }}>
+            <Section
+              key={group.title}
+              $accent={group.accent}
+              style={{ animationDelay: `${gi * 60}ms` }}
+            >
               <SectionHeader>
                 <SectionTitle>
-                  <SectionDot />
+                  <SectionDot $accent={group.accent} />
                   {group.title}
                 </SectionTitle>
                 <SectionRight>
@@ -358,7 +439,7 @@ const Testes = () => {
                       }
                     />
                   </CategorySearchBox>
-                  <SectionBadge>
+                  <SectionBadge $accent={group.accent}>
                     {items.length} componente{items.length === 1 ? '' : 's'}
                   </SectionBadge>
                 </SectionRight>
@@ -372,7 +453,12 @@ const Testes = () => {
               ) : (
                 <Grid>
                   {items.map((item, i) => (
-                    <ComponentCard key={item.path} item={item} index={i} />
+                    <ComponentCard
+                      key={item.path}
+                      item={item}
+                      index={i}
+                      accent={group.accent}
+                    />
                   ))}
                 </Grid>
               )}
