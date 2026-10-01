@@ -20,6 +20,7 @@ import {
   primaryCorpoEMente,
   primaryPelotasMerece,
   ahoraPrimary,
+  primaryMisturaBoa,
 } from './constants/color';
 import TempoGeral from './geral.jsx';
 import Lower from './lower.jsx';
@@ -289,6 +290,10 @@ const router = createBrowserRouter([
   {
     path: '/letTestAHora',
     element: <LetTest primaryColor={ahoraPrimary} topBoxColor="#3d63c4" />,
+  },
+  {
+    path: '/letTestMisturaBoa',
+    element: <LetTest primaryColor={primaryMisturaBoa} topBoxColor="#c9a6ff" />,
   },
   { path: '/', element: <TempoGeral /> },
   { path: '/radar', element: <Radar /> },

@@ -62,6 +62,11 @@ export const GROUPS = [
         path: '/letTestAHora',
         params: [nomeParam, subParam],
       },
+      {
+        name: 'Let Teste Mistura Boa',
+        path: '/letTestMisturaBoa',
+        params: [nomeParam, subParam],
+      },
       { name: 'Let Esporte', path: '/letEsporte', params: [nomeParam] },
       { name: 'Let Conexão', path: '/letConexao', params: [nomeParam] },
     ],
