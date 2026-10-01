@@ -14,4 +14,7 @@ export const ProgramacaoCorpoEMente = () => (
 export const ProgramacaoPelotasMerece = () => (
   <ProgramacaoPage colors={PALETTES.pelotasMerece} />
 );
+export const ProgramacaoMisturaBoa = () => (
+  <ProgramacaoPage colors={PALETTES.misturaBoa} />
+);
 export const ProgramacaoAHora = () => <ProgramacaoPage colors={PALETTES.aHora} />;

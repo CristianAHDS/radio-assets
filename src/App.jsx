@@ -68,6 +68,7 @@ import {
   ProgramacaoOutros,
   ProgramacaoCorpoEMente,
   ProgramacaoPelotasMerece,
+  ProgramacaoMisturaBoa,
   ProgramacaoAHora,
 } from './components/programacao/pages';
 
@@ -347,6 +348,7 @@ const router = createBrowserRouter([
   { path: '/programacaoOutros', element: <ProgramacaoOutros /> },
   { path: '/programacaoCorpoEMente', element: <ProgramacaoCorpoEMente /> },
   { path: '/programacaoPelotasMerece', element: <ProgramacaoPelotasMerece /> },
+  { path: '/programacaoMisturaBoa', element: <ProgramacaoMisturaBoa /> },
   { path: '/programacaoAHora', element: <ProgramacaoAHora /> },
 
   //Esporte

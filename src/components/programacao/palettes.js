@@ -13,6 +13,8 @@ import {
   secondaryCorpoEMente,
   primaryPelotasMerece,
   secondaryPelotasMerece,
+  primaryMisturaBoa,
+  secondaryMisturaBoa,
   ahoraPrimary,
   ahoraSecondary,
 } from '../../constants/color';
@@ -38,6 +40,7 @@ export const PALETTES = {
   outros: base(secondaryOutros, secondaryOutros, primaryOutros),
   corpoEMente: base(secondaryCorpoEMente, secondaryCorpoEMente, primaryCorpoEMente),
   pelotasMerece: base(secondaryPelotasMerece, secondaryPelotasMerece, primaryPelotasMerece),
+  misturaBoa: base(secondaryMisturaBoa, secondaryMisturaBoa, primaryMisturaBoa),
   aHora: base(ahoraSecondary, ahoraSecondary, ahoraPrimary),
 };
 

@@ -67,8 +67,6 @@ export const GROUPS = [
         path: '/letTestMisturaBoa',
         params: [nomeParam, subParam],
       },
-      { name: 'Let Esporte', path: '/letEsporte', params: [nomeParam] },
-      { name: 'Let Conexão', path: '/letConexao', params: [nomeParam] },
     ],
   },
   {
@@ -95,6 +93,7 @@ export const GROUPS = [
       { name: 'Programação Outros', path: '/programacaoOutros' },
       { name: 'Programação Corpo e Mente', path: '/programacaoCorpoEMente' },
       { name: 'Programação Pelotas Merece', path: '/programacaoPelotasMerece' },
+      { name: 'Programação Mistura Boa', path: '/programacaoMisturaBoa' },
       { name: 'Programação A Hora', path: '/programacaoAHora' },
     ],
   },
