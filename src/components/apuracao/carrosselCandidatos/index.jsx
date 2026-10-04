@@ -33,7 +33,8 @@ import {
   EmptyState,
 } from './carrossel.styled';
 import { useEleicoes } from '../../../hooks/useEleicoes';
-import { CORES_CANDIDATOS, formatNumero } from '../data';
+import { formatNumero } from '../data';
+import { corPartido } from '../partidos';
 
 const TITULOS = {
   presidente: 'Apuração Presidencial',
@@ -65,9 +66,9 @@ const CarrosselCandidatos = ({ cargo = 'presidente' }) => {
   const lista = useMemo(
     () =>
       candidatos
-        .map((cand, i) => ({
+        .map((cand) => ({
           ...cand,
-          cor: CORES_CANDIDATOS[i % CORES_CANDIDATOS.length],
+          cor: corPartido(cand.partido),
         }))
         .sort((a, b) => (b.pct || 0) - (a.pct || 0)),
     [candidatos],

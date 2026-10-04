@@ -5,35 +5,97 @@ import {
   SideLabel,
   ScrollingSide,
   ScrollingWrapper,
-  CandidateSet,
+  SectionGroup,
+  SectionTag,
   Candidate,
-  CandidateDot,
+  CandidatePhoto,
+  CandidateAvatar,
   CandidateName,
   CandidatePct,
 } from './lowerApuracao.styled';
-import { useApuracao } from '../../hooks/useApuracao';
-import { comCores, formatPct, percentual } from '../apuracao/data';
+import { useApuracaoSecoes } from '../../hooks/useApuracaoSecoes';
+import { formatPct } from '../apuracao/data';
+import { corPartido } from '../apuracao/partidos';
 
-const CandidateList = ({ candidatos, ...props }) => (
-  <CandidateSet {...props}>
-    {candidatos.map((cand) => (
-      <Candidate key={cand.numero ?? cand.nome}>
-        <CandidateDot $color={cand.cor} />
-        <CandidateName>{cand.nome}</CandidateName>
-        <CandidatePct>{formatPct(cand.pct)}%</CandidatePct>
-      </Candidate>
+const LIMITE_POR_SECAO = {
+  'deputado-federal': 12,
+  'deputado-estadual': 12,
+};
+
+const iniciais = (nome) => {
+  const partes = String(nome || '')
+    .split(' ')
+    .filter((p) => p.length > 2);
+  if (partes.length === 0) return '?';
+  return partes
+    .slice(0, 2)
+    .map((p) => p[0])
+    .join('')
+    .toUpperCase();
+};
+
+const prepararCandidatos = (candidatos, cargo) =>
+  [...candidatos]
+    .map((cand) => ({
+      ...cand,
+      cor: corPartido(cand.partido),
+    }))
+    .sort((a, b) => (b.votosNumero || 0) - (a.votosNumero || 0))
+    .slice(0, LIMITE_POR_SECAO[cargo] ?? candidatos.length);
+
+const Avatar = ({ cand }) => {
+  const [status, setStatus] = useState('loading');
+
+  return (
+    <CandidateAvatar $color={cand.cor}>
+      {iniciais(cand.nome)}
+      {cand.foto && status !== 'error' && (
+        <CandidatePhoto
+          $loaded={status === 'loaded'}
+          src={cand.foto}
+          alt={cand.nome}
+          loading="eager"
+          decoding="async"
+          referrerPolicy="no-referrer"
+          onLoad={() => setStatus('loaded')}
+          onError={() => setStatus('error')}
+        />
+      )}
+    </CandidateAvatar>
+  );
+};
+
+const Secoes = ({ secoes, ...props }) => (
+  <>
+    {secoes.map((secao) => (
+      <SectionGroup key={secao.cargo} {...props}>
+        <SectionTag>{secao.label}</SectionTag>
+        {secao.candidatos.map((cand, i) => (
+          <Candidate key={`${secao.cargo}-${cand.nome}-${i}`}>
+            <Avatar cand={cand} />
+            <CandidateName>{cand.nome}</CandidateName>
+            <CandidatePct>
+              {cand.percentual || `${formatPct(cand.pct)}%`}
+            </CandidatePct>
+          </Candidate>
+        ))}
+      </SectionGroup>
     ))}
-  </CandidateSet>
+  </>
 );
 
 const LowerApuracao = () => {
-  const apuracao = useApuracao();
-  const candidatos = useMemo(
+  const { secoes: secoesBrutas } = useApuracaoSecoes();
+
+  const secoes = useMemo(
     () =>
-      [...comCores(apuracao.candidatos)]
-        .map((c) => ({ ...c, pct: percentual(c, apuracao.candidatos) }))
-        .sort((a, b) => b.votos - a.votos),
-    [apuracao.candidatos],
+      secoesBrutas
+        .map((secao) => ({
+          ...secao,
+          candidatos: prepararCandidatos(secao.candidatos, secao.cargo),
+        }))
+        .filter((secao) => secao.candidatos.length > 0),
+    [secoesBrutas],
   );
 
   const [animationDuration, setAnimationDuration] = useState(30);
@@ -45,7 +107,7 @@ const LowerApuracao = () => {
       const speed = 100;
       setAnimationDuration(Math.max(15, measuredWidth / speed));
     }
-  }, [candidatos]);
+  }, [secoes]);
 
   return (
     <Container>
@@ -57,16 +119,17 @@ const LowerApuracao = () => {
             style={{
               position: 'absolute',
               visibility: 'hidden',
-              display: 'inline-block',
+              display: 'inline-flex',
+              alignItems: 'center',
               whiteSpace: 'nowrap',
             }}
           >
-            <CandidateList candidatos={candidatos} />
+            <Secoes secoes={secoes} />
           </span>
 
           <ScrollingWrapper $duration={animationDuration}>
-            <CandidateList candidatos={candidatos} />
-            <CandidateList candidatos={candidatos} aria-hidden="true" />
+            <Secoes secoes={secoes} />
+            <Secoes secoes={secoes} aria-hidden="true" />
           </ScrollingWrapper>
         </ScrollingSide>
         <SideLabel>ahoradosul.com.br</SideLabel>

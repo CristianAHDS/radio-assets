@@ -80,12 +80,25 @@ export const ScrollingWrapper = styled.div`
   animation: ${scroll} ${(props) => props.$duration || 30}s linear infinite;
 `;
 
-export const CandidateSet = styled.div`
+export const SectionGroup = styled.div`
   display: flex;
   align-items: center;
+  height: 100%;
 
-  padding-right: 60px;
   white-space: nowrap;
+`;
+
+export const SectionTag = styled.span`
+  padding: 0 22px 0 28px;
+  margin-right: 4px;
+
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  color: #fbbf24;
 `;
 
 export const Candidate = styled.div`
@@ -93,17 +106,46 @@ export const Candidate = styled.div`
   align-items: center;
   gap: 10px;
 
-  padding: 0 28px;
+  padding: 0 22px;
   border-right: 1px solid rgba(255, 255, 255, 0.35);
 `;
 
-export const CandidateDot = styled.span`
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
+export const CandidateAvatar = styled.span`
+  position: relative;
 
-  background: ${(props) => props.$color || '#fff'};
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  border: 2px solid ${(props) => props.$color || '#fff'};
   box-shadow: 0 0 8px ${(props) => props.$color || '#fff'}66;
+
+  background: ${(props) => props.$color || '#1f4e9c'};
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+`;
+
+export const CandidatePhoto = styled.img`
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: ${(props) => (props.$loaded ? 1 : 0)};
+  transition: opacity 0.25s ease;
 `;
 
 export const CandidateName = styled.span`

@@ -2,7 +2,17 @@ export const ARQUIVOS_ELEICOES = {
   presidente: 'presidente.txt',
   governador: 'governador.txt',
   senador: 'senador.txt',
+  'deputado-federal': 'deputado-federal.txt',
+  'deputado-estadual': 'deputado-estadual.txt',
 };
+
+export const SECOES_APURACAO = [
+  { cargo: 'presidente', label: 'Presidência' },
+  { cargo: 'governador', label: 'Governador' },
+  { cargo: 'senador', label: 'Senador' },
+  { cargo: 'deputado-federal', label: 'Dep. Federal' },
+  { cargo: 'deputado-estadual', label: 'Dep. Estadual RS' },
+];
 
 export const REFRESH_INTERVAL = 60 * 1000;
 
