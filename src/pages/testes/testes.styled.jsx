@@ -262,7 +262,223 @@ export const StatLabel = styled.span`
   margin-top: 4px;
 `;
 
+export const Layout = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    gap: 18px;
+  }
+`;
+
+export const Content = styled.div`
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
+
+export const QuickNav = styled.nav`
+  position: sticky;
+  top: 12px;
+  z-index: 20;
+  flex-shrink: 0;
+  width: ${(p) => (p.$collapsed ? '66px' : '216px')};
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: ${(p) => (p.$collapsed ? '12px 8px' : '14px 12px')};
+  border-radius: 14px;
+  background: rgba(14, 20, 32, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #1e2d47;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation: ${fadeIn} 0.4s ease;
+  transition: width 0.2s ease, padding 0.2s ease;
+
+  @media (max-width: 1200px) {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 12px;
+  }
+`;
+
+export const QuickNavHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: ${(p) => (p.$collapsed ? 'center' : 'space-between')};
+  gap: 8px;
+  min-height: 24px;
+  overflow: hidden;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`;
+
+export const QuickNavTitle = styled.span`
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #64748b;
+  padding-left: 4px;
+  white-space: nowrap;
+`;
+
+export const QuickNavToggle = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  padding: 0 !important;
+  border-radius: 7px;
+  cursor: pointer;
+  color: #94a3b8;
+  background: rgba(10, 14, 26, 0.6);
+  border: 1px solid #1e2d47;
+  transition: all 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    color: #e8edf5;
+    border-color: #273651;
+  }
+
+  &:active {
+    transform: scale(0.94);
+  }
+`;
+
+export const QuickNavScroll = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+  padding-right: 2px;
+  scrollbar-width: thin;
+  scrollbar-color: #273651 transparent;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #273651;
+    border-radius: 100px;
+  }
+
+  @media (max-width: 1200px) {
+    flex-direction: row;
+    gap: 8px;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+`;
+
+export const QuickNavItem = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: ${(p) => (p.$collapsed ? 'center' : 'flex-start')};
+  gap: 9px;
+  width: 100%;
+  flex-shrink: 0;
+  padding: ${(p) => (p.$collapsed ? '10px 0 !important' : '8px 11px !important')};
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  color: ${(p) => p.$accent || '#94a3b8'};
+  background: ${(p) =>
+    p.$active
+      ? hexToRgba(p.$accent || defaultAccent, 0.2)
+      : hexToRgba(p.$accent || defaultAccent, 0.08)};
+  border: 1px solid
+    ${(p) =>
+      p.$active ? hexToRgba(p.$accent || defaultAccent, 0.55) : 'transparent'};
+  transition: all 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+
+  &::before {
+    content: '';
+    flex-shrink: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    background: ${(p) => p.$accent || defaultAccent};
+    box-shadow: ${(p) =>
+      p.$active
+        ? `0 0 10px 1px ${hexToRgba(p.$accent || defaultAccent, 0.85)}`
+        : `0 0 8px ${hexToRgba(p.$accent || defaultAccent, 0.6)}`};
+    transform: ${(p) => (p.$active ? 'scale(1.25)' : 'scale(1)')};
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+
+  &:hover {
+    background: ${(p) => hexToRgba(p.$accent || defaultAccent, 0.18)};
+    border-color: ${(p) => hexToRgba(p.$accent || defaultAccent, 0.4)};
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  @media (max-width: 1200px) {
+    width: auto;
+    justify-content: flex-start;
+    padding: 7px 13px !important;
+    border-radius: 100px;
+    background: ${(p) => hexToRgba(p.$accent || defaultAccent, 0.1)};
+    border-color: ${(p) =>
+      p.$active
+        ? hexToRgba(p.$accent || defaultAccent, 0.55)
+        : hexToRgba(p.$accent || defaultAccent, 0.25)};
+  }
+`;
+
+export const QuickNavLabel = styled.span`
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+`;
+
+export const QuickNavCount = styled.span`
+  flex-shrink: 0;
+  margin-left: auto;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 100px;
+  color: ${(p) => p.$accent || '#818cf8'};
+  background: ${(p) => hexToRgba(p.$accent || defaultAccent, 0.18)};
+
+  @media (max-width: 1200px) {
+    margin-left: 0;
+  }
+`;
+
 export const Section = styled.section`
+  scroll-margin-top: 90px;
   border-radius: 16px;
   background: rgba(22, 29, 47, 0.55);
   backdrop-filter: blur(16px);

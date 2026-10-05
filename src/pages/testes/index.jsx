@@ -12,6 +12,8 @@ import {
   FiZap,
   FiCalendar,
   FiClock,
+  FiChevronLeft,
+  FiChevronRight,
 } from 'react-icons/fi';
 import { GROUPS } from './groups';
 import {
@@ -28,6 +30,16 @@ import {
   SearchInput,
   DatePill,
   StatsGrid,
+  Layout,
+  Content,
+  QuickNav,
+  QuickNavHeader,
+  QuickNavTitle,
+  QuickNavToggle,
+  QuickNavScroll,
+  QuickNavItem,
+  QuickNavLabel,
+  QuickNavCount,
   StatCard,
   StatIcon,
   StatInfo,
@@ -253,6 +265,34 @@ const ComponentCard = ({ item, index, accent }) => {
 const Testes = () => {
   const [search, setSearch] = useState('');
   const [categorySearch, setCategorySearch] = useState({});
+  const [active, setActive] = useState(null);
+  const [collapsed, setCollapsed] = useState(() => {
+    try {
+      return localStorage.getItem('testesNavCollapsed') === '1';
+    } catch {
+      return false;
+    }
+  });
+  const sectionRefs = useRef({});
+  const navItemsRef = useRef({});
+  const navScrollRef = useRef(null);
+
+  const scrollToSection = (title) => {
+    const el = sectionRefs.current[title];
+    if (el) {
+      setActive(title);
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('testesNavCollapsed', collapsed ? '1' : '0');
+    } catch {
+      return undefined;
+    }
+    return undefined;
+  }, [collapsed]);
 
   const setCategoryQuery = (title, query) => {
     setCategorySearch((prev) => ({ ...prev, [title]: query }));
@@ -278,6 +318,36 @@ const Testes = () => {
       };
     }).filter((group) => group.items.length > 0);
   }, [search]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort(
+            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top,
+          );
+        if (visible.length > 0) {
+          setActive(visible[0].target.dataset.section);
+        }
+      },
+      { rootMargin: '-96px 0px -65% 0px', threshold: 0 },
+    );
+
+    const elements = filteredGroups
+      .map((group) => sectionRefs.current[group.title])
+      .filter(Boolean);
+    elements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, [filteredGroups]);
+
+  useEffect(() => {
+    const item = active ? navItemsRef.current[active] : null;
+    if (item) {
+      item.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    }
+  }, [active]);
 
   const totalItems = useMemo(
     () => GROUPS.reduce((acc, group) => acc + group.items.length, 0),
@@ -404,7 +474,63 @@ const Testes = () => {
           </EmptyState>
         )}
 
-        {filteredGroups.map((group, gi) => {
+        <Layout>
+          {filteredGroups.length > 0 && (
+            <QuickNav
+              $collapsed={collapsed}
+              aria-label="Navegação rápida de categorias"
+            >
+              <QuickNavHeader $collapsed={collapsed}>
+                {!collapsed && <QuickNavTitle>Categorias</QuickNavTitle>}
+                <QuickNavToggle
+                  type="button"
+                  onClick={() => setCollapsed((value) => !value)}
+                  title={collapsed ? 'Expandir menu' : 'Recolher menu'}
+                  aria-label={collapsed ? 'Expandir menu' : 'Recolher menu'}
+                  aria-expanded={!collapsed}
+                >
+                  {collapsed ? (
+                    <FiChevronRight size={15} />
+                  ) : (
+                    <FiChevronLeft size={15} />
+                  )}
+                </QuickNavToggle>
+              </QuickNavHeader>
+
+              <QuickNavScroll ref={navScrollRef}>
+                {filteredGroups.map((group) => {
+                  const isActive = active === group.title;
+                  return (
+                    <QuickNavItem
+                      key={group.title}
+                      type="button"
+                      $accent={group.accent}
+                      $collapsed={collapsed}
+                      $active={isActive}
+                      onClick={() => scrollToSection(group.title)}
+                      title={group.title}
+                      aria-current={isActive ? 'true' : undefined}
+                      ref={(el) => {
+                        navItemsRef.current[group.title] = el;
+                      }}
+                    >
+                      {!collapsed && (
+                        <QuickNavLabel>{group.title}</QuickNavLabel>
+                      )}
+                      {!collapsed && (
+                        <QuickNavCount $accent={group.accent}>
+                          {group.items.length}
+                        </QuickNavCount>
+                      )}
+                    </QuickNavItem>
+                  );
+                })}
+              </QuickNavScroll>
+            </QuickNav>
+          )}
+
+          <Content>
+            {filteredGroups.map((group, gi) => {
           const query = (categorySearch[group.title] || '')
             .trim()
             .toLowerCase();
@@ -419,7 +545,11 @@ const Testes = () => {
           return (
             <Section
               key={group.title}
+              data-section={group.title}
               $accent={group.accent}
+              ref={(el) => {
+                sectionRefs.current[group.title] = el;
+              }}
               style={{ animationDelay: `${gi * 60}ms` }}
             >
               <SectionHeader>
@@ -465,6 +595,8 @@ const Testes = () => {
             </Section>
           );
         })}
+          </Content>
+        </Layout>
       </Container>
     </Page>
   );
