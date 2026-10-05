@@ -25,6 +25,10 @@ const scaleIn = keyframes`
   to { opacity: 1; transform: scale(1); }
 `;
 
+const spin = keyframes`
+  to { transform: rotate(360deg); }
+`;
+
 export const Page = styled.div`
   min-height: 100vh;
   width: 100%;
@@ -649,6 +653,67 @@ export const PreviewFrame = styled.iframe`
   transform-origin: top left;
   pointer-events: none;
   transform: scale(${(p) => p.$scale || 1});
+`;
+
+export const PreviewLoader = styled.div`
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  pointer-events: none;
+  animation: ${fadeIn} 0.2s ease;
+`;
+
+export const Spinner = styled.span`
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2.5px solid ${(p) => hexToRgba(p.$accent || defaultAccent, 0.25)};
+  border-top-color: ${(p) => p.$accent || defaultAccent};
+  animation: ${spin} 0.7s linear infinite;
+`;
+
+export const RetryOverlay = styled.div`
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #94a3b8;
+  font-size: 12.5px;
+  text-align: center;
+  animation: ${fadeIn} 0.2s ease;
+`;
+
+export const RetryButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px !important;
+  border-radius: 10px;
+  font-size: 12.5px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  color: #e8edf5;
+  background: rgba(10, 14, 26, 0.75);
+  border: 1px solid #273651;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    color: ${(p) => p.$accent || '#818cf8'};
+    border-color: ${(p) => p.$accent || '#6366f1'};
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
 `;
 
 export const CardFooter = styled.div`

@@ -14,6 +14,7 @@ import {
   FiClock,
   FiChevronLeft,
   FiChevronRight,
+  FiRefreshCw,
 } from 'react-icons/fi';
 import { GROUPS } from './groups';
 import {
@@ -60,6 +61,10 @@ import {
   RouteTag,
   Preview,
   PreviewFrame,
+  PreviewLoader,
+  Spinner,
+  RetryOverlay,
+  RetryButton,
   CardFooter,
   ParamsRow,
   ParamInput,
@@ -114,9 +119,22 @@ const copyText = async (text) => {
   }
 };
 
+const LOAD_TIMEOUT = 12000;
+
 const PreviewScaled = ({ url, title, accent }) => {
   const boxRef = useRef(null);
   const [scale, setScale] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+  const [timedOut, setTimedOut] = useState(false);
+  const [reloadKey, setReloadKey] = useState(0);
+
+  useEffect(() => {
+    setLoaded(false);
+    setTimedOut(false);
+
+    const timer = setTimeout(() => setTimedOut(true), LOAD_TIMEOUT);
+    return () => clearTimeout(timer);
+  }, [url, reloadKey]);
 
   useEffect(() => {
     const el = boxRef.current;
@@ -131,16 +149,41 @@ const PreviewScaled = ({ url, title, accent }) => {
     return () => observer.disconnect();
   }, []);
 
+  const handleLoad = () => {
+    setLoaded(true);
+    setTimedOut(false);
+  };
+
+  const handleRetry = () => {
+    setLoaded(false);
+    setTimedOut(false);
+    setReloadKey((key) => key + 1);
+  };
+
   return (
     <Preview $accent={accent} ref={boxRef}>
       {scale > 0 && (
         <PreviewFrame
+          key={reloadKey}
           src={url}
           title={title}
           loading="lazy"
           scrolling="no"
           $scale={scale}
+          onLoad={handleLoad}
         />
+      )}
+      {!loaded && !timedOut && (
+        <PreviewLoader>
+          <Spinner $accent={accent} />
+        </PreviewLoader>
+      )}
+      {!loaded && timedOut && (
+        <RetryOverlay>
+          <RetryButton type="button" $accent={accent} onClick={handleRetry}>
+            <FiRefreshCw size={14} /> Recarregar preview
+          </RetryButton>
+        </RetryOverlay>
       )}
     </Preview>
   );
@@ -158,18 +201,11 @@ const ComponentCard = ({ item, index, accent }) => {
 
   useEffect(() => {
     const el = cardRef.current;
-    if (!el) return;
+    if (!el) return undefined;
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setInView(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: '300px' },
+      ([entry]) => setInView(entry.isIntersecting),
+      { rootMargin: '200px' },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -215,7 +251,7 @@ const ComponentCard = ({ item, index, accent }) => {
         <Preview $accent={accent}>
           <EmptyState>
             <FiLayers size={24} />
-            Carregando preview...
+            Preview carrega quando visível
           </EmptyState>
         </Preview>
       )}
