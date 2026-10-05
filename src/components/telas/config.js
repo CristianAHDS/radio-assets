@@ -52,6 +52,11 @@ export const TELAS = [
     components: [CLOCK('/clockEsporte'), LOGO, BLOCK, LOWER('/lowerEsporte')],
   },
   {
+    id: 'tela-agro',
+    name: 'Tela Agro',
+    components: [CLOCK('/clockEsporte'), LOGO, BLOCK, LOWER('/lowerAgro')],
+  },
+  {
     id: 'tela-conexao',
     name: 'Tela Conexão',
     components: [CLOCK('/clockConexao'), LOGO, BLOCK, LOWER('/lowerConexao')],

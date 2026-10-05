@@ -67,6 +67,7 @@ export const GROUPS = [
         path: '/letTestMisturaBoa',
         params: [nomeParam, subParam],
       },
+      { name: 'Let Agro', path: '/letTestAgro', params: [nomeParam, subParam] },
     ],
   },
   {
@@ -74,6 +75,7 @@ export const GROUPS = [
     items: [
       { name: 'Tela Geral', path: '/telas/tela-geral' },
       { name: 'Tela Esporte', path: '/telas/tela-esporte' },
+      { name: 'Tela Agro', path: '/telas/tela-agro' },
       { name: 'Tela Conexão', path: '/telas/tela-conexao' },
       { name: 'Tela Corpo e Mente', path: '/telas/tela-corpo-mente' },
       { name: 'Tela Mistura Boa', path: '/telas/tela-mistura-boa' },
@@ -95,6 +97,7 @@ export const GROUPS = [
       { name: 'Programação Pelotas Merece', path: '/programacaoPelotasMerece' },
       { name: 'Programação Mistura Boa', path: '/programacaoMisturaBoa' },
       { name: 'Programação A Hora', path: '/programacaoAHora' },
+      { name: 'Programação Agro', path: '/programacaoAgro' },
     ],
   },
   {
@@ -102,6 +105,7 @@ export const GROUPS = [
     items: [
       { name: 'Tempo Geral', path: '/' },
       { name: 'Tempo Esporte', path: '/esporte' },
+      { name: 'Tempo Agro', path: '/agro' },
       { name: 'Tempo Conexão', path: '/conexao' },
       { name: 'Tempo Pensar Negócios', path: '/pensarNegocios' },
       { name: 'Tempo Outros', path: '/outros' },
@@ -115,6 +119,7 @@ export const GROUPS = [
     items: [
       { name: 'Relógio Geral', path: '/clock' },
       { name: 'Relógio Esporte', path: '/clockEsporte' },
+      { name: 'Relógio Agro', path: '/clockAgro' },
       { name: 'Relógio Conexão', path: '/clockConexao' },
       { name: 'Relógio Pensar Negócios', path: '/clockPensarNegocios' },
       { name: 'Relógio Outros', path: '/clockOutros' },
@@ -130,6 +135,7 @@ export const GROUPS = [
       { name: 'Lower Teste (Portal)', path: '/lowerTeste' },
       { name: 'Lower Geral', path: '/lower' },
       { name: 'Lower Esporte', path: '/lowerEsporte' },
+      { name: 'Lower Agro', path: '/lowerAgro' },
       { name: 'Lower Conexão', path: '/lowerConexao' },
       { name: 'Lower Pensar Negócios', path: '/lowerPensarNegocios' },
       { name: 'Lower Outros', path: '/lowerOutros' },
@@ -149,6 +155,7 @@ export const GROUPS = [
       { name: 'Instagram Outros', path: '/instaOutros' },
       { name: 'Instagram Corpo e Mente', path: '/instaCorpoEMente' },
       { name: 'Instagram Pelotas Merece', path: '/instaPelotasMerece' },
+      { name: 'Instagram Agro', path: '/instaAgro' },
     ],
   },
   {
@@ -162,6 +169,7 @@ export const GROUPS = [
       { name: 'WhatsApp Corpo e Mente', path: '/whatsCorpoEMente' },
       { name: 'WhatsApp Pelotas Merece', path: '/whatsPelotasMerece' },
       { name: 'WhatsApp Mistura Boa', path: '/whatsMisturaBoa' },
+      { name: 'WhatsApp Agro', path: '/whatsAgro' },
     ],
   },
   {
@@ -176,6 +184,7 @@ export const GROUPS = [
       { name: 'Pin Pelotas Merece', path: '/pinPelotasMerece' },
       { name: 'Pin A Hora', path: '/pinAHora' },
       { name: 'Pin Mistura Boa', path: '/pinMisturaBoa' },
+      { name: 'Pin Agro', path: '/pinAgro' },
     ],
   },
   {
@@ -198,6 +207,7 @@ export const GROUPS = [
       },
       { name: 'GC A Hora', path: '/gcAHora', params: [nomeParam] },
       { name: 'GC Mistura Boa', path: '/gcMisturaBoa', params: [nomeParam] },
+      { name: 'GC Agro', path: '/gcAgro', params: [nomeParam] },
     ],
   },
   {
@@ -263,6 +273,11 @@ export const GROUPS = [
       {
         name: 'Loc. Câmera Pelotas Merece',
         path: '/CamTpPelotasMerece',
+        params: [localParam],
+      },
+      {
+        name: 'Loc. Câmera Agro',
+        path: '/camTpAgro',
         params: [localParam],
       },
     ],

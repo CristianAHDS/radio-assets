@@ -35,6 +35,7 @@ const base = (navy, navyAlt, blue) => ({
 export const PALETTES = {
   geral: base(secondary, secondary, primary),
   esporte: base(secondaryEsporte, secondaryEsporte, primaryEstporte),
+  agro: base(secondaryEsporte, secondaryEsporte, primaryEstporte),
   conexao: base(secondaryConexão, secondaryConexão, primaryConexão),
   pensarNegocios: base(secondaryPensarNegocios, secondaryPensarNegocios, primaryPensarNegocios),
   outros: base(secondaryOutros, secondaryOutros, primaryOutros),

@@ -25,8 +25,6 @@ const LetTestGlobalStyle = createGlobalStyle`
   }
 `;
 
-const TOP_KEY = 'letTestTopText';
-const BOTTOM_KEY = 'letTestBottomText';
 const MAX_CHARS = 50;
 const HORIZONTAL_PADDING = 80;
 const TOP_BASE = 30;
@@ -39,7 +37,9 @@ const charFontSize = (base, min, text) =>
     ? Math.max((base * MAX_CHARS) / text.length, min)
     : base;
 
-const LetTest = ({ primaryColor, topBoxColor }) => {
+const LetTest = ({ primaryColor, topBoxColor, storageKey = 'letTest' }) => {
+  const topKey = `${storageKey}TopText`;
+  const bottomKey = `${storageKey}BottomText`;
   const [searchParams] = useSearchParams();
   const nome = searchParams.get('nome');
   const sub = searchParams.get('sub');
@@ -69,34 +69,34 @@ const LetTest = ({ primaryColor, topBoxColor }) => {
   useEffect(() => {
     if (nome && nome.trim() !== '') {
       setTopText(nome.toUpperCase());
-      localStorage.setItem(TOP_KEY, nome.toUpperCase());
+      localStorage.setItem(topKey, nome.toUpperCase());
     } else {
-      const savedTop = localStorage.getItem(TOP_KEY);
+      const savedTop = localStorage.getItem(topKey);
       setTopText(savedTop && savedTop.trim() !== '' ? savedTop : 'EDITAR');
     }
 
     if (sub && sub.trim() !== '') {
       setBottomText(sub.toUpperCase());
-      localStorage.setItem(BOTTOM_KEY, sub.toUpperCase());
+      localStorage.setItem(bottomKey, sub.toUpperCase());
     } else {
-      const savedBottom = localStorage.getItem(BOTTOM_KEY);
+      const savedBottom = localStorage.getItem(bottomKey);
       setBottomText(
         savedBottom && savedBottom.trim() !== '' ? savedBottom : 'EDITAR',
       );
     }
-  }, [nome, sub]);
+  }, [nome, sub, topKey, bottomKey]);
 
   useEffect(() => {
     if (topText && topText.trim() !== '') {
-      localStorage.setItem(TOP_KEY, topText);
+      localStorage.setItem(topKey, topText);
     }
-  }, [topText]);
+  }, [topText, topKey]);
 
   useEffect(() => {
     if (bottomText && bottomText.trim() !== '') {
-      localStorage.setItem(BOTTOM_KEY, bottomText);
+      localStorage.setItem(bottomKey, bottomText);
     }
-  }, [bottomText]);
+  }, [bottomText, bottomKey]);
 
   useLayoutEffect(() => {
     const containerWidth = containerRef.current?.clientWidth || innerWidth;

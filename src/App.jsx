@@ -70,12 +70,14 @@ import {
   ProgramacaoPelotasMerece,
   ProgramacaoMisturaBoa,
   ProgramacaoAHora,
+  ProgramacaoAgro,
 } from './components/programacao/pages';
 
 //Esporte
 import LetEsporte from './components/letEsporte';
 import TempoEsporte from './esporte.jsx';
 import LowerEsporte from './lowerEsporte.jsx';
+import LowerAgro from './lowerAgro.jsx';
 import ClockEsporte from './clockEsporte.jsx';
 import GcEsporte from './components/gcEsporte';
 import InstaEsporte from './components/instaEsporte';
@@ -85,6 +87,15 @@ import CamTpEsporte from './components/camTpEsporte';
 import GameResult from './components/esportes/gameResult';
 import LiveScore from './components/esportes/liveScore';
 import LiveScoreLower from './components/esportes/liveScoreLower';
+
+//Agro
+import ClockAgro from './clockAgro.jsx';
+import TempoAgro from './agro.jsx';
+import GcAgro from './components/gcAgro';
+import InstaAgro from './components/instaAgro';
+import WhatsAgro from './components/whatsAgro';
+import PinAgro from './components/pinAgro';
+import CamTpAgro from './components/camTpAgro';
 
 //Pensar Negócios
 import TempoPensarnegocios from './components/tempoPensarNegocios';
@@ -262,6 +273,16 @@ const router = createBrowserRouter([
     element: <LetTest primaryColor={primaryEstporte} topBoxColor="#4caf50" />,
   },
   {
+    path: '/letTestAgro',
+    element: (
+      <LetTest
+        primaryColor={primaryEstporte}
+        topBoxColor="#4caf50"
+        storageKey="letTestAgro"
+      />
+    ),
+  },
+  {
     path: '/letTestConexao',
     element: <LetTest primaryColor={primaryConexão} topBoxColor="#00a0bd" />,
   },
@@ -364,6 +385,17 @@ const router = createBrowserRouter([
   { path: '/gameResult', element: <GameResult /> },
   { path: '/liveScore', element: <LiveScore /> },
   { path: '/liveScoreLower', element: <LiveScoreLower /> },
+
+  //Agro
+  { path: '/agro', element: <TempoAgro /> },
+  { path: '/clockAgro', element: <ClockAgro /> },
+  { path: '/lowerAgro', element: <LowerAgro /> },
+  { path: '/gcAgro', element: <GcAgro /> },
+  { path: '/instaAgro', element: <InstaAgro /> },
+  { path: '/whatsAgro', element: <WhatsAgro /> },
+  { path: '/pinAgro', element: <PinAgro /> },
+  { path: '/camTpAgro', element: <CamTpAgro /> },
+  { path: '/programacaoAgro', element: <ProgramacaoAgro /> },
 
   //Conexão
   { path: '/letConexao', element: <LetConexao /> },

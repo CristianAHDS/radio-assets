@@ -3,6 +3,7 @@ import { PALETTES } from './palettes';
 
 export const ProgramacaoGeral = () => <ProgramacaoPage colors={PALETTES.geral} />;
 export const ProgramacaoEsporte = () => <ProgramacaoPage colors={PALETTES.esporte} />;
+export const ProgramacaoAgro = () => <ProgramacaoPage colors={PALETTES.agro} />;
 export const ProgramacaoConexao = () => <ProgramacaoPage colors={PALETTES.conexao} />;
 export const ProgramacaoPensarNegocios = () => (
   <ProgramacaoPage colors={PALETTES.pensarNegocios} />
