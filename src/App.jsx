@@ -54,11 +54,15 @@ import Logo from './components/logo';
 import BlocoBranco from './components/blocoBranco';
 import LowerTeste from './components/lowerTeste';
 import LowerApuracao from './components/lowerApuracao';
+import LowerApuracaoSegundoTurno from './components/lowerApuracaoSegundoTurno';
 import PainelApuracao from './components/apuracao/painel';
 import PlacarLider from './components/apuracao/placarLider';
 import VotoAVoto from './components/apuracao/votoAVoto';
 import ProgressoApuracao from './components/apuracao/progresso';
 import CarrosselCandidatos from './components/apuracao/carrosselCandidatos';
+import SegundoTurno from './components/apuracao/segundoTurno';
+import VotoAVotoSegundoTurno from './components/apuracao/votoAVotoSegundoTurno';
+import VotoAVotoSegundoTurnoVertical from './components/apuracao/votoAVotoSegundoTurnoVertical';
 import ProgramacaoPage from './components/programacao/page';
 import {
   ProgramacaoGeral,
@@ -352,6 +356,10 @@ const router = createBrowserRouter([
   { path: '/blocoBranco', element: <BlocoBranco /> },
   { path: '/lowerTeste', element: <LowerTeste /> },
   { path: '/lowerApuracao', element: <LowerApuracao /> },
+  {
+    path: '/lowerApuracaoSegundoTurno',
+    element: <LowerApuracaoSegundoTurno />,
+  },
   { path: '/apuracao', element: <PainelApuracao /> },
   { path: '/apuracaoLider', element: <PlacarLider /> },
   { path: '/apuracaoVotoAVoto', element: <VotoAVoto /> },
@@ -359,6 +367,15 @@ const router = createBrowserRouter([
   { path: '/apuracaoCarrossel', element: <CarrosselCandidatos /> },
   { path: '/apuracaoCarrosselGovernador', element: <CarrosselCandidatos cargo="governador" /> },
   { path: '/apuracaoCarrosselSenador', element: <CarrosselCandidatos cargo="senador" /> },
+  { path: '/apuracaoSegundoTurno', element: <SegundoTurno /> },
+  {
+    path: '/apuracaoVotoAVotoSegundoTurno',
+    element: <VotoAVotoSegundoTurno />,
+  },
+  {
+    path: '/apuracaoVotoAVotoSegundoTurnoVertical',
+    element: <VotoAVotoSegundoTurnoVertical />,
+  },
 
   //Programação
   { path: '/programacao', element: <ProgramacaoPage /> },

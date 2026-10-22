@@ -17,6 +17,11 @@ const LOWER = (src) => ({
   transform: 'translateX(-50%)',
 });
 
+const LOWER_ALTO = (src) => ({
+  ...LOWER(src),
+  height: '50px',
+});
+
 const LOGO = {
   type: 'logo',
   src: '/logo',
@@ -41,10 +46,20 @@ export const TELAS = [
     name: 'Tela Geral',
     components: [CLOCK('/clock'), LOGO, BLOCK, LOWER('/lower')],
   },
-  {
+  /*{
     id: 'tela-apuracao',
     name: 'Tela Apuração',
     components: [CLOCK('/clock'), LOGO, BLOCK, LOWER('/lowerApuracao')],
+  },*/
+  {
+    id: 'tela-apuracao-segundo-turno',
+    name: 'Tela Apuração 2º Turno',
+    components: [
+      CLOCK('/clock'),
+      LOGO,
+      BLOCK,
+      LOWER_ALTO('/lowerApuracaoSegundoTurno'),
+    ],
   },
   {
     id: 'tela-esporte',
@@ -79,7 +94,12 @@ export const TELAS = [
   {
     id: 'tela-corpo-mente',
     name: 'Tela Corpo e Mente',
-    components: [CLOCK('/clockCorpoEMente'), LOGO, BLOCK, LOWER('/lowerCorpoEMente')],
+    components: [
+      CLOCK('/clockCorpoEMente'),
+      LOGO,
+      BLOCK,
+      LOWER('/lowerCorpoEMente'),
+    ],
   },
   {
     id: 'tela-corpo-mente-gravacao',

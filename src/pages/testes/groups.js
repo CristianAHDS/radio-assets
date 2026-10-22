@@ -13,14 +13,30 @@ export const GROUPS = [
       { name: 'Placar do Líder', path: '/apuracaoLider' },
       { name: 'Voto a Voto', path: '/apuracaoVotoAVoto' },
        */
-      { name: 'Carrossel Presidente', path: '/apuracaoCarrossel' },
+      { name: 'Apuração 2º Turno', path: '/apuracaoSegundoTurno' },
+      {
+        name: 'Voto a Voto 2º Turno',
+        path: '/apuracaoVotoAVotoSegundoTurno',
+      },
+      {
+        name: 'Voto a Voto 2º Turno Vertical',
+        path: '/apuracaoVotoAVotoSegundoTurnoVertical',
+      },
+      /*{ name: 'Carrossel Presidente', path: '/apuracaoCarrossel' },
       {
         name: 'Carrossel Governador',
         path: '/apuracaoCarrosselGovernador',
       },
       { name: 'Carrossel Senador', path: '/apuracaoCarrosselSenador' },
-      { name: 'Tela Apuração', path: '/telas/tela-apuracao' },
-      { name: 'Lower Apuração', path: '/lowerApuracao' },
+      */
+
+      /*{ name: 'Tela Apuração', path: '/telas/tela-apuracao' },*/
+      /*{ name: 'Lower Apuração', path: '/lowerApuracao' },*/
+      {
+        name: 'Tela Apuração 2º Turno',
+        path: '/telas/tela-apuracao-segundo-turno',
+      },
+      { name: 'Lower Apuração 2º Turno', path: '/lowerApuracaoSegundoTurno' },
     ],
   },
   {

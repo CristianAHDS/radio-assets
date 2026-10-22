@@ -90,7 +90,7 @@ const findCargo = (data, codigo) => {
 };
 
 const buildFolder = (uf, municipio, zona, formato) => {
-  if (formato === PASTAS.unificado) {
+  if (formato === 'unificado') {
     if (zona && municipio) return `${uf}${pad(municipio, 5)}-z${pad(zona, 4)}`;
     if (municipio) return `${uf}${pad(municipio, 5)}`;
     return uf;
@@ -105,7 +105,7 @@ const buildUrl = (cfg) => {
   const pasta = PASTAS[cfg.formato] || PASTAS.simplificado;
   const uf = BR.test(cfg.uf) ? 'br' : cfg.uf;
   const folder = buildFolder(uf, cfg.municipio, cfg.zona, cfg.formato);
-  const sufixo = cfg.formato === PASTAS.unificado ? 'u' : 'r';
+  const sufixo = cfg.formato === 'unificado' ? 'u' : 'r';
   const arquivo = `${folder}-c${pad(cfg.cargo, 4)}-e${pad(cfg.eleicao, 6)}-${sufixo}.json`;
   return `${base}/${env}/${cfg.ciclo}/${cfg.eleicao}/${pasta}/${folder}/${arquivo}`;
 };
@@ -133,22 +133,25 @@ const extractCandidatos = (data, cargoCodigo) => {
   const cands = firstOf(cargo, ['cand', 'candidatos']).length
     ? firstOf(cargo, ['cand', 'candidatos'])
     : firstOf(data, ['cand', 'candidatos']);
+  const secoes =
+    data && data.s && typeof data.s === 'object' ? data.s : null;
 
   return {
     candidatos: cands
       .map((cand) => ({
         numero: toNumber(cand.n),
         nome: normalize(cand.nm) || normalize(cand.nmu) || `Candidato ${cand.n}`,
+        nomeUrna: normalize(cand.nmu) || normalize(cand.nm),
         votos: toNumber(cand.vap),
         pct: toNumber(cand.pvap),
         eleito: cand.e === 's',
         situacao: normalize(cand.st),
       }))
       .filter((cand) => cand.nome),
-    secoesTotais: toNumber(data && data.st),
-    secoesApuradas: toNumber(data && data.s),
+    secoesTotais: toNumber(data && data.st) || toNumber(secoes && secoes.ts),
+    secoesApuradas: toNumber(data && data.s) || toNumber(secoes && secoes.st),
     votosValidos: toNumber(data && (data.vc !== undefined ? data.vc : data.vv)),
-    pctApurado: toNumber(data && data.pst),
+    pctApurado: toNumber(data && data.pst) || toNumber(secoes && secoes.pst),
     atualizadoEm:
       data && (data.dt || data.dg) && (data.ht || data.hg)
         ? `${data.dt || data.dg} ${data.ht || data.hg}`
