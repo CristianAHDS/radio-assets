@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { FiMap, FiClock } from 'react-icons/fi';
 import {
   GlobalStyle,
@@ -33,16 +33,8 @@ import {
   EmptyState,
 } from './mapaSegundoTurno.styled';
 import { useApuracaoEstados } from '../../../hooks/useApuracaoEstados';
-import { CORES, formatPct } from '../data';
-
-const nomeCurto = (cand) => {
-  if (!cand) return '';
-  const nome = (cand.nomeUrna || cand.nome || '').trim();
-  const partes = nome.split(/\s+/);
-  return partes.length > 2
-    ? `${partes[0]} ${partes[partes.length - 1]}`
-    : nome;
-};
+import { CORES, formatPct, nomeCandidato } from '../data';
+import ExportImageButton from '../exportImageButton';
 
 const horaTexto = (data) => {
   if (!data) return 'atualização a cada 60s';
@@ -55,6 +47,7 @@ const horaTexto = (data) => {
 
 const MapaSegundoTurno = () => {
   const { estados, carregando, atualizadoEm } = useApuracaoEstados();
+  const captureRef = useRef(null);
 
   const secoesTotais = estados.reduce(
     (acc, estado) => acc + (estado.secoesTotais || 0),
@@ -124,7 +117,7 @@ const MapaSegundoTurno = () => {
     <>
       <GlobalStyle />
       <Page>
-        <Wrap>
+        <Wrap ref={captureRef}>
           <Header>
             <HeaderLeft>
               <HeaderIcon>
@@ -178,7 +171,7 @@ const MapaSegundoTurno = () => {
                     {ativo ? (
                       <>
                         <div>
-                          <TileName>{nomeCurto(lider)}</TileName>
+                          <TileName>{nomeCandidato(lider)}</TileName>
                           <TilePct $cor={lider.cor}>
                             {formatPct(lider.pct)}
                             <small>%</small>
@@ -205,7 +198,7 @@ const MapaSegundoTurno = () => {
               {legenda.map((cand) => (
                 <LegendItem key={cand.numero}>
                   <LegendDot $cor={cand.cor} />
-                  <LegendName>{nomeCurto(cand)}</LegendName>
+                  <LegendName>{nomeCandidato(cand)}</LegendName>
                   <LegendPct>{formatPct(cand.pct)}%</LegendPct>
                   <span>· {cand.ufs} UFs</span>
                 </LegendItem>
@@ -216,6 +209,11 @@ const MapaSegundoTurno = () => {
               {horaTexto(atualizadoEm)}
             </FooterItem>
           </Footer>
+
+          <ExportImageButton
+            targetRef={captureRef}
+            fileName="mapa-2-turno.png"
+          />
         </Wrap>
       </Page>
     </>

@@ -31,6 +31,7 @@ import { useEleicoes } from '../../../hooks/useEleicoes';
 import { useApuracaoEstados } from '../../../hooks/useApuracaoEstados';
 import { CORES, formatNumero, formatPct } from '../data';
 import { corPartido, siglaPartido } from '../partidos';
+import ExportImageButton from '../exportImageButton';
 
 const fallbackIniciais = (nome) => {
   if (!nome) return '?';
@@ -74,6 +75,7 @@ const Cargo = ({ cargo }) => {
 };
 
 const VotoAVotoSegundoTurno = ({ cargo = 'presidente' }) => {
+  const captureRef = useRef(null);
   const { candidatos, carregando, secoesApuradas, atualizadoEm } =
     useEleicoes(cargo);
   const { estados } = useApuracaoEstados();
@@ -164,7 +166,7 @@ const VotoAVotoSegundoTurno = ({ cargo = 'presidente' }) => {
     <>
       <GlobalStyle />
       <Page>
-        <Card>
+        <Card ref={captureRef}>
           <Topbar>
             <Tag>
               <LiveDot $on={!carregando && lista.length > 0} /> 2º turno ·{' '}
@@ -292,6 +294,11 @@ const VotoAVotoSegundoTurno = ({ cargo = 'presidente' }) => {
               </Ticker>
             </>
           )}
+
+          <ExportImageButton
+            targetRef={captureRef}
+            fileName="voto-a-voto-2-turno.png"
+          />
         </Card>
       </Page>
     </>

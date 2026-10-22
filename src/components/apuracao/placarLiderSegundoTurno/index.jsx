@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { FiAward, FiFlag, FiUsers, FiMapPin, FiClock } from 'react-icons/fi';
 import {
   GlobalStyle,
@@ -23,16 +23,8 @@ import {
   EmptyState,
 } from './placarLiderSegundoTurno.styled';
 import { useApuracaoEstados } from '../../../hooks/useApuracaoEstados';
-import { formatNumero, formatPct } from '../data';
-
-const nomeCurto = (cand) => {
-  if (!cand) return '';
-  const nome = (cand.nomeUrna || cand.nome || '').trim();
-  const partes = nome.split(/\s+/);
-  return partes.length > 2
-    ? `${partes[0]} ${partes[partes.length - 1]}`
-    : nome;
-};
+import { formatNumero, formatPct, nomeCandidato } from '../data';
+import ExportImageButton from '../exportImageButton';
 
 const horaTexto = (data) => {
   if (!data) return 'atualização a cada 60s';
@@ -45,6 +37,7 @@ const horaTexto = (data) => {
 
 const PlacarLiderSegundoTurno = () => {
   const { estados, carregando, atualizadoEm } = useApuracaoEstados();
+  const captureRef = useRef(null);
 
   const secoesTotais = estados.reduce(
     (acc, estado) => acc + (estado.secoesTotais || 0),
@@ -118,7 +111,7 @@ const PlacarLiderSegundoTurno = () => {
     <>
       <GlobalStyle />
       <Page>
-        <Card>
+        <Card ref={captureRef}>
           <Top>
             <Badge>
               <FiAward size={15} />{' '}
@@ -171,13 +164,13 @@ const PlacarLiderSegundoTurno = () => {
               <LegendRow>
                 <LegendItem>
                   <LegendDot $cor={lider.cor} />
-                  <span>{nomeCurto(lider)}</span>
+                  <span>{nomeCandidato(lider)}</span>
                   <strong>{formatPct(lider.pct)}%</strong>
                 </LegendItem>
                 {segundo && (
                   <LegendItem>
                     <LegendDot $cor={segundo.cor} />
-                    <span>{nomeCurto(segundo)}</span>
+                    <span>{nomeCandidato(segundo)}</span>
                     <strong>{formatPct(segundo.pct)}%</strong>
                   </LegendItem>
                 )}
@@ -186,7 +179,7 @@ const PlacarLiderSegundoTurno = () => {
               {segundo && temVotos && (
                 <Diff>
                   <strong>+{formatPct(diferenca)} pts</strong> de vantagem
-                  sobre <strong>{nomeCurto(segundo)}</strong> (
+                  sobre <strong>{nomeCandidato(segundo)}</strong> (
                   {formatPct(segundo.pct)}%)
                 </Diff>
               )}
@@ -201,6 +194,11 @@ const PlacarLiderSegundoTurno = () => {
               <FiClock size={13} /> {horaTexto(atualizadoEm)}
             </FooterItem>
           </Footer>
+
+          <ExportImageButton
+            targetRef={captureRef}
+            fileName="placar-lider-2-turno.png"
+          />
         </Card>
       </Page>
     </>

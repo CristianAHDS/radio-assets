@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { FiTrendingUp, FiClock, FiInfo } from 'react-icons/fi';
 import {
   GlobalStyle,
@@ -30,16 +30,8 @@ import {
   EmptyState,
 } from './rankingUfsSegundoTurno.styled';
 import { useApuracaoEstados } from '../../../hooks/useApuracaoEstados';
-import { formatPct } from '../data';
-
-const nomeCurto = (cand) => {
-  if (!cand) return '';
-  const nome = (cand.nomeUrna || cand.nome || '').trim();
-  const partes = nome.split(/\s+/);
-  return partes.length > 2
-    ? `${partes[0]} ${partes[partes.length - 1]}`
-    : nome;
-};
+import { formatPct, nomeCandidato } from '../data';
+import ExportImageButton from '../exportImageButton';
 
 const horaTexto = (data) => {
   if (!data) return 'atualização a cada 60s';
@@ -52,6 +44,7 @@ const horaTexto = (data) => {
 
 const RankingUfsSegundoTurno = () => {
   const { estados, carregando, atualizadoEm } = useApuracaoEstados();
+  const captureRef = useRef(null);
 
   const temVotos = estados.some((estado) => estado.totalVotos > 0);
 
@@ -82,7 +75,7 @@ const RankingUfsSegundoTurno = () => {
     <>
       <GlobalStyle />
       <Page>
-        <Wrap>
+        <Wrap ref={captureRef}>
           <Header>
             <HeaderLeft>
               <HeaderIcon>
@@ -124,9 +117,9 @@ const RankingUfsSegundoTurno = () => {
                     {item.uf.toUpperCase()}
                   </Uf>
                   <Info>
-                    <Lider>{nomeCurto(item.primeiro)}</Lider>
+                    <Lider>{nomeCandidato(item.primeiro)}</Lider>
                     <Adversario>
-                      vs {nomeCurto(item.segundo)} ·{' '}
+                      vs {nomeCandidato(item.segundo)} ·{' '}
                       {formatPct(item.segundo.pct)}%
                     </Adversario>
                   </Info>
@@ -160,6 +153,11 @@ const RankingUfsSegundoTurno = () => {
               <FiClock size={13} /> {horaTexto(atualizadoEm)}
             </FooterItem>
           </Footer>
+
+          <ExportImageButton
+            targetRef={captureRef}
+            fileName="ranking-ufs-2-turno.png"
+          />
         </Wrap>
       </Page>
     </>

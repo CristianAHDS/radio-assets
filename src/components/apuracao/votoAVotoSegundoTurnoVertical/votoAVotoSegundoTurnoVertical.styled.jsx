@@ -54,8 +54,8 @@ export const Card = styled.div`
   overflow: hidden;
   background: linear-gradient(
     160deg,
-    rgba(5, 48, 106, 0.96) 0%,
-    rgba(0, 29, 65, 0.98) 100%
+    #05306a 0%,
+    #001d41 100%
   );
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42);

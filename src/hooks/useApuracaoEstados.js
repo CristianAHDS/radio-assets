@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { CORES_CANDIDATOS } from '../components/apuracao/data';
+import { CORES_CANDIDATOS, CORES_FIXAS_CANDIDATOS } from '../components/apuracao/data';
 
 const ENDPOINT = `${window.location.origin}/.netlify/functions/apuracao`;
 const REFRESH_INTERVAL = 60 * 1000;
@@ -116,7 +116,7 @@ const aplicarCores = (estados) => {
     ...estado,
     candidatos: estado.candidatos.map((cand) => ({
       ...cand,
-      cor: cores.get(cand.numero),
+      cor: CORES_FIXAS_CANDIDATOS[cand.numero] || cores.get(cand.numero),
     })),
   }));
 };

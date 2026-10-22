@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { FiBarChart2, FiMapPin, FiClock, FiAward } from 'react-icons/fi';
 import {
   GlobalStyle,
@@ -37,6 +37,7 @@ import {
 import { useEleicoes } from '../../../hooks/useEleicoes';
 import { formatNumero, formatPct } from '../data';
 import { corPartido } from '../partidos';
+import ExportImageButton from '../exportImageButton';
 
 const abreviarPartido = (partido) => {
   if (!partido) return '';
@@ -61,6 +62,7 @@ const formatPctCandidato = (cand) => {
 };
 
 const SegundoTurno = ({ cargo = 'presidente' }) => {
+  const captureRef = useRef(null);
   const { candidatos, carregando, secoesApuradas, atualizadoEm, erro } =
     useEleicoes(cargo);
 
@@ -86,7 +88,7 @@ const SegundoTurno = ({ cargo = 'presidente' }) => {
     <>
       <GlobalStyle />
       <Page>
-        <Wrap>
+        <Wrap ref={captureRef}>
           <Header>
             <HeaderLeft>
               <HeaderIcon>
@@ -198,6 +200,11 @@ const SegundoTurno = ({ cargo = 'presidente' }) => {
               </Diferenca>
             )}
           </Footer>
+
+          <ExportImageButton
+            targetRef={captureRef}
+            fileName="segundo-turno.png"
+          />
         </Wrap>
       </Page>
     </>

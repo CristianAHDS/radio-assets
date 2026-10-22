@@ -23,6 +23,25 @@ export const CORES_CANDIDATOS = [
   '#e879f9',
 ];
 
+export const CORES_FIXAS_CANDIDATOS = {
+  13: '#ef4444',
+};
+
+const NOMES_EXIBICAO = {
+  13: 'LULA',
+};
+
+export const nomeCandidato = (cand) => {
+  if (!cand) return '';
+  if (NOMES_EXIBICAO[cand.numero]) return NOMES_EXIBICAO[cand.numero];
+
+  const nome = (cand.nomeUrna || cand.nome || '').trim();
+  const partes = nome.split(/\s+/);
+  return partes.length > 2
+    ? `${partes[0]} ${partes[partes.length - 1]}`
+    : nome;
+};
+
 export const CANDIDATOS_INICIAIS = [
   { numero: 10, nome: 'Chapa 1 - Renovação', cor: '#fbbf24', votos: 22145 },
   { numero: 20, nome: 'Chapa 2 - União', cor: '#38bdf8', votos: 18432 },
