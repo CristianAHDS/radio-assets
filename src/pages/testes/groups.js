@@ -22,6 +22,9 @@ export const GROUPS = [
         name: 'Voto a Voto 2º Turno Vertical',
         path: '/apuracaoVotoAVotoSegundoTurnoVertical',
       },
+      { name: 'Mapa 2º Turno', path: '/apuracaoMapaSegundoTurno' },
+      { name: 'Placar do Líder 2º Turno', path: '/apuracaoLiderSegundoTurno' },
+      { name: 'Ranking de UFs 2º Turno', path: '/apuracaoRankingUfsSegundoTurno' },
       /*{ name: 'Carrossel Presidente', path: '/apuracaoCarrossel' },
       {
         name: 'Carrossel Governador',

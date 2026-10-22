@@ -63,6 +63,9 @@ import CarrosselCandidatos from './components/apuracao/carrosselCandidatos';
 import SegundoTurno from './components/apuracao/segundoTurno';
 import VotoAVotoSegundoTurno from './components/apuracao/votoAVotoSegundoTurno';
 import VotoAVotoSegundoTurnoVertical from './components/apuracao/votoAVotoSegundoTurnoVertical';
+import MapaSegundoTurno from './components/apuracao/mapaSegundoTurno';
+import PlacarLiderSegundoTurno from './components/apuracao/placarLiderSegundoTurno';
+import RankingUfsSegundoTurno from './components/apuracao/rankingUfsSegundoTurno';
 import ProgramacaoPage from './components/programacao/page';
 import {
   ProgramacaoGeral,
@@ -375,6 +378,18 @@ const router = createBrowserRouter([
   {
     path: '/apuracaoVotoAVotoSegundoTurnoVertical',
     element: <VotoAVotoSegundoTurnoVertical />,
+  },
+  {
+    path: '/apuracaoMapaSegundoTurno',
+    element: <MapaSegundoTurno />,
+  },
+  {
+    path: '/apuracaoLiderSegundoTurno',
+    element: <PlacarLiderSegundoTurno />,
+  },
+  {
+    path: '/apuracaoRankingUfsSegundoTurno',
+    element: <RankingUfsSegundoTurno />,
   },
 
   //Programação

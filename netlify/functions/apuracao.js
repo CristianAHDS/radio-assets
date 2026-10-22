@@ -128,26 +128,58 @@ const fetchWithTimeout = async (url, timeout = 15000) => {
   }
 };
 
+const flattenCandidatos = (cargo, data) => {
+  const cands = [];
+
+  for (const agr of toList(cargo && cargo.agr)) {
+    for (const par of toList(agr && agr.par)) {
+      for (const cand of toList(par && par.cand)) {
+        cands.push(cand);
+      }
+    }
+  }
+
+  if (cands.length > 0) return cands;
+
+  const diretos = firstOf(cargo, ['cand', 'candidatos']);
+  if (diretos.length > 0) return diretos;
+
+  return firstOf(data, ['cand', 'candidatos']);
+};
+
 const extractCandidatos = (data, cargoCodigo) => {
   const cargo = findCargo(data, cargoCodigo) || data;
-  const cands = firstOf(cargo, ['cand', 'candidatos']).length
-    ? firstOf(cargo, ['cand', 'candidatos'])
-    : firstOf(data, ['cand', 'candidatos']);
+  const cands = flattenCandidatos(cargo, data);
   const secoes =
     data && data.s && typeof data.s === 'object' ? data.s : null;
+  const porNumero = new Map();
+
+  for (const cand of cands) {
+    const numero = toNumber(cand.n);
+    const nome =
+      normalize(cand.nm) || normalize(cand.nmu) || `Candidato ${cand.n}`;
+
+    if (!nome) continue;
+
+    const candidato = {
+      numero,
+      nome,
+      nomeUrna: normalize(cand.nmu) || normalize(cand.nm),
+      votos: toNumber(cand.vap),
+      pct: toNumber(cand.pvap),
+      eleito: cand.e === 's',
+      situacao: normalize(cand.st),
+    };
+    const chave = numero > 0 ? `n:${numero}` : `nome:${nome}`;
+    const atual = porNumero.get(chave);
+
+    if (!atual || candidato.votos >= atual.votos) {
+      porNumero.set(chave, candidato);
+    }
+  }
 
   return {
-    candidatos: cands
-      .map((cand) => ({
-        numero: toNumber(cand.n),
-        nome: normalize(cand.nm) || normalize(cand.nmu) || `Candidato ${cand.n}`,
-        nomeUrna: normalize(cand.nmu) || normalize(cand.nm),
-        votos: toNumber(cand.vap),
-        pct: toNumber(cand.pvap),
-        eleito: cand.e === 's',
-        situacao: normalize(cand.st),
-      }))
-      .filter((cand) => cand.nome),
+    candidatos: [...porNumero.values()],
     secoesTotais: toNumber(data && data.st) || toNumber(secoes && secoes.ts),
     secoesApuradas: toNumber(data && data.s) || toNumber(secoes && secoes.st),
     votosValidos: toNumber(data && (data.vc !== undefined ? data.vc : data.vv)),
