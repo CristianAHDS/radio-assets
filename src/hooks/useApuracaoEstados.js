@@ -3,7 +3,8 @@ import { CORES_CANDIDATOS, CORES_FIXAS_CANDIDATOS } from '../components/apuracao
 
 const ENDPOINT = `${window.location.origin}/.netlify/functions/apuracao`;
 const REFRESH_INTERVAL = 60 * 1000;
-const TAMANHO_LOTE = 5;
+const TIMEOUT_MS = 4000;
+const CACHE_KEY = 'apuracao-estados:v1';
 
 export const UFS = [
   'ac',
@@ -121,42 +122,83 @@ const aplicarCores = (estados) => {
   }));
 };
 
-export const useApuracaoEstados = () => {
-  const [state, setState] = useState(() => ({
-    estados: UFS.map(vazio),
-    carregando: true,
-    atualizadoEm: null,
-  }));
+const lerCache = () => {
+  try {
+    const bruto = window.localStorage.getItem(CACHE_KEY);
+    if (!bruto) return null;
+    const dados = JSON.parse(bruto);
+    if (!dados || !Array.isArray(dados.estados) || dados.estados.length === 0) return null;
+    if (!dados.estados.every((estado) => estado && estado.uf && Array.isArray(estado.candidatos)))
+      return null;
+    return dados;
+  } catch {
+    return null;
+  }
+};
 
-  const anteriorRef = useRef(new Map());
+const gravarCache = (estados) => {
+  try {
+    window.localStorage.setItem(
+      CACHE_KEY,
+      JSON.stringify({ estados, atualizadoEm: new Date().toISOString() }),
+    );
+  } catch {
+    /* storage indisponível — segue sem cache */
+  }
+};
+
+export const useApuracaoEstados = () => {
+  const cacheRef = useRef(undefined);
+  if (cacheRef.current === undefined) {
+    cacheRef.current = lerCache();
+  }
+
+  const [state, setState] = useState(() => {
+    const cache = cacheRef.current;
+    if (!cache) {
+      return { estados: UFS.map(vazio), carregando: true, atualizadoEm: null };
+    }
+    return {
+      estados: aplicarCores(cache.estados),
+      carregando: false,
+      atualizadoEm: cache.atualizadoEm ? new Date(cache.atualizadoEm) : null,
+    };
+  });
+
+  const anteriorRef = useRef(
+    new Map((cacheRef.current?.estados || []).map((estado) => [estado.uf, estado])),
+  );
 
   useEffect(() => {
     let cancelled = false;
 
     const buscar = async (uf) => {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
       try {
-        const res = await fetch(buildUrl(uf), { cache: 'no-store' });
+        const res = await fetch(buildUrl(uf), {
+          cache: 'no-store',
+          signal: controller.signal,
+        });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return normalizar(uf, await res.json());
       } catch {
         return anteriorRef.current.get(uf) || vazio(uf);
+      } finally {
+        clearTimeout(timer);
       }
     };
 
     const load = async () => {
-      const resultados = [];
-
-      for (let i = 0; i < UFS.length; i += TAMANHO_LOTE) {
-        if (cancelled) return;
-        const lote = UFS.slice(i, i + TAMANHO_LOTE);
-        resultados.push(...(await Promise.all(lote.map(buscar))));
-      }
-
+      const resultados = await Promise.all(UFS.map(buscar));
       if (cancelled) return;
 
       resultados.forEach((resultado) => {
         anteriorRef.current.set(resultado.uf, resultado);
       });
+
+      gravarCache(resultados);
 
       setState({
         estados: aplicarCores(resultados),

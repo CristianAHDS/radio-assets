@@ -359,6 +359,10 @@ export const Diferenca = styled.div`
 `;
 
 export const EmptyState = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 414px;
   padding: 80px;
   text-align: center;
   font-size: 16px;

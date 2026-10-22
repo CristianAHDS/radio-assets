@@ -309,6 +309,10 @@ export const TickerDot = styled.span`
 `;
 
 export const EmptyState = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 117px;
   padding: 30px 0 24px;
   text-align: center;
   font-size: 12px;
