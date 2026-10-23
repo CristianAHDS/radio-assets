@@ -1,6 +1,7 @@
 import { Container, Lower } from './corpoEMente.styled.jsx';
 import ClockOutros from '../../clock.jsx';
 import TempoOutros from '../../geral.jsx';
+import TempoInfosNewDefault from '../../components/newDefault/TempoInfos';
 import GcOutros from '../../components/gc';
 import PinOutros from '../../components/pin';
 import WhatsOutros from '../../components/whats';
@@ -12,6 +13,7 @@ const Esportes = () => {
     <Container>
       <ClockOutros />
       <TempoOutros />
+      <TempoInfosNewDefault />
       <GcOutros />
       <PinOutros />
       <WhatsOutros />

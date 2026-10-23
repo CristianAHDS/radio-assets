@@ -220,6 +220,7 @@ import Testes from './pages/testes';
 
 //Landing
 import Landing from './pages/landing';
+import TesteTempoInfos from './pages/testeTempoInfos';
 
 const router = createBrowserRouter([
   // Deafautl Components Pelotas Merece
@@ -559,6 +560,7 @@ const router = createBrowserRouter([
 
   //Testes
   { path: '/testes', element: <Testes /> },
+  { path: '/testeTempoInfos', element: <TesteTempoInfos /> },
 
   //Landing
   { path: '/landing', element: <Landing /> },
