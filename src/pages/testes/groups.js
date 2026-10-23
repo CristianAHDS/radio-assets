@@ -149,6 +149,22 @@ export const GROUPS = [
     ],
   },
   {
+    title: 'Temperaturas',
+    accent: '#00acf8',
+    items: [
+      { name: 'Temperatura Geral', path: '/temperatura' },
+      { name: 'Temperatura Esporte', path: '/temperaturaEsporte' },
+      { name: 'Temperatura Agro', path: '/temperaturaAgro' },
+      { name: 'Temperatura Conexão', path: '/temperaturaConexao' },
+      { name: 'Temperatura Pensar Negócios', path: '/temperaturaPensarNegocios' },
+      { name: 'Temperatura Outros', path: '/temperaturaOutros' },
+      { name: 'Temperatura Corpo e Mente', path: '/temperaturaCorpoEMente' },
+      { name: 'Temperatura Pelotas Merece', path: '/temperaturaPelotasMerece' },
+      { name: 'Temperatura A Hora', path: '/temperaturaAHora' },
+      { name: 'Temperatura Mistura Boa', path: '/temperaturaMisturaBoa' },
+    ],
+  },
+  {
     title: 'Lower',
     items: [
       { name: 'Lower Teste (Portal)', path: '/lowerTeste' },

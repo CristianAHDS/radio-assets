@@ -27,9 +27,12 @@ export const NameSection = styled.div`
 
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 0 8px;
 
-  overflow: hidden;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
   position: relative;
 `;
 
@@ -71,6 +74,7 @@ export const Icon = styled.div`
 
 export const IconImage = styled.img`
   width: 80%;
+  filter: brightness(0) invert(1);
 `;
 
 export const InfoSection = styled.div`

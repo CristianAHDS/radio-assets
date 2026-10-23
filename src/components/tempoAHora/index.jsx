@@ -48,7 +48,6 @@ const cidades = [
   { nome: 'Venâncio Aires', coord: '-29.5721496,-52.1216905' },
 ];
 
-
 const App = () => {
   const [weatherDataMapAhoraAhora, setWeatherDataMapAhora] = useState({});
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -127,9 +126,7 @@ const App = () => {
   return (
     <AnimatePresence mode="wait">
       <Card>
-        <NameSection
-          $isLongName={dados.nomeCorrigido === 'São Lourenço do Sul'}
-        >
+        <NameSection $isLongName={dados.nomeCorrigido === 'São Lourenço'}>
           <motion.div
             key={`name-${currentIndex}`}
             initial={{ opacity: 0, y: 10 }}

@@ -30,12 +30,7 @@ const getLocalWeatherIcon = (conditionText) => {
   return Nublado;
 };
 
-const cidades = [
-
-  { nome: 'Lajeado', coord: '-29.447872,-51.9762139' },
-
-];
-
+const cidades = [{ nome: 'Lajeado', coord: '-29.447872,-51.9762139' }];
 
 const App = () => {
   const [weatherDataMapAhoraAhora, setWeatherDataMapAhora] = useState({});
@@ -115,33 +110,21 @@ const App = () => {
   return (
     <AnimatePresence mode="wait">
       <Card>
-        <NameSection
-          $isLongName={dados.nomeCorrigido === 'São Lourenço do Sul'}
-        >
- 
-            {dados.nomeCorrigido}
-  
+        <NameSection $isLongName={dados.nomeCorrigido === 'São Lourenço'}>
+          {dados.nomeCorrigido}
         </NameSection>
 
         <MidleSection>
-          <Temp>
-          
-              {dados.temperatura}ºC
-         
-          </Temp>
+          <Temp>{dados.temperatura}ºC</Temp>
 
           <Icon>
-           
-              <IconImage src={dados.icon} alt="tempo" />
-        
+            <IconImage src={dados.icon} alt="tempo" />
           </Icon>
         </MidleSection>
 
         <InfoSection>
-   
-            <strong>Sensação:</strong>
-            <div style={{ marginLeft: '10px' }}>{dados.sensacao}ºC</div>
-         
+          <strong>Sensação:</strong>
+          <div style={{ marginLeft: '10px' }}>{dados.sensacao}ºC</div>
         </InfoSection>
       </Card>
     </AnimatePresence>

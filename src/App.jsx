@@ -21,10 +21,20 @@ import {
   primaryPelotasMerece,
   ahoraPrimary,
   primaryMisturaBoa,
+  secondary,
+  secondaryEsporte,
+  secondaryConexão,
+  secondaryPensarNegocios,
+  secondaryOutros,
+  secondaryCorpoEMente,
+  secondaryPelotasMerece,
+  ahoraSecondary,
+  secondaryMisturaBoa,
 } from './constants/color';
 import TempoGeral from './geral.jsx';
 import Lower from './lower.jsx';
 import Clock from './clock.jsx';
+import Temperatura from './temperatura.jsx';
 import Gc from './components/gc';
 import GcMusica from './components/gcMusica';
 import GcMusicaConexao from './components/gcMusicaConexao';
@@ -296,10 +306,7 @@ const router = createBrowserRouter([
   {
     path: '/letTestPensarNegocios',
     element: (
-      <LetTest
-        primaryColor={primaryPensarNegocios}
-        topBoxColor="#ff9a66"
-      />
+      <LetTest primaryColor={primaryPensarNegocios} topBoxColor="#ff9a66" />
     ),
   },
   {
@@ -308,7 +315,9 @@ const router = createBrowserRouter([
   },
   {
     path: '/letTestCorpoEMente',
-    element: <LetTest primaryColor={primaryCorpoEMente} topBoxColor="#93c9ff" />,
+    element: (
+      <LetTest primaryColor={primaryCorpoEMente} topBoxColor="#93c9ff" />
+    ),
   },
   {
     path: '/letTestPelotasMerece',
@@ -368,8 +377,14 @@ const router = createBrowserRouter([
   { path: '/apuracaoVotoAVoto', element: <VotoAVoto /> },
   { path: '/apuracaoProgresso', element: <ProgressoApuracao /> },
   { path: '/apuracaoCarrossel', element: <CarrosselCandidatos /> },
-  { path: '/apuracaoCarrosselGovernador', element: <CarrosselCandidatos cargo="governador" /> },
-  { path: '/apuracaoCarrosselSenador', element: <CarrosselCandidatos cargo="senador" /> },
+  {
+    path: '/apuracaoCarrosselGovernador',
+    element: <CarrosselCandidatos cargo="governador" />,
+  },
+  {
+    path: '/apuracaoCarrosselSenador',
+    element: <CarrosselCandidatos cargo="senador" />,
+  },
   { path: '/apuracaoSegundoTurno', element: <SegundoTurno /> },
   {
     path: '/apuracaoVotoAVotoSegundoTurno',
@@ -397,12 +412,57 @@ const router = createBrowserRouter([
   { path: '/programacaoGeral', element: <ProgramacaoGeral /> },
   { path: '/programacaoEsporte', element: <ProgramacaoEsporte /> },
   { path: '/programacaoConexao', element: <ProgramacaoConexao /> },
-  { path: '/programacaoPensarNegocios', element: <ProgramacaoPensarNegocios /> },
+  {
+    path: '/programacaoPensarNegocios',
+    element: <ProgramacaoPensarNegocios />,
+  },
   { path: '/programacaoOutros', element: <ProgramacaoOutros /> },
   { path: '/programacaoCorpoEMente', element: <ProgramacaoCorpoEMente /> },
   { path: '/programacaoPelotasMerece', element: <ProgramacaoPelotasMerece /> },
   { path: '/programacaoMisturaBoa', element: <ProgramacaoMisturaBoa /> },
   { path: '/programacaoAHora', element: <ProgramacaoAHora /> },
+
+  //Temperaturas
+  {
+    path: '/temperatura',
+    element: <Temperatura background={ahoraSecondary} />,
+  },
+  {
+    path: '/temperaturaEsporte',
+    element: <Temperatura background={secondaryEsporte} />,
+  },
+  {
+    path: '/temperaturaAgro',
+    element: <Temperatura background={secondaryEsporte} />,
+  },
+  {
+    path: '/temperaturaConexao',
+    element: <Temperatura background={secondaryConexão} />,
+  },
+  {
+    path: '/temperaturaPensarNegocios',
+    element: <Temperatura background={secondaryPensarNegocios} />,
+  },
+  {
+    path: '/temperaturaOutros',
+    element: <Temperatura background={secondaryOutros} />,
+  },
+  {
+    path: '/temperaturaCorpoEMente',
+    element: <Temperatura background={secondaryCorpoEMente} />,
+  },
+  {
+    path: '/temperaturaPelotasMerece',
+    element: <Temperatura background={secondaryPelotasMerece} />,
+  },
+  {
+    path: '/temperaturaAHora',
+    element: <Temperatura background={ahoraSecondary} />,
+  },
+  {
+    path: '/temperaturaMisturaBoa',
+    element: <Temperatura background={secondaryMisturaBoa} />,
+  },
 
   //Esporte
   { path: '/whatsEsporte', element: <WhatsEsporte /> },

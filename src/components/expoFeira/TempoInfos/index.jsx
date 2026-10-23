@@ -34,8 +34,7 @@ const App = () => {
   const corrigirNome = (nome) => {
     if (nome === 'Abolicao') return 'Amaral Ferrador';
     if (nome === 'Olimpo') return 'Pedro Osório';
-    if (nome === 'Cangucu') return 'Canguçu';
-    if (nome === 'Sao Lourenco Do Sul') return 'São Lourenço do Sul';
+    if (nome === 'Sao Lourenco Do Sul') return 'São Lourenço';
     if (nome === 'Jaguarao') return 'Jaguarão';
     if (nome === 'Guarda Nova') return 'Herval';
     if (nome === 'Passo Das Pedras') return 'Turuçu';

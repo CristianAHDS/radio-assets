@@ -1,0 +1,4 @@
+Mude a cord do icone par branco e ajuste oe spaçamento das informaç~eos dentro do bloco, remova canguçu pois não tem no site
+
+Alguns textos estão cortando por conta do tamanho, ajuste para que consiga aparecer todo ele sem mudar o tamanho do bloco 
+

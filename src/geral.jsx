@@ -44,15 +44,14 @@ const traduzirAlerta = (headline) => {
   if (texto.includes('rain')) return 'Chuva';
   if (texto.includes('fog')) return 'Nevoeiro';
 
-  return 'Alerta'; 
+  return 'Alerta';
 };
 
-const cidades = [ 
+const cidades = [
   { nome: 'Amaral Ferrador', coord: '-30.873,-52.2473' },
   { nome: 'Arroio Grande', coord: '-32.2387,-53.0907' },
   { nome: 'Candiota', coord: '-31.4768,-53.6792' },
-  { nome: 'Canguçu', coord: '-31.3956,-52.6864' },
-  { nome: 'Capão do Leão', coord: '-31.7675,-52.4487' },
+  { nome: 'Capão do Leão', coord: '-31.7675,-52.4487 ' },
   { nome: 'Herval', coord: '-32.0129,-53.4031' },
   { nome: 'Jaguarão', coord: '-32.5602,-53.381' },
   { nome: 'Pedro Osório', coord: '-31.8797,-52.8104' },
@@ -61,7 +60,7 @@ const cidades = [
   { nome: 'Pinheiro Machado', coord: '-31.578,-53.381' },
   { nome: 'Piratini', coord: '-31.4421,-53.1045' },
   { nome: 'Rio Grande', coord: '-32.0332,-52.0986' },
-  { nome: 'São Lourenço do Sul', coord: '-31.3629,-51.9789' },
+  { nome: 'São Lourenço', coord: '-31.3629,-51.9789' },
   { nome: 'Turuçu', coord: '-31.4292,-52.1859' },
 ];
 
@@ -74,11 +73,10 @@ const App = () => {
   const TIMESTAMP_KEY = 'weatherDataTimestamp';
 
   const corrigirNome = (nome) => {
-    if(nome === 'Sao Jose Do Patrocinio') return 'Amaral Ferrador';
+    if (nome === 'Sao Jose Do Patrocinio') return 'Amaral Ferrador';
     if (nome === 'Abolicao') return 'Amaral Ferrador';
     if (nome === 'Olimpo') return 'Pedro Osório';
-    if (nome === 'Cangucu') return 'Canguçu';
-    if (nome === 'Sao Lourenco Do Sul') return 'São Lourenço do Sul';
+    if (nome === 'Sao Lourenco Do Sul') return 'São Lourenço';
     if (nome === 'Jaguarao') return 'Jaguarão';
     if (nome === 'Guarda Nova') return 'Herval';
     if (nome === 'Passo Das Pedras') return 'Turuçu';
@@ -166,9 +164,7 @@ const App = () => {
   return (
     <AnimatePresence mode="wait">
       <Card>
-        <NameSection
-          $isLongName={dados.nomeCorrigido === 'São Lourenço do Sul'}
-        >
+        <NameSection $isLongName={dados.nomeCorrigido === 'São Lourenço'}>
           <motion.div
             key={`name-${currentIndex}`}
             initial={{ opacity: 0, y: 10 }}

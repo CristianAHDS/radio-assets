@@ -18,7 +18,8 @@ export const MidleSection = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  flex-direction: row;
+  gap: 12px;
+  padding: 0 16px;
 `;
 
 export const Temp = styled.div`
@@ -52,5 +53,6 @@ export const Icon = styled.div`
 `;
 
 export const IconImage = styled.img`
-  width: 80%;
+  width: 100%;
+  filter: brightness(0) invert(1);
 `;
