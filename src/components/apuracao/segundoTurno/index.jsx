@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, useState, useEffect } from 'react';
 import { FiBarChart2, FiMapPin, FiClock, FiAward } from 'react-icons/fi';
 import {
   GlobalStyle,
@@ -65,6 +65,13 @@ const SegundoTurno = ({ cargo = 'presidente' }) => {
   const captureRef = useRef(null);
   const { candidatos, carregando, secoesApuradas, atualizadoEm, erro } =
     useEleicoes(cargo, { eleicao: '6258', uf: 'br', cd: 1, formato: 'unificado' });
+  const [ultimaAtualizacaoLocal, setUltimaAtualizacaoLocal] = useState(null);
+
+  useEffect(() => {
+    if (!carregando && (candidatos?.length > 0 || erro)) {
+      setUltimaAtualizacaoLocal(new Date());
+    }
+  }, [carregando, candidatos, erro]);
 
   const lista = useMemo(() => {
     try {
@@ -193,7 +200,12 @@ const SegundoTurno = ({ cargo = 'presidente' }) => {
           <Footer>
             <FooterItem>
               <FiClock size={15} />
-              {atualizadoEm
+              {ultimaAtualizacaoLocal
+                ? `Atualizado ${ultimaAtualizacaoLocal.toLocaleTimeString('pt-BR', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })}`
+                : atualizadoEm
                 ? `Atualizado ${atualizadoEm}`
                 : 'Atualização automática a cada 30s'}
             </FooterItem>

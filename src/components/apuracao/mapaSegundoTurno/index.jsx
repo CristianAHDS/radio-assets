@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, useState, useEffect } from 'react';
 import { FiMap, FiClock } from 'react-icons/fi';
 import {
   GlobalStyle,
@@ -48,6 +48,13 @@ const horaTexto = (data) => {
 const MapaSegundoTurno = () => {
   const { estados, carregando, atualizadoEm } = useApuracaoEstados();
   const captureRef = useRef(null);
+  const [ultimaAtualizacaoLocal, setUltimaAtualizacaoLocal] = useState(null);
+
+  useEffect(() => {
+    if (!carregando && estados.some((e) => e.live)) {
+      setUltimaAtualizacaoLocal(new Date());
+    }
+  }, [carregando, estados]);
 
   const secoesTotais = estados.reduce(
     (acc, estado) => acc + (estado.secoesTotais || 0),
@@ -57,8 +64,12 @@ const MapaSegundoTurno = () => {
     (acc, estado) => acc + (estado.secoesApuradas || 0),
     0,
   );
+  const pctApuradoMedio = estados.reduce(
+    (acc, estado) => acc + (estado.pctApurado || 0),
+    0,
+  ) / (estados.length || 1);
   const pctGeral =
-    secoesTotais > 0 ? (secoesApuradas / secoesTotais) * 100 : 0;
+    secoesTotais > 0 ? (secoesApuradas / secoesTotais) * 100 : pctApuradoMedio;
 
   const legenda = useMemo(() => {
     const infoPorNumero = new Map();
@@ -206,7 +217,12 @@ const MapaSegundoTurno = () => {
             </Legend>
             <FooterItem>
               <FiClock size={14} />
-              {horaTexto(atualizadoEm)}
+              {ultimaAtualizacaoLocal
+                ? `Atualizado ${ultimaAtualizacaoLocal.toLocaleTimeString('pt-BR', {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                  })}`
+                : horaTexto(atualizadoEm)}
             </FooterItem>
           </Footer>
 
