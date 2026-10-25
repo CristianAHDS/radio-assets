@@ -58,7 +58,6 @@ const MapaSegundoTurno = () => {
 
   const legenda = useMemo(() => {
     const infoPorNumero = new Map();
-    const votosPorNumero = new Map();
     const ufsPorNumero = new Map();
 
     estados.forEach((estado) => {
@@ -70,10 +69,6 @@ const MapaSegundoTurno = () => {
             cor: cand.cor,
           });
         }
-        votosPorNumero.set(
-          cand.numero,
-          (votosPorNumero.get(cand.numero) || 0) + (cand.votos || 0),
-        );
       });
 
       const lider = estado.candidatos[0];
@@ -85,22 +80,12 @@ const MapaSegundoTurno = () => {
       }
     });
 
-    const total = [...votosPorNumero.values()].reduce(
-      (acc, votos) => acc + votos,
-      0,
-    );
-
     return [...infoPorNumero.values()]
-      .map((cand) => {
-        const votos = votosPorNumero.get(cand.numero) || 0;
-        return {
-          ...cand,
-          votos,
-          ufs: ufsPorNumero.get(cand.numero) || 0,
-          pct: total > 0 ? (votos / total) * 100 : 0,
-        };
-      })
-      .sort((a, b) => b.votos - a.votos);
+      .map((cand) => ({
+        ...cand,
+        ufs: ufsPorNumero.get(cand.numero) || 0,
+      }))
+      .sort((a, b) => (ufsPorNumero.get(b.numero) || 0) - (ufsPorNumero.get(a.numero) || 0));
   }, [estados]);
 
   const temCandidatos = estados.some(
@@ -192,8 +177,7 @@ const MapaSegundoTurno = () => {
                 <LegendItem key={cand.numero}>
                   <LegendDot $cor={cand.cor} />
                   <LegendName>{nomeCandidato(cand)}</LegendName>
-                  <LegendPct>{formatPct(cand.pct)}%</LegendPct>
-                  <span>· {cand.ufs} UFs</span>
+                  <span>{cand.ufs} UFs</span>
                 </LegendItem>
               ))}
             </Legend>
