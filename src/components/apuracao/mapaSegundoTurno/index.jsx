@@ -37,7 +37,7 @@ import { CORES, formatPct, nomeCandidato } from '../data';
 import ExportImageButton from '../exportImageButton';
 
 const horaTexto = (data) => {
-  if (!data) return 'atualização a cada 60s';
+  if (!data) return 'atualização a cada 30s';
   const hora = new Date(data).toLocaleTimeString('pt-BR', {
     hour: '2-digit',
     minute: '2-digit',

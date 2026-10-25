@@ -64,20 +64,24 @@ const formatPctCandidato = (cand) => {
 const SegundoTurno = ({ cargo = 'presidente' }) => {
   const captureRef = useRef(null);
   const { candidatos, carregando, secoesApuradas, atualizadoEm, erro } =
-    useEleicoes(cargo);
+    useEleicoes(cargo, { eleicao: '6258', uf: 'br', cd: 1, formato: 'unificado' });
 
-  const lista = useMemo(
-    () =>
-      candidatos
-        .map((cand) => ({ ...cand, cor: corPartido(cand.partido) }))
+  const lista = useMemo(() => {
+    try {
+      if (!Array.isArray(candidatos)) return [];
+      return candidatos
+        .map((cand) => ({ ...cand, cor: corPartido(cand?.partido) }))
+        .filter((cand) => cand && (cand.votosNumero || cand.votos || cand.pct))
         .sort(
           (a, b) =>
             (b.votosNumero || 0) - (a.votosNumero || 0) ||
             (b.pct || 0) - (a.pct || 0),
         )
-        .slice(0, 2),
-    [candidatos],
-  );
+        .slice(0, 2);
+    } catch {
+      return [];
+    }
+  }, [candidatos]);
 
   const lider = lista[0];
   const segundo = lista[1];
@@ -102,8 +106,8 @@ const SegundoTurno = ({ cargo = 'presidente' }) => {
             <HeaderRight>
               <HeaderBadge>
                 <FiMapPin size={15} />
-                {secoesApuradas != null
-                  ? `${Number(secoesApuradas).toLocaleString('pt-BR', {
+                {secoesApuradas != null && secoesApuradas !== ''
+                  ? `${Number(String(secoesApuradas).replace(',', '.')).toLocaleString('pt-BR', {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
                     })}% apurado`
@@ -191,7 +195,7 @@ const SegundoTurno = ({ cargo = 'presidente' }) => {
               <FiClock size={15} />
               {atualizadoEm
                 ? `Atualizado ${atualizadoEm}`
-                : 'Atualização automática a cada 60s'}
+                : 'Atualização automática a cada 30s'}
             </FooterItem>
             {lider && segundo && (
               <Diferenca>

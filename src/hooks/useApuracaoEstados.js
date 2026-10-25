@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { CORES_CANDIDATOS, CORES_FIXAS_CANDIDATOS } from '../components/apuracao/data';
 
 const ENDPOINT = `${window.location.origin}/.netlify/functions/apuracao`;
-const REFRESH_INTERVAL = 60 * 1000;
+const REFRESH_INTERVAL = 30 * 1000;
 const TIMEOUT_MS = 4000;
 const CACHE_KEY = 'apuracao-estados:v1';
 

@@ -247,25 +247,49 @@ export const handler = async (event) => {
   const cargo = String(qs.cargo || 'presidente').trim().toLowerCase();
   const arquivo = ARQUIVOS[cargo];
 
-  if (!arquivo) {
+  const customEleicao = qs.eleicao ? String(qs.eleicao).trim() : null;
+  const customUf = qs.uf ? String(qs.uf).trim().toLowerCase() : null;
+  const customCd = qs.cd ? Number(qs.cd) : null;
+
+  if (!arquivo && !(customEleicao && customUf && customCd)) {
     return {
       statusCode: 400,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        error: `Cargo "${cargo}" inválido`,
+        error: `Cargo "${cargo}" inválido ou parâmetros incompletos para consulta customizada`,
         disponiveis: Object.keys(ARQUIVOS),
       }),
     };
   }
 
   try {
-    const tse = await obterTse(cargo);
-    if (tse) {
+    let tse = null;
+    if (customEleicao && customUf && customCd) {
+      tse = await obterTseCustomizado(customEleicao, customUf, customCd, cargo);
+    } else {
+      tse = await obterTse(cargo);
+    }
+
+    if (tse && tse.candidatos && tse.candidatos.length > 0) {
       return responder({
         cargo,
         fonte: 'tse',
         total: tse.candidatos.length,
         ...tse,
+      });
+    }
+
+    if (customEleicao === '6258') {
+      return responder({
+        cargo,
+        fonte: 'tse',
+        total: 0,
+        candidatos: [],
+        secoesApuradas: 0,
+        secoesTotais: 0,
+        votosValidos: 0,
+        pctApurado: 0,
+        atualizadoEm: new Date().toISOString(),
       });
     }
 
@@ -290,4 +314,21 @@ export const handler = async (event) => {
       body: JSON.stringify({ error: err.message }),
     };
   }
+};
+
+const obterTseCustomizado = async (eleicao, uf, cd, cargo) => {
+  try {
+    const res = await fetchWithTimeout(urlTseCustomizado({ eleicao, uf, cd }));
+    if (!res.ok) return null;
+    const resultado = extrairCandidatosTse(await res.json(), cargo);
+    return resultado.candidatos.length > 0 ? resultado : null;
+  } catch {
+    return null;
+  }
+};
+
+const urlTseCustomizado = ({ eleicao, uf, cd }) => {
+  const c = String(cd).padStart(4, '0');
+  const e = String(eleicao).padStart(6, '0');
+  return `${TSE_BASE}/${TSE_AMBIENTE}/${TSE_CICLO}/${eleicao}/dados/${uf}/${uf}-c${c}-e${e}-u.json`;
 };

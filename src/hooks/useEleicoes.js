@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import {
   ARQUIVOS_ELEICOES,
-  REFRESH_INTERVAL,
   parseApuracaoArquivo,
   urlApuracao,
 } from '../utils/eleicoes';
 
 const FUNCAO = `${window.location.origin}/.netlify/functions/eleicoes`;
 const TIMEOUT_MS = 3000;
-const CACHE_KEY = 'eleicoes:v1';
+const REFRESH_INTERVAL_MS = 30 * 1000;
+const CACHE_KEY = 'eleicoes:v2';
 
 const cache = new Map();
 const emVoo = new Map();
@@ -33,12 +33,18 @@ const gravarDisco = (cargo, data) => {
   }
 };
 
-const buscarNaFuncao = async (cargo) => {
+const buscarNaFuncao = async (cargo, opcoes = {}) => {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
 
+  const params = new URLSearchParams({ cargo });
+  if (opcoes.eleicao) params.set('eleicao', opcoes.eleicao);
+  if (opcoes.uf) params.set('uf', opcoes.uf);
+  if (opcoes.cd) params.set('cd', opcoes.cd);
+  if (opcoes.formato) params.set('formato', opcoes.formato);
+
   try {
-    const res = await fetch(`${FUNCAO}?cargo=${encodeURIComponent(cargo)}`, {
+    const res = await fetch(`${FUNCAO}?${params.toString()}`, {
       cache: 'no-store',
       signal: controller.signal,
     });
@@ -53,16 +59,39 @@ const buscarNaFuncao = async (cargo) => {
   }
 };
 
-const buscarNoArquivo = async (cargo) => {
+const buscarNaFuncaoSegundoTurno = async (cargo, uf = 'br') => {
+  return buscarNaFuncao(cargo, {
+    eleicao: '6258',
+    uf,
+    cd: 1,
+    formato: 'unificado',
+  });
+};
+
+const buscarNoArquivo = async (cargo, opcoes = {}) => {
+  if (opcoes.eleicao && opcoes.uf && opcoes.cd) {
+    const params = new URLSearchParams({
+      ambiente: 'oficial',
+      ciclo: 'ele2026',
+      eleicao: opcoes.eleicao,
+      uf: opcoes.uf,
+      cargo: opcoes.cd,
+      formato: opcoes.formato || 'simplificado',
+    });
+    const url = `https://resultados.tse.jus.br/oficial/ele2026/${opcoes.eleicao}/dados/${opcoes.uf}/${opcoes.uf}-c${String(opcoes.cd).padStart(4, '0')}-e${String(opcoes.eleicao).padStart(6, '0')}-u.json`;
+    const res = await fetch(url, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
+  }
   const res = await fetch(urlApuracao(cargo), { cache: 'no-store' });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return parseApuracaoArquivo(await res.text());
 };
 
-const carregar = async (cargo) => {
+const carregar = async (cargo, opcoes = {}) => {
   const [funcao, arquivo] = await Promise.allSettled([
-    buscarNaFuncao(cargo),
-    buscarNoArquivo(cargo),
+    buscarNaFuncao(cargo, opcoes),
+    buscarNoArquivo(cargo, opcoes),
   ]);
 
   if (funcao.status === 'fulfilled') return funcao.value;
@@ -73,21 +102,74 @@ const carregar = async (cargo) => {
   );
 };
 
-const carregarCompartilhado = (cargo) => {
-  if (!emVoo.has(cargo)) {
-    const pedido = carregar(cargo).finally(() => emVoo.delete(cargo));
-    emVoo.set(cargo, pedido);
-  }
-  return emVoo.get(cargo);
+const carregarSegundoTurno = async (cargo, uf = 'br') => {
+  return carregar(cargo, {
+    eleicao: '6258',
+    uf,
+    cd: 1,
+    formato: 'unificado',
+  });
 };
 
-const fromData = (cargo, data, erro = null) => ({
-  cargo,
-  ...data,
-  total: data.candidatos.length,
-  carregando: false,
-  erro,
-});
+const carregarCompartilhado = (cargo, opcoes = {}) => {
+  const chave = `${cargo}:${JSON.stringify(opcoes)}`;
+  if (!emVoo.has(chave)) {
+    const pedido = carregar(cargo, opcoes).finally(() => emVoo.delete(chave));
+    emVoo.set(chave, pedido);
+  }
+  return emVoo.get(chave);
+};
+
+const recuperar = (cargo, opcoes = {}) => {
+  const chave = `${cargo}:${JSON.stringify(opcoes)}`;
+  const mem = cache.get(chave);
+  if (mem) return mem;
+  const disco = lerDisco();
+  const salv = disco[chave];
+  if (salv) return salv;
+  if (opcoes.eleicao) {
+    const chaveAntiga = `${cargo}:${JSON.stringify({ ...opcoes, eleicao: undefined })}`;
+    if (disco[chaveAntiga]) return null;
+  }
+  return null;
+};
+
+const gravarDiscoComChave = (cargo, opcoes, data) => {
+  try {
+    const chave = `${cargo}:${JSON.stringify(opcoes)}`;
+    const dados = lerDisco();
+    dados[chave] = data;
+    localStorage.setItem(CACHE_KEY, JSON.stringify(dados));
+  } catch {
+    const chave = `${cargo}:${JSON.stringify(opcoes)}`;
+    cache.set(chave, data);
+  }
+};
+
+const fromData = (cargo, data, erro = null) => {
+  if (!data || !Array.isArray(data.candidatos)) {
+    return {
+      cargo,
+      candidatos: [],
+      total: 0,
+      secoesApuradas: data?.secoesApuradas ?? null,
+      secoesTotais: data?.secoesTotais ?? null,
+      votosValidos: data?.votosValidos ?? 0,
+      pctApurado: data?.pctApurado ?? 0,
+      atualizadoEm: data?.atualizadoEm ?? null,
+      carregando: false,
+      erro,
+      fonte: data?.fonte ?? 'tse',
+    };
+  }
+  return {
+    cargo,
+    ...data,
+    total: data.candidatos.length,
+    carregando: false,
+    erro,
+  };
+};
 
 const vazioDe = (cargo) => ({
   cargo,
@@ -99,13 +181,13 @@ const vazioDe = (cargo) => ({
   erro: null,
 });
 
-const recuperar = (cargo) => cache.get(cargo) || lerDisco()[cargo] || null;
-
-export const useEleicoes = (cargo = 'presidente') => {
+export const useEleicoes = (cargo = 'presidente', opcoes = {}) => {
   const [state, setState] = useState(() => {
-    const guardado = recuperar(cargo);
+    const guardado = recuperar(cargo, opcoes);
     return guardado ? fromData(cargo, guardado) : vazioDe(cargo);
   });
+
+  const isSegundoTurno = opcoes.eleicao === '6258';
 
   useEffect(() => {
     let cancelled = false;
@@ -123,8 +205,8 @@ export const useEleicoes = (cargo = 'presidente') => {
       return undefined;
     }
 
-    const guardado = recuperar(cargo);
-    if (guardado) {
+    const guardado = recuperar(cargo, opcoes);
+    if (guardado && (!isSegundoTurno || guardado.fonte === 'tse')) {
       setState(fromData(cargo, guardado));
     } else {
       setState((prev) => (prev.cargo === cargo ? prev : vazioDe(cargo)));
@@ -135,7 +217,7 @@ export const useEleicoes = (cargo = 'presidente') => {
       let erro = null;
 
       try {
-        data = await carregarCompartilhado(cargo);
+        data = await carregarCompartilhado(cargo, opcoes);
       } catch (err) {
         erro = err.message;
       }
@@ -147,19 +229,20 @@ export const useEleicoes = (cargo = 'presidente') => {
         return;
       }
 
-      cache.set(cargo, data);
-      gravarDisco(cargo, data);
+      const chave = `${cargo}:${JSON.stringify(opcoes)}`;
+      cache.set(chave, data);
+      gravarDiscoComChave(cargo, opcoes, data);
       setState(fromData(cargo, data));
     };
 
     load();
-    const interval = setInterval(load, REFRESH_INTERVAL);
+    const interval = setInterval(load, REFRESH_INTERVAL_MS);
 
     return () => {
       cancelled = true;
       clearInterval(interval);
     };
-  }, [cargo]);
+  }, [cargo, JSON.stringify(opcoes)]);
 
   return state;
 };

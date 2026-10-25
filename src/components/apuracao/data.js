@@ -90,3 +90,14 @@ export const formatPct = (n) =>
     minimumFractionDigits: 1,
     maximumFractionDigits: 1,
   });
+
+export const CORES_ESPECIAIS = {
+  nulos: '#ef4444',
+  brancos: '#64748b',
+};
+
+export const totalVotosTodos = (candidatos, nulos = 0, brancos = 0) =>
+  totalVotos(candidatos) + nulos + brancos;
+
+export const percentualItem = (votos, total) =>
+  total === 0 ? 0 : (votos / total) * 100;

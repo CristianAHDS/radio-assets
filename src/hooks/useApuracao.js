@@ -7,7 +7,7 @@ import {
 } from '../components/apuracao/data';
 
 const ENDPOINT = `${window.location.origin}/.netlify/functions/apuracao`;
-const REFRESH_INTERVAL = 60 * 1000;
+const REFRESH_INTERVAL = 30 * 1000;
 
 const buildUrl = (config) => {
   const params = new URLSearchParams();

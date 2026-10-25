@@ -76,21 +76,25 @@ const Cargo = ({ cargo }) => {
 const VotoAVotoSegundoTurnoVertical = ({ cargo = 'presidente' }) => {
   const captureRef = useRef(null);
   const { candidatos, carregando, secoesApuradas, atualizadoEm } =
-    useEleicoes(cargo);
+    useEleicoes(cargo, { eleicao: '6258', uf: 'br', cd: 1, formato: 'unificado' });
   const { estados } = useApuracaoEstados();
 
-  const lista = useMemo(
-    () =>
-      candidatos
-        .map((cand) => ({ ...cand, cor: corPartido(cand.partido) }))
+  const lista = useMemo(() => {
+    try {
+      if (!Array.isArray(candidatos)) return [];
+      return candidatos
+        .map((cand) => ({ ...cand, cor: corPartido(cand?.partido) }))
+        .filter((cand) => cand && (cand.votosNumero || cand.votos || cand.pct))
         .sort(
           (a, b) =>
             (b.votosNumero || 0) - (a.votosNumero || 0) ||
             (b.pct || 0) - (a.pct || 0),
         )
-        .slice(0, 2),
-    [candidatos],
-  );
+        .slice(0, 2);
+    } catch {
+      return [];
+    }
+  }, [candidatos]);
 
   const [lider, segundo] = lista;
   const soma = (lider?.pct || 0) + (segundo?.pct || 0);
@@ -181,8 +185,8 @@ const VotoAVotoSegundoTurnoVertical = ({ cargo = 'presidente' }) => {
           <MetaRow>
             <MetaItem>
               <FiMapPin size={11} />
-              {secoesApuradas != null
-                ? `${Number(secoesApuradas).toLocaleString('pt-BR', {
+              {secoesApuradas != null && secoesApuradas !== ''
+                ? `${Number(String(secoesApuradas).replace(',', '.')).toLocaleString('pt-BR', {
                     minimumFractionDigits: 2,
                     maximumFractionDigits: 2,
                   })}% apurado`
@@ -190,7 +194,7 @@ const VotoAVotoSegundoTurnoVertical = ({ cargo = 'presidente' }) => {
             </MetaItem>
             <MetaItem>
               <FiClock size={11} />
-              {atualizadoEm ? `atualizado ${atualizadoEm}` : '60s'}
+              {atualizadoEm ? `atualizado ${atualizadoEm}` : '30s'}
             </MetaItem>
           </MetaRow>
 
