@@ -25,6 +25,7 @@ export const CORES_CANDIDATOS = [
 
 export const CORES_FIXAS_CANDIDATOS = {
   13: '#ef4444',
+  22: '#38bdf8',
 };
 
 const NOMES_EXIBICAO = {
