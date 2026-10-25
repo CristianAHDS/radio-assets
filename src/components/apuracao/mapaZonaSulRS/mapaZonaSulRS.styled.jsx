@@ -128,7 +128,7 @@ export const LiveDot = styled.span`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   grid-auto-rows: 138px;
   gap: 12px;
 `;

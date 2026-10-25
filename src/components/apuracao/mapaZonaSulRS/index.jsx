@@ -31,7 +31,7 @@ import {
   FooterItem,
   EmptyState,
 } from './mapaZonaSulRS.styled';
-import { useApuracaoCidadesRS, CIDADES_ZONA_SUL_RS } from '../../../hooks/useApuracaoCidadesRS';
+import { useApuracaoCidadesRS, CIDADES_PRINCIPAIS_RS } from '../../../hooks/useApuracaoCidadesRS';
 import { CORES, formatPct, nomeCandidato } from '../data';
 import ExportImageButton from '../exportImageButton';
 
@@ -134,7 +134,7 @@ const MapaZonaSulRS = () => {
                 <FiMapPin size={28} />
               </HeaderIcon>
               <div>
-                <Title>Zona Sul · RS · 2º Turno</Title>
+                <Title>Principais Cidades · RS · 2º Turno</Title>
                 <Subtitle>
                   {temVotos
                     ? 'Líder em cada cidade'
@@ -157,7 +157,7 @@ const MapaZonaSulRS = () => {
             </EmptyState>
           ) : (
             <Grid>
-              {CIDADES_ZONA_SUL_RS.map((cidadeInfo) => {
+              {CIDADES_PRINCIPAIS_RS.map((cidadeInfo) => {
                 const cidade = cidades.find((c) => c.codigo === cidadeInfo.codigo);
                 const lider = cidade?.candidatos[0];
                 const ativo = Boolean(lider && cidade && cidade.totalVotos > 0);
@@ -234,4 +234,4 @@ const MapaZonaSulRS = () => {
 };
 
 export default MapaZonaSulRS;
-export { CIDADES_ZONA_SUL_RS };
+export { CIDADES_PRINCIPAIS_RS };

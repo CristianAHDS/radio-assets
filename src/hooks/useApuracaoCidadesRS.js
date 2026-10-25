@@ -25,6 +25,29 @@ export const CIDADES_ZONA_SUL_RS = [
   { codigo: '431690', nome: 'Santa Vitória do Palmar' },
 ];
 
+export const CIDADES_PRINCIPAIS_RS = [
+  { codigo: '431490', nome: 'Pelotas' },
+  { codigo: '431560', nome: 'Rio Grande' },
+  { codigo: '431340', nome: 'Porto Alegre' },
+  { codigo: '430480', nome: 'Caxias do Sul' },
+  { codigo: '431400', nome: 'Novo Hamburgo' },
+  { codigo: '431850', nome: 'São Leopoldo' },
+  { codigo: '431700', nome: 'Sapucaia do Sul' },
+  { codigo: '430890', nome: 'Gravataí' },
+  { codigo: '430920', nome: 'Guaíba' },
+  { codigo: '431780', nome: 'Santa Maria' },
+  { codigo: '431280', nome: 'Passo Fundo' },
+  { codigo: '431600', nome: 'Rio Grande do Sul' },
+  { codigo: '431090', nome: 'Jaguarão' },
+  { codigo: '430160', nome: 'Bagé' },
+  { codigo: '431720', nome: 'São Lourenço do Sul' },
+  { codigo: '430420', nome: 'Canguçu' },
+  { codigo: '431210', nome: 'Morro Redondo' },
+  { codigo: '430350', nome: 'Capão do Leão' },
+  { codigo: '431690', nome: 'Santa Vitória do Palmar' },
+  { codigo: '430470', nome: 'Chuí' },
+];
+
 export const CONFIG_SEGUNDO_TURNO = {
   ambiente: 'oficial',
   ciclo: 'ele2026',
