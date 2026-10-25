@@ -74,6 +74,7 @@ import SegundoTurno from './components/apuracao/segundoTurno';
 import VotoAVotoSegundoTurno from './components/apuracao/votoAVotoSegundoTurno';
 import VotoAVotoSegundoTurnoVertical from './components/apuracao/votoAVotoSegundoTurnoVertical';
 import MapaSegundoTurno from './components/apuracao/mapaSegundoTurno';
+import MapaZonaSulRS from './components/apuracao/mapaZonaSulRS';
 import PlacarLiderSegundoTurno from './components/apuracao/placarLiderSegundoTurno';
 import RankingUfsSegundoTurno from './components/apuracao/rankingUfsSegundoTurno';
 import ProgramacaoPage from './components/programacao/page';
@@ -398,6 +399,10 @@ const router = createBrowserRouter([
   {
     path: '/apuracaoMapaSegundoTurno',
     element: <MapaSegundoTurno />,
+  },
+  {
+    path: '/apuracaoMapaZonaSulRS',
+    element: <MapaZonaSulRS />,
   },
   {
     path: '/apuracaoLiderSegundoTurno',

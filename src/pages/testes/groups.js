@@ -23,6 +23,7 @@ export const GROUPS = [
         path: '/apuracaoVotoAVotoSegundoTurnoVertical',
       },
       { name: 'Mapa 2º Turno', path: '/apuracaoMapaSegundoTurno' },
+      { name: 'Mapa Zona Sul RS 2º Turno', path: '/apuracaoMapaZonaSulRS' },
       { name: 'Placar do Líder 2º Turno', path: '/apuracaoLiderSegundoTurno' },
       { name: 'Ranking de UFs 2º Turno', path: '/apuracaoRankingUfsSegundoTurno' },
       /*{ name: 'Carrossel Presidente', path: '/apuracaoCarrossel' },
