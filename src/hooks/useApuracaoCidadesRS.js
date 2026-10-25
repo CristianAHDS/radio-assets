@@ -22,8 +22,8 @@ export const CIDADES_ZONA_SUL_RS = [
   { codigo: '430430', nome: 'Cerrito' },
   { codigo: '431880', nome: 'Sentinela do Sul' },
   { codigo: '430470', nome: 'Chuí' },
-  { codigo: '431690', nome: 'Santa Vitória do Palmar' },
-];
+{ codigo: '431690', nome: 'Sta Vitória do Palmar' },
+  ];
 
 export const CIDADES_PRINCIPAIS_RS = [
   { codigo: '431490', nome: 'Pelotas' },
@@ -37,14 +37,14 @@ export const CIDADES_PRINCIPAIS_RS = [
   { codigo: '430920', nome: 'Guaíba' },
   { codigo: '431780', nome: 'Santa Maria' },
   { codigo: '431280', nome: 'Passo Fundo' },
-  { codigo: '431600', nome: 'Rio Grande do Sul' },
+  { codigo: '431600', nome: 'Rio Grande' },
   { codigo: '431090', nome: 'Jaguarão' },
   { codigo: '430160', nome: 'Bagé' },
   { codigo: '431720', nome: 'São Lourenço do Sul' },
   { codigo: '430420', nome: 'Canguçu' },
   { codigo: '431210', nome: 'Morro Redondo' },
   { codigo: '430350', nome: 'Capão do Leão' },
-  { codigo: '431690', nome: 'Santa Vitória do Palmar' },
+  { codigo: '431690', nome: 'Sta Vitória do Palmar' },
   { codigo: '430470', nome: 'Chuí' },
 ];
 
