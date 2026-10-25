@@ -56,21 +56,6 @@ const MapaSegundoTurno = () => {
     }
   }, [carregando, estados]);
 
-  const secoesTotais = estados.reduce(
-    (acc, estado) => acc + (estado.secoesTotais || 0),
-    0,
-  );
-  const secoesApuradas = estados.reduce(
-    (acc, estado) => acc + (estado.secoesApuradas || 0),
-    0,
-  );
-  const pctApuradoMedio = estados.reduce(
-    (acc, estado) => acc + (estado.pctApurado || 0),
-    0,
-  ) / (estados.length || 1);
-  const pctGeral =
-    secoesTotais > 0 ? (secoesApuradas / secoesTotais) * 100 : pctApuradoMedio;
-
   const legenda = useMemo(() => {
     const infoPorNumero = new Map();
     const votosPorNumero = new Map();
@@ -144,9 +129,6 @@ const MapaSegundoTurno = () => {
               </div>
             </HeaderLeft>
             <HeaderRight>
-              <HeaderBadge>
-                {formatPct(pctGeral)}% apurado
-              </HeaderBadge>
               <LiveBadge>
                 <LiveDot $on={!carregando && temVotos} /> Tempo real
               </LiveBadge>
