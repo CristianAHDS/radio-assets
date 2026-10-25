@@ -280,17 +280,7 @@ export const handler = async (event) => {
     }
 
     if (customEleicao === '6258') {
-      return responder({
-        cargo,
-        fonte: 'tse',
-        total: 0,
-        candidatos: [],
-        secoesApuradas: 0,
-        secoesTotais: 0,
-        votosValidos: 0,
-        pctApurado: 0,
-        atualizadoEm: new Date().toISOString(),
-      });
+      tse = await obterTseCustomizado(customEleicao, customUf || 'br', customCd || 1, cargo);
     }
 
     const { json, fonte } = await obterSiteOuArquivo(cargo, arquivo);

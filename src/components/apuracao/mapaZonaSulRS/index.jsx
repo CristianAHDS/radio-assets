@@ -169,7 +169,7 @@ const MapaZonaSulRS = () => {
                   >
                     <TileTop>
                       <CidadeSigla $cor={ativo ? lider.cor : CORES.textoSuave}>
-                        {cidadeInfo.nome}
+                        {cidadeInfo.nomeCurto}
                       </CidadeSigla>
                       <TileApurado>
                         {cidade ? formatPct(cidade.pctApurado) : '0'}%

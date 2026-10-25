@@ -157,11 +157,17 @@ export const TileTop = styled.div`
 `;
 
 export const CidadeSigla = styled.span`
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 900;
-  letter-spacing: 0.5px;
-  line-height: 1;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
   color: ${(p) => p.$cor || CORES.textoSuave};
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
 `;
 
 export const TileApurado = styled.span`
