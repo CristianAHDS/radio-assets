@@ -10,13 +10,12 @@ import {
   Title,
   Subtitle,
   HeaderRight,
-  HeaderBadge,
   LiveBadge,
   LiveDot,
   Grid,
   Tile,
   TileTop,
-  CidadeNome,
+  CidadeSigla,
   TileApurado,
   TileName,
   TilePct,
@@ -28,7 +27,7 @@ import {
   LegendItem,
   LegendDot,
   LegendName,
-  LegendUfs,
+  LegendPct,
   FooterItem,
   EmptyState,
 } from './mapaZonaSulRS.styled';
@@ -73,7 +72,8 @@ const MapaZonaSulRS = () => {
 
   const legenda = useMemo(() => {
     const infoPorNumero = new Map();
-    const ufsPorNumero = new Map();
+    const votosPorNumero = new Map();
+    const cidadesPorNumero = new Map();
 
     cidades.forEach((cidade) => {
       cidade.candidatos.forEach((cand) => {
@@ -84,23 +84,37 @@ const MapaZonaSulRS = () => {
             cor: cand.cor,
           });
         }
+        votosPorNumero.set(
+          cand.numero,
+          (votosPorNumero.get(cand.numero) || 0) + (cand.votos || 0),
+        );
       });
 
       const lider = cidade.candidatos[0];
       if (lider && cidade.totalVotos > 0) {
-        ufsPorNumero.set(
+        cidadesPorNumero.set(
           lider.numero,
-          (ufsPorNumero.get(lider.numero) || 0) + 1,
+          (cidadesPorNumero.get(lider.numero) || 0) + 1,
         );
       }
     });
 
+    const total = [...votosPorNumero.values()].reduce(
+      (acc, votos) => acc + votos,
+      0,
+    );
+
     return [...infoPorNumero.values()]
-      .map((cand) => ({
-        ...cand,
-        ufs: ufsPorNumero.get(cand.numero) || 0,
-      }))
-      .sort((a, b) => (ufsPorNumero.get(b.numero) || 0) - (ufsPorNumero.get(a.numero) || 0));
+      .map((cand) => {
+        const votos = votosPorNumero.get(cand.numero) || 0;
+        return {
+          ...cand,
+          votos,
+          cidades: cidadesPorNumero.get(cand.numero) || 0,
+          pct: total > 0 ? (votos / total) * 100 : 0,
+        };
+      })
+      .sort((a, b) => b.votos - a.votos);
   }, [cidades]);
 
   const temCandidatos = cidades.some(
@@ -117,7 +131,7 @@ const MapaZonaSulRS = () => {
           <Header>
             <HeaderLeft>
               <HeaderIcon>
-                <FiMapPin size={26} />
+                <FiMapPin size={28} />
               </HeaderIcon>
               <div>
                 <Title>Zona Sul · RS · 2º Turno</Title>
@@ -129,9 +143,6 @@ const MapaZonaSulRS = () => {
               </div>
             </HeaderLeft>
             <HeaderRight>
-              <HeaderBadge>
-                {formatPct(pctGeral)}% apurado
-              </HeaderBadge>
               <LiveBadge>
                 <LiveDot $on={!carregando && temVotos} /> Tempo real
               </LiveBadge>
@@ -146,21 +157,22 @@ const MapaZonaSulRS = () => {
             </EmptyState>
           ) : (
             <Grid>
-              {cidades.map((cidade) => {
-                const lider = cidade.candidatos[0];
-                const ativo = Boolean(lider && cidade.totalVotos > 0);
+              {CIDADES_ZONA_SUL_RS.map((cidadeInfo) => {
+                const cidade = cidades.find((c) => c.codigo === cidadeInfo.codigo);
+                const lider = cidade?.candidatos[0];
+                const ativo = Boolean(lider && cidade && cidade.totalVotos > 0);
                 return (
                   <Tile
-                    key={cidade.codigo}
+                    key={cidadeInfo.codigo}
                     $cor={lider?.cor || CORES.textoSuave}
                     $ativo={ativo}
                   >
                     <TileTop>
-                      <CidadeNome $cor={ativo ? lider.cor : CORES.textoSuave}>
-                        {cidade.nome}
-                      </CidadeNome>
+                      <CidadeSigla $cor={ativo ? lider.cor : CORES.textoSuave}>
+                        {cidadeInfo.nome}
+                      </CidadeSigla>
                       <TileApurado>
-                        {formatPct(cidade.pctApurado)}%
+                        {cidade ? formatPct(cidade.pctApurado) : '0'}%
                       </TileApurado>
                     </TileTop>
 
@@ -195,7 +207,8 @@ const MapaZonaSulRS = () => {
                 <LegendItem key={cand.numero}>
                   <LegendDot $cor={cand.cor} />
                   <LegendName>{nomeCandidato(cand)}</LegendName>
-                  <LegendUfs>{cand.ufs} cidades</LegendUfs>
+                  <LegendPct>{formatPct(cand.pct)}%</LegendPct>
+                  <span>· {cand.cidades} cidades</span>
                 </LegendItem>
               ))}
             </Legend>

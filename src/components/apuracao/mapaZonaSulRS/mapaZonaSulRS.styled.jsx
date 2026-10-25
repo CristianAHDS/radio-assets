@@ -1,250 +1,285 @@
-import styled from 'styled-components';
+import styled, { keyframes, createGlobalStyle } from 'styled-components';
+import { CORES } from '../data';
 
-export const GlobalStyle = styled.div`
-  * { box-sizing: border-box; }
+export const GlobalStyle = createGlobalStyle`
+  html, body, #root {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+`;
+
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+`;
+
+const pulse = keyframes`
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.75); }
 `;
 
 export const Page = styled.div`
-  font-family: 'Inter', system-ui, sans-serif;
-  background: ${({ theme }) => theme?.secundaria || '#001d41'};
-  color: ${({ theme }) => theme?.texto || '#fff'};
-  min-height: 100vh;
-  padding: 16px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', 'Inter', 'Segoe UI', system-ui, sans-serif;
+  color: ${CORES.texto};
+  box-sizing: border-box;
+  padding: 0 48px;
 `;
 
 export const Wrap = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 1500px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 22px 26px;
+  border-radius: 24px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #05306a 0%,
+    #001d41 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
+  animation: ${fadeIn} 0.5s ease both;
 `;
 
-export const Header = styled.header`
+export const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 20px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  flex-wrap: wrap;
+  gap: 20px;
 `;
 
 export const HeaderLeft = styled.div`
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 `;
 
 export const HeaderIcon = styled.div`
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: ${CORES.ouro};
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #05306a, #001d41);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  flex-shrink: 0;
 `;
 
 export const Title = styled.h1`
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.1;
+  text-transform: uppercase;
 `;
 
 export const Subtitle = styled.p`
-  font-size: 0.8rem;
-  color: #94a3b8;
-  margin: 2px 0 0;
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: ${CORES.textoSuave};
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
 `;
 
 export const HeaderRight = styled.div`
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-`;
-
-export const HeaderBadge = styled.div`
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #fbbf24;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: rgba(251,191,36,0.15);
-  border: 1px solid rgba(251,191,36,0.3);
+  gap: 14px;
 `;
 
 export const LiveBadge = styled.div`
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.7rem;
-  font-weight: 600;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: ${CORES.textoSuave};
+  font-weight: 700;
+  font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #22c55e;
+  letter-spacing: 1px;
+  white-space: nowrap;
 `;
 
 export const LiveDot = styled.span`
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  background: ${({ $on }) => ($on ? '#22c55e' : '#64748b')};
-  box-shadow: ${({ $on }) => ($on ? '0 0 8px #22c55e' : 'none')};
-  animation: ${({ $on }) => ($on ? 'pulse 2s infinite' : 'none')};
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.9); }
-  }
+  background: ${(p) => (p.$on ? '#4ade80' : '#94a3b8')};
+  box-shadow: ${(p) => (p.$on ? '0 0 10px rgba(74, 222, 128, 0.8)' : 'none')};
+  animation: ${(p) => (p.$on ? pulse : 'none')} 1.4s ease-in-out infinite;
 `;
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-auto-rows: 138px;
+  gap: 12px;
 `;
 
-export const Tile = styled.article`
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-  border: 1px solid ${({ $cor }) => $cor || 'rgba(255,255,255,0.1)'};
-  border-radius: 16px;
-  padding: 16px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  opacity: ${({ $ativo }) => ($ativo ? 1 : 0.5)};
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-  }
+export const Tile = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: ${(p) =>
+    p.$ativo ? `${p.$cor}1a` : 'rgba(255, 255, 255, 0.04)'};
+  border: 1px solid
+    ${(p) => (p.$ativo ? `${p.$cor}59` : 'rgba(255, 255, 255, 0.08)')};
+  animation: ${fadeIn} 0.45s ease both;
 `;
 
 export const TileTop = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  gap: 6px;
 `;
 
-export const CidadeNome = styled.span`
-  font-size: 1rem;
-  font-weight: 700;
-  color: ${({ $cor }) => $cor || '#fff'};
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+export const CidadeSigla = styled.span`
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  color: ${(p) => p.$cor || CORES.textoSuave};
 `;
 
 export const TileApurado = styled.span`
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #fbbf24;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(251,191,36,0.15);
+  font-size: 11px;
+  font-weight: 700;
+  color: ${CORES.textoSuave};
+  white-space: nowrap;
 `;
 
 export const TileName = styled.div`
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #cbd5e1;
 `;
 
 export const TilePct = styled.div`
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -1px;
   line-height: 1;
-  color: ${({ $cor }) => $cor || '#fff'};
+  color: ${(p) => p.$cor || CORES.texto};
+  white-space: nowrap;
 
   small {
-    font-size: 0.7rem;
-    font-weight: 500;
-    opacity: 0.8;
+    font-size: 15px;
+    font-weight: 800;
+    margin-left: 1px;
   }
 `;
 
 export const TileVazio = styled.div`
-  font-size: 2rem;
-  font-weight: 300;
-  color: #64748b;
-  text-align: center;
-  padding: 20px 0;
+  font-size: 28px;
+  font-weight: 800;
+  color: ${CORES.textoSuave};
 `;
 
 export const TileTrack = styled.div`
-  margin-top: 10px;
-  height: 8px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 4px;
+  height: 5px;
+  margin-top: 7px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.08);
   overflow: hidden;
 `;
 
 export const TileBar = styled.div`
   height: 100%;
-  width: ${({ $width }) => $width}%;
-  background: ${({ $cor }) => $cor || '#fbbf24'};
-  border-radius: 4px;
-  transition: width 0.5s ease;
+  width: ${(p) => p.$width || 0}%;
+  border-radius: 100px;
+  background: ${(p) => p.$cor || CORES.textoSuave};
+  transition: width 0.8s ease;
 `;
 
-export const Footer = styled.footer`
-  margin-top: 24px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+export const Footer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 18px;
   flex-wrap: wrap;
-  gap: 12px;
 `;
 
 export const Legend = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
   align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 `;
 
 export const LegendItem = styled.div`
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.8rem;
-  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 700;
+  color: ${CORES.textoSuave};
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
 `;
 
 export const LegendDot = styled.span`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: ${({ $cor }) => $cor || '#fbbf24'};
+  background: ${(p) => p.$cor || CORES.ouro};
+  flex-shrink: 0;
 `;
 
 export const LegendName = styled.span`
-  font-weight: 600;
+  color: #ffffff;
 `;
 
-export const LegendUfs = styled.span`
-  color: #94a3b8;
-  font-size: 0.75rem;
+export const LegendPct = styled.strong`
+  color: ${CORES.ouro};
+  font-weight: 900;
 `;
 
 export const FooterItem = styled.div`
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.75rem;
-  color: #94a3b8;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: ${CORES.textoSuave};
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
 `;
 
 export const EmptyState = styled.div`
-  grid-column: 1 / -1;
+  padding: 80px;
   text-align: center;
-  padding: 60px 20px;
-  color: #64748b;
-  font-size: 1rem;
+  font-size: 16px;
+  font-weight: 700;
+  color: ${CORES.textoSuave};
+  text-transform: uppercase;
+  letter-spacing: 1px;
 `;
