@@ -64,7 +64,12 @@ const formatPctCandidato = (cand) => {
 const SegundoTurno = ({ cargo = 'presidente' }) => {
   const captureRef = useRef(null);
   const { candidatos, carregando, secoesApuradas, atualizadoEm, erro } =
-    useEleicoes(cargo, { eleicao: '6258', uf: 'br', cd: 1, formato: 'unificado' });
+    useEleicoes(cargo, {
+      eleicao: '6258',
+      uf: 'br',
+      cd: 1,
+      formato: 'unificado',
+    });
   const [ultimaAtualizacaoLocal, setUltimaAtualizacaoLocal] = useState(null);
 
   useEffect(() => {
@@ -114,7 +119,9 @@ const SegundoTurno = ({ cargo = 'presidente' }) => {
               <HeaderBadge>
                 <FiMapPin size={15} />
                 {secoesApuradas != null && secoesApuradas !== ''
-                  ? `${Number(String(secoesApuradas).replace(',', '.')).toLocaleString('pt-BR', {
+                  ? `${Number(
+                      String(secoesApuradas).replace(',', '.'),
+                    ).toLocaleString('pt-BR', {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
                     })}% apurado`
@@ -188,7 +195,7 @@ const SegundoTurno = ({ cargo = 'presidente' }) => {
                     <PercentLabel>dos votos válidos</PercentLabel>
                     {(cand.votos || cand.votosNumero != null) && (
                       <Votos>
-                        {cand.votos || formatNumero(cand.votosNumero)} votos
+                        {cand.votos || formatNumero(cand.votosNumero)}
                       </Votos>
                     )}
                   </PercentBox>
@@ -201,13 +208,16 @@ const SegundoTurno = ({ cargo = 'presidente' }) => {
             <FooterItem>
               <FiClock size={15} />
               {ultimaAtualizacaoLocal
-                ? `Atualizado ${ultimaAtualizacaoLocal.toLocaleTimeString('pt-BR', {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                  })}`
+                ? `Atualizado ${ultimaAtualizacaoLocal.toLocaleTimeString(
+                    'pt-BR',
+                    {
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    },
+                  )}`
                 : atualizadoEm
-                ? `Atualizado ${atualizadoEm}`
-                : 'Atualização automática a cada 30s'}
+                  ? `Atualizado ${atualizadoEm}`
+                  : 'Atualização automática a cada 30s'}
             </FooterItem>
             {lider && segundo && (
               <Diferenca>
