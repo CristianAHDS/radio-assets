@@ -25,6 +25,7 @@ const CIDADES_PADRAO = [
   { nome: 'Pelotas', coord: '-31.768099,-52.341164' },
   { nome: 'Rio Grande', coord: '-32.0332,-52.0986' },
   { nome: 'São Lourenço', coord: '-31.3629,-51.9789' },
+  { nome: 'Canguçu', coord: '-31.7272,-52.5167' },
 ];
 
 const getLocalWeatherIcon = (conditionText = '') => {

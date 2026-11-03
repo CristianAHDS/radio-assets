@@ -435,12 +435,12 @@ const router = createBrowserRouter([
   },
   {
     path: '/temperaturaEsporte',
-    element: <Temperatura background={secondaryEsporte} />,
+    element: <Temperatura background={primaryEstporte} />,
   },
-  {
-    path: '/temperaturaAgro',
-    element: <Temperatura background={secondaryEsporte} />,
-  },
+{
+  path: '/temperaturaAgro',
+  element: <Temperatura background={primaryEstporte} />,
+},
   {
     path: '/temperaturaConexao',
     element: <Temperatura background={secondaryConexão} />,
