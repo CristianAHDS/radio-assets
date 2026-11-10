@@ -7,7 +7,7 @@ import {
   ScrollingWrapper,
 } from '../../lower.styled';
 
-const NEWS_URL = `${window.location.origin}/.netlify/functions/news`;
+const NEWS_URL = '/news.json';
 const STORAGE_KEY = 'lowerTesteText';
 
 const joinTitles = (titles) => `${titles.map((t) => `  ${t}  `).join('•')} •`;

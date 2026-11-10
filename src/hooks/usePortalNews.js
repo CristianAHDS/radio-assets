@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const NEWS_URL = `${window.location.origin}/.netlify/functions/news`;
+const NEWS_URL = '/news.json';
 const REFRESH_INTERVAL = 5 * 60 * 1000;
 
 export const DEFAULT_NEWS_TEXT =
