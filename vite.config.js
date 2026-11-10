@@ -15,6 +15,14 @@ const functionsProxy = {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: { proxy: functionsProxy },
-  preview: { proxy: functionsProxy },
+  server: {
+    port: 5174,
+    strictPort: true,
+    proxy: functionsProxy,
+  },
+  preview: {
+    port: 5174,
+    strictPort: true,
+    proxy: functionsProxy,
+  },
 })

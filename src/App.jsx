@@ -23,7 +23,7 @@ import {
   primaryMisturaBoa,
   secondary,
   secondaryEsporte,
-  secondaryConexão,
+
   secondaryPensarNegocios,
   secondaryOutros,
   secondaryCorpoEMente,
@@ -443,7 +443,7 @@ const router = createBrowserRouter([
 },
   {
     path: '/temperaturaConexao',
-    element: <Temperatura background={secondaryConexão} />,
+    element: <Temperatura background={primaryConexão} />,
   },
   {
     path: '/temperaturaPensarNegocios',
