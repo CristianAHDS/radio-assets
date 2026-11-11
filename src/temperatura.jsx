@@ -72,6 +72,13 @@ const gravarCache = (dados) => {
   }
 };
 
+// "São Lourenço" tem 12 caracteres, mas em caixa alta fica largo demais para
+// caber em uma linha no card; 14px é o único caso com ajuste próprio.
+const AJUSTES_TAMANHO_CIDADE = { 'São Lourenço': 14 };
+
+const tamanhoCidade = (nome) =>
+  AJUSTES_TAMANHO_CIDADE[nome] ?? (nome.length > 12 ? 13 : 16);
+
 const Temperatura = ({
   background = primary,
   cidades = CIDADES_PADRAO,
@@ -175,7 +182,7 @@ const Temperatura = ({
               transition={{ duration: 0.45, ease: 'easeInOut' }}
             >
               <Icone src={getLocalWeatherIcon(info?.condicao)} alt="" />
-              <Cidade $longa={cidadeAtual.nome.length > 12}>
+              <Cidade $tamanho={tamanhoCidade(cidadeAtual.nome)}>
                 {cidadeAtual.nome}
               </Cidade>
               <Valor>{info ? `${info.temperatura}°` : '--°'}</Valor>

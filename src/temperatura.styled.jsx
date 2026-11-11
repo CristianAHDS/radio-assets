@@ -41,12 +41,13 @@ export const Icone = styled.img`
 export const Cidade = styled.span`
   min-width: 0;
   overflow: hidden;
-  font-size: ${({ $longa }) => ($longa ? '13px' : '16px')};
+  font-size: ${({ $tamanho = 16 }) => `${$tamanho}px`};
   line-height: 1.2;
   font-weight: 900;
   white-space: normal;
   word-break: break-word;
   text-align: center;
+  text-transform: uppercase;
 `;
 
 export const Valor = styled.span`

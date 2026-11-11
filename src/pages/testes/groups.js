@@ -4,46 +4,6 @@ const localParam = { key: 'local', label: 'Local', default: 'Estúdio' };
 
 export const GROUPS = [
   {
-    title: 'Apuração de Votos',
-    accent: '#efd844',
-    items: [
-      /*
-      { name: 'Painel de Apuração', path: '/apuracao' },
-      { name: 'Progresso da Apuração', path: '/apuracaoProgresso' },
-      { name: 'Placar do Líder', path: '/apuracaoLider' },
-      { name: 'Voto a Voto', path: '/apuracaoVotoAVoto' },
-       */
-      { name: 'Apuração 2º Turno', path: '/apuracaoSegundoTurno' },
-      {
-        name: 'Voto a Voto 2º Turno',
-        path: '/apuracaoVotoAVotoSegundoTurno',
-      },
-      {
-        name: 'Voto a Voto 2º Turno Vertical',
-        path: '/apuracaoVotoAVotoSegundoTurnoVertical',
-      },
-      { name: 'Mapa 2º Turno', path: '/apuracaoMapaSegundoTurno' },
-      { name: 'Mapa Zona Sul RS 2º Turno', path: '/apuracaoMapaZonaSulRS' },
-      { name: 'Placar do Líder 2º Turno', path: '/apuracaoLiderSegundoTurno' },
-      { name: 'Ranking de UFs 2º Turno', path: '/apuracaoRankingUfsSegundoTurno' },
-      /*{ name: 'Carrossel Presidente', path: '/apuracaoCarrossel' },
-      {
-        name: 'Carrossel Governador',
-        path: '/apuracaoCarrosselGovernador',
-      },
-      { name: 'Carrossel Senador', path: '/apuracaoCarrosselSenador' },
-      */
-
-      /*{ name: 'Tela Apuração', path: '/telas/tela-apuracao' },*/
-      /*{ name: 'Lower Apuração', path: '/lowerApuracao' },*/
-      {
-        name: 'Tela Apuração 2º Turno',
-        path: '/telas/tela-apuracao-segundo-turno',
-      },
-      { name: 'Lower Apuração 2º Turno', path: '/lowerApuracaoSegundoTurno' },
-    ],
-  },
-  {
     title: 'Let',
     items: [
       { name: 'Let Teste', path: '/letTest', params: [nomeParam, subParam] },
