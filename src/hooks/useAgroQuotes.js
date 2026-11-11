@@ -1,28 +1,8 @@
 import { useEffect, useState } from 'react';
 
-const AGRO_URL = `${window.location.origin}/.netlify/functions/agro`;
+const AGRO_URL = '/agro.json';
 
-const UPDATE_HOURS = [4, 5];
-
-export const msUntilNextUpdate = (now = new Date()) => {
-  let next = null;
-
-  for (let dayOffset = 0; dayOffset <= 1; dayOffset += 1) {
-    for (const hour of UPDATE_HOURS) {
-      const candidate = new Date(now);
-      candidate.setDate(now.getDate() + dayOffset);
-      candidate.setHours(hour, 0, 0, 0);
-
-      if (candidate.getTime() > now.getTime()) {
-        if (!next || candidate.getTime() < next.getTime()) {
-          next = candidate;
-        }
-      }
-    }
-  }
-
-  return next ? next.getTime() - now.getTime() : 60 * 60 * 1000;
-};
+const REFRESH_INTERVAL = 5 * 60 * 1000;
 
 export const DEFAULT_QUOTES = [
   { label: 'Dólar', value: 'R$ 5,42', change: 0.32 },
@@ -83,19 +63,12 @@ export const useAgroQuotes = () => {
       }
     };
 
-    const scheduleNext = () => {
-      timer = setTimeout(async () => {
-        await load();
-        if (!cancelled) scheduleNext();
-      }, msUntilNextUpdate());
-    };
-
     load();
-    scheduleNext();
+    timer = setInterval(load, REFRESH_INTERVAL);
 
     return () => {
       cancelled = true;
-      clearTimeout(timer);
+      clearInterval(timer);
     };
   }, []);
 

@@ -1,20 +1,21 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { updateNews } from './scripts/update-news.mjs'
+import { updateAgro } from './scripts/update-agro.mjs'
 
-const NEWS_REFRESH_INTERVAL = 5 * 60 * 1000
+const REFRESH_INTERVAL = 5 * 60 * 1000
 
-// Atualiza public/news.json localmente (scraping do portal) para o dev/preview
-// funcionarem sem depender das Netlify Functions.
-const localNews = () => ({
-  name: 'local-news',
+// Atualiza os JSONs locais (public/news.json e public/agro.json) ao iniciar o
+// dev server e a cada 5 minutos, para funcionar sem as Netlify Functions.
+const localData = (name, task) => ({
+  name,
   configureServer(server) {
-    updateNews()
-    const timer = setInterval(updateNews, NEWS_REFRESH_INTERVAL)
+    task()
+    const timer = setInterval(task, REFRESH_INTERVAL)
     server.httpServer?.once('close', () => clearInterval(timer))
   },
   configurePreviewServer() {
-    updateNews()
+    task()
   },
 })
 
@@ -31,12 +32,16 @@ const functionsProxy = {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), localNews()],
+  plugins: [
+    react(),
+    localData('local-news', updateNews),
+    localData('local-agro', updateAgro),
+  ],
   server: {
     port: 5174,
     strictPort: true,
     proxy: functionsProxy,
-    watch: { ignored: ['**/public/news.json'] },
+    watch: { ignored: ['**/public/news.json', '**/public/agro.json'] },
   },
   preview: {
     port: 5174,

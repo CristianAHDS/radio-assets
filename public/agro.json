@@ -1,0 +1,40 @@
+{
+  "quotes": [
+    {
+      "label": "Dólar",
+      "value": "R$ 5,56",
+      "change": -0.374358
+    },
+    {
+      "label": "Euro",
+      "value": "R$ 6,18",
+      "change": -0.909365
+    },
+    {
+      "label": "Soja (saca 60kg)",
+      "value": "R$ 143,00",
+      "change": 1.4
+    },
+    {
+      "label": "Milho (saca 60kg)",
+      "value": "R$ 70,00",
+      "change": 7.7
+    },
+    {
+      "label": "Boi Gordo (@)",
+      "value": "R$ 395,00",
+      "change": 0
+    },
+    {
+      "label": "Café Arábica (saca 60kg)",
+      "value": "R$ 1.750,00",
+      "change": 0
+    },
+    {
+      "label": "Trigo (ton)",
+      "value": "R$ 1.550,00",
+      "change": 0
+    }
+  ],
+  "updatedAt": "2026-11-11T16:09:56.403Z"
+}
